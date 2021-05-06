@@ -1,13 +1,13 @@
 {
     "version": 3,
-    "mappings": "AGAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;CACzB;;AACD,AAAA,IAAI,EAAC,IAAI,CAAA;EACL,WAAW,EAAE,oBAAoB;CACpC;;AAED,AAAA,IAAI,CAAC;EACD,gBAAgB,EFPH,OAAO;CEQvB;;AEXD,AAAA,IAAI,CAAC;EACD,SAAS,EAAE,IAAI;CAClB",
+    "mappings": "AGAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;CACzB;;AACD,AAAA,IAAI,EAAC,IAAI,CAAA;EACL,WAAW,EAAE,oBAAoB;CACpC;;AAED,AAAA,CAAC,CAAA;EACG,eAAe,EAAE,IAAI;CACxB;;AAED,AAAA,EAAE,CAAA;EACE,UAAU,EAAE,IAAI;CACnB;;AEfD,AAAA,UAAU,CAAA;EHCN,KAAK,EDAW,OAAO;ECCvB,SAAS,EDWN,IAAI;ECVP,WAAW,EDoBL,GAAG;CIrBZ",
     "sources": [
         "main.scss",
         "Helper/_variables.scss",
         "Helper/_mixin.scss",
         "Base/_reset.scss",
         "Base/_customize.scss",
-        "Layouts/_Header.scss"
+        "Components/_text.scss"
     ],
     "names": [],
     "file": "main.css"

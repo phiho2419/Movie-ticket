@@ -1,6 +1,7 @@
 @mixin styleText( $color , $fs , $fw ) {
     color : $color ;
     font-size : $fs ;
+    font-weight: $fw;
 }
 @mixin  styleButton( $bg-color , $bd-color , $pd-y , $pd-x  , $radius ) {
     background-color: $bg-color ;
