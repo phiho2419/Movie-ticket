@@ -1,0 +1,76 @@
+.UserTemplate {
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .user__back {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        i {
+            font-size: 50px;
+            padding: 5px 40px;
+            color: $color-red-primary;
+            background-color: $color-white-1;
+            border-bottom-right-radius: 30px;
+            transition: 0.5;
+            &:hover {
+                color: $color-white-1;
+                background-color: $color-red-primary;
+            }
+        }
+    }
+    .user__content {
+        width: 50%;
+        margin: auto;
+        .row {
+            margin: 0;
+        }
+        .user__topic {
+            background-color: $color-red-dark;
+            width: 100%;
+            text-align: center;
+            .col-6 {
+                transition: 0.5;
+                padding: 10px 0;
+                .name {
+                    color: white;
+                    font-size: 26px;
+                    font-weight: 700;
+                }
+                &:hover {
+                    background-color: $color-red-light;
+                    cursor: pointer;
+                    .name {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsible("medium") {
+    .UserTemplate {
+        .user__back {
+            i {
+                font-size: 35px;
+                padding: 5px 30px;
+            }
+        }
+        .user__content {
+            .user__topic {
+                .col-6 {
+                    .name {
+                        color: white;
+                        font-size: 22px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
