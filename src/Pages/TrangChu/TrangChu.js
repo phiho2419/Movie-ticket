@@ -1,9 +1,15 @@
 import React from 'react'
+import Carousel from './Carousel/Carousel'
+import ListPhim from './ListPhim/ListPhim'
+import TabPhim from './TabPhim/TabPhim'
 
 export default function TrangChu() {
     return (
         <div>
-            <p className="text_time">10:11</p>
+            
+           <Carousel/>
+           <ListPhim />
+           <TabPhim/>
         </div>
     )
 }

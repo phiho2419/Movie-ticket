@@ -10,7 +10,13 @@
 
 //COMPONENTS
 @import './Components/text';
+@import './Components/button';
+@import './Components//tagPhim';
 
 //LAYOUTS
+@import './Layouts/Header';
 
 //PAGES
+@import './Pages/TrangChu/carousel';
+@import './Pages//TrangChu/listPhim';
+@import './Pages/TrangChu/tabphims';
