@@ -11,6 +11,7 @@ import ChiTietCumRap from './Pages/ChiTietCumRap/ChiTietCumRap';
 import { UserTemplate } from './Templates/HomeTemplate';
 import DangKi from './Pages/DangKi/DangKi';
 import DangNhap from './Pages/DangNhap/DangNhap';
+import ThongTinCaNhan from './Pages/ThongTinCaNhan/ThongTinCaNhan';
 export const history = createBrowserHistory();
 
 
@@ -23,6 +24,8 @@ function App() {
           <Route path='/trangchu' component={TrangChu} />
           <UserTemplate path="/dangnhap" component={DangNhap}/>
           <UserTemplate path="/dangky" component={DangKi}/>
+          <Route path='/' component={ThongTinCaNhan} />
+
           <ChiTietPhim />
           {/* <ChiTietCumRap/> */}
         </Switch>

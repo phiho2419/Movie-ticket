@@ -853,4 +853,150 @@ li {
   padding: 8px 20px;
   border-radius: 5px;
 }
+
+.ThongTinCaNhan {
+  background-color: #fff;
+  padding: 30px 0;
+}
+
+.ThongTinCaNhan .TT_content {
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 25px 98px 0 rgba(0, 0, 0, 0.1);
+  padding: 0px 30px 10px 0px;
+  border-radius: 5px;
+}
+
+.ThongTinCaNhan .TT_content .ant-tabs-nav-list {
+  background-color: #ff867f;
+  transition: 0.5s;
+}
+
+.ThongTinCaNhan .TT_content .ant-tabs-tab {
+  margin: 0;
+}
+
+.ThongTinCaNhan .TT_content .ant-tabs-tab p {
+  font-size: 22px;
+  color: #fff;
+  padding: 0 30px;
+  margin: 0;
+}
+
+.ThongTinCaNhan .TT_content .ant-tabs-tab-active {
+  background-color: #ff5252;
+}
+
+.ThongTinCaNhan .TT_content .Edit__button {
+  width: 100%;
+  padding-left: 25px;
+  margin-top: 20px;
+}
+
+.ThongTinCaNhan .TT_content .Edit__button .TT__button {
+  padding: 10px 25px;
+  background-color: #ff867f;
+  font-size: 20px;
+  color: white;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.ThongTinCaNhan .TT_content .Edit__button .TT__button:hover {
+  background-color: #ff5252;
+}
+
+.ThongTinCaNhan .Edit {
+  width: 90%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 10px 30px;
+  display: none;
+}
+
+.ThongTinCaNhan .Edit h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #ff5252;
+}
+
+.ThongTinCaNhan .Edit label {
+  font-size: 20px;
+}
+
+.ThongTinCaNhan .Edit input, .ThongTinCaNhan .Edit select {
+  border-radius: 15px;
+}
+
+.ThongTinCaNhan .Edit input:focus, .ThongTinCaNhan .Edit select:focus {
+  border-color: #ff5252;
+  box-shadow: 0 0 0 0.2rem #c50e2948;
+}
+
+.ThongTinCaNhan .Edit .Edit__button {
+  text-align: right;
+  width: 100%;
+  padding-right: 15px;
+}
+
+.ThongTinCaNhan .Edit .Edit__button .TT__button {
+  padding: 10px 25px;
+  background-color: #ff867f;
+  font-size: 20px;
+  color: white;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.ThongTinCaNhan .Edit .Edit__button .TT__button:hover {
+  background-color: #ff5252;
+}
+
+.LichSu .LS__content img {
+  width: auto;
+  height: auto;
+}
+
+.LichSu .LS__content .LS__text {
+  margin-top: 20px;
+}
+
+.LichSu .LS__content .LS__text h2 {
+  font-size: 26px;
+}
+
+.LichSu .LS__content .LS__text .adress {
+  color: #c7c7c7;
+  font-size: 16px;
+}
+
+.LichSu .LS__content .LS__text .adress span {
+  color: #ff5252;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.LichSu .LS__content .LS__text p {
+  font-size: 14px;
+  margin: 10px 0 0 0;
+}
+
+.LichSu .LS__content .LS__text p span {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ThongTin .TT__content p {
+  color: #000;
+  padding: 0 30px;
+  margin: 16px 0 0 0;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.ThongTin .TT__content p span {
+  font-weight: 400;
+  margin-left: 20px;
+}
 /*# sourceMappingURL=main.css.map */
