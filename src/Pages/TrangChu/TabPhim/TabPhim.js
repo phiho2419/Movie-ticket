@@ -16,20 +16,17 @@ export default function TabPhim() {
     return (
         <section className="mt-5 container sectionTabPhim">
             <Tabs tabPosition={tabPosition}>
-                <TabPane tab={<img src="./img/cgv.png" style={{ borderRadius: '50%' }} width="60" height="60" />} key="1">
+                <TabPane tab={<img src="./img/cgv.png" style={{ borderRadius: '50%' }} width="64" height="64" />} key="1">
                     <TabListDanhSachRap />
                 </TabPane>
-                <TabPane tab={<img src="./img/cinestar.png" style={{ borderRadius: '50%' }} width="60" height="60" />} key="2">
+                <TabPane tab={<img src="./img/cinestar.png" style={{ borderRadius: '50%' }} width="64" height="64" />} key="2">
                     <TabListDanhSachRap />
-
                 </TabPane>
-                <TabPane tab={<img src="./img/lotte-cinema.png" style={{ borderRadius: '50%' }} width="60" height="60" />} key="3">
+                <TabPane tab={<img src="./img/lotte-cinema.png" style={{ borderRadius: '50%' }} width="64" height="64" />} key="3">
                     <TabListDanhSachRap />
-
                 </TabPane>
-                <TabPane tab={<img src="./img/galaxy-cinema.png" style={{ borderRadius: '50%' }} width="60" height="60" />} key="4">
+                <TabPane tab={<img src="./img/galaxy-cinema.png" style={{ borderRadius: '50%' }} width="64" height="64" />} key="4">
                     <TabListDanhSachRap />
-
                 </TabPane>
                 
             </Tabs>

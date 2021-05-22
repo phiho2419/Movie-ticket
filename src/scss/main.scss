@@ -15,8 +15,18 @@
 
 //LAYOUTS
 @import './Layouts/Header';
+@import './Layouts/AdminTemplate';
 
 //PAGES
+
+    //TRANG CHU
 @import './Pages/TrangChu/carousel';
 @import './Pages//TrangChu/listPhim';
 @import './Pages/TrangChu/tabphims';
+
+    //QUANLYPHIM
+@import './Pages/QuanLyPhim/QuanLyPhim';
+
+//CHITIETPHONGVE
+
+@import './Pages/ChiTietPhongVe/chiTietPhongVe'

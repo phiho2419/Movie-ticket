@@ -11,9 +11,28 @@
     .ant-tabs-tab{
         opacity: 0.7;
         transition: all .2s;
+        padding: 10px 24px 0 24px !important;
     }
     .ant-tabs-tab.ant-tabs-tab-active{
         opacity: 1;
+    }
+    .ant-tabs-tabpane{
+        .tab_tenphim{
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .tab_thoigian_star{
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .tab_star_{
+            color: rgb(207, 123, 27);
+        }
+        .tab_thoigianchieu{
+            font-size: 18px;
+            padding: 3px 4px;
+        }
+        
     }
     
 }

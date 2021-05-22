@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
-import  Header  from '../../../Components/Header/Header'
+import Header from '../../../Components/Header/Header'
 
 export default function Carousel() {
+    
     return (
         <div className="carousel_TrangChu">
             <Header />
@@ -13,10 +14,10 @@ export default function Carousel() {
                 </ol>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img className="d-block w-100 carousel_poster " src="./img/ps1.jpg" alt="First slide" />
+                        <img className="d-block w-100 carousel_poster" src="./img/ps1.jpg" alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
-                            <a className="text-white venobox_custom" href="https://youtu.be/UxH084HDnDQ"
+                            <a className="text-white venobox" venobox="venobox" href="https://youtu.be/UxH084HDnDQ"
                                 data-vbtype="video" >
                                 <div className="carousel-caption d-none d-md-block">
                                     <span className="icon_play"><i className="fa fa-play"></i> </span>
@@ -63,7 +64,7 @@ export default function Carousel() {
             </div>
             <form className="search_form">
                 <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Tìm kiếm tên phim, rạp phim..."  />
+                    <input type="text" className="form-control" placeholder="Tìm kiếm tên phim, rạp phim..." />
                     <div className="input-group-append">
                         <span className="input-group-text" id="basic-addon2">
                             <i className="fa fa-search" />

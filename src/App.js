@@ -1,9 +1,14 @@
 import '../src/scss/main.css'
 import { Route, BrowserRouter, Switch, Router, NavLink } from 'react-router-dom'
 import {createBrowserHistory} from 'history'
-import { Fragment,useEffect } from 'react';
 import Header from './Components/Header/Header';
 import TrangChu from './Pages/TrangChu/TrangChu';
+import ChiTietPhongVe from './Pages/ChiTietPhongVe/ChiTietPhongVe';
+import { AdminTemplate } from './Templates/AdminTemplate';
+import AdminQuanLyPhim from './Pages/AdminQuanLyPhim/AdminQuanLyPhim';
+import AdminThemPhim from './Pages/AdminThemPhim/AdminThemPhim';
+import AdminQuanLyNguoiDung from './Pages/AdminQuanLyNguoiDung/AdminQuanLyNguoiDung';
+import AdminThemNguoiDung from './Pages/AdminThemNguoiDung/AdminThemNguoiDung';
 export  const history = createBrowserHistory();
 
 function App() {
@@ -13,7 +18,15 @@ function App() {
 
       <div className="App">
         <Switch>
-          <Route path='/' component={TrangChu} />    
+          <Route path='/trangchu' exact component={TrangChu} />    
+          <Route path='/chitietphongve' exact component={ChiTietPhongVe} /> 
+          <AdminTemplate path='/admin/quanlyphim' exact component={AdminQuanLyPhim} />
+          <AdminTemplate path='/admin/themphim' exact component={AdminThemPhim} />
+          <AdminTemplate path='/admin/themnguoidung' exact component={AdminThemNguoiDung} />
+          <AdminTemplate path='/admin/quanlynguoidung' exact component={AdminQuanLyNguoiDung} />
+          
+          <Route path='/' exact component={TrangChu} />    
+
         </Switch>
         
       </div>

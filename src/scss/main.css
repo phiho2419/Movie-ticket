@@ -34,6 +34,12 @@ li {
   color: unset !important;
 }
 
+.ant-table-pagination-right {
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
 .text_time {
   color: #ff5252;
   font-size: 20px;
@@ -65,7 +71,7 @@ li {
   border-radius: 2px;
 }
 
-header {
+.carousel_TrangChu header {
   position: absolute;
   top: 0;
   left: 0;
@@ -73,46 +79,123 @@ header {
   width: 100%;
 }
 
-header .navbar-light .navbar-brand {
+.carousel_TrangChu header .navbar-light .navbar-brand {
   color: white;
   margin-left: 30px;
 }
 
-header .navbar-light .navbar-brand:hover {
+.carousel_TrangChu header .navbar-light .navbar-brand:hover {
   color: white;
 }
 
-header .header-logo {
-  font-family: 'Dancing Script', sans-serif;
+.carousel_TrangChu header .header-logo {
+  font-family: "Dancing Script", sans-serif;
   font-weight: 700;
   font-size: 90px;
   line-height: 90px;
   color: #ff867f !important;
 }
 
-header .navbar {
+.carousel_TrangChu header .navbar {
   padding: 0;
 }
 
-header .navbar .navbar-nav .nav-item {
+.carousel_TrangChu header .navbar .navbar-nav .nav-item {
   margin: 2px 2px 0 2px;
 }
 
-header .navbar .navbar-nav .nav-item .nav-link {
+.carousel_TrangChu header .navbar .navbar-nav .nav-item .nav-link {
   color: #fff;
   font-size: 15px;
   font-weight: normal;
   font-weight: 700;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   border-radius: 20px;
   min-width: 70px;
   text-align: center;
 }
 
-header .navbar .navbar-nav .nav-item .nav-link:hover {
+.carousel_TrangChu header .navbar .navbar-nav .nav-item .nav-link:hover {
   background-color: #fff;
   color: #c50e29;
+}
+
+.pageChiTietPhongVe header .navbar-light .navbar-brand {
+  color: white;
+  margin-left: 30px;
+}
+
+.pageChiTietPhongVe header .navbar-light .navbar-brand:hover {
+  color: white;
+}
+
+.pageChiTietPhongVe header .header-logo {
+  font-family: "Dancing Script", sans-serif;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 90px;
+  color: #ff867f !important;
+}
+
+.pageChiTietPhongVe header .navbar {
+  padding: 0;
+}
+
+.pageChiTietPhongVe header .navbar .navbar-nav .nav-item {
+  margin: 2px 2px 0 2px;
+}
+
+.pageChiTietPhongVe header .navbar .navbar-nav .nav-item .nav-link {
+  color: #fff;
+  font-size: 15px;
+  font-weight: normal;
+  font-weight: 700;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 20px;
+  min-width: 70px;
+  text-align: center;
+}
+
+.pageChiTietPhongVe header .navbar .navbar-nav .nav-item .nav-link:hover {
+  background-color: #fff;
+  color: #c50e29;
+}
+
+.dashboard .db_select {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background: #272635;
+}
+
+.dashboard .db_select .db_selectContent .db_logo {
+  font-family: "Dancing Script", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  color: #ff867f;
+  text-align: center;
+}
+
+.dashboard .db_nameBar {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  height: 40px;
+  background: #f1f3f5;
+  line-height: 40px;
+}
+
+.dashboard .admin_title {
+  font-weight: 700;
+  font-size: 30px;
 }
 
 .carousel_TrangChu {
@@ -325,6 +408,7 @@ header .navbar .navbar-nav .nav-item .nav-link:hover {
 .sectionListPhim .card .card_tenphim {
   font-size: 16px;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .sectionListPhim .card .card_ngaykhoichieu {
@@ -334,6 +418,7 @@ header .navbar .navbar-nav .nav-item .nav-link:hover {
 
 .sectionListPhim .card .card_thoiluong {
   font-size: 12px;
+  letter-spacing: 2px;
 }
 
 .sectionTabPhim .tabpane_thongTinRap .tabpane_tenRap {
@@ -349,9 +434,189 @@ header .navbar .navbar-nav .nav-item .nav-link:hover {
   opacity: 0.7;
   -webkit-transition: all .2s;
   transition: all .2s;
+  padding: 10px 24px 0 24px !important;
 }
 
 .sectionTabPhim .ant-tabs-tab.ant-tabs-tab-active {
   opacity: 1;
+}
+
+.sectionTabPhim .ant-tabs-tabpane .tab_tenphim {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sectionTabPhim .ant-tabs-tabpane .tab_thoigian_star {
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.sectionTabPhim .ant-tabs-tabpane .tab_star_ {
+  color: #cf7b1b;
+}
+
+.sectionTabPhim .ant-tabs-tabpane .tab_thoigianchieu {
+  font-size: 18px;
+  padding: 3px 4px;
+}
+
+.pageQuanLyPhim .search_form {
+  width: 700px;
+  margin: 0 auto;
+  -webkit-box-shadow: 2px 2px 2px 2px #1b1b1b4f;
+          box-shadow: 2px 2px 2px 2px #1b1b1b4f;
+  border-radius: 20px !important;
+}
+
+.pageQuanLyPhim .search_form .form-control {
+  height: 40px;
+  border-radius: 20px 0px 0px 20px;
+  border: none;
+}
+
+.pageQuanLyPhim .search_form .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: none;
+}
+
+.pageQuanLyPhim .search_form .form-control::-webkit-input-placeholder {
+  font-size: 18x;
+}
+
+.pageQuanLyPhim .search_form .form-control:-ms-input-placeholder {
+  font-size: 18x;
+}
+
+.pageQuanLyPhim .search_form .form-control::-ms-input-placeholder {
+  font-size: 18x;
+}
+
+.pageQuanLyPhim .search_form .form-control::placeholder {
+  font-size: 18x;
+}
+
+.pageQuanLyPhim .search_form .input-group-append .input-group-text {
+  border-radius: 0px 20px 20px 0px;
+  background: white;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: none;
+}
+
+.pageQuanLyPhim .search_form .input-group-append .input-group-text:hover {
+  background: #ff5252;
+  color: white;
+  cursor: pointer;
+}
+
+.pageChiTietPhongVe {
+  background-image: url("../assets/img/bannerrapchieu.jpg");
+  height: 750px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.pageChiTietPhongVe .ghe_manhinh {
+  height: 550px;
+  width: 100%;
+  background-color: white;
+  margin-top: 75px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.pageChiTietPhongVe .ghe_manhinh .man_hinh {
+  background-color: #1f1f1f;
+  width: 70%;
+  margin: 0  auto;
+  height: 13px;
+  border-radius: 10px;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 13px;
+  -webkit-box-shadow: 0px 15px 15px -2px yellow;
+          box-shadow: 0px 15px 15px -2px yellow;
+  letter-spacing: 1px;
+}
+
+.pageChiTietPhongVe .ghe_manhinh .cumGhe {
+  margin-top: 100px;
+}
+
+.pageChiTietPhongVe .ghe_manhinh .cumGhe .ghe {
+  height: 30px;
+  width: 30px;
+  border-radius: 3px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #b8b7b7;
+}
+
+.pageChiTietPhongVe .ghe_manhinh .cumGhe .gheDaDat {
+  background-color: #4e4e4e;
+}
+
+.pageChiTietPhongVe .ghe_manhinh .cumGhe .gheDangDat {
+  background-color: #d2ff2f;
+}
+
+.pageChiTietPhongVe .thongtin_datve {
+  height: 550px;
+  width: 100%;
+  background-color: white;
+  margin-top: 75px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.pageChiTietPhongVe .thongtin_datve p, .pageChiTietPhongVe .thongtin_datve hr {
+  margin-bottom: 8px;
+}
+
+.pageChiTietPhongVe .thongtin_datve .tt_tenPhim {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.pageChiTietPhongVe .thongtin_datve .tt_email, .pageChiTietPhongVe .thongtin_datve .tt_sdt, .pageChiTietPhongVe .thongtin_datve .tt_tithttt {
+  font-weight: 700;
+}
+
+.pageChiTietPhongVe .thongtin_datve .tt_tenRap, .pageChiTietPhongVe .thongtin_datve .tt_thoiGianChieu {
+  font-size: 13px;
+  font-style: italic;
+}
+
+.pageChiTietPhongVe .thongtin_datve .tt_datGhe, .pageChiTietPhongVe .thongtin_datve .tt_giaVe {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.pageChiTietPhongVe .thongtin_datve .tt_datGhe {
+  color: #ff5252;
+}
+
+.pageChiTietPhongVe .thongtin_datve .tt_giaVe, .pageChiTietPhongVe .thongtin_datve .tt_soGheDat {
+  color: #0cc40c;
+}
+
+.pageChiTietPhongVe .thongtin_datve .tt_httt .form-check {
+  margin: 10px 0;
+}
+
+.pageChiTietPhongVe .thongtin_datve .tt_httt .form-check .form-check-input {
+  top: 20%;
+}
+
+.pageChiTietPhongVe .thongtin_datve .tt_httt .form-check img {
+  width: 30px;
+  height: 30px;
+  display: inline;
+  margin-right: 8px;
 }
 /*# sourceMappingURL=main.css.map */

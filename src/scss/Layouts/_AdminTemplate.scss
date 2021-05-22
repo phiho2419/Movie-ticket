@@ -1,0 +1,33 @@
+.dashboard {
+    .db_select {
+        position: sticky;
+        z-index: 10;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        background: #272635;
+        .db_selectContent {
+            .db_logo {
+                font-family: "Dancing Script", sans-serif;
+                font-weight: 700;
+                font-size: 60px;
+                color: $color-red-light;
+                text-align: center;
+            }
+        }
+    }
+    .db_nameBar {
+        position: sticky;
+        width: 100%;
+        top: 0;
+        z-index: 10;
+        height: 40px;
+        background: #f1f3f5;
+        line-height: 40px;
+    }
+    .admin_title{
+        font-weight: 700;
+        font-size: 30px;
+    }
+}
