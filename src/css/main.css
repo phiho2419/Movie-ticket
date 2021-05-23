@@ -301,7 +301,7 @@ li {
 }
 
 .CtPhim__Intro .CtPhim__content .CtPhim__Text .tab__right .tab__rate h2 {
-  font-size: 40px;
+  font-size: 35px;
   color: #c50e29;
   line-height: 100px;
 }
@@ -491,6 +491,11 @@ li {
 
 .CTPhimList .Ctp__content .Ctp__day .ant-tabs-nav-list .ant-tabs-tab-active .day {
   color: red;
+}
+
+.CTPhimList .Ctp__content .Ctp__day .Ctp__rap {
+  margin: 15px 0;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .CTPhimList .Ctp__content .Ctp__day .Ctp__rap h2 {

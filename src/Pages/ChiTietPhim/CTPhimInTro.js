@@ -1,28 +1,30 @@
 import React, { useState } from 'react'
 import { Tabs, Progress, Rate } from 'antd';
-import ModalVideo from 'react-modal-video'
+import ModalVideo from 'react-modal-video';
+import moment from 'moment'
 const { TabPane } = Tabs;
-export default function CTPhimInTro() {
-    function callback(key) {
-        console.log(key);
-    }
+export default function CTPhimInTro(props) {
+
+    let { hinhAnh, tenPhim, moTa, ngayKhoiChieu, trailer, danhGia } = props;
+    let trailers = String(trailer).slice(30);
+    let danhgias = Number(danhGia);
     const [isOpen, setOpen] = useState(false)
     return (
         <div className="CtPhim__Intro">
             <div className="CtPhim__content row">
                 <div className="col-4 d-none d-sm-block CtPhim__img">
-                    <img src="http://movie0706.cybersoft.edu.vn/hinhanh/ga-trong-nuoi-vo_gp01.png" />
+                    <img src={hinhAnh} />
                 </div>
                 <div className="col-8 CtPhim__Text">
-                    <Tabs defaultActiveKey="1" onChange={callback}>
+                    <Tabs defaultActiveKey="1">
                         <TabPane className="tab__left" tab="Thông tin" key="1">
-                            <h2>Trạng Tí</h2>
+                            <h2>{tenPhim}</h2>
                             <div className="tab__txt">
-                                <p>Ngày công chiếu: <span>07/05/2021</span></p>
-                                <p>Nội dung: <span>abcxyz</span></p>
+                                <p>Ngày công chiếu: <span>{moment(ngayKhoiChieu).add(10, 'days').calendar()}</span></p>
+                                <p>Nội dung: <span>{moTa}</span></p>
                             </div>
                             <div className="tab__button">
-                                <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="POkFZ_1sbfc" onClose={() => setOpen(false)} />
+                                <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="jluSu8Rw6YE" onClose={() => setOpen(false)} />
 
                                 <button onClick={() => setOpen(true)}>TRAILER</button>
                                 <button >MUA VÉ</button>
@@ -33,14 +35,14 @@ export default function CTPhimInTro() {
                             <div className="tab__rate">
                                 <div class="row">
                                     <div className="col-6">
-                                        <h2>Trạng tí</h2>
+                                        <h2>{tenPhim}</h2>
                                     </div>
                                     <div className="col-12 col-sm-6">
-                                        <Progress type="circle" strokeColor={{ '0%': '#108ee9', '100%': '#87d068', }} percent={95} />
+                                        <Progress type="circle" strokeColor={{ '0%': '#108ee9', '100%': '#87d068', }} percent={danhgias*10} />
                                         <div className="d-none d-lg-block">
 
 
-                                            <Rate allowHalf defaultValue={4.5} disabled />
+                                            <Rate allowHalf defaultValue={danhgias} disabled />
                                         </div>
                                     </div>
                                 </div>

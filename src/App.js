@@ -24,9 +24,10 @@ function App() {
           <Route path='/trangchu' component={TrangChu} />
           <UserTemplate path="/dangnhap" component={DangNhap}/>
           <UserTemplate path="/dangky" component={DangKi}/>
+          <Route path='/chitietphim/:maPhim' component={ChiTietPhim} />
+          <Route path='/chitietcumrap/:maRap' component={ChiTietCumRap} />
           <Route path='/' component={ThongTinCaNhan} />
 
-          <ChiTietPhim />
           {/* <ChiTietCumRap/> */}
         </Switch>
         {/* <Footer /> */}

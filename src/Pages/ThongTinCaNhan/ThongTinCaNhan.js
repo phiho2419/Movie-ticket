@@ -47,8 +47,10 @@ export default function ThongTinCaNhan() {
                     <div className="form-group">
                         <label>Mật khẩu</label>
                         <input className="form-control" />
+                    </div><div className="form-group">
+                        <label> Nhập lại mật khẩu</label>
+                        <input className="form-control" />
                     </div>
-
 
                     <div class="row">
                         <div className="col-6">
