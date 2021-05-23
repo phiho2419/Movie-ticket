@@ -11,7 +11,7 @@ import AdminThemNguoiDung from './Pages/AdminThemNguoiDung/AdminThemNguoiDung';
 import TrangChu from './Pages/TrangChu/TrangChu';
 import ChiTietPhim from './Pages/ChiTietPhim/ChiTietPhim';
 import ChiTietCumRap from './Pages/ChiTietCumRap/ChiTietCumRap';
-import { UserTemplate } from './Templates/HomeTemplate';
+import { UserTemplate } from './Templates/UserTemplate';
 import DangKi from './Pages/DangKi/DangKi';
 import DangNhap from './Pages/DangNhap/DangNhap';
 import ThongTinCaNhan from './Pages/ThongTinCaNhan/ThongTinCaNhan';
@@ -21,7 +21,6 @@ function App() {
   
   return (
     <Router history={history}>
-
       <div className="App">
         <Switch>
           <Route path='/trangchu' exact component={TrangChu} />    
