@@ -25,6 +25,7 @@ function App() {
           <AdminTemplate path='/admin/themnguoidung' exact component={AdminThemNguoiDung} />
           <AdminTemplate path='/admin/quanlynguoidung' exact component={AdminQuanLyNguoiDung} />
           
+          <AdminTemplate path='/admin' exact component={AdminQuanLyPhim} />
           <Route path='/' exact component={TrangChu} />    
 
         </Switch>

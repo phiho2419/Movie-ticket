@@ -9,7 +9,6 @@ export default function AdminThemPhim() {
     return (
         <div>
             <div className="container">
-
                 <div className="row mt-5">
                 <div className="col-10">
                         <h1 className="admin_title">Thêm phim</h1>

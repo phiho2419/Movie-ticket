@@ -114,7 +114,6 @@ export default function AdminQuanLyNguoiDung() {
     return (
         <div className="pageQuanLyPhim mt-4">
             <h1 className="admin_title mt-4 text-center">Quản lý người dùng</h1>
-
             <form className="search_form">
                 <div className="input-group">
                     <input type="text" className="form-control" placeholder="Nhập vào tài khoản hoặc họ tên người dùng" />
