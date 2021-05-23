@@ -1,0 +1,21 @@
+.DangKy {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 500px;
+    .DK__content {
+        width: 90%;
+        margin: 0 auto;
+        color: white;
+        padding: 35px 0;
+        .DK__btn {
+            width: 100%;
+            margin-top: 20px;
+            button {
+                width: 100%;
+                font-size: 16px;
+                background-color: $color-red-light;
+                padding: 8px 20px;
+                border-radius: 5px;
+            }
+        }
+    }
+}

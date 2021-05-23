@@ -14,6 +14,7 @@
 @import './Components//tagPhim';
 
 //LAYOUTS
+<<<<<<< HEAD
 @import './Layouts/Header';
 @import './Layouts/AdminTemplate';
 
@@ -30,3 +31,21 @@
 //CHITIETPHONGVE
 
 @import './Pages/ChiTietPhongVe/chiTietPhongVe'
+=======
+@import './Layouts/Footer';
+@import './Layouts/UserTemplate';
+
+//PAGES
+@import './Pages//ChiTietPhim/CTPhimInTro';
+@import './Pages//ChiTietPhim/CTPhimList';
+
+@import './Pages/ChiTietCumRap/CTRapInTro';
+@import './Pages/ChiTietCumRap/CTRapList';
+
+@import './Pages/DangNhap/DangNhap';
+@import './Pages/DangKy/DangKy';
+
+@import './Pages/ThongTinCaNhan/ThongTinCaNhan';
+@import './Pages/ThongTinCaNhan/LichSu';
+@import './Pages/ThongTinCaNhan/ThongTin';
+>>>>>>> b6534e0f6fc2204cfc7612b1d509ae720d7ee482

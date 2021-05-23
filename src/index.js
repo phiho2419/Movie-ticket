@@ -5,10 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import {store} from './Redux/configStore'
-import "antd/dist/antd.css";
-
-
-
+import 'antd/dist/antd.css';
+import 'react-modal-video/scss/modal-video.scss';
 ReactDOM.render(
   <Provider store={store}>
     <App />
