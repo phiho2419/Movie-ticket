@@ -1,7 +1,6 @@
 import '../src/scss/main.css'
-import { Route, BrowserRouter, Switch, Router, NavLink } from 'react-router-dom'
+import { Route, Switch, Router } from 'react-router-dom'
 import {createBrowserHistory} from 'history'
-import Header from './Components/Header/Header';
 import TrangChu from './Pages/TrangChu/TrangChu';
 import ChiTietPhongVe from './Pages/ChiTietPhongVe/ChiTietPhongVe';
 import { AdminTemplate } from './Templates/AdminTemplate';
@@ -24,7 +23,6 @@ function App() {
           <AdminTemplate path='/admin/themphim' exact component={AdminThemPhim} />
           <AdminTemplate path='/admin/themnguoidung' exact component={AdminThemNguoiDung} />
           <AdminTemplate path='/admin/quanlynguoidung' exact component={AdminQuanLyNguoiDung} />
-          
           <AdminTemplate path='/admin' exact component={AdminQuanLyPhim} />
           <Route path='/' exact component={TrangChu} />    
 

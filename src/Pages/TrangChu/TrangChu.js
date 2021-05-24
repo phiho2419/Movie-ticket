@@ -6,9 +6,9 @@ import TabPhim from './TabPhim/TabPhim'
 export default function TrangChu() {
     return (
         <div>
-           <Carousel/>
+           <Carousel />
            <ListPhim />
-           <TabPhim/>
+           <TabPhim />
         </div>
     )
 }
