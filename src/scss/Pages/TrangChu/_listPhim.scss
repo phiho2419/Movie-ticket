@@ -21,8 +21,9 @@
     .card{
         border:none;
         line-height: 30px;
-        .venobox_trailer{
+        .overlay_link{
             position: relative;
+            cursor: pointer;
             .overlay{
                 position: absolute;
                 width: 215px;

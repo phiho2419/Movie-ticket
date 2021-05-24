@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react';
 import Header from '../../../Components/Header/Header'
-
+import ModalVideo from 'react-modal-video';
 export default function Carousel() {
-    
+    const [isOpen, setOpen] = useState(false);
     return (
         <div className="carousel_TrangChu">
             <Header />
@@ -17,8 +17,8 @@ export default function Carousel() {
                         <img className="d-block w-100 carousel_poster" src="./img/ps1.jpg" alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
-                            <a className="text-white venobox" venobox="venobox" href="https://youtu.be/UxH084HDnDQ"
-                                data-vbtype="video" >
+                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="jluSu8Rw6YE" onClose={() => setOpen(false)} />
+                            <a className="text-white" onClick={() => setOpen(true)} >
                                 <div className="carousel-caption d-none d-md-block">
                                     <span className="icon_play"><i className="fa fa-play"></i> </span>
                                 </div>
@@ -29,8 +29,8 @@ export default function Carousel() {
                         <img className="d-block w-100 carousel_poster " src="./img/ps2.jpg" alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
-                            <a className="text-white venobox " href="https://youtu.be/UxH084HDnDQ"
-                                data-vbtype="video">
+                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="jluSu8Rw6YE" onClose={() => setOpen(false)} />
+                            <a className="text-white  " onClick={() => setOpen(true)}>
                                 <div className="carousel-caption d-none d-md-block">
                                     <span className="icon_play"><i className="fa fa-play"></i> </span>
 
@@ -42,8 +42,8 @@ export default function Carousel() {
                         <img className="d-block w-100 carousel_poster " src="./img/img1.png" alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
-                            <a className="text-white venobox " href="https://youtu.be/UxH084HDnDQ"
-                                data-vbtype="video">
+                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="jluSu8Rw6YE" onClose={() => setOpen(false)} />
+                            <a className="text-white  " onClick={() => setOpen(true)}>
                                 <div className="carousel-caption d-none d-md-block">
                                     <span className="icon_play"><i className="fa fa-play"></i> </span>
 

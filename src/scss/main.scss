@@ -29,4 +29,20 @@
 
 //CHITIETPHONGVE
 
-@import './Pages/ChiTietPhongVe/chiTietPhongVe'
+@import './Pages/ChiTietPhongVe/chiTietPhongVe';
+@import './Layouts/Footer';
+@import './Layouts/UserTemplate';
+
+//PAGES
+@import './Pages//ChiTietPhim/CTPhimInTro';
+@import './Pages//ChiTietPhim/CTPhimList';
+
+@import './Pages/ChiTietCumRap/CTRapInTro';
+@import './Pages/ChiTietCumRap/CTRapList';
+
+@import './Pages/DangNhap/DangNhap';
+@import './Pages/DangKy/DangKy';
+
+@import './Pages/ThongTinCaNhan/ThongTinCaNhan';
+@import './Pages/ThongTinCaNhan/LichSu';
+@import './Pages/ThongTinCaNhan/ThongTin';
