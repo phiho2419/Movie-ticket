@@ -1,7 +1,6 @@
 const stateDefault = {
     mangPhim: [
-        { maPhim: 1, tenphim: 'Kiều', hinhAnh: 'https://picsum.photos/200/200', moTa: 'Phim đang được chiếu tất cả các rạp trên toàn quốc' },
-        { maPhim: 2, tenphim: 'BatMan', hinhAnh: 'https://picsum.photos/200/200', moTa: 'Phim đang được chiếu tất cả các rạp trên toàn quốc' }
+         
     ],
     chiTietPhim: {
 

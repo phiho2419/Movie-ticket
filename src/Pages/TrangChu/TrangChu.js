@@ -1,3 +1,4 @@
+import Footer from '../../Components/Footer/Footer'
 import React from 'react'
 import Carousel from './Carousel/Carousel'
 import ListPhim from './ListPhim/ListPhim'
@@ -9,6 +10,7 @@ export default function TrangChu() {
            <Carousel />
            <ListPhim />
            <TabPhim />
+           <Footer />
         </div>
     )
 }

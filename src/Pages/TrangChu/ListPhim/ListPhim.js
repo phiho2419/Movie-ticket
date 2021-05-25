@@ -1,9 +1,29 @@
-import React from 'react'
-import CardPhimDangChieu from './CardPhimDangChieu'
-import CardPhimHotNhat from './CardPhimHotNhat'
-import CardPhimSapChieu from './CardPhimSapChieu'
+import React, {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import CardPhimDangChieu from './CardPhimDangChieu';
+import CardPhimHotNhat from './CardPhimHotNhat';
+import CardPhimSapChieu from './CardPhimSapChieu';
+import { callAPI_layDanhSachPhimAction } from '../../../Redux/Actions/QuanLyPhimAction';
+
+
+
 
 export default function ListPhim() {
+    const dispatch = useDispatch();
+    const {mangPhim} = useSelector(state => state.QuanLyPhimReducer);
+
+    useEffect(() => {
+        dispatch(callAPI_layDanhSachPhimAction());
+        
+    }, [])
+
+
+    const renderPhimSapChieu = () => {
+        return mangPhim.map((phim,index) => {
+            return  <CardPhimSapChieu key={index} phim={phim} /> 
+        })
+    }
     return (
         <section className=" container sectionListPhim">
             <div>
@@ -21,14 +41,7 @@ export default function ListPhim() {
                 <div className="tab-content" id="myTabContent">
                     <div className="tab-pane  show active" id="coming" >
                         <div className="row mt-2">
-                            <CardPhimSapChieu />
-                            <CardPhimSapChieu />
-                            <CardPhimSapChieu />
-                            <CardPhimSapChieu />
-                            <CardPhimSapChieu />
-                            <CardPhimSapChieu />
-                            <CardPhimSapChieu />
-                            <CardPhimSapChieu />
+                            {renderPhimSapChieu()}
                         </div>
                     </div>
                     <div className="tab-pane " id="came" >

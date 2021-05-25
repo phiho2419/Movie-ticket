@@ -1,21 +1,26 @@
-import React, { useState } from 'react'
+import React,{useEffect} from 'react'
+import {useSelector,useDispatch} from 'react-redux'
 
 import { Tabs } from 'antd';
 import { Tag } from 'antd';
+import {LayChiTietRapApiAction} from '../../../Redux/Actions/QuanLyRapAction';
 
 const { TabPane } = Tabs;
 
-export default function TabListDanhSachRap() {
-    const [state, setState] = useState({
-        tabPosition: 'left',
-    });
+export default function TabListDanhSachRap(props) {
+    const dispatch = useDispatch();
+    const {chiTietRap} = useSelector(state => state.QuanLyRapReducer);
 
+    useEffect(() => {
+        dispatch(LayChiTietRapApiAction(props.maHeThongRap))
+    }, [])
+
+    console.log('chiTietRap',chiTietRap);
     
 
 
-    const { tabPosition } = state;
     return (
-            <Tabs tabPosition={tabPosition}>
+            <Tabs tabPosition='left'>
                 <TabPane tab={<div className="row tabpane_tabs" style={{width:"250px"}}>
                     <img src="./img/rapgalaxy.jpg" style={{height:"60px"}}   className="col-5 "  />
                     <div className="col-7 p-0 text-left tabpane_thongTinRap">
