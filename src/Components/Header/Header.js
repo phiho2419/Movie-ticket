@@ -30,8 +30,6 @@ export default function Header() {
                         </form>
                     </div>
                 </nav>
-
-
             </div>
         </header>
     )

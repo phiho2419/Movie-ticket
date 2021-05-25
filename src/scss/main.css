@@ -767,24 +767,21 @@ li {
   text-align: center;
 }
 
-.UserTemplate .user__content .user__topic .col-6 {
+.UserTemplate .user__content .user__topic .name {
   -webkit-transition: 0.5;
   transition: 0.5;
   padding: 10px 0;
-}
-
-.UserTemplate .user__content .user__topic .col-6 .name {
   color: white;
   font-size: 26px;
   font-weight: 700;
 }
 
-.UserTemplate .user__content .user__topic .col-6:hover {
+.UserTemplate .user__content .user__topic .name:hover {
   background-color: #ff867f;
   cursor: pointer;
 }
 
-.UserTemplate .user__content .user__topic .col-6:hover .name {
+.UserTemplate .user__content .user__topic .name:hover .name {
   color: black;
 }
 
@@ -1094,6 +1091,7 @@ li {
 .CTPhimList .Ctp__content .Ctp__day .ant-tabs-nav-list {
   width: 100%;
   height: 60px;
+  padding-left: 15px;
 }
 
 .CTPhimList .Ctp__content .Ctp__day .ant-tabs-nav-list::before {
@@ -1310,9 +1308,13 @@ li {
   border-radius: 10px;
 }
 
+.ctr__List .Ctr__content .ant-tabs-tab {
+  max-width: 300px;
+}
+
 .ctr__List .Ctr__content .Rap {
-  min-width: 200px;
   text-align: left;
+  max-width: 300px;
 }
 
 .ctr__List .Ctr__content .Rap h2 {
@@ -1321,12 +1323,15 @@ li {
   font-weight: 500;
   padding-bottom: 5px;
   margin-bottom: 0;
+  white-space: normal;
 }
 
 .ctr__List .Ctr__content .Rap p {
   font-size: 14px;
   color: #c7c7c7;
   margin-bottom: 0;
+  max-width: 300px;
+  white-space: normal;
 }
 
 .ctr__List .Ctr__content .ctr__day .day {
@@ -1338,6 +1343,7 @@ li {
 .ctr__List .Ctr__content .ctr__day .ant-tabs-nav-list {
   width: 100%;
   height: 60px;
+  padding-left: 15px;
 }
 
 .ctr__List .Ctr__content .ctr__day .ant-tabs-nav-list::before {
@@ -1351,6 +1357,12 @@ li {
 
 .ctr__List .Ctr__content .ctr__day .ant-tabs-nav-list .ant-tabs-tab-active .day {
   color: red;
+}
+
+.ctr__List .Ctr__content .ctr__day .Ctr__phim {
+  margin: 15px 0;
+  -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .ctr__List .Ctr__content .ctr__day .Ctr__phim .ctr__img {
@@ -1375,17 +1387,20 @@ li {
   color: #ff5252;
   font-size: 20px;
   font-weight: 700;
-  padding: 5px 10px;
+  padding: 5px 8px;
   background-color: white;
   border: none;
 }
 
 .DangNhap {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.4);
   height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1393,6 +1408,9 @@ li {
 
 .DangNhap .DN__content {
   padding: 30px 40px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .DangNhap .DN__content .DN__btn {
@@ -1417,53 +1435,29 @@ li {
   color: #ff867f;
 }
 
-.DangNhap .input {
-  position: relative;
-  width: 100%;
-  margin-top: 20px;
-  font-size: 22px;
-  color: white;
-  font-weight: 500;
-  padding: 5px 0;
+.DangNhap .DN__content p {
+  font-size: 18px;
+  padding: 5px 10px;
+  margin: 0;
 }
 
-.DangNhap .input input {
+.DangNhap .DN__content .text {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
   padding: 5px 10px;
+  margin: 0;
+}
+
+.DangNhap .DN__content input {
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  width: 100%;
+  border: 1.5px solid white;
   border-radius: 10px;
   outline: none;
-}
-
-.DangNhap .input__label {
-  position: absolute;
-  left: 2px;
-  top: 5px;
-  white-space: nowrap;
-  color: #ff5252;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
-  -webkit-transition: -webkit-transform 120ms ease-in;
-  transition: -webkit-transform 120ms ease-in;
-  transition: transform 120ms ease-in;
-  transition: transform 120ms ease-in, -webkit-transform 120ms ease-in;
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.DangNhap .input__field {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
-  width: 100%;
-  border: 2px solid currentColor;
-  color: currentColor;
-  background: transparent;
-}
-
-.DangNhap .input__field:focus + .input__label, .DangNhap .input__field:not(:placeholder-shown) + .input__label {
-  -webkit-transform: translate(0.5rem, -65%) scale(0.8);
-          transform: translate(0.5rem, -65%) scale(0.8);
+  padding: 10px;
 }
 
 .DangKy {

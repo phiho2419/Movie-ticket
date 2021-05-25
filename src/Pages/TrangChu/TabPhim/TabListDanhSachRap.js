@@ -15,52 +15,45 @@ export default function TabListDanhSachRap(props) {
         dispatch(LayChiTietRapApiAction(props.maHeThongRap))
     }, [])
 
-    console.log('chiTietRap',chiTietRap);
     
+    const renderChiTietRap = () => {
+        // return chiTietRap.map((ctr,index)=>{
+        //     return ctr.lstCumRap.map((cr,index)=>{
+        //         return 
+        //     })
+        // })
+
+        return chiTietRap?.map((ctr,index)=>{
+            return ctr.lstCumRap.map((cr,index)=>{
+                console.log('cr',cr.danhSachPhim);
+            })
+        })
+    }
 
 
     return (
             <Tabs tabPosition='left'>
-                <TabPane tab={<div className="row tabpane_tabs" style={{width:"250px"}}>
-                    <img src="./img/rapgalaxy.jpg" style={{height:"60px"}}   className="col-5 "  />
-                    <div className="col-7 p-0 text-left tabpane_thongTinRap">
-                        <p className="m-0 tabpane_tenRap">GLX Nguyễn Du</p>
-                        <p className="m-0 tabpane_diaChiRap">116 Nguyễn Du, Q1</p>
-                        <p className="m-0 tabpane_xemChiTiet">Xem chi tiết</p>
+                {renderChiTietRap()}
+                <TabPane tab={<div className="row tabpane_tabs" style={{width:"250px"}} >
+                <img src="./img/rapgalaxy.jpg" style={{height:"60px"}}   className="col-5 "  />
+                <div className="col-7 p-0 text-left tabpane_thongTinRap">
+                    <p className="m-0 tabpane_tenRap"></p>
+                    <p className="m-0 tabpane_diaChiRap">116 Nguyễn Du, Q1</p>
+                    <p className="m-0 tabpane_xemChiTiet">Xem chi tiết</p>
+                </div>
+            </div>}  key="1">
+                {/* Content of tabs  */}
+                <div className="row ml-2">
+                    <div className='col-2'>
+                        <img src='./img/Batman_V_Superman_Dawn_Of_Justice.jpg' height="60" width="60" alt="aaa"/> 
                     </div>
-                </div>}  key="1">
-                    {/* Content of tabs  */}
-                    <div className="row ml-2">
-                        <div className='col-2'>
-                            <img src='./img/Batman_V_Superman_Dawn_Of_Justice.jpg' height="60" width="60" alt="aaa"/> 
-                        </div>
-                        <div className="col-10">
-                            <h5 className="tab_tenphim"> Batman_V_Superman_Dawn_Of_Justice </h5>
-                            <div className="tab_thoigian_star"> <span className="tab_thoigian_"> 100 phút </span> <span className="tab_star_"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
-                            <Tag className="tab_thoigianchieu" color="magenta"> 10:00 </Tag>
-                        </div>
+                    <div className="col-10">
+                        <h5 className="tab_tenphim"> Batman_V_Superman_Dawn_Of_Justice </h5>
+                        <div className="tab_thoigian_star"> <span className="tab_thoigian_"> 100 phút </span> <span className="tab_star_"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                        <Tag className="tab_thoigianchieu" color="magenta"> 10:00 </Tag>
                     </div>
-                </TabPane>
-                <TabPane tab={<div className="row tabpane_tabs" style={{width:"250px"}}>
-                    <img src="./img/rapgalaxy.jpg" style={{height:"60px"}}   className="col-5 "  />
-                    <div className="col-7 p-0 text-left tabpane_thongTinRap">
-                        <p className="m-0 tabpane_tenRap">GLX Nguyễn Du</p>
-                        <p className="m-0 tabpane_diaChiRap">116 Nguyễn Du, Q1</p>
-                        <p className="m-0 tabpane_xemChiTiet">Xem chi tiết</p>
-                    </div>
-                </div>}  key="2">
-                    Content of Tab 2
-                </TabPane>
-                <TabPane tab={<div className="row tabpane_tabs" style={{width:"250px"}}>
-                    <img src="./img/rapgalaxy.jpg" style={{height:"60px"}}   className="col-5 "  />
-                    <div className="col-7 p-0 text-left tabpane_thongTinRap">
-                        <p className="m-0 tabpane_tenRap">GLX Nguyễn Du</p>
-                        <p className="m-0 tabpane_diaChiRap">116 Nguyễn Du, Q1</p>
-                        <p className="m-0 tabpane_xemChiTiet">Xem chi tiết</p>
-                    </div>
-                </div>}  key="3">
-                    Content of Tab 3
-                </TabPane>               
+                </div>
+            </TabPane>
             </Tabs>
     );
 }

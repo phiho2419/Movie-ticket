@@ -23,11 +23,11 @@ export const callApi_layThongTinHeThongRap = () => {
     }
 }
 
-export const LayChiTietRapApiAction = (maHeThongRap) => {
+export const LayChiTietRapApiAction = (maRap) => {
     return async dispatch => {
         try {
             const result = await axios({
-                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`,
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maRap}&maNhom=GP01`,
                 method: 'GET'
             });
             // console.log('kq ma he thong rap',result.data);

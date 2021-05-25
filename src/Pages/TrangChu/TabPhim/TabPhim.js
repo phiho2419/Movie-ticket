@@ -18,6 +18,8 @@ export default function TabPhim() {
         dispatch(callApi_layThongTinHeThongRap())
     }, [])
 
+    console.log('mangRap',mangRap);
+
 
     const renderMangRap = () => {
         return mangRap.map((rap, index) => {
