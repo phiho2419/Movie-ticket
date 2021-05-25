@@ -6,13 +6,13 @@ export const LayChiTietRapApiAction = (maRap) => {
     return async dispatch => {
         try {
             const result = await axios({
-                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maRap}`,
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maRap}&maNhom=GP01`,
                 method: 'GET'
             });
             console.log(result.data);
             dispatch({
                 type: 'SET_CHI_TIET_RAP',
-                chiTietPhim: result.data
+                chiTietRap: result.data
             })
         } catch (errors) {
             if (errors.response.status === 400) {

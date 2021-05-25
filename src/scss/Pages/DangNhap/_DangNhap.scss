@@ -1,10 +1,12 @@
 .DangNhap {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     height: 500px;
     display: flex;
+    justify-content: center;
     align-items: center;
     .DN__content {
         padding: 30px 40px;
+        flex-grow: 1;
         .DN__btn {
             margin-top: 30px;
             button {
@@ -17,52 +19,33 @@
                 font-size: 18px;
                 font-weight: 700;
                 transition: 0.5;
-                &:hover{
+                &:hover {
                     background-color: white;
                     color: $color-red-light;
                 }
             }
         }
-    }
-    .input {
-        input {
+        p{
+            font-size: 18px;
             padding: 5px 10px;
+            margin: 0;
+        }
+        .text {
+            color: $color-white-0;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 5px 10px;
+            margin: 0;
+        }
+        input {
+            background-color: transparent;
+            color: white;
+            font-size: 18px;
+            width: 100%;
+            border: 1.5px solid white;
             border-radius: 10px;
             outline: none;
-        }
-        position: relative;
-        width: 100%;
-        margin-top: 20px;
-        font-size: 22px;
-        color: white;
-        font-weight: 500;
-        padding: 5px 0;
-        &__label {
-            position: absolute;
-            left: 2px;
-            top: 5px;
-            white-space: nowrap;
-            color: $color-red-primary;
-            transform: translate(0, 0);
-            transform-origin: 0 0;
-            transition: transform 120ms ease-in;
-            font-weight: bold;
-            line-height: 1.2;
-        }
-        &__field {
-            box-sizing: border-box;
-            display: block;
-            width: 100%;
-            border: 2px solid currentColor;
-            color: currentColor;
-            background: transparent;
-
-            &:focus,
-            &:not(:placeholder-shown) {
-                & + .input__label {
-                    transform: translate(0.5rem, -65%) scale(0.8);
-                }
-            }
+            padding: 10px;
         }
     }
 }

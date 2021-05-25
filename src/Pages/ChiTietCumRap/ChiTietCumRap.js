@@ -13,10 +13,11 @@ export default function ChiTietCumRap(props) {
         // Call API
         dispatch(LayChiTietRapApiAction(maRap))
     }, [])
+
     return (
         <div>
-            <CTRapInTro/>
-            <CTRapList/>
+            <CTRapInTro />
+            <CTRapList chiTietRap={chiTietRap}/>
         </div>
     )
 }

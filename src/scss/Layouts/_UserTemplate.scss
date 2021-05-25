@@ -34,14 +34,14 @@
             background-color: $color-red-dark;
             width: 100%;
             text-align: center;
-            .col-6 {
+
+            .name {
                 transition: 0.5;
                 padding: 10px 0;
-                .name {
-                    color: white;
-                    font-size: 26px;
-                    font-weight: 700;
-                }
+                color: white;
+                font-size: 26px;
+                font-weight: 700;
+
                 &:hover {
                     background-color: $color-red-light;
                     cursor: pointer;

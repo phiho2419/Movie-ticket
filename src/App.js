@@ -1,5 +1,5 @@
-import '../src/scss/main.css'
 import './css/main.css'
+import '../src/scss/main.css'
 import { Route, BrowserRouter, Switch, Router, NavLink } from 'react-router-dom'
 import {createBrowserHistory} from 'history'
 import ChiTietPhongVe from './Pages/ChiTietPhongVe/ChiTietPhongVe';
