@@ -1,17 +1,15 @@
-import React,{useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Tabs, Radio, Space, Tag } from 'antd';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment'
+import { useDispatch } from 'react-redux';
+import { ChangeRap } from '../../Redux/Actions/QuanLyRapAction';
 
 const { TabPane } = Tabs;
 export default function CTRapList(props) {
     let { chiTietRap } = props;
-    function callback(key) {
-        console.log(key);
-    }
-
-    
+    const dispatch = useDispatch();
 
 
 
@@ -22,7 +20,10 @@ export default function CTRapList(props) {
                 <Tabs tabPosition='left' defaultActiveKey="1" >
                     {chiTietRap?.map((ctr, index) => {
                         return ctr.lstCumRap?.map((cr, index) => {
-                            return <TabPane tab={<div className="Rap" onClick={()=>{console.log(cr.diaChi);}}><h2>{cr.tenCumRap}</h2><p>{cr.diaChi}</p></div>} key={index} >
+                            return <TabPane tab={<div className="Rap" onClick={() => {
+                                dispatch(ChangeRap(cr.tenCumRap, cr.diaChi));
+                                // console.log(cr.diaChi);
+                            }}><h2>{cr.tenCumRap}</h2><p>{cr.diaChi}</p></div>} key={index} >
                                 <div className="ctr__day" >
                                     <Tabs >
                                         <TabPane tab={<div className="day">Thứ 2</div>} key="1" >
@@ -37,12 +38,12 @@ export default function CTRapList(props) {
                                                             <h2>{dsp.tenPhim}</h2>
                                                             <p></p>
                                                             <div class="ctp__gio">
-                                                            {dsp.lstLichChieuTheoPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                        return <NavLink className="ctp__time" to="/" key={index}>
-                                                            <Tag className="text_time">{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</Tag>
-                                                        </NavLink>
-                                                    })}
-                                                          
+                                                                {dsp.lstLichChieuTheoPhim?.slice(0, 12).map((lichChieu, index) => {
+                                                                    return <NavLink className="ctp__time" to="/" key={index}>
+                                                                        <Tag className="text_time">{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</Tag>
+                                                                    </NavLink>
+                                                                })}
+
                                                             </div>
                                                         </div>
                                                     </div>

@@ -44,3 +44,12 @@ export const LayChiTietRapApiAction = (maRap) => {
         }
     }
 }
+export const ChangeRap =(ten,diaChi)=>{
+    return dispatch =>{
+        dispatch({
+            type: 'SET_INFO_RAP',
+            ten,
+            diaChi
+        })
+    }
+}

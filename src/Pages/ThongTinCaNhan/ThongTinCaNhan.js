@@ -1,21 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LichSu from './LichSu'
 import ThongTin from './ThongTin'
 import { Tabs } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+import { thongTinAction } from '../../Redux/Actions/NguoiDungAction';
+import { USERLOGIN } from '../../Util/setting';
 
 const { TabPane } = Tabs;
 
 export default function ThongTinCaNhan() {
     const [edit, setEdit] = useState(false);
 
-    function callback(key) {
-        console.log(key);
-    }
+    const { user,taiKhoan } = useSelector(state => state.NguoiDungReducer);
+    const dispatch = useDispatch();
+let a ={
+    taiKhoan:taiKhoan
+}
+    useEffect(() => {
+        dispatch(thongTinAction(a))
+    })
+    console.log(user);
 
     return (
         <div className="ThongTinCaNhan">
             <div className="TT_content">
-                <Tabs defaultActiveKey="1" onChange={callback}>
+                <Tabs defaultActiveKey="1">
                     <TabPane tab={<p>Thông Tin Chi Tiết</p>} key="1">
                         <ThongTin />
                         <div className="Edit__button">

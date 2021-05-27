@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {history} from '../../App'
+import { history } from '../../App'
 import { TOKEN, USERLOGIN } from '../../Util/setting';
 export const dangNhapAction = (userLogin) => {
     return async (dispatch) => {
@@ -23,6 +23,49 @@ export const dangNhapAction = (userLogin) => {
             history.push('/');
 
         } catch (errors) {
+            console.log(errors.response.data);
+
         }
     }
 }
+export const dangKyAction = (userLogup) => {
+    console.log('result', userLogup);
+
+    return async () => {
+        try {
+            const result = await axios({
+                url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy',
+                method: 'POST',
+                data: userLogup
+            });
+
+            history.push('/Dangnhap');
+
+        } catch (errors) {
+            console.log(errors.response.data);
+        }
+    }
+}
+export const thongTinAction = (taiKhoan) => {
+    console.log(taiKhoan);
+    return async (dispatch) => {
+        // try {
+            const result = await axios({
+                url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan',
+                method: 'POST',
+                data: taiKhoan
+            });
+
+            console.log(result.data);
+
+            dispatch({
+                type: 'THONG_TIN_NGUOI_DUNG',
+                user: result.data
+            })
+        // } catch (errors) {
+        //     console.log(errors.response.data);
+        // }
+
+    }
+}
+

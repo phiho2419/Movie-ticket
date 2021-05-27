@@ -5,7 +5,7 @@ import { NguoiDungReducer } from './Reducers/NguoiDungReducer';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 const rootReducer = combineReducers({
     QuanLyPhimReducer,
-NguoiDungReducer,
+    NguoiDungReducer,
     QuanLyRapReducer
 });
 
