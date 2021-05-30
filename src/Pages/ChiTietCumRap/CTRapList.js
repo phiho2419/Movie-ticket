@@ -11,8 +11,13 @@ export default function CTRapList(props) {
     let { chiTietRap } = props;
     const dispatch = useDispatch();
 
+    useEffect(()=>{
+        chiTietRap?.map((ctr, index) => {
+            // dispatch(ChangeRap(ctr.lstCumRap[0].tenCumRap, ctr.lstCumRap[0].diaChi));
 
+        })
 
+    })
     return (
         <div className="ctr__List">
             <div className="Ctr__content">

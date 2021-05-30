@@ -5,8 +5,8 @@ const stateDefault = {
     chiTietRap: [
 
     ],
-    tenRap:'Lotte cinime',
-    diaChiRap:'123 Trần Hưng Đạo',
+    tenRap:'',
+    diaChiRap:'',
 };
 
 export const QuanLyRapReducer = (state = stateDefault, action) => {

@@ -8,7 +8,7 @@ if(localStorage.getItem(USERLOGIN)){
 
 const stateDefault = {
     taiKhoan: taiKhoanDN,
-    user: {}
+    user: {},
 }
 export const NguoiDungReducer = (state = stateDefault, action) => {
     switch (action.type) {
@@ -17,6 +17,10 @@ export const NguoiDungReducer = (state = stateDefault, action) => {
             return {...state}
         }
         case 'THONG_TIN_NGUOI_DUNG':{
+            state.user = action.user;
+            return {...state}
+        }
+        case 'THONG_TIN_NGUOI_DUNG_UPDATE':{
             state.user = action.user;
             return {...state}
         }

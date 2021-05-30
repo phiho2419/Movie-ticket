@@ -47,25 +47,48 @@ export const dangKyAction = (userLogup) => {
     }
 }
 export const thongTinAction = (taiKhoan) => {
-    console.log(taiKhoan);
     return async (dispatch) => {
-        // try {
+        try {
             const result = await axios({
-                url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan',
                 method: 'POST',
-                data: taiKhoan
+                url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan',
+                data: {
+                    taiKhoan: taiKhoan
+                }
             });
 
-            console.log(result.data);
-
+            // console.log(result.data);
             dispatch({
                 type: 'THONG_TIN_NGUOI_DUNG',
                 user: result.data
             })
-        // } catch (errors) {
-        //     console.log(errors.response.data);
-        // }
-
+        } catch (errors) {
+            console.log(errors.response.data);
+        }
     }
 }
-
+export const CapNhatNguoiDungAction = (thongTinNguoiDung) =>{
+    return async(dispatch) =>{
+        try{
+            const result = await axios({
+                url:'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung',
+                method:'PUT',
+                data:thongTinNguoiDung,
+                headers:{
+                    'Authorization': `Bearer ${localStorage.getItem(TOKEN)}`
+                }
+            });
+            console.log(result.data);
+            dispatch({
+                type: 'THONG_TIN_NGUOI_DUNG_UPDATE',
+                user: result.data
+            })
+            // if(result.status=== 200){
+            //     alert(result.data);
+            //     window.location.reload();
+            // }
+        }catch(err){
+            console.log(err.response?.data);
+        }
+    }
+}
