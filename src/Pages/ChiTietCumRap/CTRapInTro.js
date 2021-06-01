@@ -2,7 +2,11 @@ import React from 'react'
 import Rap from '../../assets/img/rap/rap.jpg'
 import lotte_cinema from '../../assets/img/rap/lotte-cinema.jpg'
 import { Progress, Rate } from 'antd';
+import { useSelector } from 'react-redux';
 export default function CTRapInTro() {
+    const { tenRap,diaChiRap } = useSelector(state => state.QuanLyRapReducer);
+
+
     return (
         <div className="Ctr__InTro" style={{ backgroundImage: `url(${Rap})` }}>
             <div className="bgBlack"></div>
@@ -12,8 +16,8 @@ export default function CTRapInTro() {
                         <img src={lotte_cinema} />
                     </div>
                     <div className="ctr__text">
-                        <h2>Lotte Cinema Cộng Hòa</h2>
-                        <p>123 Trần Hưng Đạo. Q1. HCM</p>
+                        <h2>{tenRap}</h2>
+                        <p>{diaChiRap}</p>
                         <button>Mua Vé</button>
                     </div>
                 </div>
