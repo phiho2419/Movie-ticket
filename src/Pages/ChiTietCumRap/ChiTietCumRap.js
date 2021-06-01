@@ -10,11 +10,13 @@ export default function ChiTietCumRap(props) {
     const dispatch = useDispatch();
     useEffect(() => {
         // Call API
-        dispatch(LayChiTietRapApiAction(maRap))
+        dispatch(LayChiTietRapApiAction(maRap));
+
         chiTietRap?.map((ctr) => {
             dispatch(ChangeRap(ctr.lstCumRap[0].tenCumRap, ctr.lstCumRap[0].diaChi));
         })
     }, [])
+
 
     return (
         <div>

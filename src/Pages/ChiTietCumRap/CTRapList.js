@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { Tabs, Radio, Space, Tag } from 'antd';
 import { NavLink } from 'react-router-dom';
@@ -10,14 +10,6 @@ const { TabPane } = Tabs;
 export default function CTRapList(props) {
     let { chiTietRap } = props;
     const dispatch = useDispatch();
-
-    useEffect(()=>{
-        chiTietRap?.map((ctr, index) => {
-            // dispatch(ChangeRap(ctr.lstCumRap[0].tenCumRap, ctr.lstCumRap[0].diaChi));
-
-        })
-
-    })
     return (
         <div className="ctr__List">
             <div className="Ctr__content">

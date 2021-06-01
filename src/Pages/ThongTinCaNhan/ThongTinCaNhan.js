@@ -10,32 +10,25 @@ const { TabPane } = Tabs;
 
 export default function ThongTinCaNhan() {
     const [edit, setEdit] = useState(false);
-    const { user, taiKhoan } = useSelector(state => state.NguoiDungReducer);
     const dispatch = useDispatch();
-
-    const [state, setState] = useState({});
-
+    const { user, taiKhoan } = useSelector(state => state.NguoiDungReducer);
     useEffect(() => {
         dispatch(thongTinAction(taiKhoan));
-         setState(user);
     })
+
     const formik = useFormik({
         initialValues: {
-            taiKhoan: '',
-            matKhau: '',
-            email: '',
-            soDt: '',
-            maNhom: 'Gp01',
+            taiKhoan: user.taiKhoan,
+            matKhau: user.matKhau,
+            email: user.email,
+            soDt: user.soDT,
+            maNhom: user.maNhom,
             maLoaiNguoiDung: 'KhachHang',
-            hoTen: '',
+            hoTen: user.hoTen,
         },
-        onChange: value => {
-            console.log(value);
+        enableReinitialize: true,
 
-            setState(value);
-        },
         onSubmit: values => {
-            console.log(values);
             dispatch(CapNhatNguoiDungAction(values));
         },
     });
@@ -70,11 +63,11 @@ export default function ThongTinCaNhan() {
                     <form onSubmit={formik.handleSubmit}>
                         <div className="form-group">
                             <label>Tài Khoản</label>
-                            <input value={user.taiKhoan} className="form-control" name="taiKhoan" onChange={formik.handleChange} />
+                            <input value={formik.values.taiKhoan} className="form-control" name="taiKhoan" onChange={formik.handleChange} />
                         </div>
                         <div className="form-group">
                             <label>Mật khẩu</label>
-                            <input value={user.matKhau} className="form-control" name="matKhau" onChange={formik.handleChange} />
+                            <input value={formik.values.matKhau} className="form-control" name="matKhau" onChange={formik.handleChange} />
                         </div>
                         <div className="form-group">
                             <label> Nhập lại mật khẩu</label>
@@ -85,13 +78,13 @@ export default function ThongTinCaNhan() {
                             <div className="col-6">
                                 <div className="form-group">
                                     <label>Họ Tên</label>
-                                    <input value={user.hoTen} className="form-control" name="hoTen" onChange={formik.handleChange} />
+                                    <input value={formik.values.hoTen} className="form-control" name="hoTen" onChange={formik.handleChange} />
                                 </div>
                             </div>
                             <div className="col-6">
                                 <div className="form-group">
                                     <label>Nhóm</label>
-                                    <select value={user.maNhom} className="form-control" name="maNhom" onChange={formik.handleChange} >
+                                    <select value={formik.values.maNhom} className="form-control" name="maNhom" onChange={formik.handleChange} >
                                         <option >Gp01</option>
                                         <option >Gp02</option>
                                         <option >Gp03</option>
@@ -110,13 +103,13 @@ export default function ThongTinCaNhan() {
                             <div className="col-6">
                                 <div className="form-group">
                                     <label>Email</label>
-                                    <input value={user.email} className="form-control" name="email" onChange={formik.handleChange} />
+                                    <input value={formik.values.email} className="form-control" name="email" onChange={formik.handleChange} />
                                 </div>
                             </div>
                             <div className="col-6">
                                 <div className="form-group">
                                     <label>Số điện thoại</label>
-                                    <input value={user.soDT} className="form-control" name="soDt" onChange={formik.handleChange} />
+                                    <input value={formik.values.soDt} className="form-control" name="soDt" onChange={formik.handleChange} />
                                 </div>
                             </div>
                             <div className="Edit__button">

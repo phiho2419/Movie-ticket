@@ -67,14 +67,14 @@ export const thongTinAction = (taiKhoan) => {
         }
     }
 }
-export const CapNhatNguoiDungAction = (thongTinNguoiDung) =>{
-    return async(dispatch) =>{
-        try{
+export const CapNhatNguoiDungAction = (thongTinNguoiDung) => {
+    return async (dispatch) => {
+        try {
             const result = await axios({
-                url:'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung',
-                method:'PUT',
-                data:thongTinNguoiDung,
-                headers:{
+                url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung',
+                method: 'PUT',
+                data: thongTinNguoiDung,
+                headers: {
                     'Authorization': `Bearer ${localStorage.getItem(TOKEN)}`
                 }
             });
@@ -83,11 +83,11 @@ export const CapNhatNguoiDungAction = (thongTinNguoiDung) =>{
                 type: 'THONG_TIN_NGUOI_DUNG_UPDATE',
                 user: result.data
             })
-            // if(result.status=== 200){
-            //     alert(result.data);
-            //     window.location.reload();
-            // }
-        }catch(err){
+            if (result.status === 200) {
+                alert('Thay đổi thành công');
+                window.location.reload();
+            }
+        } catch (err) {
             console.log(err.response?.data);
         }
     }
