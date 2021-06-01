@@ -14,7 +14,7 @@ export default function ThongTinCaNhan() {
     const { user, taiKhoan } = useSelector(state => state.NguoiDungReducer);
     useEffect(() => {
         dispatch(thongTinAction(taiKhoan));
-    })
+    },[])
 
     const formik = useFormik({
         initialValues: {

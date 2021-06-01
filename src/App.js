@@ -23,7 +23,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path='/trangchu' exact component={TrangChu} />    
-          <Route path='/chitietphongve' exact component={ChiTietPhongVe} /> 
+          <Route path='/chitietphongve/:maPhim' exact component={ChiTietPhongVe} /> 
           <AdminTemplate path='/admin/quanlyphim' exact component={AdminQuanLyPhim} />
           <AdminTemplate path='/admin/themphim' exact component={AdminThemPhim} />
           <AdminTemplate path='/admin/themnguoidung' exact component={AdminThemNguoiDung} />

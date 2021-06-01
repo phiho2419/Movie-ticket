@@ -11,7 +11,7 @@ export default function TabListDanhSachRap(props) {
     const renderChiTietRap = () => {
         return props.heThongRap?.map((ctr, index) => {
             return <TabPane tab={<div className="row tabpane_tabs" style={{ width: "400px" }} >
-                <img src="./img/rapgalaxy.jpg" style={{ height: "60px" }} className="col-3 " />
+                <img src={ctr.tenCumRap === 'cgv' ? 'cgv.png' : ''} style={{ height: "60px" }} className="col-3 " />
                 <div className="col-9 p-0 text-left tabpane_thongTinRap">
                     <p className="m-0 tabpane_tenRap">{ctr.tenCumRap}</p>
                     <p className="m-0 tabpane_diaChiRap">{ctr.diaChi}</p>

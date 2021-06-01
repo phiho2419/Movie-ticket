@@ -5,9 +5,9 @@ import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import { layThongTinLichChieuAction, datVeAction } from '../../Redux/Actions/LichChieuAction';
 import { USERLOGIN } from '../../Util/setting';
-export default function ChiTietPhongVe() {
+export default function ChiTietPhongVe(props) {
 
-
+    const { maPhim } = props.match.params;
     const dispatch = useDispatch();
 
 
@@ -17,7 +17,7 @@ export default function ChiTietPhongVe() {
 
     //Call api 
     useEffect(() => {
-        dispatch(layThongTinLichChieuAction(15240));
+        dispatch(layThongTinLichChieuAction(maPhim));
     }, [])
 
 
@@ -115,19 +115,19 @@ export default function ChiTietPhongVe() {
                                         <div className="form-check">
                                             <label className="form-check-label">
                                                 <input type="radio" className="form-check-input" name="optradio" defaultChecked />
-                                                <img src="./img/Icon-app_white-bg.png" /> Thanh toán qua ZaloPay
+                                                <img src="../../../img/Icon-app_white-bg.png" /> Thanh toán qua ZaloPay
                                         </label>
                                         </div>
                                         <div className="form-check">
                                             <label className="form-check-label">
                                                 <input type="radio" className="form-check-input" name="optradio" />
-                                                <img src="./img/visa.png" /> Visa, Master
+                                                <img src="../../../img/visa.png" /> Visa, Master
                                         </label>
                                         </div>
                                         <div className="form-check ">
                                             <label className="form-check-label">
                                                 <input type="radio" className="form-check-input" name="optradio" />
-                                                <img src="./img/atm.png" /> Thẻ ATM nội địa
+                                                <img src="../../../img/atm.png" /> Thẻ ATM nội địa
                                         </label>
                                         </div>
 
