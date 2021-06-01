@@ -517,7 +517,6 @@ li {
   width: 100%;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 .pageChiTietPhongVe .ghe_manhinh {
@@ -546,24 +545,33 @@ li {
 }
 
 .pageChiTietPhongVe .ghe_manhinh .cumGhe {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .pageChiTietPhongVe .ghe_manhinh .cumGhe .ghe {
+  outline: none;
   height: 30px;
   width: 30px;
   border-radius: 3px;
   margin: 5px;
   cursor: pointer;
-  background-color: #b8b7b7;
+  background: -webkit-gradient(linear, left bottom, left top, from(#761818), color-stop(#761818), color-stop(#761818), color-stop(#761818), color-stop(#761818), color-stop(#B54041), to(#F3686A));
+  background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
 }
 
 .pageChiTietPhongVe .ghe_manhinh .cumGhe .gheDaDat {
-  background-color: #4e4e4e;
+  background: -webkit-gradient(linear, left bottom, left top, from(#a8a7a7), color-stop(#a8a7a7), color-stop(#a8a7a7), color-stop(#a8a7a7), color-stop(#a8a7a7), color-stop(#f0ebeb), to(#f0ebeb)) !important;
+  background: linear-gradient(to top, #a8a7a7, #a8a7a7, #a8a7a7, #a8a7a7, #a8a7a7, #f0ebeb, #f0ebeb) !important;
 }
 
 .pageChiTietPhongVe .ghe_manhinh .cumGhe .gheDangDat {
-  background-color: #d2ff2f;
+  background: -webkit-gradient(linear, left bottom, left top, from(#6edb43), color-stop(#7efa4d), color-stop(#7efa4d), color-stop(#7efa4d), color-stop(#7efa4d), color-stop(#b9ff9d), to(#b9ff9d)) !important;
+  background: linear-gradient(to top, #6edb43, #7efa4d, #7efa4d, #7efa4d, #7efa4d, #b9ff9d, #b9ff9d) !important;
+}
+
+.pageChiTietPhongVe .ghe_manhinh .cumGhe .gheVip {
+  background: -webkit-gradient(linear, left bottom, left top, from(#b9d130), color-stop(#c8e236), color-stop(#c8e236), color-stop(#c8e236), color-stop(#c8e236), color-stop(#f5ff9d), to(#f5ff9d));
+  background: linear-gradient(to top, #b9d130, #c8e236, #c8e236, #c8e236, #c8e236, #f5ff9d, #f5ff9d);
 }
 
 .pageChiTietPhongVe .thongtin_datve {
@@ -619,6 +627,10 @@ li {
   height: 30px;
   display: inline;
   margin-right: 8px;
+}
+
+.pageChiTietPhongVe .form-check-label {
+  cursor: pointer;
 }
 
 .footer {

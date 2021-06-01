@@ -19,13 +19,11 @@ export default function TabPhim() {
         dispatch(callApi_layThongTinHeThongRap())
     }, [])
 
-    let numTest = 1;
-
 
     const renderMangRap = () => {
         return mangRap.map((rap, index) => {
             return <TabPane tab={<img  src={rap.logo} style={{ borderRadius: '50%' }} width="64" height="64" />} key={index} centered="true">
-                <TabListDanhSachRap maHeThongRap={rap.maHeThongRap} />
+                <TabListDanhSachRap heThongRap={rap.lstCumRap} />
             </TabPane>
         })
     }

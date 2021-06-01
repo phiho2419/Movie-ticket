@@ -6,7 +6,7 @@ export const callApi_layThongTinHeThongRap = () => {
     return async dispatch => {
         try {
             let result = await axios({
-                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap`,
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP02`,
                 method: 'GET'
             });
             dispatch({

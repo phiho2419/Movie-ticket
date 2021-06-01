@@ -4,6 +4,9 @@ import { DatePicker } from 'antd';
 import moment from 'moment';
 export default function AdminThemPhim() {
     const { TextArea } = Input;
+
+
+    //dateFormatList và today dùng để lấy ngày hiện tại
     const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
     const today = new Date();
     return (

@@ -3,17 +3,6 @@ import { history } from '../../App'
 
 
 export const callAPI_layDanhSachPhimAction =  () => {
-    // try {
-    //     let result = await axios({
-    //         url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP02',
-    //         method: 'GET',
-    //     });
-    //     console.log(result.data);
-    //     dispatch({ type: 'SET_MANG_PHIM', mangPhim: result.data })
-
-    // } catch (errors) {
-
-    // }
     return async (dispatch) => {
         try {
             let result = await axios({

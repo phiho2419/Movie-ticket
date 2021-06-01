@@ -25,8 +25,8 @@ export default function Header() {
                             </li>
                         </ul>
                         <form className="form-inline my-2 ">
-                            <button className="btn_header btn_dangnhap" >  Đăng nhập </button>
-                            <button className="btn_header btn_dangki" >  Đăng kí</button>
+                            <button className="btn_header btn_dangnhap" > <NavLink to="/dangnhap"> Đăng nhập</NavLink> </button>
+                            <button className="btn_header btn_dangki" >  <NavLink to="/dangky"> Đăng kí</NavLink></button>
                         </form>
                     </div>
                 </nav>

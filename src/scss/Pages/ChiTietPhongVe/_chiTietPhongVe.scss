@@ -4,7 +4,6 @@
     width: 100%;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
     .ghe_manhinh{
         height: 550px;
         width: 100%;
@@ -27,21 +26,26 @@
             letter-spacing: 1px;
         }
         .cumGhe{
-            margin-top: 100px;
+            margin-top: 50px;
             .ghe{
+                outline: none;
                 height: 30px;
                 width: 30px;
                 border-radius: 3px;
                 margin: 5px;
                 cursor: pointer;
-                background-color: rgb(184, 183, 183) ;
+                background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041,  #F3686A);
             }
             .gheDaDat{
-                background-color: rgb(78, 78, 78) ;
+                background: linear-gradient(to top, #a8a7a7, #a8a7a7, #a8a7a7, #a8a7a7, #a8a7a7, #f0ebeb,  #f0ebeb) !important;
             }
             .gheDangDat{
-                background-color: rgb(210, 255, 47);
+                background: linear-gradient(to top, #6edb43, #7efa4d, #7efa4d, #7efa4d, #7efa4d, #b9ff9d,  #b9ff9d) !important;
             }
+            .gheVip{
+                background: linear-gradient(to top, #b9d130, #c8e236, #c8e236, #c8e236, #c8e236, #f5ff9d,  #f5ff9d) ;
+            }
+            
         }
     }
     .thongtin_datve{
@@ -90,5 +94,8 @@
             }
         }
         
+    }
+    .form-check-label{
+        cursor: pointer;
     }
 }

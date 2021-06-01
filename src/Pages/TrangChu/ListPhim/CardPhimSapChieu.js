@@ -14,7 +14,7 @@ export default function CardPhimSapChieu(props) {
         <div className="card col-3  " >
             <div className="overlay_link">
 
-                <img className="card-img-top card_img_listphim" src={phim.hinhAnh} alt="Card image cap" />
+                <img style={{objectFit:'cover'}} className="card-img-top card_img_listphim" src={phim.hinhAnh} alt="Card image cap" />
                 <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId={handleTrailerString(phim.trailer)} onClose={() => setOpen(false)} />
                 
                 <div className="overlay" onClick={() => setOpen(true)} >
