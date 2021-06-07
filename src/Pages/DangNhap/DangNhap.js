@@ -14,7 +14,7 @@ export default function DangNhap() {
         },
         validationSchema: Yup.object().shape({
             taiKhoan: Yup.string().required('Tài khoản không được bỏ trống!'),
-            matKhau: Yup.string().required('Mật khẩu khộng được bỏ trống').min(3, 'Mật khẩu tối thiểu 6 ký tự').max(32, 'mật khẩu tối đa 32 kí tự!')
+            matKhau: Yup.string().required('Mật khẩu khộng được bỏ trống').min(6, 'Mật khẩu tối thiểu 6 ký tự').max(32, 'mật khẩu tối đa 32 kí tự!')
         }),
         onSubmit: values => {
             const action = dangNhapAction(values);

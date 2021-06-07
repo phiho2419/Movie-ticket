@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tabs, Radio, Space, Tag } from 'antd';
+import { Tabs, Tag } from 'antd';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment'
 
@@ -7,7 +7,6 @@ const { TabPane } = Tabs;
 
 export default function CTPhimList(props) {
     let { heThongRap } = props;
-
     return (
         <div className="CTPhimList">
             <div className="Ctp__content">
@@ -24,7 +23,7 @@ export default function CTPhimList(props) {
                                                 <p>{cumRap.maCumRap}<span>[Bản đồ]</span></p>
                                                 <div class="ctp__gio">
                                                     {cumRap.lichChieuPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                        return <NavLink className="ctp__time" to="/" key={index}>
+                                                        return <NavLink className="ctp__time" to={`/chitietphongve/${lichChieu.maLichChieu}`} key={index}>
                                                             <Tag className="text_time">{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</Tag>
                                                         </NavLink>
                                                     })}
@@ -41,7 +40,7 @@ export default function CTPhimList(props) {
                                                 <p>{cumRap.maCumRap}<span>[Bản đồ]</span></p>
                                                 <div class="ctp__gio">
                                                     {cumRap.lichChieuPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                        return <NavLink className="ctp__time" to="/" key={index}>
+                                                        return <NavLink className="ctp__time" to={`/chitietphongve/${lichChieu.maLichChieu}`} key={index}>
                                                             <Tag className="text_time">{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</Tag>
                                                         </NavLink>
                                                     })}
@@ -55,7 +54,7 @@ export default function CTPhimList(props) {
                                                 <p>{cumRap.maCumRap}<span>[Bản đồ]</span></p>
                                                 <div class="ctp__gio">
                                                     {cumRap.lichChieuPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                        return <NavLink className="ctp__time" to="/" key={index}>
+                                                        return <NavLink className="ctp__time" to={`/chitietphongve/${lichChieu.maLichChieu}`} key={index}>
                                                             <Tag className="text_time">{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</Tag>
                                                         </NavLink>
                                                     })}
@@ -69,7 +68,7 @@ export default function CTPhimList(props) {
                                                 <p>{cumRap.maCumRap}<span>[Bản đồ]</span></p>
                                                 <div class="ctp__gio">
                                                     {cumRap.lichChieuPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                        return <NavLink className="ctp__time" to="/" key={index}>
+                                                        return <NavLink className="ctp__time" to={`/chitietphongve/${lichChieu.maLichChieu}`} key={index}>
                                                             <Tag className="text_time">{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</Tag>
                                                         </NavLink>
                                                     })}
@@ -84,7 +83,7 @@ export default function CTPhimList(props) {
                                                 <p>{cumRap.maCumRap}<span>[Bản đồ]</span></p>
                                                 <div class="ctp__gio">
                                                     {cumRap.lichChieuPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                        return <NavLink className="ctp__time" to="/" key={index}>
+                                                        return <NavLink className="ctp__time" to={`/chitietphongve/${lichChieu.maLichChieu}`} key={index}>
                                                             <Tag className="text_time">{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</Tag>
                                                         </NavLink>
                                                     })}
@@ -99,7 +98,7 @@ export default function CTPhimList(props) {
                                                 <p>{cumRap.maCumRap}<span>[Bản đồ]</span></p>
                                                 <div class="ctp__gio">
                                                     {cumRap.lichChieuPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                        return <NavLink className="ctp__time" to="/" key={index}>
+                                                        return <NavLink className="ctp__time" to={`/chitietphongve/${lichChieu.maLichChieu}`} key={index}>
                                                             <Tag className="text_time">{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</Tag>
                                                         </NavLink>
                                                     })}
@@ -114,7 +113,7 @@ export default function CTPhimList(props) {
                                                 <p>{cumRap.maCumRap}<span>[Bản đồ]</span></p>
                                                 <div class="ctp__gio">
                                                     {cumRap.lichChieuPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                        return <NavLink className="ctp__time" to="/" key={index}>
+                                                        return <NavLink className="ctp__time" to={`/chitietphongve/${lichChieu.maLichChieu}`} key={index}>
                                                             <Tag className="text_time">{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</Tag>
                                                         </NavLink>
                                                     })}

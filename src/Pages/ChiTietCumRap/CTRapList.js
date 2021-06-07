@@ -11,7 +11,7 @@ export default function CTRapList(props) {
     let { chiTietRap } = props;
     const dispatch = useDispatch();
     return (
-        <div className="ctr__List">
+        <div className="ctr__List" id="listCumRap">
             <div className="Ctr__content">
 
                 <Tabs tabPosition='left' defaultActiveKey="1" >
@@ -36,7 +36,7 @@ export default function CTRapList(props) {
                                                             <p></p>
                                                             <div class="ctp__gio">
                                                                 {dsp.lstLichChieuTheoPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                                    return <NavLink className="ctp__time" to="/" key={index}>
+                                                                    return <NavLink className="ctp__time" to={`/chitietphongve/${lichChieu.maLichChieu}`} key={index}>
                                                                         <Tag className="text_time">{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</Tag>
                                                                     </NavLink>
                                                                 })}

@@ -46,14 +46,17 @@ export const dangKyAction = (userLogup) => {
         }
     }
 }
-export const thongTinAction = (taiKhoan) => {
+export const thongTinAction = () => {
+    let usLogin = JSON.parse(localStorage.getItem(USERLOGIN));
+    let taiKhoanDN= usLogin.taiKhoan;
+
     return async (dispatch) => {
         try {
             const result = await axios({
                 method: 'POST',
                 url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan',
                 data: {
-                    taiKhoan: taiKhoan
+                    taiKhoan: taiKhoanDN
                 }
             });
 
