@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { USERLOGIN } from '../../Util/setting';
-import { dangNhapAction } from '../../Redux/Actions/NguoiDungAction';
+import { dangNhapAction, thongTinAction } from '../../Redux/Actions/NguoiDungAction';
 import { Redirect } from 'react-router';
 export default function DangNhap() {
     const dispatch = useDispatch()
@@ -24,6 +24,7 @@ export default function DangNhap() {
     });
     if (localStorage.getItem(USERLOGIN)) {
         alert('Bạn đã đăng nhập thành công!');
+        dispatch(thongTinAction());
         return <Redirect to="/" />
     }
     return (

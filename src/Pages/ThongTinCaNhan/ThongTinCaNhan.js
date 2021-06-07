@@ -19,7 +19,7 @@ export default function ThongTinCaNhan() {
     useEffect(() => {
         dispatch(thongTinAction());
     }, [])
-console.log(user);
+    console.log(user);
     const formik = useFormik({
         initialValues: {
             taiKhoan: user.taiKhoan,
@@ -47,7 +47,7 @@ console.log(user);
     });
     return (
         <div className="ThongTinCaNhan">
-            <Header/>
+            <Header />
             <div className="TT_content">
                 <Tabs defaultActiveKey="1">
                     <TabPane tab={<p>Thông Tin Chi Tiết</p>} key="1">
