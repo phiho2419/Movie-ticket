@@ -1,54 +1,11 @@
-.carousel_TrangChu {
-    header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        width: 100%;
-        .navbar-light .navbar-brand {
-            color: white;
-            margin-left: 30px;
-            &:hover {
-                color: white;
-            }
-        }
-        .header-logo {
-            font-family: "Dancing Script", sans-serif;
-            font-weight: 700;
-            font-size: 90px;
-            line-height: 90px;
-            color: $color-red-light !important;
-        }
-        .navbar {
-            padding: 0;
-            .navbar-nav {
-                .nav-item {
-                    margin: 2px 2px 0 2px;
-                    .nav-link {
-                        @include styleText($color-white-0, 15px, $fw-normal);
-                        font-weight: 700;
-                        transition: all 0.3s;
-                        border-radius: 20px;
-                        min-width: 70px;
-                        text-align: center;
-                        &:hover {
-                            background-color: $color-white-0;
-                            color: $color-red-dark;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
 
-.pageChiTietPhongVe {
     header {
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        // z-index: 10;
-        // width: 100%;
+        box-shadow: 0 0 15px black;
+        position: fixed;
+        top: 0;
+        z-index: 25;
+        width: 100%;
+        background: white;
         .navbar-light .navbar-brand {
             color: white;
             margin-left: 30px;
@@ -69,19 +26,54 @@
                 .nav-item {
                     margin: 2px 2px 0 2px;
                     .nav-link {
-                        @include styleText($color-white-0, 15px, $fw-normal);
                         font-weight: 700;
-                        transition: all 0.3s;
+                        transition: all 0.5s;
                         border-radius: 20px;
                         min-width: 70px;
                         text-align: center;
+                        color: $color-black-1;
+                        border-bottom: 2px solid white;
+                        padding: 3px 10px;
                         &:hover {
                             background-color: $color-white-0;
                             color: $color-red-dark;
+                            border-bottom: 2px solid $color-red-dark;
                         }
                     }
                 }
             }
         }
-    }
+        .btn_header{
+            padding: 10px 15px;
+            margin: 0 5px;
+            color: $color-black-1;
+            border-radius: 50px;
+            min-width: 80px;
+            &:hover{
+                color: $color-red-dark;
+                border-color: black;
+            }
+            
+            i{
+                color: $color-black-1;
+            }
+        }
+        .btn_dangnhap{
+            border-left: 1px solid $color-red-dark;
+            position: relative;
+            &::after{
+                position: absolute;
+                right: -3px;
+                top: 5px;
+                z-index: 5;
+                content: '';
+                display: inline-block;
+                height: 80%;
+                width: 1px;
+                background-color: $color-white-1;
+            }
+        }
+        .btn_dangki{
+            border-right: 1px solid $color-red-dark;
+        }
 }

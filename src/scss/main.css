@@ -22,15 +22,7 @@ li {
   padding: unset !important;
 }
 
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-  color: unset !important;
-}
-
-.ant-tabs-tab-btn:focus, .ant-tabs-tab-remove:focus, .ant-tabs-tab-btn:active, .ant-tabs-tab-remove:active {
-  color: unset !important;
-}
-
-.ant-tabs-tab:hover {
+.ant-tabs-tab:hover, .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-tab-btn:focus, .ant-tabs-tab-remove:focus, .ant-tabs-tab-btn:active, .ant-tabs-tab-remove:active {
   color: unset !important;
 }
 
@@ -46,24 +38,6 @@ li {
   font-weight: 700;
 }
 
-.btn_header {
-  padding: 10px 15px;
-  margin: 0 5px;
-  font-weight: 700;
-  border-radius: 2px;
-  min-width: 90px;
-}
-
-.btn_dangnhap {
-  color: #c50e29;
-  background: white;
-}
-
-.btn_dangki {
-  color: white;
-  background: #ff5252;
-}
-
 .tag_phim_c18 {
   color: white;
   background-color: #ff5252;
@@ -71,24 +45,26 @@ li {
   border-radius: 2px;
 }
 
-.carousel_TrangChu header {
-  position: absolute;
+header {
+  -webkit-box-shadow: 0 0 15px black;
+          box-shadow: 0 0 15px black;
+  position: fixed;
   top: 0;
-  left: 0;
-  z-index: 10;
+  z-index: 25;
   width: 100%;
+  background: white;
 }
 
-.carousel_TrangChu header .navbar-light .navbar-brand {
+header .navbar-light .navbar-brand {
   color: white;
   margin-left: 30px;
 }
 
-.carousel_TrangChu header .navbar-light .navbar-brand:hover {
+header .navbar-light .navbar-brand:hover {
   color: white;
 }
 
-.carousel_TrangChu header .header-logo {
+header .header-logo {
   font-family: "Dancing Script", sans-serif;
   font-weight: 700;
   font-size: 90px;
@@ -96,71 +72,68 @@ li {
   color: #ff867f !important;
 }
 
-.carousel_TrangChu header .navbar {
+header .navbar {
   padding: 0;
 }
 
-.carousel_TrangChu header .navbar .navbar-nav .nav-item {
+header .navbar .navbar-nav .nav-item {
   margin: 2px 2px 0 2px;
 }
 
-.carousel_TrangChu header .navbar .navbar-nav .nav-item .nav-link {
-  color: #fff;
-  font-size: 15px;
-  font-weight: normal;
+header .navbar .navbar-nav .nav-item .nav-link {
   font-weight: 700;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   border-radius: 20px;
   min-width: 70px;
   text-align: center;
+  color: #1b1b1b;
+  border-bottom: 2px solid white;
+  padding: 3px 10px;
 }
 
-.carousel_TrangChu header .navbar .navbar-nav .nav-item .nav-link:hover {
+header .navbar .navbar-nav .nav-item .nav-link:hover {
   background-color: #fff;
   color: #c50e29;
+  border-bottom: 2px solid #c50e29;
 }
 
-.pageChiTietPhongVe header .navbar-light .navbar-brand {
-  color: white;
-  margin-left: 30px;
+header .btn_header {
+  padding: 10px 15px;
+  margin: 0 5px;
+  color: #1b1b1b;
+  border-radius: 50px;
+  min-width: 80px;
 }
 
-.pageChiTietPhongVe header .navbar-light .navbar-brand:hover {
-  color: white;
-}
-
-.pageChiTietPhongVe header .header-logo {
-  font-family: "Dancing Script", sans-serif;
-  font-weight: 700;
-  font-size: 90px;
-  line-height: 90px;
-  color: #ff867f !important;
-}
-
-.pageChiTietPhongVe header .navbar {
-  padding: 0;
-}
-
-.pageChiTietPhongVe header .navbar .navbar-nav .nav-item {
-  margin: 2px 2px 0 2px;
-}
-
-.pageChiTietPhongVe header .navbar .navbar-nav .nav-item .nav-link {
-  color: #fff;
-  font-size: 15px;
-  font-weight: normal;
-  font-weight: 700;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border-radius: 20px;
-  min-width: 70px;
-  text-align: center;
-}
-
-.pageChiTietPhongVe header .navbar .navbar-nav .nav-item .nav-link:hover {
-  background-color: #fff;
+header .btn_header:hover {
   color: #c50e29;
+  border-color: black;
+}
+
+header .btn_header i {
+  color: #1b1b1b;
+}
+
+header .btn_dangnhap {
+  border-left: 1px solid #c50e29;
+  position: relative;
+}
+
+header .btn_dangnhap::after {
+  position: absolute;
+  right: -3px;
+  top: 5px;
+  z-index: 5;
+  content: '';
+  display: inline-block;
+  height: 80%;
+  width: 1px;
+  background-color: #c7c7c7;
+}
+
+header .btn_dangki {
+  border-right: 1px solid #c50e29;
 }
 
 .dashboard .db_select {
@@ -199,7 +172,7 @@ li {
 }
 
 .carousel_TrangChu {
-  position: relative;
+  margin-top: 60px;
 }
 
 .carousel_TrangChu .carousel-item {
@@ -219,8 +192,8 @@ li {
   height: 100%;
   top: 0;
   left: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#161616), color-stop(transparent), to(transparent));
-  background: linear-gradient(to bottom, #161616, transparent, transparent);
+  background: -webkit-gradient(linear, left top, left bottom, from(#161616), color-stop(transparent), color-stop(transparent), color-stop(transparent), to(transparent));
+  background: linear-gradient(to bottom, #161616, transparent, transparent, transparent, transparent);
 }
 
 .carousel_TrangChu .carousel-item .carousel-caption {

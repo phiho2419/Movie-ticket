@@ -18,15 +18,9 @@ li{
 .ant-tabs-left > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane, .ant-tabs-left > div > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane{
     padding: unset !important;
 }
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+.ant-tabs-tab:hover,.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,.ant-tabs-tab-btn:focus, .ant-tabs-tab-remove:focus, .ant-tabs-tab-btn:active, .ant-tabs-tab-remove:active{
     color: unset !important;
     
-}
-.ant-tabs-tab-btn:focus, .ant-tabs-tab-remove:focus, .ant-tabs-tab-btn:active, .ant-tabs-tab-remove:active{
-    color: unset !important;
-}
-.ant-tabs-tab:hover{
-    color: unset !important;
 }
 .ant-table-pagination-right{
     justify-content: center !important;

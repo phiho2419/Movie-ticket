@@ -14,6 +14,7 @@ import { UserTemplate } from './Templates/UserTemplate';
 import DangKi from './Pages/DangKi/DangKi';
 import DangNhap from './Pages/DangNhap/DangNhap';
 import ThongTinCaNhan from './Pages/ThongTinCaNhan/ThongTinCaNhan';
+import Header from './Components/Header/Header';
 export const history = createBrowserHistory();
 
 function App() {

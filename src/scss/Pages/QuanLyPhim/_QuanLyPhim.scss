@@ -1,33 +1,42 @@
-
 .pageQuanLyPhim {
-    .search_form{
+    .search_form {
         width: 700px;
         margin: 0 auto;
         box-shadow: 2px 2px 2px 2px #1b1b1b4f;
         border-radius: 20px !important;
-        .form-control{
+        .form-control {
             height: 40px;
             border-radius: 20px 0px 0px 20px;
-            border:none;
-            &:focus{
+            border: none;
+            &:focus {
                 box-shadow: none;
                 border-color: none;
             }
-            &::placeholder{
+            &::placeholder {
                 font-size: 18x;
             }
         }
-        .input-group-append{
-            .input-group-text{
+        .input-group-append {
+            .input-group-text {
                 border-radius: 0px 20px 20px 0px;
                 background: white;
-                transition: all .3s;
-                border:none;
-                &:hover{
+                transition: all 0.3s;
+                border: none;
+                &:hover {
                     background: $color-red-primary;
                     color: white;
                     cursor: pointer;
                 }
+            }
+        }
+    }
+    
+}
+.modalQuanLyPhim {
+    .modal-content {
+        .modal-header {
+            .close{
+                margin-left: unset;
             }
         }
     }

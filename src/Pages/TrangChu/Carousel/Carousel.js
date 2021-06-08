@@ -5,7 +5,7 @@ export default function Carousel() {
     const [isOpen, setOpen] = useState(false);
     return (
         <div className="carousel_TrangChu">
-            <Header />
+            {/* <Header /> */}
             <div id="carouselTrangChu" className="carousel slide" data-ride="carousel" data-interval="3000" >
                 <ol className="carousel-indicators">
                     <li data-target="#carouselTrangChu" data-slide-to={0} className="active" />

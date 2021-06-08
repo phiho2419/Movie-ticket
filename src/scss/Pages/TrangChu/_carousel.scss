@@ -1,5 +1,5 @@
 .carousel_TrangChu{
-    position: relative;
+    margin-top: 60px;
     .carousel-item{
         position: relative;
         .carousel_poster{
@@ -13,7 +13,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            background: linear-gradient(to bottom, rgb(22, 22, 22), transparent, transparent);
+            background: linear-gradient(to bottom, rgb(22, 22, 22), transparent, transparent, transparent, transparent);
         }
         .carousel-caption {
             position: absolute;

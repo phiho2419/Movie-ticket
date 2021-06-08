@@ -23,7 +23,7 @@ export default function TabPhim() {
     const renderMangRap = () => {
         return mangRap.map((rap, index) => {
             return <TabPane tab={<img  src={rap.logo} style={{ borderRadius: '50%' }} width="64" height="64" />} key={index} centered="true">
-                <TabListDanhSachRap heThongRap={rap.lstCumRap} />
+                <TabListDanhSachRap heThongRap={rap.lstCumRap} logoRap={rap.logo}/>
             </TabPane>
         })
     }
