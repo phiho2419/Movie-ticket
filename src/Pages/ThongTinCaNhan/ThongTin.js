@@ -10,7 +10,6 @@ export default function ThongTin(props) {
                 <p>Email:<span>{user.email}</span></p>
                 <p>Số Điện Thoại:<span>{user.soDT}</span></p>
                 <p>Mã Nhóm:<span>{user.maNhom}</span></p>
-
             </div>
         </div>
     )

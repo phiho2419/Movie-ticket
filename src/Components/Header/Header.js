@@ -1,6 +1,6 @@
 import React from 'react'
 import { Fragment } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
 export default function Header() {
 
 
@@ -27,7 +27,7 @@ export default function Header() {
                                 <a className="nav-link" href="#">Cụm rạp</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><NavLink to="/thongtincanhan">Tin tức</NavLink></a>
+                                <a className="nav-link" href="#">Tin tức</a>
                             </li>
                             <li className="nav-item ">
                                 <a className="nav-link" href="#">Ứng dụng</a>
@@ -41,7 +41,7 @@ export default function Header() {
                                         <button style={{ outline: 'none' }} className="btn_header btn_dangki" onClick={() => {
                                             localStorage.removeItem('userLogin');
                                             localStorage.removeItem('accesstoken');
-                                            window.location.reload();
+                                            <Redirect to="/"/>
                                         }}>Đăng xuất</button>
                                     </Fragment> :
                                     <Fragment>

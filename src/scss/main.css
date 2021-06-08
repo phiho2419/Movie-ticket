@@ -473,8 +473,8 @@ header .btn_dangki {
 .pageQuanLyPhim .search_form .input-group-append .input-group-text {
   border-radius: 0px 20px 20px 0px;
   background: white;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   border: none;
 }
 
@@ -482,6 +482,10 @@ header .btn_dangki {
   background: #ff5252;
   color: white;
   cursor: pointer;
+}
+
+.modalQuanLyPhim .modal-content .modal-header .close {
+  margin-left: unset;
 }
 
 .pageChiTietPhongVe {
@@ -1185,6 +1189,13 @@ header .btn_dangki {
   transition: 0.5;
 }
 
+.Ctr__InTro .Ctr__content .ctr__text button a {
+  font-size: 16px;
+  color: white;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
 .Ctr__InTro .Ctr__content .ctr__text button:hover {
   background-color: #c50e29;
 }
@@ -1454,7 +1465,12 @@ header .btn_dangki {
   width: 90%;
   margin: 0 auto;
   color: white;
-  padding: 35px 0;
+  padding: 10px 0;
+}
+
+.DangKy .DK__content span {
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .DangKy .DK__content .DK__btn {
@@ -1472,12 +1488,11 @@ header .btn_dangki {
 
 .ThongTinCaNhan {
   background-color: #fff;
-  padding: 30px 0;
 }
 
 .ThongTinCaNhan .TT_content {
   width: 90%;
-  margin: auto;
+  margin: 30px auto;
   -webkit-box-shadow: 0 25px 98px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 25px 98px 0 rgba(0, 0, 0, 0.1);
   padding: 0px 30px 10px 0px;

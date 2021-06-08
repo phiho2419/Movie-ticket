@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Table, Space, Image } from 'antd';
-import { Button } from 'antd';
+import { Button, Modal } from 'antd';
 import { callAPI_layDanhSachPhimAction } from '../../Redux/Actions/QuanLyPhimAction';
 
 const { Column } = Table;
@@ -15,8 +15,20 @@ export default function AdminQuanLyPhim() {
         dispatch(callAPI_layDanhSachPhimAction());
 
     }, [])
+console.log('mangPhim',mangPhim);
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
 
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
 
     return (
         <div className="pageQuanLyPhim mt-4">
@@ -49,24 +61,26 @@ export default function AdminQuanLyPhim() {
                     <Column title="Ngày khởi chiếu" dataIndex="ngayKhoiChieu" key="6" />
                     <Column
                         key="action"
-                        
-                    render={(text, record) => (
-                        <Space size="small">
 
-                                <Button size="small" type="secondary" danger onClick={
-                                    ()=>{console.log('record',record)}
-                                }>
+                        render={(text, record) => (
+                            <Space size="small">
+
+                                <Button size="small" type="secondary" danger onClick={showModal}>
                                     Tạo lịch
                                 </Button>
 
                                 {/* Popup tạo lịch chiếu BS4  */}
-                                
+                                <Modal title={text.tenPhim} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                                    <p>Some contents...</p>
+                                    <p>Some contents...</p>
+                                    <p>Some contents...</p>
+                                </Modal>
 
 
-                            <Button type="primary" size="small">Sửa</Button>
-                            <Button type="primary" danger size="small">Xoá</Button>
-                        </Space>
-                    )}
+                                <Button type="primary" size="small">Sửa</Button>
+                                <Button type="primary" danger size="small">Xoá</Button>
+                            </Space>
+                        )}
                     />
 
                 </Table>

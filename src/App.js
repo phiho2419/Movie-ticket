@@ -1,5 +1,5 @@
 import '../src/scss/main.css'
-import '../src/css/main.css'
+// import '../src/css/main.css'
 import { Route, Switch, Router } from 'react-router-dom'
 import {createBrowserHistory} from 'history'
 import ChiTietPhongVe from './Pages/ChiTietPhongVe/ChiTietPhongVe';

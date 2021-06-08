@@ -17,7 +17,6 @@ export default function AdminThemNguoiDung() {
             maNhom:'GP01',
             maLoaiNguoiDung:'KhachHang',
             hoTen: '',
-
         },
         validationSchema:  Yup.object().shape({
             taiKhoan: Yup.string().required('Required !'),
