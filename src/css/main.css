@@ -466,7 +466,6 @@ li {
   width: 100%;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 .pageChiTietPhongVe .ghe_manhinh {
@@ -494,24 +493,29 @@ li {
 }
 
 .pageChiTietPhongVe .ghe_manhinh .cumGhe {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .pageChiTietPhongVe .ghe_manhinh .cumGhe .ghe {
+  outline: none;
   height: 30px;
   width: 30px;
   border-radius: 3px;
   margin: 5px;
   cursor: pointer;
-  background-color: #b8b7b7;
+  background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
 }
 
 .pageChiTietPhongVe .ghe_manhinh .cumGhe .gheDaDat {
-  background-color: #4e4e4e;
+  background: linear-gradient(to top, #a8a7a7, #a8a7a7, #a8a7a7, #a8a7a7, #a8a7a7, #f0ebeb, #f0ebeb) !important;
 }
 
 .pageChiTietPhongVe .ghe_manhinh .cumGhe .gheDangDat {
-  background-color: #d2ff2f;
+  background: linear-gradient(to top, #6edb43, #7efa4d, #7efa4d, #7efa4d, #7efa4d, #b9ff9d, #b9ff9d) !important;
+}
+
+.pageChiTietPhongVe .ghe_manhinh .cumGhe .gheVip {
+  background: linear-gradient(to top, #b9d130, #c8e236, #c8e236, #c8e236, #c8e236, #f5ff9d, #f5ff9d);
 }
 
 .pageChiTietPhongVe .thongtin_datve {
@@ -567,6 +571,10 @@ li {
   height: 30px;
   display: inline;
   margin-right: 8px;
+}
+
+.pageChiTietPhongVe .form-check-label {
+  cursor: pointer;
 }
 
 .footer {
@@ -1127,6 +1135,12 @@ li {
   transition: 0.5;
 }
 
+.Ctr__InTro .Ctr__content .ctr__text button a {
+  font-size: 16px;
+  color: white;
+  transition: 1s;
+}
+
 .Ctr__InTro .Ctr__content .ctr__text button:hover {
   background-color: #c50e29;
 }
@@ -1386,7 +1400,12 @@ li {
   width: 90%;
   margin: 0 auto;
   color: white;
-  padding: 35px 0;
+  padding: 10px 0;
+}
+
+.DangKy .DK__content span {
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .DangKy .DK__content .DK__btn {
@@ -1404,12 +1423,11 @@ li {
 
 .ThongTinCaNhan {
   background-color: #fff;
-  padding: 30px 0;
 }
 
 .ThongTinCaNhan .TT_content {
   width: 90%;
-  margin: auto;
+  margin: 30px auto;
   box-shadow: 0 25px 98px 0 rgba(0, 0, 0, 0.1);
   padding: 0px 30px 10px 0px;
   border-radius: 5px;

@@ -37,6 +37,11 @@
                 color: $color-white-1;
             }
             button {
+                a{
+                    font-size: 16px;
+                    color: white;
+                    transition: 1s;
+                }
                 padding: 8px 30px;
                 background-color: $color-red-primary;
                 border: none;

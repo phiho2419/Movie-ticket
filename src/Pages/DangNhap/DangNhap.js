@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { USERLOGIN } from '../../Util/setting';
-import { dangNhapAction } from '../../Redux/Actions/NguoiDungAction';
+import { dangNhapAction, thongTinAction } from '../../Redux/Actions/NguoiDungAction';
 import { Redirect } from 'react-router';
 export default function DangNhap() {
     const dispatch = useDispatch()
@@ -14,7 +14,7 @@ export default function DangNhap() {
         },
         validationSchema: Yup.object().shape({
             taiKhoan: Yup.string().required('Tài khoản không được bỏ trống!'),
-            matKhau: Yup.string().required('Mật khẩu khộng được bỏ trống').min(3, 'Mật khẩu tối thiểu 6 ký tự').max(32, 'mật khẩu tối đa 32 kí tự!')
+            matKhau: Yup.string().required('Mật khẩu khộng được bỏ trống').min(6, 'Mật khẩu tối thiểu 6 ký tự').max(32, 'mật khẩu tối đa 32 kí tự!')
         }),
         onSubmit: values => {
             const action = dangNhapAction(values);
@@ -24,6 +24,7 @@ export default function DangNhap() {
     });
     if (localStorage.getItem(USERLOGIN)) {
         alert('Bạn đã đăng nhập thành công!');
+        dispatch(thongTinAction());
         return <Redirect to="/" />
     }
     return (

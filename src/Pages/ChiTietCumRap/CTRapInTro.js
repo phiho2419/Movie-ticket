@@ -18,7 +18,7 @@ export default function CTRapInTro() {
                     <div className="ctr__text">
                         <h2>{tenRap}</h2>
                         <p>{diaChiRap}</p>
-                        <button>Mua Vé</button>
+                        <button><a href="#listCumRap">Mua Vé</a> </button>
                     </div>
                 </div>
                 <div className="col-4 rate">

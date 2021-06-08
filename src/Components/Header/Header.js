@@ -27,7 +27,7 @@ export default function Header() {
                                 <a className="nav-link" href="#">Cụm rạp</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Tin tức</a>
+                                <a className="nav-link" href="#"><NavLink to="/thongtincanhan">Tin tức</NavLink></a>
                             </li>
                             <li className="nav-item ">
                                 <a className="nav-link" href="#">Ứng dụng</a>
