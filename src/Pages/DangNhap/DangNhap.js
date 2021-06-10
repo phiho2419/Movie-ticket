@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { USERLOGIN } from '../../Util/setting';
 import { dangNhapAction, thongTinAction } from '../../Redux/Actions/NguoiDungAction';
 import { Redirect } from 'react-router';
+import { NavLink } from 'react-router-dom';
 export default function DangNhap() {
     const dispatch = useDispatch()
     const formik = useFormik({
@@ -30,20 +31,26 @@ export default function DangNhap() {
     return (
         <div className="DangNhap">
             <div className="DN__content">
-                <form className="container" onSubmit={formik.handleSubmit}>
-                    <div className="form-group">
-                        <p className="text">Tài khoản</p>
-                        <input className="form-control" name="taiKhoan" onChange={formik.handleChange} />
+                <h2>Đăng Nhập</h2>
+                <form onSubmit={formik.handleSubmit}>
+                    <div className="form__user">
+                        <input name="taiKhoan" onChange={formik.handleChange} required />
+                        <label>Tài Khoản</label>
                         <p className="text-danger"> {formik.errors.taiKhoan}</p>
                     </div>
-                    <div className="form-group">
-                        <p className="text">Mật khẩu</p>
-                        <input className="form-control" name="matKhau" onChange={formik.handleChange} />
+                    <div className="form__user">
+                        <input name="matKhau" onChange={formik.handleChange} required />
+                        <label>Mật Khẩu</label>
                         <p className="text-danger"> {formik.errors.matKhau}</p>
                     </div>
                     <div className="DN__btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                         <button type="submit">Đăng Nhập</button>
                     </div>
+                    <p className="text-right mt-3"><NavLink to="/dangky">Chưa có tài khoản? Đăng Ký ngay</NavLink></p>
                 </form>
 
             </div>

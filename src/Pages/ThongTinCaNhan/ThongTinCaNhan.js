@@ -15,9 +15,9 @@ const { TabPane } = Tabs;
 export default function ThongTinCaNhan() {
     const [edit, setEdit] = useState(false);
     const dispatch = useDispatch();
-    const { user } = useSelector(state => state.NguoiDungReducer);
+    const { user,taiKhoan } = useSelector(state => state.NguoiDungReducer);
     useEffect(() => {
-        dispatch(thongTinAction());
+        dispatch(thongTinAction(taiKhoan));
     }, [])
     console.log(user);
     const formik = useFormik({

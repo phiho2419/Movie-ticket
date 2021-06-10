@@ -24,34 +24,6 @@
             }
         }
     }
-    .user__content {
-        width: 50%;
-        margin: auto;
-        .row {
-            margin: 0;
-        }
-        .user__topic {
-            background-color: $color-red-dark;
-            width: 100%;
-            text-align: center;
-
-            .name {
-                transition: 0.5;
-                padding: 10px 0;
-                color: white;
-                font-size: 26px;
-                font-weight: 700;
-
-                &:hover {
-                    background-color: $color-red-light;
-                    cursor: pointer;
-                    .name {
-                        color: black;
-                    }
-                }
-            }
-        }
-    }
 }
 @include responsible("medium") {
     .UserTemplate {

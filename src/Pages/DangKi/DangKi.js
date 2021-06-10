@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 
 import { useDispatch } from 'react-redux';
 import { dangKyAction } from '../../Redux/Actions/NguoiDungAction';
+import { NavLink } from 'react-router-dom';
 
 export default function DangKi() {
     const dispatch = useDispatch()
@@ -20,13 +21,13 @@ export default function DangKi() {
 
         },
         validationSchema: Yup.object().shape({
-            taiKhoan: Yup.string().required(' không được bỏ trống!'),
-            matKhau: Yup.string().required(' không được bỏ trống').min(6, ' tối thiểu 6 ký tự').max(32, ' tối đa 32 kí tự!'),
-            email: Yup.string().required(' không được bỏ trống').email('Phải đúng dịnh dạng @email'),
-            soDt: Yup.string().required(' không được bỏ trống'),
-            soDt: Yup.number().positive(' phải là dạng số'),
-            matKhauConfirm: Yup.string().required(' không được bỏ trống').min(6, ' tối thiểu 6 ký tự').max(32, ' tối đa 32 kí tự!').oneOf([Yup.ref("matKhau"), null], " nhập lại không đúng"),
-            hoTen: Yup.string().required(' không được bỏ trống'),
+            taiKhoan: Yup.string().required('Tài khoản không được bỏ trống!'),
+            matKhau: Yup.string().required('Không được bỏ trống').min(6, 'Mật khẩu tối thiểu 6 ký tự').max(32, ' tối đa 32 kí tự!'),
+            email: Yup.string().required('Email không được bỏ trống').email('Phải đúng dịnh dạng @email'),
+            soDt: Yup.string().required('Số điện thoại không được bỏ trống'),
+            soDt: Yup.number().positive('Số điện thoại phải là dạng số'),
+            matKhauConfirm: Yup.string().required('Không được bỏ trống').min(6, 'mật khẩu tối thiểu 6 ký tự').max(32, ' tối đa 32 kí tự!').oneOf([Yup.ref("matKhau"), null], " nhập lại không đúng"),
+            hoTen: Yup.string().required('Họ tên không được bỏ trống'),
 
         }),
         onSubmit: values => {
@@ -36,39 +37,45 @@ export default function DangKi() {
     return (
         <div className="DangKy">
             <div className="DK__content">
+                <h2>Đăng Ký</h2>
                 <form onSubmit={formik.handleSubmit}>
-                    <div className="form-group">
-                        <label>Tài Khoản</label>
-                        <span className="text-danger"> {formik.errors.taiKhoan}</span>
-                        <input className="form-control" name="taiKhoan" onChange={formik.handleChange} />
-
-                    </div>
-                    <div className="form-group">
-                        <label>Mật khẩu</label>
-                        <span className="text-danger"> {formik.errors.matKhau}</span>
-
-                        <input type="password" className="form-control" name="matKhau" onChange={formik.handleChange} />
-
-                    </div>
-                    <div className="form-group">
-                        <label> Nhập lại mật khẩu</label>
-                        <span className="text-danger"> {formik.errors.matKhauConfirm}</span>
-                        <input type="password" name="matKhauConfirm" className="form-control" onChange={formik.handleChange} />
-
-                    </div>
                     <div class="row">
+                        <div className="col-12" style={{ padding: 0 }}>
+                            <div className="form__user">
+                                <input required name="taiKhoan" onChange={formik.handleChange} />
+                                <label>Tài Khoản</label>
+                                <span className="text-danger"> {formik.errors.taiKhoan}</span>
+
+                            </div>
+                        </div>
                         <div className="col-6" style={{ paddingLeft: '0' }}>
-                            <div className="form-group">
-                                <label>Họ Tên</label>
-                                <span className="text-danger"> {formik.errors.hoTen}</span>
-                                <input className="form-control" name="hoTen" onChange={formik.handleChange} />
+                            <div className="form__user">
+                                <input required type="email" name="email" onChange={formik.handleChange} />
+                                <label>Email</label>
+                                <span className="text-danger"> {formik.errors.email}</span>
 
                             </div>
                         </div>
                         <div className="col-6" style={{ paddingRight: '0' }}>
-                            <div className="form-group">
-                                <label>Nhóm</label>
-                                <select className="form-control" name="maNhom" onChange={formik.handleChange} >
+                            <div className="form__user" >
+                                <input required type="number" name="soDt" onChange={formik.handleChange} />
+                                <label>Số điện thoại</label>
+                                <span className="text-danger"> {formik.errors.soDt}</span>
+
+                            </div>
+                        </div>
+                        <div className="col-6" style={{ paddingLeft: '0' }}>
+                            <div className="form__user">
+                                <input required name="hoTen" onChange={formik.handleChange} />
+                                <label>Họ Tên</label>
+                                <span className="text-danger"> {formik.errors.hoTen}</span>
+
+                            </div>
+                        </div>
+                        <div className="col-6" style={{ paddingRight: '0' }}>
+                            <div className="form__user">
+                                {/* <label>Nhóm</label> */}
+                                <select name="maNhom" onChange={formik.handleChange} >
                                     <option >Gp01</option>
                                     <option >Gp02</option>
                                     <option >Gp03</option>
@@ -85,25 +92,30 @@ export default function DangKi() {
                     </div>
                     <div class="row">
                         <div className="col-6" style={{ paddingLeft: '0' }}>
-                            <div className="form-group">
-                                <label>Email</label>
-                                <span className="text-danger"> {formik.errors.email}</span>
-                                <input type="email" className="form-control" name="email" onChange={formik.handleChange} />
-
+                            <div className="form__user">
+                                <input required type="password" name="matKhau" onChange={formik.handleChange} />
+                                <label>Mật khẩu</label>
+                                <span className="text-danger"> {formik.errors.matKhau}</span>
                             </div>
                         </div>
                         <div className="col-6" style={{ paddingRight: '0' }}>
-                            <div className="form-group">
-                                <label>Số điện thoại</label>
-                                <span className="text-danger"> {formik.errors.soDt}</span>
-                                <input type="number" className="form-control" name="soDt" onChange={formik.handleChange}/>
-
+                            <div className="form__user">
+                                <input required type="password" name="matKhauConfirm" onChange={formik.handleChange} />
+                                <label> Nhập lại mật khẩu</label>
+                                <span className="text-danger"> {formik.errors.matKhauConfirm}</span>
+                            </div>
+                        </div>
+                        <div className="col-12" style={{ padding: 0 }}>
+                            <div className="DN__btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <button type="submit">Đăng Ký</button>
                             </div>
                         </div>
                     </div>
-                    <div className="DK__btn">
-                        <button type="submit">Submit</button>
-                    </div>
+                    <p className="text-right mt-3"><NavLink to="/dangnhap">Đã có tài khoản? Đăng Nhập ngay</NavLink></p>
                 </form>
             </div>
         </div>
