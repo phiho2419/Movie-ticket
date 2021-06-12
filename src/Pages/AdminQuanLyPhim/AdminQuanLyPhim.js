@@ -33,7 +33,6 @@ console.log('mangPhim',mangPhim);
     return (
         <div className="pageQuanLyPhim mt-4">
             <h1 className="admin_title mt-4 text-center">Quản lý phim</h1>
-
             <form className="search_form">
                 <div className="input-group">
                     <input type="text" className="form-control" placeholder="Nhập vào tài khoản hoặc họ tên người dùng" />
@@ -44,9 +43,9 @@ console.log('mangPhim',mangPhim);
                     </div>
                 </div>
             </form>
-
             <div className="container mt-4">
                 <Table dataSource={mangPhim} bordered="true" >
+                    
                     <Column title="Mã phim" dataIndex="maPhim" key="1" />
                     <Column title="Tên phim" dataIndex="tenPhim" key="2" />
                     <Column title="Hình ảnh"
@@ -60,9 +59,10 @@ console.log('mangPhim',mangPhim);
                     <Column title="Mã nhóm" dataIndex="maNhom" key="5" />
                     <Column title="Ngày khởi chiếu" dataIndex="ngayKhoiChieu" key="6" />
                     <Column
+                         
                         key="action"
 
-                        render={(text, record) => (
+                        render= {(text, record) => (
                             <Space size="small">
 
                                 <Button size="small" type="secondary" danger onClick={showModal}>
@@ -71,7 +71,7 @@ console.log('mangPhim',mangPhim);
 
                                 {/* Popup tạo lịch chiếu BS4  */}
                                 <Modal title={text.tenPhim} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                                    <p>Some contents...</p>
+                                    <p>{record.tenPhim}</p>
                                     <p>Some contents...</p>
                                     <p>Some contents...</p>
                                 </Modal>

@@ -7,6 +7,7 @@ import {Provider} from 'react-redux';
 import {store} from './Redux/configStore'
 import 'antd/dist/antd.css';
 import 'react-modal-video/scss/modal-video.scss';
+// import 'sweetalert2/src/sweetalert2.scss';
 ReactDOM.render(
   <Provider store={store}>
     <App />

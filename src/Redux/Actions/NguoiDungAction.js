@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { history } from '../../App'
 import { TOKEN, USERLOGIN } from '../../Util/setting';
+import Swal from 'sweetalert2';
+
 export const dangNhapAction = (userLogin) => {
     return async (dispatch) => {
         try {
@@ -29,8 +31,6 @@ export const dangNhapAction = (userLogin) => {
     }
 }
 export const dangKyAction = (userLogup) => {
-    console.log('result', userLogup);
-
     return async () => {
         try {
             const result = await axios({
@@ -39,7 +39,7 @@ export const dangKyAction = (userLogup) => {
                 data: userLogup
             });
 
-            history.push('/Dangnhap');
+            history.push('/dangnhap');
 
         } catch (errors) {
             console.log(errors.response.data);
@@ -83,8 +83,11 @@ export const CapNhatNguoiDungAction = (thongTinNguoiDung) => {
                 user: result.data
             })
             if (result.status === 200) {
-                alert('Thay đổi thành công');
-                window.location.reload();
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Thay đổi thành công!',
+                })
+                // window.location.reload();
             }
         } catch (err) {
             console.log(err.response?.data);

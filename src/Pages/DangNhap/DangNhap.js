@@ -6,6 +6,7 @@ import { USERLOGIN } from '../../Util/setting';
 import { dangNhapAction, thongTinAction } from '../../Redux/Actions/NguoiDungAction';
 import { Redirect } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import Swal from 'sweetalert2';
 export default function DangNhap() {
     const dispatch = useDispatch()
     const formik = useFormik({
@@ -24,7 +25,10 @@ export default function DangNhap() {
         },
     });
     if (localStorage.getItem(USERLOGIN)) {
-        alert('Bạn đã đăng nhập thành công!');
+        Swal.fire({
+            icon: 'success',
+            text: 'Bạn đã đăng nhập rồi!',
+        })
         dispatch(thongTinAction());
         return <Redirect to="/" />
     }
@@ -39,7 +43,7 @@ export default function DangNhap() {
                         <p className="text-danger"> {formik.errors.taiKhoan}</p>
                     </div>
                     <div className="form__user">
-                        <input name="matKhau" onChange={formik.handleChange} required />
+                        <input type="password" name="matKhau" onChange={formik.handleChange} required />
                         <label>Mật Khẩu</label>
                         <p className="text-danger"> {formik.errors.matKhau}</p>
                     </div>
