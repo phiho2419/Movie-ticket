@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../../Components/Header/Header'
 import ModalVideo from 'react-modal-video';
+import SearchForm from '../SearchForm/SearchForm';
 export default function Carousel() {
     const [isOpen, setOpen] = useState(false);
     return (
@@ -62,16 +63,9 @@ export default function Carousel() {
 
 
             </div>
-            <form className="search_form">
-                <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Tìm kiếm tên phim, rạp phim..." />
-                    <div className="input-group-append">
-                        <span className="input-group-text" id="basic-addon2">
-                            <i className="fa fa-search" />
-                        </span>
-                    </div>
-                </div>
-            </form>
+            <div className="search_form">
+                <SearchForm />
+            </div>
 
         </div>
     )

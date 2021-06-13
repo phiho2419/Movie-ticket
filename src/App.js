@@ -15,7 +15,6 @@ import { UserTemplate } from './Templates/UserTemplate';
 import DangKi from './Pages/DangKi/DangKi';
 import DangNhap from './Pages/DangNhap/DangNhap';
 import ThongTinCaNhan from './Pages/ThongTinCaNhan/ThongTinCaNhan';
-import Header from './Components/Header/Header';
 export const history = createBrowserHistory();
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
     <Router history={history}>
       <div className="App">
         <Switch>
-          <Route path='/trangchu' exact component={TrangChu} />    
           <Route path='/chitietphongve/:maPhim' exact component={ChiTietPhongVe} /> 
           <AdminTemplate path='/admin/quanlyphim' exact component={AdminQuanLyPhim} />
           <AdminTemplate path='/admin/themphim' exact component={AdminThemPhim} />

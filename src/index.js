@@ -7,6 +7,9 @@ import {Provider} from 'react-redux';
 import {store} from './Redux/configStore'
 import 'antd/dist/antd.css';
 import 'react-modal-video/scss/modal-video.scss';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { Table, Space, Image } from 'antd';
-import { Button } from 'antd';
+import { Table, Space, Popover, Button } from 'antd';
 import { layDanhSachNguoiDungAction } from '../../Redux/Actions/AdminAction';
 const { Column } = Table;
-
+const popoverDelete = (
+    <small>Delete</small>
+);
+const popoverEdit = (
+    <small>Edit</small>
+);
 
 export default function AdminQuanLyNguoiDung() {
     const [page, setPage] = React.useState(1);
@@ -32,20 +36,27 @@ export default function AdminQuanLyNguoiDung() {
 
             <div className="container mt-4">
 
-                <Table dataSource={mangNguoiDung} bordered="true" pagination={{ onChange(current){setPage(current)}}}>
-                    <Column title="STT" key="1" render={(value, item, index) => (page - 1) * 10 + index + 1} />
-                    <Column title="Tài khoản" dataIndex="taiKhoan" key="2" />
-                    <Column title="Mật khẩu" dataIndex="matKhau" key="3" />
-                    <Column title="Họ tên" dataIndex="hoTen" key="4" />
-                    <Column title="Email" dataIndex="email" key="5" />
-                    <Column title="Số điện thoại" dataIndex="soDt" key="6" />
+                <Table dataSource={mangNguoiDung} bordered="true" pagination={{ onChange(current) { setPage(current) } }} pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15'] }}>
+                    <Column align={'center'} title="STT" key="STT" render={(value, item, index) => (page - 1) * 10 + index + 1} />
+                    <Column title="Tài khoản" dataIndex="taiKhoan" key="taiKhoan" />
+                    <Column title="Mật khẩu" dataIndex="matKhau" key="matKhau" />
+                    <Column title="Họ tên" dataIndex="hoTen" key="hoTen" />
+                    <Column title="Email" dataIndex="email" key="email" />
+                    <Column title="Số điện thoại" dataIndex="soDt" key="soDt" />
                     <Column
                         key="action"
-                        render={() => (
+                        render={(value, item, index) => (
                             <Space size="small">
-                                <Button danger size="small">Ghi danh</Button>
-                                <Button type="primary" size="small">Sửa</Button>
-                                <Button type="primary" danger size="small">Xoá</Button>
+                                <Popover content={popoverEdit}>
+                                    <Button type="primary" size="small" onClick={(value) => {
+                                        
+                                    }}><i class="fa fa-edit"></i></Button>
+                                </Popover>
+                                <Popover content={popoverDelete}>
+                                    <Button type="primary" danger size="small" onClick={(value) => {
+                                        
+                                    }}><i class="fa fa-trash-alt"></i></Button>
+                                </Popover>
                             </Space>
                         )}
                     />

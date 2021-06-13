@@ -1,29 +1,40 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import CardPhimDangChieu from './CardPhimDangChieu';
 import CardPhimHotNhat from './CardPhimHotNhat';
 import CardPhimSapChieu from './CardPhimSapChieu';
 import { callAPI_layDanhSachPhimAction } from '../../../Redux/Actions/QuanLyPhimAction';
-
+import { Fragment } from 'react';
+import Slider from 'react-slick';
 
 
 
 export default function ListPhim() {
     const dispatch = useDispatch();
-    const {mangPhim} = useSelector(state => state.QuanLyPhimReducer);
+    const { mangPhim } = useSelector(state => state.QuanLyPhimReducer);
 
     useEffect(() => {
         dispatch(callAPI_layDanhSachPhimAction());
-        
     }, [])
 
 
     const renderPhimSapChieu = () => {
-        return mangPhim.map((phim,index) => {
-            return  <CardPhimSapChieu key={index} phim={phim} /> 
+        return mangPhim.map((phim, index) => {
+            if(index <= 23){
+                return <CardPhimSapChieu phim={phim} index={index} />
+            }
         })
     }
+
+    const settingsSlickCarousel = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        rows:2,
+        arrows:true
+    };
     return (
         <section className=" container sectionListPhim">
             <div>
@@ -40,31 +51,17 @@ export default function ListPhim() {
                 </ul>
                 <div className="tab-content" id="myTabContent">
                     <div className="tab-pane  show active" id="coming" >
-                        <div className="row mt-2">
+                        <Slider className="mt-2" {...settingsSlickCarousel}>
                             {renderPhimSapChieu()}
-                        </div>
+                        </Slider>
                     </div>
                     <div className="tab-pane " id="came" >
                         <div className="row mt-2">
-                            <CardPhimDangChieu />
-                            <CardPhimDangChieu />
-                            <CardPhimDangChieu />
-                            <CardPhimDangChieu />
-                            <CardPhimDangChieu />
-                            <CardPhimDangChieu />
-                            <CardPhimDangChieu />
                             <CardPhimDangChieu />
                         </div>
                     </div>
                     <div className="tab-pane " id="hot" >
                         <div className="row mt-2">
-                            <CardPhimHotNhat />
-                            <CardPhimHotNhat />
-                            <CardPhimHotNhat />
-                            <CardPhimHotNhat />
-                            <CardPhimHotNhat />
-                            <CardPhimHotNhat />
-                            <CardPhimHotNhat />
                             <CardPhimHotNhat />
                         </div>
                     </div>

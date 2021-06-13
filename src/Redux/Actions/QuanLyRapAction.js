@@ -53,3 +53,19 @@ export const ChangeRap =(ten,diaChi)=>{
         })
     }
 }
+export const LayThongTinLichChieuPhim_Action = (maPhim) => {
+    return async dispatch => {
+        try {
+            const result = await axios({
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`,
+                method: 'GET'
+            });
+            dispatch({
+                type: 'SET_THONG_TIN_LICH_CHIEU_PHIM',
+                thongTinLichChieu: result.data
+            })
+        } catch (errors) {
+            console.log(errors.response);
+        }
+    }
+}

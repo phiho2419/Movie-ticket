@@ -58,8 +58,8 @@ export default function Footer() {
                     <div className="col-12 col-sm-4 col-lg-3">
                         <p>Liên hệ</p>
                         <ul>
-                            <li><a href="#"><i class="fab fa-facebook-f"></i>Duy</a> </li>
-                            <li><a href="#"><i class="fab fa-facebook-f"></i>Phi</a>  </li>
+                            <li><a href="#"><i className="fab fa-facebook-f"></i>Duy</a> </li>
+                            <li><a href="#"><i className="fab fa-facebook-f"></i>Phi</a>  </li>
                         </ul>
                     </div>
                 </div>

@@ -68,15 +68,33 @@
         .card_tenphim{
             font-size: 16px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 7px;
         }
         .card_ngaykhoichieu{
-            font-size: 15px;
+            font-size: 13px;
             font-style: italic;
         }
         .card_thoiluong{
             font-size: 12px;
             letter-spacing: 2px;
+        }
+        #btn_close_modal{
+            position: absolute;
+            color: white;
+        }
+    }
+    .slick-slider{
+        .slick-prev:before, .slick-next:before{
+            color: $color-red-dark ;
+            font-size: 30px;
+        }
+        .slick-prev, .slick-next{
+            width: 30px;
+            height: 30px;
+            top: 45%;
+        }
+        .slick-prev{
+            left: -52px;
         }
     }
 }
