@@ -21,15 +21,7 @@ li {
   padding: unset !important;
 }
 
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-  color: unset !important;
-}
-
-.ant-tabs-tab-btn:focus, .ant-tabs-tab-remove:focus, .ant-tabs-tab-btn:active, .ant-tabs-tab-remove:active {
-  color: unset !important;
-}
-
-.ant-tabs-tab:hover {
+.ant-tabs-tab:hover, .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-tab-btn:focus, .ant-tabs-tab-remove:focus, .ant-tabs-tab-btn:active, .ant-tabs-tab-remove:active {
   color: unset !important;
 }
 
@@ -43,24 +35,6 @@ li {
   font-weight: 700;
 }
 
-.btn_header {
-  padding: 10px 15px;
-  margin: 0 5px;
-  font-weight: 700;
-  border-radius: 2px;
-  min-width: 90px;
-}
-
-.btn_dangnhap {
-  color: #c50e29;
-  background: white;
-}
-
-.btn_dangki {
-  color: white;
-  background: #ff5252;
-}
-
 .tag_phim_c18 {
   color: white;
   background-color: #ff5252;
@@ -68,24 +42,25 @@ li {
   border-radius: 2px;
 }
 
-.carousel_TrangChu header {
-  position: absolute;
+header {
+  box-shadow: 0 0 15px black;
+  position: fixed;
   top: 0;
-  left: 0;
-  z-index: 10;
+  z-index: 25;
   width: 100%;
+  background: white;
 }
 
-.carousel_TrangChu header .navbar-light .navbar-brand {
+header .navbar-light .navbar-brand {
   color: white;
   margin-left: 30px;
 }
 
-.carousel_TrangChu header .navbar-light .navbar-brand:hover {
+header .navbar-light .navbar-brand:hover {
   color: white;
 }
 
-.carousel_TrangChu header .header-logo {
+header .header-logo {
   font-family: "Dancing Script", sans-serif;
   font-weight: 700;
   font-size: 90px;
@@ -93,69 +68,67 @@ li {
   color: #ff867f !important;
 }
 
-.carousel_TrangChu header .navbar {
+header .navbar {
   padding: 0;
 }
 
-.carousel_TrangChu header .navbar .navbar-nav .nav-item {
+header .navbar .navbar-nav .nav-item {
   margin: 2px 2px 0 2px;
 }
 
-.carousel_TrangChu header .navbar .navbar-nav .nav-item .nav-link {
-  color: #fff;
-  font-size: 15px;
-  font-weight: normal;
+header .navbar .navbar-nav .nav-item .nav-link {
   font-weight: 700;
-  transition: all 0.3s;
+  transition: all 0.5s;
   border-radius: 20px;
   min-width: 70px;
   text-align: center;
+  color: #1b1b1b;
+  border-bottom: 2px solid white;
+  padding: 3px 10px;
 }
 
-.carousel_TrangChu header .navbar .navbar-nav .nav-item .nav-link:hover {
+header .navbar .navbar-nav .nav-item .nav-link:hover {
   background-color: #fff;
   color: #c50e29;
+  border-bottom: 2px solid #c50e29;
 }
 
-.pageChiTietPhongVe header .navbar-light .navbar-brand {
-  color: white;
-  margin-left: 30px;
+header .btn_header {
+  padding: 10px 15px;
+  margin: 0 5px;
+  color: #1b1b1b;
+  border-radius: 50px;
+  min-width: 80px;
 }
 
-.pageChiTietPhongVe header .navbar-light .navbar-brand:hover {
-  color: white;
-}
-
-.pageChiTietPhongVe header .header-logo {
-  font-family: "Dancing Script", sans-serif;
-  font-weight: 700;
-  font-size: 90px;
-  line-height: 90px;
-  color: #ff867f !important;
-}
-
-.pageChiTietPhongVe header .navbar {
-  padding: 0;
-}
-
-.pageChiTietPhongVe header .navbar .navbar-nav .nav-item {
-  margin: 2px 2px 0 2px;
-}
-
-.pageChiTietPhongVe header .navbar .navbar-nav .nav-item .nav-link {
-  color: #fff;
-  font-size: 15px;
-  font-weight: normal;
-  font-weight: 700;
-  transition: all 0.3s;
-  border-radius: 20px;
-  min-width: 70px;
-  text-align: center;
-}
-
-.pageChiTietPhongVe header .navbar .navbar-nav .nav-item .nav-link:hover {
-  background-color: #fff;
+header .btn_header:hover {
   color: #c50e29;
+  border-color: black;
+}
+
+header .btn_header i {
+  color: #1b1b1b;
+}
+
+header .btn_dangnhap {
+  border-left: 1px solid #c50e29;
+  position: relative;
+}
+
+header .btn_dangnhap::after {
+  position: absolute;
+  right: -3px;
+  top: 5px;
+  z-index: 5;
+  content: '';
+  display: inline-block;
+  height: 80%;
+  width: 1px;
+  background-color: #c7c7c7;
+}
+
+header .btn_dangki {
+  border-right: 1px solid #c50e29;
 }
 
 .dashboard .db_select {
@@ -192,7 +165,7 @@ li {
 }
 
 .carousel_TrangChu {
-  position: relative;
+  margin-top: 60px;
 }
 
 .carousel_TrangChu .carousel-item {
@@ -211,7 +184,7 @@ li {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, #161616, transparent, transparent);
+  background: linear-gradient(to bottom, #161616, transparent, transparent, transparent, transparent);
 }
 
 .carousel_TrangChu .carousel-item .carousel-caption {
@@ -450,7 +423,7 @@ li {
 .pageQuanLyPhim .search_form .input-group-append .input-group-text {
   border-radius: 0px 20px 20px 0px;
   background: white;
-  transition: all .3s;
+  transition: all 0.3s;
   border: none;
 }
 
@@ -458,6 +431,10 @@ li {
   background: #ff5252;
   color: white;
   cursor: pointer;
+}
+
+.modalQuanLyPhim .modal-content .modal-header .close {
+  margin-left: unset;
 }
 
 .pageChiTietPhongVe {
@@ -702,38 +679,6 @@ li {
   background-color: #ff5252;
 }
 
-.UserTemplate .user__content {
-  width: 50%;
-  margin: auto;
-}
-
-.UserTemplate .user__content .row {
-  margin: 0;
-}
-
-.UserTemplate .user__content .user__topic {
-  background-color: #c50e29;
-  width: 100%;
-  text-align: center;
-}
-
-.UserTemplate .user__content .user__topic .name {
-  transition: 0.5;
-  padding: 10px 0;
-  color: white;
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.UserTemplate .user__content .user__topic .name:hover {
-  background-color: #ff867f;
-  cursor: pointer;
-}
-
-.UserTemplate .user__content .user__topic .name:hover .name {
-  color: black;
-}
-
 @media screen and (max-width: 768px) {
   .UserTemplate .user__back i {
     font-size: 35px;
@@ -747,6 +692,7 @@ li {
 }
 
 .CtPhim__Intro {
+  margin-top: 60px;
   background: linear-gradient(to top left, #ff867f, #ff5252, #ff867f, #ff867f, #ff5252, #c50e29);
 }
 
@@ -1332,97 +1278,347 @@ li {
   border: none;
 }
 
-.DangNhap {
-  background-color: rgba(255, 255, 255, 0.4);
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.DangNhap .DN__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
 }
 
-.DangNhap .DN__content {
-  padding: 30px 40px;
-  flex-grow: 1;
+.DangNhap .DN__content h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #1b1b1b;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.DangNhap .DN__content .form__user {
+  position: relative;
+}
+
+.DangNhap .DN__content .form__user input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #1b1b1b;
+  outline: none;
+  background: transparent;
+}
+
+.DangNhap .DN__content .form__user label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.DangNhap .DN__content .form__user input:focus ~ label, .DangNhap .DN__content .form__user input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #ff5252;
+  font-size: 12px;
 }
 
 .DangNhap .DN__content .DN__btn {
-  margin-top: 30px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ff5252;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .DangNhap .DN__content .DN__btn button {
-  width: 100%;
-  background-color: #ff867f;
-  color: white;
-  padding: 10px 0;
-  border-radius: 10px;
   outline: none;
-  font-size: 18px;
-  font-weight: 700;
-  transition: 0.5;
+  width: 100%;
 }
 
-.DangNhap .DN__content .DN__btn button:hover {
-  background-color: white;
-  color: #ff867f;
-}
-
-.DangNhap .DN__content p {
-  font-size: 18px;
-  padding: 5px 10px;
-  margin: 0;
-}
-
-.DangNhap .DN__content .text {
+.DangNhap .DN__content .DN__btn:hover {
+  background: #ff5252;
   color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 5px 10px;
-  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ff5252, 0 0 25px #ff5252, 0 0 50px #ff5252, 0 0 100px #ff5252;
 }
 
-.DangNhap .DN__content input {
-  background-color: transparent;
-  color: white;
-  font-size: 18px;
+.DangNhap .DN__content .DN__btn span {
+  position: absolute;
+  display: block;
+}
+
+.DangNhap .DN__content .DN__btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
   width: 100%;
-  border: 1.5px solid white;
-  border-radius: 10px;
-  outline: none;
-  padding: 10px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff5252);
+  animation: btn-anim1 1s linear infinite;
 }
 
-.DangKy {
-  background-color: rgba(255, 255, 255, 0.3);
-  height: 500px;
+.DangNhap .DN__content .DN__btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ff5252);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.DangNhap .DN__content .DN__btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ff5252);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.DangNhap .DN__content .DN__btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #ff5252);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
 
 .DangKy .DK__content {
-  width: 90%;
-  margin: 0 auto;
-  color: white;
-  padding: 10px 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
 }
 
-.DangKy .DK__content span {
+.DangKy .DK__content h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #1b1b1b;
+  text-align: center;
+  font-size: 30px;
   font-weight: 500;
-  font-size: 16px;
 }
 
-.DangKy .DK__content .DK__btn {
-  width: 100%;
-  margin-top: 20px;
+.DangKy .DK__content .form__user {
+  position: relative;
 }
 
-.DangKy .DK__content .DK__btn button {
+.DangKy .DK__content .form__user input, .DangKy .DK__content .form__user select {
   width: 100%;
+  padding: 10px 0;
   font-size: 16px;
-  background-color: #ff867f;
-  padding: 8px 20px;
+  color: #000;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #1b1b1b;
+  outline: none;
+  background: transparent;
+}
+
+.DangKy .DK__content .form__user label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.DangKy .DK__content .form__user input:focus ~ label, .DangKy .DK__content .form__user input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #ff5252;
+  font-size: 12px;
+}
+
+.DangKy .DK__content .form__user span {
+  font-size: 12px;
+}
+
+.DangKy .DK__content .DN__btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ff5252;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.DangKy .DK__content .DN__btn button {
+  outline: none;
+  width: 100%;
+}
+
+.DangKy .DK__content .DN__btn:hover {
+  background: #ff5252;
+  color: #fff;
   border-radius: 5px;
+  box-shadow: 0 0 5px #ff5252, 0 0 25px #ff5252, 0 0 50px #ff5252, 0 0 100px #ff5252;
+}
+
+.DangKy .DK__content .DN__btn span {
+  position: absolute;
+  display: block;
+}
+
+.DangKy .DK__content .DN__btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff5252);
+  animation: btn-anim1 1s linear infinite;
+}
+
+.DangKy .DK__content .DN__btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ff5252);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.DangKy .DK__content .DN__btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ff5252);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.DangKy .DK__content .DN__btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #ff5252);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
 
 .ThongTinCaNhan {
   background-color: #fff;
+  margin-top: 65px;
 }
 
 .ThongTinCaNhan .TT_content {

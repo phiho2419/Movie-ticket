@@ -1,11 +1,11 @@
 import React from 'react'
 import { Fragment } from 'react'
 import { NavLink, Redirect } from 'react-router-dom'
+import Swal from 'sweetalert2';
+import { history } from '../../App';
+
 export default function Header() {
-
-
     let dataUser = JSON.parse(localStorage.getItem('userLogin'));
-
 
     return (
         <header>
@@ -38,11 +38,22 @@ export default function Header() {
                                 localStorage.getItem('userLogin') ?
                                     <Fragment>
                                         <NavLink to='/thongtincanhan' className="btn_header btn_dangnhap">{dataUser.hoTen}</NavLink>
-                                        <button style={{ outline: 'none' }} className="btn_header btn_dangki" onClick={() => {
-                                            localStorage.removeItem('userLogin');
-                                            localStorage.removeItem('accesstoken');
-                                            <Redirect to="/"/>
-                                        }}>Đăng xuất</button>
+                                        <NavLink to="#" style={{ outline: 'none' }} className="btn_header btn_dangki" onClick={() => {
+                                            Swal.fire({
+                                                icon: 'question',
+                                                title: 'Bạn có chắc muốn đăng xuất?',
+                                                showCancelButton: true,
+                                                cancelButtonText: 'Hủy bỏ',
+                                                confirmButtonText: ' Xác Nhận',
+                                            }).then((result) => {
+                                                if (result.isConfirmed) {
+                                                    localStorage.removeItem('userLogin');
+                                                    localStorage.removeItem('accesstoken');
+                                                    history.push('/');
+                                                }
+                                            })
+
+                                        }}>Đăng xuất</NavLink>
                                     </Fragment> :
                                     <Fragment>
                                         <NavLink to="/dangnhap" className="btn_header btn_dangnhap"><i className="fa fa-user-circle" style={{ fontSize: '20px', paddingBottom: '3px' }}></i> <span>Đăng nhập</span></NavLink>

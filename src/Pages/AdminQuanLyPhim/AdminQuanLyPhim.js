@@ -19,7 +19,6 @@ export default function AdminQuanLyPhim() {
     return (
         <div className="pageQuanLyPhim mt-4">
             <h1 className="admin_title mt-4 text-center">Quản lý phim</h1>
-
             <form className="search_form">
                 <div className="input-group">
                     <input type="text" className="form-control" placeholder="Nhập vào tài khoản hoặc họ tên người dùng" />
@@ -30,7 +29,6 @@ export default function AdminQuanLyPhim() {
                     </div>
                 </div>
             </form>
-
             <div className="container mt-4">
                 <Table dataSource={mangPhim} bordered="true" pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15']}}>
                     <Column align="center"  title="Mã phim" dataIndex="maPhim" key="maPhim" />
@@ -50,6 +48,7 @@ export default function AdminQuanLyPhim() {
                             </Space>
                         )}/>
                     <Column
+                         
                         key="action"
                         render={() => (
                             <Space size="small">

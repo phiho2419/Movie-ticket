@@ -6,7 +6,7 @@ export const callAPI_layDanhSachPhimAction =  () => {
     return async (dispatch) => {
         try {
             let result = await axios({
-                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP08`,
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09`,
                 method: 'GET'
             });
             dispatch({ type: 'SET_MANG_PHIM', mangPhim: result.data })

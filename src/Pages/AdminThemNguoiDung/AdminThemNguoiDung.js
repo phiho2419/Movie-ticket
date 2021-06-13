@@ -33,7 +33,7 @@ export default function AdminThemNguoiDung() {
     })
 
     const onChangeLoaiNguoiDung = (valueText) => {
-        formik.setFieldValue('loaiNguoiDung',valueText)
+        formik.setFieldValue('maLoaiNguoiDung',valueText)
     }
     return (
         <div>

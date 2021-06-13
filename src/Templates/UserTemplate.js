@@ -8,13 +8,10 @@ export const UserTemplate = (props) => {
             return <Fragment>
                 <div className="UserTemplate" style={{ backgroundImage: `url(${Bg})` }}>
                     <div className="user__content">
-                        <div className="user__back">
+                        {/* <div className="user__back">
                             <NavLink className="back" to="/"><i class="fas fa-long-arrow-alt-left"></i></NavLink>
-                        </div>
-                        <div className="user__topic row">
-                                <NavLink className="name col-6" to="/dangnhap">Đăng Nhập</NavLink>
-                                <NavLink className="name col-6" to="/dangky">Đăng Ký</NavLink>
-                        </div>
+                        </div> */}
+
                         <props.component {...propsRoute} />
 
                     </div>

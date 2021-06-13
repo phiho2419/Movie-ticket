@@ -8,6 +8,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
+import { USERLOGIN } from '../../Util/setting';
 
 
 const { TabPane } = Tabs;
@@ -16,8 +17,13 @@ export default function ThongTinCaNhan() {
     const [edit, setEdit] = useState(false);
     const dispatch = useDispatch();
     const { user } = useSelector(state => state.NguoiDungReducer);
+    let usLogin = '';
+    if (localStorage.getItem(USERLOGIN)) {
+        usLogin = JSON.parse(localStorage.getItem(USERLOGIN));
+    }
+
     useEffect(() => {
-        dispatch(thongTinAction());
+        dispatch(thongTinAction(usLogin.taiKhoan));
     }, [])
     console.log(user);
     const formik = useFormik({

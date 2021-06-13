@@ -34,7 +34,8 @@ export default function SearchForm() {
             return heThongRap.cumRapChieu?.map((rap) => {
                 if(rap.maCumRap == maCumRapState){
                     return rap.lichChieuPhim?.map((lichChieu,index)=>{
-                        mangLichChieu.push(lichChieu.ngayChieuGioChieu)
+                        mangLichChieu.push({"ngayChieu":lichChieu.ngayChieuGioChieu.substr(0,10),"gioChieu":lichChieu.ngayChieuGioChieu.substr(10,19),"maLichChieu":lichChieu.maLichChieu});
+                        console.log('mangLichChieu',mangLichChieu);
                         return <Option key={index}>{lichChieu.ngayChieuGioChieu}</Option>
                     })
                 }
@@ -42,7 +43,6 @@ export default function SearchForm() {
         })
     }
 
-  
 
 
     const handleChangeChonPhim = (maPhim) => {

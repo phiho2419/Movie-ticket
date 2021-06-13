@@ -39,7 +39,7 @@ export const themNguoiDungAction = (nguoiDungDuocThem) => {
             });
 
             if(result.status === 200) {
-                alert(result.response);
+                alert("Thêm người dùng thành công !");
             }
         }catch (errors) {
             console.log('errors',errors.response)
