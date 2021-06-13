@@ -24,8 +24,11 @@ export const dangNhapAction = (userLogin) => {
 
             history.push('/');
 
-        } catch (errors) {
-            console.log(errors.response.data);
+        } catch (err) {
+            Swal.fire({
+                icon: 'error',
+                text: `${err.response?.data}`,
+            })
 
         }
     }
@@ -41,8 +44,11 @@ export const dangKyAction = (userLogup) => {
 
             history.push('/dangnhap');
 
-        } catch (errors) {
-            console.log(errors.response.data);
+        } catch (err) {
+            Swal.fire({
+                icon: 'error',
+                text: `${err.response?.data}`,
+            })
         }
     }
 }
@@ -61,8 +67,11 @@ export const thongTinAction = (taiKhoan) => {
                 type: 'THONG_TIN_NGUOI_DUNG',
                 user: result.data
             })
-        } catch (errors) {
-            console.log(errors.response.data);
+        } catch (err) {
+            Swal.fire({
+                icon: 'error',
+                text: `${err.response?.data}`,
+            })
         }
     }
 }
@@ -90,7 +99,10 @@ export const CapNhatNguoiDungAction = (thongTinNguoiDung) => {
                 // window.location.reload();
             }
         } catch (err) {
-            console.log(err.response?.data);
+            Swal.fire({
+                icon: 'error',
+                text: `${err.response?.data}`,
+            })
         }
     }
 }

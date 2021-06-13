@@ -19,7 +19,7 @@ export default function ChiTietPhongVe(props) {
     useEffect(() => {
         dispatch(layThongTinLichChieuAction(maPhim));
     }, [])
-
+console.log(lichChieu);
 
 
     //Lấy thông tin người dùng
