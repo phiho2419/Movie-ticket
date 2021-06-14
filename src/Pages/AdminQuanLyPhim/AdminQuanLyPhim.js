@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Table, Space, Image, Tag } from 'antd';
 import { Button, Modal } from 'antd';
 import { callAPI_layDanhSachPhimAction } from '../../Redux/Actions/QuanLyPhimAction';
+import Edit from './Edit';
 
 const { Column } = Table;
-
-
 
 export default function AdminQuanLyPhim() {
     const dispatch = useDispatch();
@@ -15,6 +14,7 @@ export default function AdminQuanLyPhim() {
         dispatch(callAPI_layDanhSachPhimAction());
 
     }, [])
+    // console.log(mangPhim);
 
     return (
         <div className="pageQuanLyPhim mt-4">
@@ -30,36 +30,65 @@ export default function AdminQuanLyPhim() {
                 </div>
             </form>
             <div className="container mt-4">
-                <Table dataSource={mangPhim} bordered="true" pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15']}}>
-                    <Column align="center"  title="Mã phim" dataIndex="maPhim" key="maPhim" />
+                <Table dataSource={mangPhim} bordered="true" pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15'] }}>
+                    <Column align="center" title="Mã phim" dataIndex="maPhim" key="maPhim" />
                     <Column align="center" title="Tên phim" dataIndex="tenPhim" key="tenPhim" />
                     <Column title="Hình ảnh"
                         key="hinhAnh"
                         render={(text, record) => (
                             <Space size="small">
-                                <Image src={record.hinhAnh}  alt="hinhAnh" preview={false}/>
+                                <Image src={record.hinhAnh} alt="hinhAnh" preview={false} />
                             </Space>
                         )}
                     />
-                    <Column  title="Mô tả" dataIndex="moTa" key="moTa" />
-                    <Column title="Ngày khởi chiếu" key="ngayKhoiChieu" render={(text,record) => (
-                            <Space size="small">
-                                <Tag color="gold">{record.ngayKhoiChieu.substr(0,10)}</Tag>
-                            </Space>
-                        )}/>
+                    <Column title="Mô tả" dataIndex="moTa" key="moTa" />
+                    <Column title="Ngày khởi chiếu" key="ngayKhoiChieu" render={(text, record) => (
+                        <Space size="small">
+                            <Tag color="gold">{record.ngayKhoiChieu.substr(0, 10)}</Tag>
+                        </Space>
+                    )} />
+
                     <Column
-                         
+
                         key="action"
-                        render={() => (
+                        render={(text, record) => (
+
                             <Space size="small">
-                                <Button type="primary" size="small"><i class="fa fa-edit"></i></Button>
+                                <Button type="primary" size="small" onClick={() => {
+                                    // dispatch mã phim
+                                    dispatch({
+                                        type: 'SET_MA_PHIM',
+                                        maPhim: record.maPhim
+                                    })
+                                }} data-toggle="modal" data-target="#exampleModal"><i class="fa fa-edit" ></i>
+                                </Button>
                                 <Button type="primary" danger size="small"><i class="fa fa-trash-alt"></i></Button>
                             </Space>
                         )}
                     />
-
                 </Table>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <Edit />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
     )
 }

@@ -1,53 +1,69 @@
 
 
 import axios from 'axios';
-import {history} from '../../App'
+import { history } from '../../App'
+import Swal from 'sweetalert2';
 
 
 
-export const themPhimAction = (phimDuocThem) => { 
+export const themPhimAction = (phimDuocThem) => {
     return async (dispatch) => {
         try {
             const result = await axios({
                 url: "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim",
-                method:'POST',
+                method: 'POST',
                 data: phimDuocThem,
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('accesstoken')}`
                 }
             });
 
-            if(result.status === 200) {
-                alert(result.response?.data);
-            }
-        }catch (errors) {
-            console.log('errors',errors.response)
+            if (result.status === 200) {
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Thêm phim thành công',
+                })            }
+        } catch (err) {
+            console.log(err.response);
+            Swal.fire({
+                icon: 'error',
+                text: `${err.response.data}`,
+            })
+
         }
     }
 }
 
-export const themNguoiDungAction = (nguoiDungDuocThem) => { 
+export const themNguoiDungAction = (nguoiDungDuocThem) => {
     return async (dispatch) => {
         try {
             const result = await axios({
-                url:'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung',
-                method:'POST',
+                url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung',
+                method: 'POST',
                 data: nguoiDungDuocThem,
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('accesstoken')}`
                 }
             });
 
-            if(result.status === 200) {
-                alert("Thêm người dùng thành công !");
+            if (result.status === 200) {
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Thêm người dùng thành công',
+                })
             }
-        }catch (errors) {
-            console.log('errors',errors.response)
+        } catch (errors) {
+            console.log(errors.response);
+            Swal.fire({
+                icon: 'error',
+                text: `${errors.response?.data}`,
+            })
+
         }
     }
 }
 
-export const layDanhSachNguoiDungAction =  () => {
+export const layDanhSachNguoiDungAction = () => {
     return async (dispatch) => {
         try {
             let result = await axios({
@@ -55,8 +71,12 @@ export const layDanhSachNguoiDungAction =  () => {
                 method: 'GET'
             });
             dispatch({ type: 'SET_MANG_NGUOI_DUNG', mangNguoiDung: result.data })
-        } catch (errors) {
-            console.log(errors.response)
+        } catch (err) {
+            Swal.fire({
+                icon: 'error',
+                text: `${err.response?.data}`,
+            })
+
         }
     }
 }

@@ -41,7 +41,12 @@ export const dangKyAction = (userLogup) => {
                 method: 'POST',
                 data: userLogup
             });
-
+            if(result.status === 200) {
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Đăng ký thành công',
+                })
+            }
             history.push('/dangnhap');
 
         } catch (err) {
