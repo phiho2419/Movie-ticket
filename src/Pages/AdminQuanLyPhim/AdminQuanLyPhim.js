@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Table, Space, Image, Tag } from 'antd';
 import { Button, Modal } from 'antd';
-import { callAPI_layDanhSachPhimAction } from '../../Redux/Actions/QuanLyPhimAction';
+import { callAPI_layDanhSachPhimAction, LayThongTinPhimAction } from '../../Redux/Actions/QuanLyPhimAction';
 import Edit from './Edit';
-
+import { xoaPhim } from '../../Redux/Actions/AdminAction';
 const { Column } = Table;
 
 export default function AdminQuanLyPhim() {
@@ -52,40 +52,29 @@ export default function AdminQuanLyPhim() {
 
                         key="action"
                         render={(text, record) => (
-
                             <Space size="small">
                                 <Button type="primary" size="small" onClick={() => {
-                                    // dispatch mã phim
                                     dispatch({
                                         type: 'SET_MA_PHIM',
-                                        maPhim: record.maPhim
+                                        thongTinPhim: record
                                     })
-                                }} data-toggle="modal" data-target="#exampleModal"><i class="fa fa-edit" ></i>
-                                </Button>
-                                <Button type="primary" danger size="small"><i class="fa fa-trash-alt"></i></Button>
+
+                                }} data-toggle="modal" data-target="#EditPhim"><i class="fa fa-edit" ></i></Button>
+                                <div class="modal fade" id="EditPhim" tabindex="-1" aria-labelledby="EditPhimLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <Edit />
+                                        </div>
+                                    </div>
+                                </div>
+                                <Button type="primary" danger size="small"><i class="fa fa-trash-alt" onClick={()=>{
+                                       dispatch(xoaPhim(record.maPhim))
+                                }}></i></Button>
                             </Space>
                         )}
                     />
                 </Table>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <Edit />
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 

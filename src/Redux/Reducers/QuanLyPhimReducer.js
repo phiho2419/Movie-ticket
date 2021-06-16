@@ -4,6 +4,9 @@ const stateDefault = {
     ],
     chiTietPhim: {
 
+    },
+    thongTinPhim:{
+
     }
 };
 
@@ -15,6 +18,11 @@ export const QuanLyPhimReducer = (state = stateDefault, action) => {
         }
         case 'SET_CHI_TIET_PHIM': {
             state.chiTietPhim = action.chiTietPhim;
+            return { ...state };
+
+        }
+        case 'SET_THONG_TIN_PHIM': {
+            state.thongTinPhim = action.thongTinPhim;
             return { ...state };
 
         }

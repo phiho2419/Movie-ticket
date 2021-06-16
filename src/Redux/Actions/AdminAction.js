@@ -10,7 +10,7 @@ export const themPhimAction = (phimDuocThem) => {
     return async (dispatch) => {
         try {
             const result = await axios({
-                url: "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim",
+                url: "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhimUploadHinh",
                 method: 'POST',
                 data: phimDuocThem,
                 headers: {
@@ -22,7 +22,8 @@ export const themPhimAction = (phimDuocThem) => {
                 Swal.fire({
                     icon: 'success',
                     text: 'Thêm phim thành công',
-                })            }
+                })
+            }
         } catch (err) {
             console.log(err.response);
             Swal.fire({
@@ -33,7 +34,37 @@ export const themPhimAction = (phimDuocThem) => {
         }
     }
 }
+export const capNhatPhimAction = (phimCapNhat) => {
+    return async (dispatch) => {
+        try {
+            const result = await axios({
+                url: "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/CapNhatPhimUpload",
+                method: 'POST',
+                data: phimCapNhat,
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('accesstoken')}`
+                }
+            });
+            if (result.status === 200) {
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Cập nhật phim thành công',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
 
+                    }
+                })
+            }
+        } catch (err) {
+            console.log(err.response);
+            Swal.fire({
+                icon: 'error',
+                text: `${err.response.data}`,
+            })
+        }
+    }
+}
 export const themNguoiDungAction = (nguoiDungDuocThem) => {
     return async (dispatch) => {
         try {
@@ -51,6 +82,7 @@ export const themNguoiDungAction = (nguoiDungDuocThem) => {
                     icon: 'success',
                     text: 'Thêm người dùng thành công',
                 })
+
             }
         } catch (errors) {
             console.log(errors.response);
@@ -80,3 +112,69 @@ export const layDanhSachNguoiDungAction = () => {
         }
     }
 }
+export const xoaPhim = (maPhim) => {
+    return async (dispatch) => {
+        try {
+            const result = await axios({
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim?MaPhim=${maPhim}`,
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('accesstoken')}`
+                }
+            });
+
+            if (result.status === 200) {
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Xóa Phim thành công',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
+                })
+
+            }
+        } catch (errors) {
+            console.log(errors.response);
+            Swal.fire({
+                icon: 'error',
+                text: `${errors.response?.data}`,
+            })
+
+        }
+    }
+}
+export const xoaNguoiDung = (maTaiKhoan) => {
+    return async (dispatch) => {
+        try {
+            const result = await axios({
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${maTaiKhoan}`,
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('accesstoken')}`
+                }
+            });
+
+            if (result.status === 200) {
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Xóa Tài Khoản thành công',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
+                })
+
+            }
+        } catch (errors) {
+            console.log(errors.response);
+            Swal.fire({
+                icon: 'error',
+                text: `${errors.response?.data}`,
+            })
+
+        }
+    }
+}
+
+

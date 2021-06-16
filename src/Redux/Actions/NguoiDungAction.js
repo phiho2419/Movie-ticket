@@ -100,6 +100,10 @@ export const CapNhatNguoiDungAction = (thongTinNguoiDung) => {
                 Swal.fire({
                     icon: 'success',
                     text: 'Thay đổi thành công!',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
                 })
                 // window.location.reload();
             }

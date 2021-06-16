@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Table, Space, Popover, Button } from 'antd';
-import { layDanhSachNguoiDungAction } from '../../Redux/Actions/AdminAction';
+import { layDanhSachNguoiDungAction, xoaNguoiDung } from '../../Redux/Actions/AdminAction';
+import EditNguoiDung from './EditNguoiDung';
+
 const { Column } = Table;
 const popoverDelete = (
     <small>Delete</small>
@@ -15,11 +17,10 @@ export default function AdminQuanLyNguoiDung() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(layDanhSachNguoiDungAction());
-
     }, []);
 
     const { mangNguoiDung } = useSelector(state => state.AdminReducer);
-    console.log('mangNguoiDung :', mangNguoiDung);
+    // console.log('mangNguoiDung :', mangNguoiDung);
     return (
         <div className="pageQuanLyPhim mt-4">
             <h1 className="admin_title mt-4 text-center">Quản lý người dùng</h1>
@@ -45,18 +46,25 @@ export default function AdminQuanLyNguoiDung() {
                     <Column title="Số điện thoại" dataIndex="soDt" key="soDt" />
                     <Column
                         key="action"
-                        render={(value, item, index) => (
+                        render={(text, record) => (
                             <Space size="small">
-                                <Popover content={popoverEdit}>
-                                    <Button type="primary" size="small" onClick={(value) => {
-                                        
-                                    }}><i class="fa fa-edit"></i></Button>
-                                </Popover>
-                                <Popover content={popoverDelete}>
-                                    <Button type="primary" danger size="small" onClick={(value) => {
+                                    <Button type="primary" size="small" onClick={() => {
+                                          dispatch({
+                                            type: 'SET_NGUOI_DUNG',
+                                            thongTinNguoiDung: record
+                                        })
+                                    }} data-toggle="modal" data-target="#EditNguoiDung"><i class="fa fa-edit"></i></Button>
+                               <div class="modal fade" id="EditNguoiDung" tabindex="-1" aria-labelledby="EditNguoiDung" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <EditNguoiDung />
+                                        </div>
+                                    </div>
+                                </div>
+                                    <Button type="primary" danger size="small" onClick={() => {
+                                       dispatch(xoaNguoiDung(record.taiKhoan))
                                         
                                     }}><i class="fa fa-trash-alt"></i></Button>
-                                </Popover>
                             </Space>
                         )}
                     />

@@ -1,20 +1,25 @@
 const stateDefault = {
     mangNguoiDung: [],
-    maPhim:'',
+    thongTinPhim: {},
+    thongTinNguoiDung: {},
 }
 
 export const AdminReducer = (state = stateDefault, action) => {
 
-    switch (action.type){
+    switch (action.type) {
         case 'SET_MANG_NGUOI_DUNG': {
             state.mangNguoiDung = action.mangNguoiDung;
-            return {...state}
+            return { ...state }
         }
         case 'SET_MA_PHIM': {
-            state.maPhim = action.maPhim;
-            return {...state}
+            state.thongTinPhim = action.thongTinPhim;
+            return { ...state }
         }
-        default: return{...state}
+        case 'SET_NGUOI_DUNG': {
+            state.thongTinNguoiDung = action.thongTinNguoiDung;
+            return { ...state }
+        }
+        default: return { ...state }
     }
 
 }

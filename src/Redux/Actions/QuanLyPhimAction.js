@@ -37,3 +37,23 @@ export const LayChiTietPhimAppiAction = (maPhim) => {
         }
     }
 }
+export const LayThongTinPhimAction = (maPhim) => {
+    return async dispatch => {
+        try {
+            const result = await axios({
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${maPhim}`,
+                method: 'GET'
+            });
+            dispatch({
+                type: 'SET_THONG_TIN_PHIM',
+                thongTinPhim: result.data
+            })
+        } catch (errors) {
+            if (errors.response.status === 400) {
+                alert('Không hợp lệ!');
+                // history.push('/');
+            }
+            // console.log('error', error.reponse.status);
+        }
+    }
+}
