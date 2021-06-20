@@ -3,20 +3,35 @@
         .tabpane_tenRap{
             font-weight: 700;
             font-size: 15px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
         }
         .tabpane_diaChiRap{
             font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
     .ant-tabs-tab{
-        opacity: 0.7;
-        transition: all .2s;
-        padding: 10px 24px 0 24px !important;
+        opacity: 0.5;
+        .logo__rap{
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+            border: 2px solid white;
+            
+        }
     }
     .ant-tabs-tab.ant-tabs-tab-active{
         opacity: 1;
     }
-    .ant-tabs-tabpane{
+    .hr_logo{
+        transform: translateY(15px);
+    }
+    .tabs-tabpane{
         .tab_tenphim{
             font-size: 18px;
             font-weight: 700;
@@ -34,5 +49,45 @@
         }
         
     }
+    .ant-tabs-left > .ant-tabs-nav::before, .ant-tabs-bottom > .ant-tabs-nav::before, .ant-tabs-top > div > .ant-tabs-nav::before, .ant-tabs-bottom > div > .ant-tabs-nav::before{
+        border-bottom: unset !important;
+    }
+    .ant-tabs-left > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ant-tabs-bottom > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ant-tabs-bottom > div > .ant-tabs-nav .ant-tabs-ink-bar-animated{
+        background: unset !important;
+    }
+    .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active, .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active{
+        color: unset;
+        font-weight: unset;
+    }
+    #tab_phim{
+        border: 1px solid rgb(215, 216, 218);
+        box-shadow: 0px -5px 40px rgb(187, 187, 187);
+    }
     
+    .tab_chi_tiet_phim{
+        height: 500px;
+        overflow: auto;
+        &:hover{
+            overflow-y: scroll;
+            
+        }
+    }
+    ::-webkit-scrollbar {
+        width: 5px;
+        background:rgb(202, 202, 202);
+    }
+    ::-webkit-scrollbar-thumb{
+        background: gray;
+    }
+    .film_name{
+        font-weight: 700;
+        font-size: 25px;
+    }
+    .tag_phim_c18{
+        height: 20px;
+        line-height: 15px;
+    }
+    .film_details{
+        font-style: italic;
+    }
 }

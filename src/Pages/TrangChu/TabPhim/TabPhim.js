@@ -5,6 +5,7 @@ import { Tabs } from 'antd';
 import TabListDanhSachRap from './TabListDanhSachRap';
 
 import { callApi_layThongTinHeThongRap } from '../../../Redux/Actions/QuanLyRapAction';
+import { Fragment } from 'react';
 
 
 const { TabPane } = Tabs;
@@ -22,18 +23,16 @@ export default function TabPhim() {
 
     const renderMangRap = () => {
         return mangRap.map((rap, index) => {
-            return <TabPane tab={<img  src={rap.logo} style={{ borderRadius: '50%' }} width="64" height="64" />} key={index} centered="true">
+            return <TabPane  tab={<Fragment> <img className="logo__rap"  src={rap.logo}  /> <hr className="hr_logo"/></Fragment>} key={index} centered="true">
                 <TabListDanhSachRap heThongRap={rap.lstCumRap} logoRap={rap.logo}/>
             </TabPane>
         })
     }
 
     return (
-        <section className="mt-5 container sectionTabPhim">
-            <Tabs centered>
-                
+        <section className="py-5 container sectionTabPhim">
+            <Tabs centered type="line" tabPosition="left" id="tab_phim">
                 {renderMangRap()}
-
             </Tabs>
         </section>
     );

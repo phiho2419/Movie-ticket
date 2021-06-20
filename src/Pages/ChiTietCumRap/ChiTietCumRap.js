@@ -25,10 +25,9 @@ export default function ChiTietCumRap(props) {
 
     return (
         <div>
-            <Header />
             <CTRapInTro />
             <CTRapList chiTietRap={chiTietRap} />
-            <Footer />
+            
         </div>
     )
 }

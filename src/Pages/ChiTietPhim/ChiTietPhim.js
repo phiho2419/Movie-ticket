@@ -12,15 +12,12 @@ export default function ChiTietPhim(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // Call API
         dispatch(LayChiTietPhimAppiAction(maPhim))
     }, [])
     return (
         <div className="ChiTietPhim">
-            <Header/>
-            <CTPhimInTro hinhAnh={chiTietPhim.hinhAnh} tenPhim={chiTietPhim.tenPhim} moTa={chiTietPhim.moTa} ngayKhoiChieu={chiTietPhim.ngayKhoiChieu} trailer={chiTietPhim.trailer} danhGia={chiTietPhim.danhGia}/>
+            <CTPhimInTro chiTietPhim={chiTietPhim}/>
             <CTPhimList heThongRap={chiTietPhim.heThongRapChieu}/>
-            <Footer/>
         </div>
     )
 }

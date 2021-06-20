@@ -53,7 +53,7 @@ export default function ThongTinCaNhan() {
     });
     return (
         <div className="ThongTinCaNhan">
-            <Header />
+           
             <div className="TT_content">
                 <Tabs defaultActiveKey="1">
                     <TabPane tab={<p>Thông Tin Chi Tiết</p>} key="1">

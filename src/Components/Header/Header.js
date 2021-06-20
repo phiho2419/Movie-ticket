@@ -1,8 +1,9 @@
 import React from 'react'
 import { Fragment } from 'react'
-import { NavLink, Redirect } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Swal from 'sweetalert2';
 import { history } from '../../App';
+// import logo from './img/logob.jpg'
 
 export default function Header() {
     let dataUser = JSON.parse(localStorage.getItem('userLogin'));
@@ -12,7 +13,7 @@ export default function Header() {
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light ">
                     <NavLink to='/'>
-                        <img className="navbar-brand header-logo p-0 pr-1 img-fluid" style={{ width: '70px', objectFit: 'cover', height: '60px' }} src="./img/logob.jpg" />
+                        <img className="navbar-brand header-logo p-0 pr-1 img-fluid" style={{ width: '70px', objectFit: 'cover', height: '60px' }} src="../../../img/logob.jpg" />
                     </NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i className="fa fa-bars"></i>

@@ -36,6 +36,11 @@ export const LichChieuReducer = (state = stateDefault, action) => {
 
         }
 
+        case 'XOA_LICH_SU_DATVE': {
+            state.danhSachGheDangDat = [];
+            return {...state}
+        }
+
         default: { return { ...state } }
     }
 

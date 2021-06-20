@@ -6,7 +6,7 @@ export const callApi_layThongTinHeThongRap = () => {
     return async dispatch => {
         try {
             let result = await axios({
-                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP03`,
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP09`,
                 method: 'GET'
             });
             dispatch({
@@ -27,7 +27,7 @@ export const LayChiTietRapApiAction = (maRap) => {
     return async dispatch => {
         try {
             const result = await axios({
-                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maRap}&maNhom=GP03`,
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maRap}&maNhom=GP09`,
                 method: 'GET'
             });
             // console.log('kq ma he thong rap',result.data);

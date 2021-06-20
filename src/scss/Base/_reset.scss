@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 html,body{
-    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Quicksand', sans-serif !important;
     font-size: $fs-1;
 }
 
@@ -48,3 +48,10 @@ li{
 .ant-table.ant-table-bordered > .ant-table-container{
     box-shadow: 0 0 10px rgb(114, 107, 99);
 }
+.yel__star{
+    color: rgba(241, 241, 55, 0.836);
+}
+.gray__star{
+    color: rgba(187, 186, 186, 0.822);
+}
+
