@@ -48,6 +48,7 @@ export default function SearchForm() {
         return thongTinLichChieu.heThongRapChieu?.map((heThongRap) => {
             return heThongRap.cumRapChieu?.map((rap) => {
                 return rap.lichChieuPhim?.map((lichChieu, index) => {
+                    console.log(ngayChieu);
                     if (lichChieu.ngayChieuGioChieu.substr(0, 10) == ngayChieu) {
                         console.log(lichChieu);
                         return <Option key={index} value={lichChieu.maLichChieu}>{lichChieu.ngayChieuGioChieu.substr(11, 19)}</Option>
@@ -61,9 +62,12 @@ export default function SearchForm() {
 
     const handleChangeChonPhim = (maPhim) => {
         dispatch(LayThongTinLichChieuPhim_Action(maPhim));
+        setNgayChieu('0');
+        setMaCumRap('0');
     }
     const handleChangeChonRap = (maCumRap) => {
         setMaCumRap(maCumRap);
+        setNgayChieu('0');
     }
     const handleChangeChonNgay=(ngay) => {
         setNgayChieu(ngay);
