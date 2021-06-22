@@ -8,7 +8,7 @@ import { CapNhatNguoiDungAction } from '../../Redux/Actions/NguoiDungAction';
 export default function EditNguoiDung() {
     const { thongTinNguoiDung } = useSelector(state => state.AdminReducer);
     const dispatch = useDispatch();
-    console.log(thongTinNguoiDung);
+    // console.log(thongTinNguoiDung);
     const formik = useFormik({
         initialValues: {
             taiKhoan: thongTinNguoiDung.taiKhoan,

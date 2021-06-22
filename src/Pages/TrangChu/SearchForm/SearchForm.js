@@ -13,6 +13,8 @@ export default function SearchForm() {
 
     let [ngayChieuGioChieuState, setNgayChieuGioChieu] = useState([]);
     let [maCumRapState, setMaCumRap] = useState('');
+    let [ngayChieu, setNgayChieu] = useState('');
+    let [malichChieu, setMalichChieu] = useState('');
 
     const renderPropDownPhim = () => {
         return mangPhim.map((phim, index) => {
@@ -32,17 +34,29 @@ export default function SearchForm() {
         let mangLichChieu = []
         return thongTinLichChieu.heThongRapChieu?.map((heThongRap) => {
             return heThongRap.cumRapChieu?.map((rap) => {
-                if(rap.maCumRap == maCumRapState){
-                    return rap.lichChieuPhim?.map((lichChieu,index)=>{
-                        mangLichChieu.push({"ngayChieu":lichChieu.ngayChieuGioChieu.substr(0,10),"gioChieu":lichChieu.ngayChieuGioChieu.substr(10,19),"maLichChieu":lichChieu.maLichChieu});
-                        console.log('mangLichChieu',mangLichChieu);
-                        return <Option key={index}>{lichChieu.ngayChieuGioChieu}</Option>
+                if (rap.maCumRap == maCumRapState) {
+                    return rap.lichChieuPhim?.map((lichChieu, index) => {
+                        mangLichChieu.push({ "ngayChieu": lichChieu.ngayChieuGioChieu.substr(0, 10), "gioChieu": lichChieu.ngayChieuGioChieu.substr(10, 19), "maLichChieu": lichChieu.maLichChieu });
+                        console.log('mangLichChieu', ngayChieu);
+                        return <Option key={index} value={lichChieu.ngayChieuGioChieu.substr(0, 10)}>{lichChieu.ngayChieuGioChieu.substr(0, 10)}</Option>
                     })
                 }
             })
         })
     }
+    const renderPropDownGio = () => {
+        return thongTinLichChieu.heThongRapChieu?.map((heThongRap) => {
+            return heThongRap.cumRapChieu?.map((rap) => {
+                return rap.lichChieuPhim?.map((lichChieu, index) => {
+                    if (lichChieu.ngayChieuGioChieu.substr(0, 10) == ngayChieu) {
+                        console.log(lichChieu);
+                        return <Option key={index} value={lichChieu.maLichChieu}>{lichChieu.ngayChieuGioChieu.substr(11, 19)}</Option>
+                    }
 
+                })
+            })
+        })
+    }
 
 
     const handleChangeChonPhim = (maPhim) => {
@@ -51,27 +65,33 @@ export default function SearchForm() {
     const handleChangeChonRap = (maCumRap) => {
         setMaCumRap(maCumRap);
     }
-
+    const handleChangeChonNgay=(ngay) => {
+        setNgayChieu(ngay);
+    }
+    const handleMalichChieu=(maLichChieu) => {
+console.log(maLichChieu);
+    }
     return (
         <form className="search_bar" style={{ display: "flex" }}>
             <div className="search_dropdown">
-                <Select size='large' placeholder="Chọn phim" onChange={handleChangeChonPhim} style={{minWidth:'150px'}}>
+                <Select size='large' placeholder="Chọn phim" onChange={handleChangeChonPhim} style={{ minWidth: '150px' }}>
                     {renderPropDownPhim()}
                 </Select>
             </div>
             <div className="search_dropdown">
-                <Select size='large' placeholder="Chọn rạp" onChange={handleChangeChonRap} notFoundContent={'Chọn phim trước'} style={{minWidth:'150px'}}>
+                <Select size='large' placeholder="Chọn rạp" onChange={handleChangeChonRap} notFoundContent={'Chọn phim trước'} style={{ minWidth: '150px' }}>
                     {renderPropDownRap()}
                 </Select>
             </div>
             <div className="search_dropdown" >
-                <Select size='large' placeholder="Chọn ngày" style={{minWidth:'150px'}} notFoundContent={'Chọn rạp trước'}>
+                <Select size='large' placeholder="Chọn ngày" onChange={handleChangeChonNgay} style={{ minWidth: '150px' }} notFoundContent={'Chọn rạp trước'}>
                     {renderPropDownNgay()}
                 </Select>
             </div>
             <div className="search_dropdown">
-                <Select size='large' placeholder="Chọn giờ" style={{minWidth:'150px'}} notFoundContent={'Chọn ngày trước'}>
-                   
+                <Select size='large' placeholder="Chọn giờ" onChange={handleMalichChieu} style={{ minWidth: '150px' }} notFoundContent={'Chọn ngày trước'}>
+                    {renderPropDownGio()}
+
                 </Select>
             </div>
             <div>

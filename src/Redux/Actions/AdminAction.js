@@ -112,6 +112,23 @@ export const layDanhSachNguoiDungAction = () => {
         }
     }
 }
+export const timKiemNguoiDungAction = (tuKhoa) => {
+    return async (dispatch) => {
+        try {
+            let result = await axios({
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP03&tuKhoa=${tuKhoa.tuKhoa}`,
+                method: 'GET'
+            });
+            dispatch({ type: 'SET_MANG_TIM_KIEM_NGUOI_DUNG', mangNguoiDung: result.data })
+        } catch (err) {
+            Swal.fire({
+                icon: 'error',
+                text: `${err.response?.data}`,
+            })
+
+        }
+    }
+}
 export const xoaPhim = (maPhim) => {
     return async (dispatch) => {
         try {
