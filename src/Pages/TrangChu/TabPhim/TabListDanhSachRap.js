@@ -88,7 +88,7 @@ export default function TabListDanhSachRap(props) {
 
 
     return (
-        <Tabs  type='card' id='tab_rap' >
+        <Tabs  type='card' id='tab_rap'  >
             {renderTheaterDetails()}
         </Tabs>
     );

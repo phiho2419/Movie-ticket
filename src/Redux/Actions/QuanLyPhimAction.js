@@ -23,7 +23,6 @@ export const LayChiTietPhimAppiAction = (maPhim) => {
                 url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`,
                 method: 'GET'
             });
-            console.log(result.data);
             dispatch({
                 type: 'SET_CHI_TIET_PHIM',
                 chiTietPhim: result.data

@@ -68,6 +68,11 @@ li {
   color: rgba(187, 186, 186, 0.822);
 }
 
+.tag_thoigian {
+  padding: 4px 8px;
+  font-size: 16px;
+}
+
 .text_time {
   color: #ff5252;
   font-size: 20px;
@@ -436,7 +441,7 @@ header .btn_dangki {
   width: 100%;
 }
 
-.sectionTabPhim .tabpane_thongTinRap .tabpane_tenRap {
+.sectionTabPhim .tabpane_thongTinRap .tabpane_tenRap, .ctp_list .tabpane_thongTinRap .tabpane_tenRap {
   font-weight: 700;
   font-size: 15px;
   white-space: nowrap;
@@ -444,100 +449,100 @@ header .btn_dangki {
   text-overflow: ellipsis;
 }
 
-.sectionTabPhim .tabpane_thongTinRap .tabpane_diaChiRap {
+.sectionTabPhim .tabpane_thongTinRap .tabpane_diaChiRap, .ctp_list .tabpane_thongTinRap .tabpane_diaChiRap {
   font-size: 13px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.sectionTabPhim .ant-tabs-tab {
+.sectionTabPhim .ant-tabs-tab, .ctp_list .ant-tabs-tab {
   opacity: 0.5;
 }
 
-.sectionTabPhim .ant-tabs-tab .logo__rap {
+.sectionTabPhim .ant-tabs-tab .logo__rap, .ctp_list .ant-tabs-tab .logo__rap {
   border-radius: 50%;
   width: 64px;
   height: 64px;
   border: 2px solid white;
 }
 
-.sectionTabPhim .ant-tabs-tab.ant-tabs-tab-active {
+.sectionTabPhim .ant-tabs-tab.ant-tabs-tab-active, .ctp_list .ant-tabs-tab.ant-tabs-tab-active {
   opacity: 1;
 }
 
-.sectionTabPhim .hr_logo {
+.sectionTabPhim .hr_logo, .ctp_list .hr_logo {
   -webkit-transform: translateY(15px);
           transform: translateY(15px);
 }
 
-.sectionTabPhim .tabs-tabpane .tab_tenphim {
+.sectionTabPhim .tabs-tabpane .tab_tenphim, .ctp_list .tabs-tabpane .tab_tenphim {
   font-size: 18px;
   font-weight: 700;
 }
 
-.sectionTabPhim .tabs-tabpane .tab_thoigian_star {
+.sectionTabPhim .tabs-tabpane .tab_thoigian_star, .ctp_list .tabs-tabpane .tab_thoigian_star {
   letter-spacing: 2px;
   margin-bottom: 5px;
 }
 
-.sectionTabPhim .tabs-tabpane .tab_star_ {
+.sectionTabPhim .tabs-tabpane .tab_star_, .ctp_list .tabs-tabpane .tab_star_ {
   color: #cf7b1b;
 }
 
-.sectionTabPhim .tabs-tabpane .tab_thoigianchieu {
+.sectionTabPhim .tabs-tabpane .tab_thoigianchieu, .ctp_list .tabs-tabpane .tab_thoigianchieu {
   font-size: 18px;
   padding: 3px 4px;
 }
 
-.sectionTabPhim .ant-tabs-left > .ant-tabs-nav::before, .sectionTabPhim .ant-tabs-bottom > .ant-tabs-nav::before, .sectionTabPhim .ant-tabs-top > div > .ant-tabs-nav::before, .sectionTabPhim .ant-tabs-bottom > div > .ant-tabs-nav::before {
+.sectionTabPhim .ant-tabs-left > .ant-tabs-nav::before, .sectionTabPhim .ant-tabs-bottom > .ant-tabs-nav::before, .sectionTabPhim .ant-tabs-top > div > .ant-tabs-nav::before, .sectionTabPhim .ant-tabs-bottom > div > .ant-tabs-nav::before, .ctp_list .ant-tabs-left > .ant-tabs-nav::before, .ctp_list .ant-tabs-bottom > .ant-tabs-nav::before, .ctp_list .ant-tabs-top > div > .ant-tabs-nav::before, .ctp_list .ant-tabs-bottom > div > .ant-tabs-nav::before {
   border-bottom: unset !important;
 }
 
-.sectionTabPhim .ant-tabs-left > .ant-tabs-nav .ant-tabs-ink-bar-animated, .sectionTabPhim .ant-tabs-bottom > .ant-tabs-nav .ant-tabs-ink-bar-animated, .sectionTabPhim .ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar-animated, .sectionTabPhim .ant-tabs-bottom > div > .ant-tabs-nav .ant-tabs-ink-bar-animated {
+.sectionTabPhim .ant-tabs-left > .ant-tabs-nav .ant-tabs-ink-bar-animated, .sectionTabPhim .ant-tabs-bottom > .ant-tabs-nav .ant-tabs-ink-bar-animated, .sectionTabPhim .ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar-animated, .sectionTabPhim .ant-tabs-bottom > div > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ctp_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ctp_list .ant-tabs-bottom > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ctp_list .ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ctp_list .ant-tabs-bottom > div > .ant-tabs-nav .ant-tabs-ink-bar-animated {
   background: unset !important;
 }
 
-.sectionTabPhim .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active, .sectionTabPhim .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active {
+.sectionTabPhim .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active, .sectionTabPhim .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active, .ctp_list .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active, .ctp_list .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active {
   color: unset;
   font-weight: unset;
 }
 
-.sectionTabPhim #tab_phim {
+.sectionTabPhim #tab_phim, .ctp_list #tab_phim {
   border: 1px solid #d7d8da;
   -webkit-box-shadow: 0px -5px 40px #bbbbbb;
           box-shadow: 0px -5px 40px #bbbbbb;
 }
 
-.sectionTabPhim .tab_chi_tiet_phim {
+.sectionTabPhim .tab_chi_tiet_phim, .ctp_list .tab_chi_tiet_phim {
   height: 500px;
   overflow: auto;
 }
 
-.sectionTabPhim .tab_chi_tiet_phim:hover {
+.sectionTabPhim .tab_chi_tiet_phim:hover, .ctp_list .tab_chi_tiet_phim:hover {
   overflow-y: scroll;
 }
 
-.sectionTabPhim ::-webkit-scrollbar {
+.sectionTabPhim ::-webkit-scrollbar, .ctp_list ::-webkit-scrollbar {
   width: 5px;
   background: #cacaca;
 }
 
-.sectionTabPhim ::-webkit-scrollbar-thumb {
+.sectionTabPhim ::-webkit-scrollbar-thumb, .ctp_list ::-webkit-scrollbar-thumb {
   background: gray;
 }
 
-.sectionTabPhim .film_name {
+.sectionTabPhim .film_name, .ctp_list .film_name {
   font-weight: 700;
   font-size: 25px;
 }
 
-.sectionTabPhim .tag_phim_c18 {
+.sectionTabPhim .tag_phim_c18, .ctp_list .tag_phim_c18 {
   height: 20px;
   line-height: 15px;
 }
 
-.sectionTabPhim .film_details {
+.sectionTabPhim .film_details, .ctp_list .film_details {
   font-style: italic;
 }
 
@@ -900,6 +905,11 @@ header .btn_dangki {
   color: white;
 }
 
+.ctp_container .intro_content .intro_infor .infor_tenPhim {
+  font-size: 22px;
+  font-weight: 700;
+}
+
 .ctp_container .intro_content .btnDatVe {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -923,93 +933,62 @@ header .btn_dangki {
   cursor: pointer;
 }
 
+.ctp_container .intro_content .intro_rate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .ctp_container .intro_content .intro_rate .ant-progress-text {
   font-weight: 700;
   color: #ff5252;
 }
 
-.CTPhimList {
-  background-color: #ff857fc5;
-  padding: 30px 0;
-}
-
-.CTPhimList .Ctp__content {
-  width: 85%;
-  margin: auto;
-  background-color: #fff;
-  min-height: 500px;
-  padding: 0 30px 30px 0;
-  border-radius: 10px;
-}
-
-.CTPhimList .Ctp__content .ctp__logo {
-  min-width: 200px;
-  text-align: left;
+.ctp_container .intro_content .intro_rate .rate_star i {
   font-size: 20px;
-  color: black;
+  margin: 0 2px;
 }
 
-.CTPhimList .Ctp__content .ctp__logo img {
-  margin-right: 12px;
-  width: 50px;
-  height: 50px;
-  display: inline-block;
+.ctp_container .intro_content .intro_rate .nguoiDg {
+  font-size: 16px;
+  color: white;
 }
 
-.CTPhimList .Ctp__content .Ctp__day .day {
-  padding: 70px auto;
-  font-size: 20px;
-  font-weight: 600;
+.ctp_list .tabs_day {
+  text-align: center;
+  width: 60px;
 }
 
-.CTPhimList .Ctp__content .Ctp__day .ant-tabs-nav-list {
-  width: 100%;
-  height: 60px;
-  padding-left: 15px;
+.ctp_list .tabs_day p:first-child {
+  font-weight: 700;
+  margin-bottom: 3px;
 }
 
-.CTPhimList .Ctp__content .Ctp__day .ant-tabs-nav-list::before {
-  display: none;
+.ctp_list .tabs_day p:last-child {
+  margin: 0;
 }
 
-.CTPhimList .Ctp__content .Ctp__day .ant-tabs-nav-list .ant-tabs-tab {
-  width: 100%;
-  height: 60px;
-}
-
-.CTPhimList .Ctp__content .Ctp__day .ant-tabs-nav-list .ant-tabs-tab-active .day {
-  color: red;
-}
-
-.CTPhimList .Ctp__content .Ctp__day .Ctp__rap {
-  margin: 15px 0;
-  -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
-}
-
-.CTPhimList .Ctp__content .Ctp__day .Ctp__rap h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.CTPhimList .Ctp__content .Ctp__day .Ctp__rap p {
-  color: #c7c7c7;
-}
-
-.CTPhimList .Ctp__content .Ctp__day .Ctp__rap p span {
-  color: rgba(255, 0, 0, 0.507);
-  font-weight: 500;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.CTPhimList .Ctp__content .Ctp__day .Ctp__rap .ctp__gio .text_time {
-  color: #ff5252;
+.ctp_list .tenCumRap {
   font-size: 20px;
   font-weight: 700;
-  padding: 5px 10px;
-  background-color: white;
-  border: none;
+}
+
+.ctp_list .tab_chi_tiet_rap {
+  height: 400px;
+  overflow: auto;
+}
+
+.ctp_list #tab_ht_rap {
+  border: 1px solid #d7d8da;
+  -webkit-box-shadow: 0px -5px 40px #bbbbbb;
+          box-shadow: 0px -5px 40px #bbbbbb;
 }
 
 .Ctr__InTro {

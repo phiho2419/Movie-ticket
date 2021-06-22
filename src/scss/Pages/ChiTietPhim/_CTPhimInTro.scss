@@ -30,6 +30,10 @@
         }
         .intro_infor{
             color: white;
+            .infor_tenPhim{
+                font-size: 22px;
+                font-weight: 700;
+            }
         }
         .btnDatVe{
             display: inline-flex;
@@ -47,9 +51,22 @@
             cursor: pointer;
         }
         .intro_rate{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             .ant-progress-text{
                 font-weight: 700;
                 color: $color-red-primary;
+            }
+            .rate_star{
+                i{
+                    font-size: 20px;
+                    margin: 0 2px;
+                }
+            }
+            .nguoiDg{
+                font-size: 16px;
+                color: white;
             }
         }
     }

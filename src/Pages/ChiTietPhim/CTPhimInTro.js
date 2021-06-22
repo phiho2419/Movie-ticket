@@ -10,7 +10,6 @@ export default function CTPhimInTro(props) {
     let { chiTietPhim } = props;
     const [isOpen, setOpen] = useState(false)
 
-    console.log('chiTietPhim', chiTietPhim);
 
     const styleBgImage = {
         backgroundImage: `url(${chiTietPhim.hinhAnh})`,
@@ -29,9 +28,9 @@ export default function CTPhimInTro(props) {
                     </div>
                     <div className="intro_infor col-5">
                         <p className="ngayKhoiChieu"> {chiTietPhim.ngayKhoiChieu?.substr(0, 10)}</p>
-                        <p>
+                        <p className="m-0">
                             <span className="tag_phim_c18 m-0">C16</span>
-                            <span>{chiTietPhim.tenPhim}</span>
+                            <span className="infor_tenPhim ml-2">{chiTietPhim.tenPhim}</span>
                         </p>
                         <p>105p - {chiTietPhim.danhGia} IMDb - 2D/Digital</p>
                         <p className="btnDatVe">ĐẶT VÉ</p>
@@ -48,9 +47,10 @@ export default function CTPhimInTro(props) {
                                 format={(percent)=>{return percent/10}}
                             />
                         </div>
-                        <div className="rate_star">
+                        <div className="rate_star mt-3">
                             {renderIMDb(chiTietPhim.danhGia)}
                         </div>
+                        <p className='nguoiDg'>65 người đánh giá</p>
                     </div>
                 </div>
             </div>

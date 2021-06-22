@@ -23,7 +23,7 @@ export default function TabDanhSachPhim(props) {
                             </div>
                             <p className="film_details"> 105p IMDb - 8.0{phim.danhGia}</p>
                             {phim.lstLichChieuTheoPhim.slice(0, 6).map((lichChieu, index) => {
-                                return <Tag key={index} color="magenta" size>
+                                return <Tag key={index} color="magenta" className="tag_thoigian">
                                     <NavLink to={`/chitietphongve/${lichChieu.maLichChieu}`} >{lichChieu.ngayChieuGioChieu.slice(11, 16)}</NavLink>
                                 </Tag>
                             })}

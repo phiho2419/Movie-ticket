@@ -1,75 +1,103 @@
-.CTPhimList {
-    background-color: #ff857fc5;
-    padding: 30px 0;
-    .Ctp__content {
-        width: 85%;
-        margin: auto;
-        background-color: $color-white-0;
-        min-height: 500px;
-        padding:0 30px 30px 0;
-        border-radius: 10px;
-        .ctp__logo {
-            min-width: 200px;
-            text-align: left;
-            font-size: 20px;
-            color: black;
-            img {
-                margin-right: 12px;
-                width: 50px;
-                height: 50px;
-                display: inline-block;
-            }
+.ctp_list{
+    // background:#0a2029;
+    .tabs_day{
+        text-align: center;
+        width: 60px;
+        p:first-child{
+            font-weight: 700;
+            margin-bottom: 3px;
         }
-
-        .Ctp__day {
-            .day {
-                padding: 70px auto;
-                font-size: 20px;
-                font-weight: 600;
-            }
-            .ant-tabs-nav-list {
-                width: 100%;
-                height: 60px;
-                padding-left: 15px;
-                &::before {
-                    display: none;
-                }
-                .ant-tabs-tab {
-                    width: 100%;
-                    height: 60px;
-                }
-                .ant-tabs-tab-active {
-                    .day {
-                        color: red;
-                    }
-                }
-            }
-
-            .Ctp__rap {
-                margin: 15px 0;
-                box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
-                h2 {
-                    font-size: 24px;
-                    margin-bottom: 10px;
-                }
-                p {
-                    color: $color-white-1;
-                    span {
-                        color: rgba(255, 0, 0, 0.507);
-                        font-weight: 500;
-                        margin-left: 10px;
-                        cursor: pointer;
-                    }
-                }
-                .ctp__gio {
-                    .text_time {
-                        @include styleText($color-red-primary, $fs-2, $fw-bold);
-                        padding: 5px 10px;
-                        background-color: white;
-                        border: none;
-                    }
-                }
-            }
+        p:last-child{
+            margin: 0;
         }
     }
+    .tenCumRap{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .tab_chi_tiet_rap{
+        height: 400px;
+        overflow: auto;
+    }
+    #tab_ht_rap{
+        border: 1px solid rgb(215, 216, 218);
+        box-shadow: 0px -5px 40px rgb(187, 187, 187);
+    }
 }
+
+
+// .CTPhimList {
+//     background-color: #ff857fc5;
+//     padding: 30px 0;
+//     .Ctp__content {
+//         width: 85%;
+//         margin: auto;
+//         background-color: $color-white-0;
+//         min-height: 500px;
+//         padding:0 30px 30px 0;
+//         border-radius: 10px;
+//         .ctp__logo {
+//             min-width: 200px;
+//             text-align: left;
+//             font-size: 20px;
+//             color: black;
+//             img {
+//                 margin-right: 12px;
+//                 width: 50px;
+//                 height: 50px;
+//                 display: inline-block;
+//             }
+//         }
+
+//         .Ctp__day {
+//             .day {
+//                 padding: 70px auto;
+//                 font-size: 20px;
+//                 font-weight: 600;
+//             }
+//             .ant-tabs-nav-list {
+//                 width: 100%;
+//                 height: 60px;
+//                 padding-left: 15px;
+//                 &::before {
+//                     display: none;
+//                 }
+//                 .ant-tabs-tab {
+//                     width: 100%;
+//                     height: 60px;
+//                 }
+//                 .ant-tabs-tab-active {
+//                     .day {
+//                         color: red;
+//                     }
+//                 }
+//             }
+
+//             .Ctp__rap {
+//                 margin: 15px 0;
+//                 box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
+//                 h2 {
+//                     font-size: 24px;
+//                     margin-bottom: 10px;
+//                 }
+//                 p {
+//                     color: $color-white-1;
+//                     span {
+//                         color: rgba(255, 0, 0, 0.507);
+//                         font-weight: 500;
+//                         margin-left: 10px;
+//                         cursor: pointer;
+//                     }
+//                 }
+//                 .ctp__gio {
+//                     .text_time {
+//                         @include styleText($color-red-primary, $fs-2, $fw-bold);
+//                         padding: 5px 10px;
+//                         background-color: white;
+//                         border: none;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
