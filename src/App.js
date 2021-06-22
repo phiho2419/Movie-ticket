@@ -12,6 +12,7 @@ import TrangChu from './Pages/TrangChu/TrangChu';
 import ChiTietPhim from './Pages/ChiTietPhim/ChiTietPhim';
 import ChiTietCumRap from './Pages/ChiTietCumRap/ChiTietCumRap';
 import { UserTemplate } from './Templates/UserTemplate';
+import { HomeTemplate } from './Templates/HomeTemplate';
 import DangKi from './Pages/DangKi/DangKi';
 import DangNhap from './Pages/DangNhap/DangNhap';
 import ThongTinCaNhan from './Pages/ThongTinCaNhan/ThongTinCaNhan';
@@ -23,18 +24,23 @@ function App() {
     <Router history={history}>
       <div className="App">
         <Switch>
-          <Route path='/chitietphongve/:maPhim' exact component={ChiTietPhongVe} /> 
+        <HomeTemplate path='/chitietphongve/:maPhim' exact component={ChiTietPhongVe} /> 
+
           <AdminTemplate path='/admin/quanlyphim' exact component={AdminQuanLyPhim} />
           <AdminTemplate path='/admin/themphim' exact component={AdminThemPhim} />
           <AdminTemplate path='/admin/themnguoidung' exact component={AdminThemNguoiDung} />
           <AdminTemplate path='/admin/quanlynguoidung' exact component={AdminQuanLyNguoiDung} />
           <AdminTemplate path='/admin' exact component={AdminQuanLyPhim} />
+
           <UserTemplate path="/dangnhap" component={DangNhap}/>
           <UserTemplate path="/dangky" component={DangKi}/>
-          <Route path='/chitietphim/:maPhim' component={ChiTietPhim} />
-          <Route path='/chitietcumrap/:maRap' component={ChiTietCumRap} />
-          <Route path='/thongtincanhan' component={ThongTinCaNhan} />
-          <Route path='/' exact component={TrangChu} />    
+
+          <HomeTemplate path='/chitietphim/:maPhim' component={ChiTietPhim} />
+          <HomeTemplate path='/chitietcumrap/:maRap' component={ChiTietCumRap} />
+          <HomeTemplate path='/thongtincanhan' component={ThongTinCaNhan} />
+
+          <HomeTemplate path='/' exact component={TrangChu} />    
+
         </Switch>
       </div>
     </Router>

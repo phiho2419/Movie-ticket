@@ -17,11 +17,9 @@ export default function TrangChu() {
 
     return (
         <div>
-            <Header />
             <Carousel />
             <ListPhim />
             <TabPhim />
-            <Footer />
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { Tabs } from 'antd';
 import { Tag } from 'antd';
 import TabDanhSachPhim from './TabDanhSachPhim';
@@ -7,33 +7,89 @@ const { TabPane } = Tabs;
 
 export default function TabListDanhSachRap(props) {
 
+    //handleAfterString_TheaterName xử lý lấy tên rạp đằng sau dấu gạch
+    function handleAfterString_TheaterName(string) {
+        return string.substr(string.indexOf('-'), string.length)
+    }
 
-    const renderChiTietRap = () => {
+    //handlePreString_TheaterName xử lý trên rạp đằng trước dấu gạch và chọn màu 
+    function handlePreString_TheaterName(stringTenRap) {
+         let string = stringTenRap.substr(0, stringTenRap.indexOf('-')).replace('Star Cineplex', '');
+
+        let string_handled = string.trim()
+        if(string_handled.trim() === 'BHD'){
+            return <span style={{color:'#80eb34'}}>{string_handled}</span>
+        }
+        else if(string_handled.trim() === 'CGV'){
+            return <span style={{color:'#ff5252'}}>{string_handled}</span>
+        }
+        else if(string_handled.trim() === 'CNS'){
+            return <span style={{color:'#b434eb'}}>{string_handled}</span>
+        }
+        else if(string_handled.trim() === 'GLX'){
+            return <span style={{color:'#ebae34'}}>{string_handled}</span>
+        }
+        else if(string_handled.trim() === 'Lotte'){
+            return <span style={{color:'#ff5252'}}>{string_handled}</span>
+        }
+        else if(string_handled.trim() === 'MegaGS'){
+            return <span style={{color:'#ebd334'}}>{string_handled}</span>
+        }
+    }
+
+    const hanleLogoRap = (tenCumRap) => {
+        let string = tenCumRap.substr(0, tenCumRap.indexOf('-')).replace('Star Cineplex', '');
+
+        let string_handled = string.trim()
+
+        if(string_handled.trim() === 'BHD'){
+            return <img src="../../../../img/BHDStar_theater.jpg" width={50} />
+        }
+        else if(string_handled.trim() === 'CGV'){
+            return <img src="../../../../img/CGV_theater.jpg" width={50} />
+
+        }
+        else if(string_handled.trim() === 'CNS'){
+            return <img src="../../../../img/CineStar_theater.jpg" width={50} />
+
+        }
+        else if(string_handled.trim() === 'GLX'){
+            return <img src="../../../../img/Galaxy_theater.jpg" width={50} />
+
+        }
+        else if(string_handled.trim() === 'Lotte'){
+            return <img src="../../../../img/LotteCinima_theater.jpg" width={50} />
+
+        }
+        else if(string_handled.trim() === 'MegaGS'){
+            return <img src="../../../../img/MegaGS_theater.jpg" width={50} />
+
+        }
+    }
+
+    
+
+
+    const renderTheaterDetails = () => {
         return props.heThongRap?.map((ctr, index) => {
-            return <TabPane tab={<div className="row tabpane_tabs" style={{ width: "400px" }} >
-                <img src={props.logoRap} style={{ height: "60px" }} className="col-3 " />
-                <div className="col-9 p-0 text-left tabpane_thongTinRap">
-                    <p className="m-0 tabpane_tenRap">{ctr.tenCumRap}</p>
-                    <p className="m-0 tabpane_diaChiRap">{ctr.diaChi}</p>
-                    <p className="m-0 tabpane_xemChiTiet">Xem chi tiết</p>
+            return <TabPane tab={<div className=" tabpane_tabs d-flex" style={{ width: "250px" }} >
+                {hanleLogoRap(ctr.tenCumRap)}
+                <div className=" pl-2 pt-2 text-left tabpane_thongTinRap " style={{ width: "200px" }}>
+                    <p className="m-0 tabpane_tenRap" > {handlePreString_TheaterName(ctr.tenCumRap)} <span >{handleAfterString_TheaterName(ctr.tenCumRap)}</span></p>
+                    <p className="m-0 tabpane_diaChiRap" >{ctr.diaChi}</p>
                 </div>
             </div>} key={index} >
-            <div className="container-fluid">
-                <TabDanhSachPhim danhSachPhim={ctr.danhSachPhim} />
-            </div>
-
+                <div className="pl-3">
+                    <TabDanhSachPhim danhSachPhim={ctr.danhSachPhim} />
+                </div>
             </TabPane>
-
-
         })
     }
 
 
     return (
-        <Tabs tabPosition='left' >
-
-            {renderChiTietRap()}
-
+        <Tabs  type='card' id='tab_rap'  >
+            {renderTheaterDetails()}
         </Tabs>
     );
 }

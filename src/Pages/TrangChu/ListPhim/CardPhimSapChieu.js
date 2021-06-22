@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Fragment } from 'react';
 import Modal from 'react-modal';
+import buttonCloseStyle from './CardPhimDangChieu'
 
 
 Modal.defaultStyles.overlay.backgroundColor = 'rgb(0,0,0,0.75)';
@@ -24,6 +25,20 @@ export default function CardPhimSapChieu(props) {
         }
     };
 
+    let buttonCloseStyle = {
+        display: 'inline-block',
+        width: '40px',
+        height: '40px',
+        lineHeight: '40px',
+        border: '2px solid white',
+        borderRadius: '50%',
+        color: 'white',
+        fontSize: '30px',
+        position: 'absolute',
+        right: '0px',
+        top: '0px',
+        outline: 'none'
+    }
     const [modalIsOpen, setIsOpen] = useState(false);
     function openModal() {
         setIsOpen(true);
@@ -32,16 +47,16 @@ export default function CardPhimSapChieu(props) {
         setIsOpen(false);
     }
     return (
-        <div className="card" >
+        <div className="card" style={{ padding: '10px' }}>
             <div className="overlay_link">
-                <img style={{ objectFit: 'cover' }} className="card-img-top card_img_listphim" src={phim.hinhAnh} alt="Card image cap" />
+                <img style={{ objectFit: 'cover', width: '100%' }} className="card-img-top card_img_listphim" src={phim.hinhAnh} alt="Card image cap" />
                 <Modal
                     isOpen={modalIsOpen}
                     style={customStyles}
                     contentLabel="Example Modal"
                     onRequestClose={closeModal}
                 >
-                    <button style={{color:'white',fontSize:'30px',position:'absolute',right:'0px',top:'-5px',outline:'none'}} onClick={closeModal}>X</button>
+                    <button style={buttonCloseStyle} onClick={closeModal}>X</button>
                     <iframe width="800" height="500" src={phim.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </Modal>
                 <div className="overlay" onClick={openModal} >

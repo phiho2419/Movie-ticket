@@ -1,23 +1,93 @@
-import React from 'react'
+import { Button, Rate  } from 'antd';
+import React, { useState } from 'react'
+import { Fragment } from 'react';
+import Modal from 'react-modal';
+import { NavLink } from 'react-router-dom';
+import {renderIMDb} from '../../../Util/services'
 
-export default function CardPhimDangChieu() {
+Modal.defaultStyles.overlay.backgroundColor = 'rgb(0,0,0,0.75)';
+Modal.defaultStyles.overlay.zIndex = '100';
+
+
+
+export default function CardPhimDangChieu(props) {
+
+    const { phim } = props;
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: 'rgb(0,0,0,0)',
+            padding: '40px',
+            border: 'unset',
+        }
+    };
+    let buttonCloseStyle = {
+        display: 'inline-block',
+        width: '40px',
+        height: '40px',
+        lineHeight: '40px',
+        border: '2px solid white',
+        borderRadius: '50%',
+        color: 'white',
+        fontSize: '30px',
+        position: 'absolute',
+        right: '0px',
+        top: '0px',
+        outline: 'none'
+    }
+
+    const [modalIsOpen, setIsOpen] = useState(false);
+    function openModal() {
+        setIsOpen(true);
+    }
+    function closeModal() {
+        setIsOpen(false);
+    }
+
+    
+
+
+
     return (
-            <div className="card col-3  " >
-            <a className="venobox venobox_trailer" href="https://youtu.be/UxH084HDnDQ" data-vbtype="video">
-                <img className="card-img-top card_img_listphim" src="./img/Batman_V_Superman_Dawn_Of_Justice.jpg" alt="Card image cap" />
-                <div className="overlay">
-                    <span className="icon_play"><i className="fa fa-play"></i> </span>
+        <div className="card " style={{ padding: '10px' }}>
+            <div className="overlay_link">
+                <img style={{ objectFit: 'cover', width: '100%' }} className="card-img-top card_img_listphim" src={phim.hinhAnh} alt="Card image cap" />
+                <Modal
+                    isOpen={modalIsOpen}
+                    style={customStyles}
+                    contentLabel="Example Modal"
+                    onRequestClose={closeModal}
+                >
+                    <button style={buttonCloseStyle} onClick={closeModal}>X</button>
+                    <iframe width="800" height="500" src={phim.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </Modal>
+                <div className="overlay" onClick={openModal} >
+                    <span className="icon_play" ><i className="fa fa-play"></i> </span>
                 </div>
-            </a>
-            <div className="card-body p-3">
-                <p className="card_tenphim"> <span className="tag_phim_c18">C18</span> Batman & Superman</p>
-                <div className="card_ngaykhoichieu">
-                    <span>Ngày khởi chiếu: </span> <span> 12-03-2020</span>
-                </div>
-                <p className="card_thoiluong">100 phút</p>
             </div>
-
+            <div className="card-body" style={{ padding: 'unset' }}>
+                <div className="card__content p-3">
+                    <p className="card_tenphim" style={{
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis'
+                    }}> <span className="tag_phim_c18" >C18</span > {phim.tenPhim} </p>
+                    <div className="card_ngaykhoichieu">
+                        <span> {renderIMDb(phim.danhGia)} </span>
+                    </div>
+                </div>
+                <div className="card__btnDatve" >
+                    <Button className="btn__datve" danger type="primary">
+                        <NavLink to={`/chitietphim/${phim.maPhim}`} style={{ fontWeight: '700' }}>ĐẶT VÉ</NavLink>
+                    </Button>
+                </div>
+            </div>
         </div>
-        
+
     )
 }

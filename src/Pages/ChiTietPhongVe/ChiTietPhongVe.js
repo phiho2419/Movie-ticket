@@ -18,8 +18,10 @@ export default function ChiTietPhongVe(props) {
     //Call api 
     useEffect(() => {
         dispatch(layThongTinLichChieuAction(maPhim));
+        return dispatch({
+            type:'XOA_LICH_SU_DATVE',
+        })
     }, [])
-console.log(lichChieu);
 
 
     //Lấy thông tin người dùng
@@ -70,7 +72,6 @@ console.log(lichChieu);
     return (
         <Fragment>
             <div className="pageChiTietPhongVe">
-                <Header />
                 <div className="container-fluid">
                     <div className='row'>
                         <div className=" col-9 ">
@@ -141,7 +142,6 @@ console.log(lichChieu);
                 </div>
 
             </div>
-            <Footer />
         </Fragment>
     )
 }
