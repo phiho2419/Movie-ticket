@@ -58,3 +58,10 @@ li{
     padding: 4px 8px;
     font-size: 16px;
 }
+button{
+    outline: none;
+    border: none;
+    :focus{
+        outline: none !important;
+    }
+}

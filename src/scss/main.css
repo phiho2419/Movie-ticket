@@ -73,6 +73,15 @@ li {
   font-size: 16px;
 }
 
+button {
+  outline: none;
+  border: none;
+}
+
+button :focus {
+  outline: none !important;
+}
+
 .text_time {
   color: #ff5252;
   font-size: 20px;
@@ -474,6 +483,7 @@ header .btn_dangki {
 .sectionTabPhim .hr_logo, .ctp_list .hr_logo {
   -webkit-transform: translateY(15px);
           transform: translateY(15px);
+  margin: 0 !important;
 }
 
 .sectionTabPhim .tabs-tabpane .tab_tenphim, .ctp_list .tabs-tabpane .tab_tenphim {
@@ -872,9 +882,11 @@ header .btn_dangki {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  -webkit-filter: blur(15px);
-          filter: blur(15px);
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
   position: relative;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .ctp_intro .ctp_overlay {
@@ -883,13 +895,13 @@ header .btn_dangki {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(#0a2029), to(transparent));
-  background: linear-gradient(to top, #0a2029, transparent);
+  background: -webkit-gradient(linear, left bottom, left top, from(#0a2029), color-stop(#0a2029e8), color-stop(rgba(10, 32, 41, 0)), color-stop(rgba(10, 32, 41, 0.6)), to(transparent));
+  background: linear-gradient(to top, #0a2029, #0a2029e8, rgba(10, 32, 41, 0), rgba(10, 32, 41, 0.6), transparent);
 }
 
 .ctp_container {
   width: 60%;
-  height: 80%;
+  height: 55%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -899,6 +911,9 @@ header .btn_dangki {
 
 .ctp_container .intro_content img {
   width: 250px;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .ctp_container .intro_content .intro_infor {
@@ -961,34 +976,78 @@ header .btn_dangki {
   color: white;
 }
 
-.ctp_list .tabs_day {
-  text-align: center;
-  width: 60px;
-}
-
-.ctp_list .tabs_day p:first-child {
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-
-.ctp_list .tabs_day p:last-child {
-  margin: 0;
-}
-
-.ctp_list .tenCumRap {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.ctp_list .tab_chi_tiet_rap {
-  height: 400px;
-  overflow: auto;
+.ctp_list {
+  background: #0a2029;
 }
 
 .ctp_list #tab_ht_rap {
   border: 1px solid #d7d8da;
-  -webkit-box-shadow: 0px -5px 40px #bbbbbb;
-          box-shadow: 0px -5px 40px #bbbbbb;
+  background: white;
+}
+
+.ctp_list #tab_ht_rap .tabs_day {
+  text-align: center;
+  width: 80px;
+}
+
+.ctp_list #tab_ht_rap .tabs_day p:first-child {
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.ctp_list #tab_ht_rap .tabs_day p:last-child {
+  margin: 0;
+}
+
+.ctp_list #tab_ht_rap .tenCumRap {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ctp_list #tab_ht_rap .tag_thoigian {
+  color: #000;
+}
+
+.ctp_list #tab_ht_rap .ant-tabs-tab:hover {
+  color: #ff5252 !important;
+}
+
+.ctp_list #tab_ht_rap .tab_chi_tiet_rap {
+  min-height: 400px;
+  overflow: auto;
+  padding-left: 20px;
+}
+
+.ctp_list .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active, .ctp_list .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active {
+  color: #ff5252;
+}
+
+.ctp_list .ant-tabs-dropdown-menu-item {
+  font-weight: 700;
+}
+
+.ctp_list .nav_tabs_chiTietPhim {
+  margin-bottom: 30px;
+  border-bottom: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+}
+
+.ctp_list .nav_tabs_chiTietPhim .nav-link {
+  color: white;
+  border: none;
+  font-weight: 700;
+}
+
+.ctp_list .nav_tabs_chiTietPhim .nav-link:hover {
+  color: #ff5252;
+}
+
+.ctp_list .nav-tabs .nav-item.show .nav-link, .ctp_list .nav-tabs .nav-link.active {
+  background-color: unset;
+  color: #ff5252;
 }
 
 .Ctr__InTro {

@@ -26,19 +26,21 @@ function App() {
         <Switch>
         <HomeTemplate path='/chitietphongve/:maPhim' exact component={ChiTietPhongVe} /> 
 
+          {/* AdminTemplate */}
           <AdminTemplate path='/admin/quanlyphim' exact component={AdminQuanLyPhim} />
           <AdminTemplate path='/admin/themphim' exact component={AdminThemPhim} />
           <AdminTemplate path='/admin/themnguoidung' exact component={AdminThemNguoiDung} />
           <AdminTemplate path='/admin/quanlynguoidung' exact component={AdminQuanLyNguoiDung} />
           <AdminTemplate path='/admin' exact component={AdminQuanLyPhim} />
 
+          {/* UserTemplate */}
           <UserTemplate path="/dangnhap" component={DangNhap}/>
           <UserTemplate path="/dangky" component={DangKi}/>
 
+          {/* HomeTemplate */}
           <HomeTemplate path='/chitietphim/:maPhim' component={ChiTietPhim} />
           <HomeTemplate path='/chitietcumrap/:maRap' component={ChiTietCumRap} />
           <HomeTemplate path='/thongtincanhan' component={ThongTinCaNhan} />
-
           <HomeTemplate path='/' exact component={TrangChu} />    
 
         </Switch>

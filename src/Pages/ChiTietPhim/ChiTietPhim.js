@@ -17,7 +17,7 @@ export default function ChiTietPhim(props) {
     return (
         <div className="ChiTietPhim">
             <CTPhimInTro chiTietPhim={chiTietPhim}/>
-            <CTPhimList heThongRap={chiTietPhim.heThongRapChieu}/>
+            <CTPhimList heThongRap={chiTietPhim.heThongRapChieu} ngayKhoiChieu={chiTietPhim.ngayKhoiChieu} moTa={chiTietPhim.moTa}/>
         </div>
     )
 }
