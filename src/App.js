@@ -18,6 +18,7 @@ import DangNhap from './Pages/DangNhap/DangNhap';
 import ThongTinCaNhan from './Pages/ThongTinCaNhan/ThongTinCaNhan';
 import { useEffect, useState } from 'react';
 import Loading from './Components/Loading/Loading'
+import AdminTaoLichChieu from './Pages/AdminTaoLichChieu/AdminTaoLichChieu';
 export const history = createBrowserHistory();
 
 function App() {
@@ -31,12 +32,14 @@ function App() {
       {loading === false ? (
         <div className="App">
           <Switch>
-            <HomeTemplate path='/chitietphongve/:maPhim' exact component={ChiTietPhongVe} />
+            <HomeTemplate path='/chitietphongve/:malichChieu' exact component={ChiTietPhongVe} />
 
             <AdminTemplate path='/admin/quanlyphim' exact component={AdminQuanLyPhim} />
             <AdminTemplate path='/admin/themphim' exact component={AdminThemPhim} />
             <AdminTemplate path='/admin/themnguoidung' exact component={AdminThemNguoiDung} />
             <AdminTemplate path='/admin/quanlynguoidung' exact component={AdminQuanLyNguoiDung} />
+            <AdminTemplate path='/admin/taolichchieu' exact component={AdminTaoLichChieu} />
+
             <AdminTemplate path='/admin' exact component={AdminQuanLyPhim} />
 
             <UserTemplate path="/dangnhap" component={DangNhap} />

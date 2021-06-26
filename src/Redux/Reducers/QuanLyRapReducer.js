@@ -3,7 +3,8 @@ const stateDefault = {
     chiTietRap: [],
     tenRap:'',
     diaChiRap:'',
-    thongTinLichChieu:[]
+    thongTinLichChieu:[],
+    thongTinHeThongRap:[],
 };
 
 export const QuanLyRapReducer = (state = stateDefault, action) => {
@@ -24,6 +25,10 @@ export const QuanLyRapReducer = (state = stateDefault, action) => {
         }
         case 'SET_THONG_TIN_LICH_CHIEU_PHIM':{
             state.thongTinLichChieu = action.thongTinLichChieu;
+            return {...state}
+        }
+        case 'SET_HE_THONG_RAP':{
+            state.thongTinHeThongRap = action.heThongRap;
             return {...state}
         }
         default: return { ...state }

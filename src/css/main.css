@@ -69,6 +69,15 @@ li {
   font-size: 16px;
 }
 
+button {
+  outline: none;
+  border: none;
+}
+
+button :focus {
+  outline: none !important;
+}
+
 .text_time {
   color: #ff5252;
   font-size: 20px;
@@ -172,6 +181,20 @@ header .btn_dangki {
   border-right: 1px solid #c50e29;
 }
 
+header .navbar-expand-lg .navbar-collapse {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 992px) {
+  header .navbar .navbar-nav .nav-item {
+    text-align: center;
+  }
+  header .navbar .navbar-nav .nav-item .nav-link {
+    display: inline-block;
+    font-size: 20px;
+  }
+}
+
 .dashboard .db_select {
   position: sticky;
   z-index: 10;
@@ -271,14 +294,40 @@ header .btn_dangki {
 .carousel_TrangChu .search_form {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -30px);
   z-index: 20;
   box-shadow: 5px 5px 5px 5px #1b1b1b4f;
 }
 
+.carousel_TrangChu .search_form .ant-btn-primary[disabled], .carousel_TrangChu .search_form .ant-btn-primary[disabled]:hover, .carousel_TrangChu .search_form .ant-btn-primary[disabled]:focus, .carousel_TrangChu .search_form .ant-btn-primary[disabled]:active {
+  background-color: #ff5252;
+  color: #e6e6e6;
+  cursor: default;
+}
+
+.carousel_TrangChu .search_form .ant-btn {
+  border: none;
+  background-color: #ff5252;
+  font-weight: 700;
+  height: 60px;
+  line-height: 60px;
+}
+
+.carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector {
+  height: 60px;
+}
+
+.carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector::after, .carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-item, .carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-placeholder {
+  line-height: 60px;
+}
+
+.carousel_TrangChu .search_form .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border: none;
+}
+
 .sectionListPhim {
   margin-top: 70px;
-  max-width: 1140px;
+  max-width: 1040px;
 }
 
 .sectionListPhim .nav {
@@ -450,6 +499,7 @@ header .btn_dangki {
 
 .sectionTabPhim .hr_logo, .ctp_list .hr_logo {
   transform: translateY(15px);
+  margin: 0 !important;
 }
 
 .sectionTabPhim .tabs-tabpane .tab_tenphim, .ctp_list .tabs-tabpane .tab_tenphim {
@@ -821,8 +871,9 @@ header .btn_dangki {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(15px);
+  filter: blur(8px);
   position: relative;
+  transform: scale(1.1);
 }
 
 .ctp_intro .ctp_overlay {
@@ -831,12 +882,12 @@ header .btn_dangki {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, #0a2029, transparent);
+  background: linear-gradient(to top, #0a2029, #0a2029e8, rgba(10, 32, 41, 0), rgba(10, 32, 41, 0.6), transparent);
 }
 
 .ctp_container {
   width: 60%;
-  height: 80%;
+  height: 55%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -845,6 +896,8 @@ header .btn_dangki {
 
 .ctp_container .intro_content img {
   width: 250px;
+  height: 350px;
+  object-fit: cover;
 }
 
 .ctp_container .intro_content .intro_infor {
@@ -876,6 +929,7 @@ header .btn_dangki {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .ctp_container .intro_content .intro_rate .ant-progress-text {
@@ -893,33 +947,95 @@ header .btn_dangki {
   color: white;
 }
 
-.ctp_list .tabs_day {
-  text-align: center;
-  width: 60px;
+@media screen and (max-width: 1200px) {
+  .ctp_container {
+    width: 70%;
+  }
+  .ctp_container .intro_content img {
+    width: 200px;
+    height: 300px;
+  }
+  .ctp_container .intro_content .intro_rate .rate_star i {
+    font-size: 18px;
+  }
 }
 
-.ctp_list .tabs_day p:first-child {
-  font-weight: 700;
-  margin-bottom: 3px;
+@media screen and (max-width: 992px) {
+  .ctp_container {
+    width: 80%;
+  }
 }
 
-.ctp_list .tabs_day p:last-child {
-  margin: 0;
-}
-
-.ctp_list .tenCumRap {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.ctp_list .tab_chi_tiet_rap {
-  height: 400px;
-  overflow: auto;
+.ctp_list {
+  background: #0a2029;
 }
 
 .ctp_list #tab_ht_rap {
   border: 1px solid #d7d8da;
-  box-shadow: 0px -5px 40px #bbbbbb;
+  background: white;
+}
+
+.ctp_list #tab_ht_rap .tabs_day {
+  text-align: center;
+  width: 80px;
+}
+
+.ctp_list #tab_ht_rap .tabs_day p:first-child {
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.ctp_list #tab_ht_rap .tabs_day p:last-child {
+  margin: 0;
+}
+
+.ctp_list #tab_ht_rap .tenCumRap {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ctp_list #tab_ht_rap .tag_thoigian {
+  color: #000;
+}
+
+.ctp_list #tab_ht_rap .ant-tabs-tab:hover {
+  color: #ff5252 !important;
+}
+
+.ctp_list #tab_ht_rap .tab_chi_tiet_rap {
+  min-height: 400px;
+  overflow: auto;
+  padding-left: 20px;
+}
+
+.ctp_list .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active, .ctp_list .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active {
+  color: #ff5252;
+}
+
+.ctp_list .ant-tabs-dropdown-menu-item {
+  font-weight: 700;
+}
+
+.ctp_list .nav_tabs_chiTietPhim {
+  margin-bottom: 30px;
+  border-bottom: none;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.ctp_list .nav_tabs_chiTietPhim .nav-link {
+  color: white;
+  border: none;
+  font-weight: 700;
+}
+
+.ctp_list .nav_tabs_chiTietPhim .nav-link:hover {
+  color: #ff5252;
+}
+
+.ctp_list .nav-tabs .nav-item.show .nav-link, .ctp_list .nav-tabs .nav-link.active {
+  background-color: unset;
+  color: #ff5252;
 }
 
 .Ctr__InTro {
@@ -1230,119 +1346,34 @@ header .btn_dangki {
 .DangNhap .DN__content .form__user input:focus ~ label, .DangNhap .DN__content .form__user input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #ff5252;
+  color: #555ee4;
   font-size: 12px;
 }
 
 .DangNhap .DN__content .DN__btn {
-  position: relative;
   display: inline-block;
-  padding: 10px 20px;
-  color: #ff5252;
+  color: white;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
   letter-spacing: 4px;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
 }
 
 .DangNhap .DN__content .DN__btn button {
   outline: none;
   width: 100%;
+  padding: 10px 20px;
+  background-color: #ff5252bd;
+  transition: all .2s;
+  font-weight: 700;
 }
 
-.DangNhap .DN__content .DN__btn:hover {
-  background: #ff5252;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #ff5252, 0 0 25px #ff5252, 0 0 50px #ff5252, 0 0 100px #ff5252;
-}
-
-.DangNhap .DN__content .DN__btn span {
-  position: absolute;
-  display: block;
-}
-
-.DangNhap .DN__content .DN__btn span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #ff5252);
-  animation: btn-anim1 1s linear infinite;
-}
-
-.DangNhap .DN__content .DN__btn span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #ff5252);
-  animation: btn-anim2 1s linear infinite;
-  animation-delay: 0.25s;
-}
-
-.DangNhap .DN__content .DN__btn span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #ff5252);
-  animation: btn-anim3 1s linear infinite;
-  animation-delay: 0.5s;
-}
-
-.DangNhap .DN__content .DN__btn span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #ff5252);
-  animation: btn-anim4 1s linear infinite;
-  animation-delay: 0.75s;
-}
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,
-  100% {
-    left: 100%;
-  }
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,
-  100% {
-    top: 100%;
-  }
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,
-  100% {
-    right: 100%;
-  }
-}
-
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,
-  100% {
-    bottom: 100%;
-  }
+.DangNhap .DN__content .DN__btn button:hover {
+  background-color: #ff5252;
 }
 
 .DangKy .DK__content {
@@ -1397,7 +1428,7 @@ header .btn_dangki {
 .DangKy .DK__content .form__user input:focus ~ label, .DangKy .DK__content .form__user input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #ff5252;
+  color: #555ee4;
   font-size: 12px;
 }
 
@@ -1406,11 +1437,7 @@ header .btn_dangki {
 }
 
 .DangKy .DK__content .DN__btn {
-  cursor: pointer;
-  position: relative;
   display: inline-block;
-  padding: 10px 20px;
-  color: #ff5252;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -1419,102 +1446,20 @@ header .btn_dangki {
   letter-spacing: 4px;
   margin-top: 30px;
   width: 100%;
+  color: white;
 }
 
 .DangKy .DK__content .DN__btn button {
   outline: none;
   width: 100%;
+  padding: 10px 20px;
+  background-color: #5272ffbd;
+  transition: all .2s;
+  font-weight: 700;
 }
 
-.DangKy .DK__content .DN__btn:hover {
-  background: #ff5252;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #ff5252, 0 0 25px #ff5252, 0 0 50px #ff5252, 0 0 100px #ff5252;
-}
-
-.DangKy .DK__content .DN__btn span {
-  position: absolute;
-  display: block;
-}
-
-.DangKy .DK__content .DN__btn span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #ff5252);
-  animation: btn-anim1 1s linear infinite;
-}
-
-.DangKy .DK__content .DN__btn span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #ff5252);
-  animation: btn-anim2 1s linear infinite;
-  animation-delay: 0.25s;
-}
-
-.DangKy .DK__content .DN__btn span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #ff5252);
-  animation: btn-anim3 1s linear infinite;
-  animation-delay: 0.5s;
-}
-
-.DangKy .DK__content .DN__btn span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #ff5252);
-  animation: btn-anim4 1s linear infinite;
-  animation-delay: 0.75s;
-}
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,
-  100% {
-    left: 100%;
-  }
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,
-  100% {
-    top: 100%;
-  }
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,
-  100% {
-    right: 100%;
-  }
-}
-
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,
-  100% {
-    bottom: 100%;
-  }
+.DangKy .DK__content .DN__btn button:hover {
+  background-color: #5272ff;
 }
 
 .ThongTinCaNhan {

@@ -35,7 +35,7 @@ export default function AdminThemPhim() {
 
         }),
         onSubmit: (values, actions) => {
-            console.log('values', { ...values, ngayKhoiChieu: values.ngayKhoiChieu + 'T00:00:00' });
+            console.log(values);
             let form_data = new FormData();
             for (var key in values) {
                 form_data.append(key, values[key])
