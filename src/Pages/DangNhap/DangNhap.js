@@ -16,7 +16,7 @@ export default function DangNhap() {
         },
         validationSchema: Yup.object().shape({
             taiKhoan: Yup.string().required('Tài khoản không được bỏ trống!'),
-            matKhau: Yup.string().required('Mật khẩu khộng được bỏ trống').min(6, 'Mật khẩu tối thiểu 6 ký tự').max(32, 'mật khẩu tối đa 32 kí tự!')
+            matKhau: Yup.string().required('Mật khẩu khộng được bỏ trống')
         }),
         onSubmit: values => {
             const action = dangNhapAction(values);
@@ -35,26 +35,22 @@ export default function DangNhap() {
     return (
         <div className="DangNhap">
             <div className="DN__content">
-                <h2>Đăng Nhập</h2>
+                <h2 className="font-weight-bold">ĐĂNG NHẬP</h2>
                 <form onSubmit={formik.handleSubmit}>
                     <div className="form__user">
                         <input name="taiKhoan" onChange={formik.handleChange} required />
-                        <label>Tài Khoản</label>
+                        <label>Tài khoản</label>
                         <p className="text-danger"> {formik.errors.taiKhoan}</p>
                     </div>
                     <div className="form__user">
                         <input type="password" name="matKhau" onChange={formik.handleChange} required />
-                        <label>Mật Khẩu</label>
+                        <label>Mật khẩu</label>
                         <p className="text-danger"> {formik.errors.matKhau}</p>
                     </div>
                     <div className="DN__btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <button type="submit">Đăng Nhập</button>
+                        <button type="submit">ĐĂNG NHẬP</button>
                     </div>
-                    <p className="text-right mt-3"><NavLink to="/dangky">Chưa có tài khoản? Đăng Ký ngay</NavLink></p>
+                    <p className="text-right mt-3"><NavLink to="/dangky">Chưa có tài khoản ? Đăng ký ngay !</NavLink></p>
                 </form>
 
             </div>

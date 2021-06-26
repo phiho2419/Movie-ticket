@@ -19,22 +19,7 @@ export default function Header() {
                         <i className="fa fa-bars"></i>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav m-auto  ">
-
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Lịch chiếu</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Cụm rạp</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Tin tức</a>
-                            </li>
-                            <li className="nav-item ">
-                                <a className="nav-link" href="#">Ứng dụng</a>
-                            </li>
-                        </ul>
-                        <form className="form-inline my-2 ">
+                        <form className="form-inline my-2 justify-content-center">
                             {
                                 localStorage.getItem('userLogin') ?
                                     <Fragment>
@@ -54,14 +39,29 @@ export default function Header() {
                                                 }
                                             })
 
-                                        }}>Đăng xuất</NavLink>
+                                        }}>Đăng Xuất</NavLink>
                                     </Fragment> :
                                     <Fragment>
-                                        <NavLink to="/dangnhap" className="btn_header btn_dangnhap"><i className="fa fa-user-circle" style={{ fontSize: '20px', paddingBottom: '3px' }}></i> <span>Đăng nhập</span></NavLink>
-                                        <NavLink to="/dangky" className="btn_header btn_dangki"> Đăng kí <i className="fa fa-user" style={{ fontSize: '20px', paddingBottom: '3px' }}></i></NavLink>
+                                        <NavLink to="/dangnhap" className="btn_header btn_dangnhap"><i className="fa fa-user-circle" style={{ fontSize: '20px', paddingBottom: '3px' }}></i> <span>Đăng Nhập</span></NavLink>
+                                        <NavLink to="/dangky" className="btn_header btn_dangki"> Đăng Kí <i className="fa fa-user" style={{ fontSize: '20px', paddingBottom: '3px' }}></i></NavLink>
                                     </Fragment>
                             }
                         </form>
+                        <ul className="navbar-nav m-auto  ">
+
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Lịch Chiếu</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Cụm Rạp</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Tin Tức</a>
+                            </li>
+                            <li className="nav-item ">
+                                <a className="nav-link" href="#">Ứng Dụng</a>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
             </div>

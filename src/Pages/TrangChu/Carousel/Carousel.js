@@ -63,7 +63,7 @@ export default function Carousel() {
 
 
             </div>
-            <div className="search_form">
+            <div className="search_form d-none d-md-block " style={{background:'white'}}>
                 <SearchForm />
             </div>
 

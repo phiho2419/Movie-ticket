@@ -28,17 +28,13 @@ export default function CardPhimDangChieu(props) {
     };
     let buttonCloseStyle = {
         display: 'inline-block',
-        width: '40px',
-        height: '40px',
-        lineHeight: '40px',
-        border: '2px solid white',
-        borderRadius: '50%',
         color: 'white',
         fontSize: '30px',
         position: 'absolute',
         right: '0px',
         top: '0px',
-        outline: 'none'
+        outline: 'none',
+        background:'unset'
     }
 
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -63,7 +59,7 @@ export default function CardPhimDangChieu(props) {
                     contentLabel="Example Modal"
                     onRequestClose={closeModal}
                 >
-                    <button style={buttonCloseStyle} onClick={closeModal}>X</button>
+                    <button style={buttonCloseStyle} onClick={closeModal}><i class="fa fa-times"></i></button>
                     <iframe width="800" height="500" src={phim.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </Modal>
                 <div className="overlay" onClick={openModal} >

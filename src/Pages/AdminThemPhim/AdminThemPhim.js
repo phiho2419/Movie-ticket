@@ -100,16 +100,16 @@ export default function AdminThemPhim() {
                         <div className="col-12" >
                                 <label>Nhóm</label>
                                 <select name="maNhom" onChange={formik.handleChange} >
-                                    <option >Gp01</option>
-                                    <option >Gp02</option>
-                                    <option >Gp03</option>
-                                    <option >Gp04</option>
-                                    <option >Gp05</option>
-                                    <option >Gp06</option>
-                                    <option >Gp07</option>
-                                    <option >Gp08</option>
-                                    <option >Gp09</option>
-                                    <option >Gp10</option>
+                                <option value="GP01" >GP01</option>
+                                <option value="GP02" >GP02</option>
+                                <option value="GP03" >GP03</option>
+                                <option value="GP04" >GP04</option>
+                                <option value="GP05" >GP05</option>
+                                <option value="GP06" >GP06</option>
+                                <option value="GP07" >GP07</option>
+                                <option value="GP08" >GP08</option>
+                                <option value="GP09" >GP09</option>
+                                <option value="GP10" >GP10</option>
                                 </select>
                         </div>
                         <div className="col-10 mt-3">

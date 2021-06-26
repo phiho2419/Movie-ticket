@@ -18,23 +18,23 @@ export default function CTPhimInTro(props) {
 
 
     return (
-        <div className='ctp_intro_wrapper' style={{ position: 'relative',overflow:'hidden' }} >
+        <div className='ctp_intro_wrapper' style={{ position: 'relative', overflow: 'hidden' }} >
             <div className='ctp_intro' style={styleBgImage}><div className="ctp_overlay"></div></div>
             <div className="ctp_container">
                 <div className="intro_content row align-items-center">
-                    <div className="intro_img col-4">
+                    <div className="intro_img col-6 col-lg-4">
                         <img src={chiTietPhim.hinhAnh} atl="intro_img" />
                     </div>
-                    <div className="intro_infor col-5">
-                        <p className="ngayKhoiChieu"> {chiTietPhim.ngayKhoiChieu?.substr(0, 10)}</p>
-                        <p className="m-0">
+                    <div className="intro_infor col-6 col-lg-5">
+                        <p className="ngayKhoiChieu "> {chiTietPhim.ngayKhoiChieu?.substr(0, 10)}</p>
+                        <p className="m-0 d-inline">
                             <span className="tag_phim_c18 m-0">C16</span>
                             <span className="infor_tenPhim ml-2">{chiTietPhim.tenPhim}</span>
                         </p>
-                        <p>105p - {chiTietPhim.danhGia} IMDb - 2D/Digital</p>
-                        <p className="btnDatVe">ĐẶT VÉ</p>
+                        <p >105p - {chiTietPhim.danhGia} IMDb - 2D/Digital</p>
+                        <p className="btnDatVe  d-md-inline-flex">ĐẶT VÉ</p>
                     </div>
-                    <div className="intro_rate col-3" >
+                    <div className="intro_rate d-none d-lg-block col-lg-3" >
                         <div className="rate_cirle">
                             <Progress
                                 type="circle"

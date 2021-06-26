@@ -16,7 +16,6 @@ export default function LichSu(props) {
                             <p>Thời lượng: <span className="adress">{tt.thoiLuongPhim}</span></p>
                             <p>Ngày đặt:<span>{moment(tt.ngayDat).subtract(10, 'days').calendar()} {moment(tt.ngayDat).format('hh:mm A')}</span></p>
                             <p>Tên rạp:<span>{tt.danhSachGhe[0].tenHeThongRap}</span></p>
-                            {/* <p>Rạp:<span>Rạp 1</span></p> */}
                             <p>Ghế: {tt.danhSachGhe?.map((rap,index)=>{
                                 return <span>{rap.tenGhe} </span>
                             })}  </p>

@@ -5,6 +5,9 @@ import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import { layThongTinLichChieuAction, datVeAction } from '../../Redux/Actions/LichChieuAction';
 import { USERLOGIN } from '../../Util/setting';
+import Swal from 'sweetalert2';
+import { Redirect } from 'react-router';
+
 export default function ChiTietPhongVe(props) {
 
     const { maPhim } = props.match.params;
@@ -22,11 +25,17 @@ export default function ChiTietPhongVe(props) {
             type:'XOA_LICH_SU_DATVE',
         })
     }, [])
-
+    
 
     //Lấy thông tin người dùng
     let dataUser = JSON.parse(localStorage.getItem(USERLOGIN));
-
+    if (!localStorage.getItem(USERLOGIN)) {
+        // Swal.fire({
+        //     icon: 'error',
+        //     text: 'Bạn vui lòng đăng nhập !',
+        // })
+        return <Redirect to="/dangnhap" />
+    }
 
     const renderDanhSachGhe = () => {
         return lichChieu.danhSachGhe?.map((ghe, index) => {

@@ -5,6 +5,10 @@ import { Button, Modal } from 'antd';
 import { callAPI_layDanhSachPhimAction, LayThongTinPhimAction } from '../../Redux/Actions/QuanLyPhimAction';
 import Edit from './Edit';
 import { xoaPhim } from '../../Redux/Actions/AdminAction';
+import { USERLOGIN } from '../../Util/setting';
+import { Redirect } from 'react-router';
+import Swal from 'sweetalert2';
+
 const { Column } = Table;
 
 export default function AdminQuanLyPhim() {
@@ -15,7 +19,22 @@ export default function AdminQuanLyPhim() {
 
     }, [])
     // console.log(mangPhim);
-
+    let dataUser = JSON.parse(localStorage.getItem(USERLOGIN));
+    console.log(dataUser);
+    if (!localStorage.getItem(USERLOGIN)) {
+        // Swal.fire({
+        //     icon: 'error',
+        //     text: 'Bạn vui lòng đăng nhập !',
+        // })
+        return <Redirect to="/dangnhap" />
+    } else if (dataUser.maLoaiNguoiDung !== "QuanTri") {
+        Swal.fire({
+            icon: 'error',
+            text: 'Không có quyền quản trị !',
+        })
+        return <Redirect to="/" />
+        // console.log(dataUser.maLoaiNguoiDung);
+    }
     return (
         <div className="pageQuanLyPhim mt-4">
             <h1 className="admin_title mt-4 text-center">Quản lý phim</h1>
@@ -67,8 +86,8 @@ export default function AdminQuanLyPhim() {
                                         </div>
                                     </div>
                                 </div>
-                                <Button type="primary" danger size="small"><i class="fa fa-trash-alt" onClick={()=>{
-                                       dispatch(xoaPhim(record.maPhim))
+                                <Button type="primary" danger size="small"><i class="fa fa-trash-alt" onClick={() => {
+                                    dispatch(xoaPhim(record.maPhim))
                                 }}></i></Button>
                             </Space>
                         )}

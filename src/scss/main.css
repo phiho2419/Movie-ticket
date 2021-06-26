@@ -187,6 +187,23 @@ header .btn_dangki {
   border-right: 1px solid #c50e29;
 }
 
+header .navbar-expand-lg .navbar-collapse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 992px) {
+  header .navbar .navbar-nav .nav-item {
+    text-align: center;
+  }
+  header .navbar .navbar-nav .nav-item .nav-link {
+    display: inline-block;
+    font-size: 20px;
+  }
+}
+
 .dashboard .db_select {
   position: -webkit-sticky;
   position: sticky;
@@ -294,16 +311,42 @@ header .btn_dangki {
 .carousel_TrangChu .search_form {
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, -30px);
+          transform: translate(-50%, -30px);
   z-index: 20;
   -webkit-box-shadow: 5px 5px 5px 5px #1b1b1b4f;
           box-shadow: 5px 5px 5px 5px #1b1b1b4f;
 }
 
+.carousel_TrangChu .search_form .ant-btn-primary[disabled], .carousel_TrangChu .search_form .ant-btn-primary[disabled]:hover, .carousel_TrangChu .search_form .ant-btn-primary[disabled]:focus, .carousel_TrangChu .search_form .ant-btn-primary[disabled]:active {
+  background-color: #ff5252;
+  color: #e6e6e6;
+  cursor: default;
+}
+
+.carousel_TrangChu .search_form .ant-btn {
+  border: none;
+  background-color: #ff5252;
+  font-weight: 700;
+  height: 60px;
+  line-height: 60px;
+}
+
+.carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector {
+  height: 60px;
+}
+
+.carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector::after, .carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-item, .carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-placeholder {
+  line-height: 60px;
+}
+
+.carousel_TrangChu .search_form .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border: none;
+}
+
 .sectionListPhim {
   margin-top: 70px;
-  max-width: 1140px;
+  max-width: 1040px;
 }
 
 .sectionListPhim .nav {
@@ -959,6 +1002,9 @@ header .btn_dangki {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .ctp_container .intro_content .intro_rate .ant-progress-text {
@@ -974,6 +1020,25 @@ header .btn_dangki {
 .ctp_container .intro_content .intro_rate .nguoiDg {
   font-size: 16px;
   color: white;
+}
+
+@media screen and (max-width: 1200px) {
+  .ctp_container {
+    width: 70%;
+  }
+  .ctp_container .intro_content img {
+    width: 200px;
+    height: 300px;
+  }
+  .ctp_container .intro_content .intro_rate .rate_star i {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .ctp_container {
+    width: 80%;
+  }
 }
 
 .ctp_list {
@@ -1367,15 +1432,13 @@ header .btn_dangki {
 .DangNhap .DN__content .form__user input:focus ~ label, .DangNhap .DN__content .form__user input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #ff5252;
+  color: #555ee4;
   font-size: 12px;
 }
 
 .DangNhap .DN__content .DN__btn {
-  position: relative;
   display: inline-block;
-  padding: 10px 20px;
-  color: #ff5252;
+  color: white;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -1383,156 +1446,22 @@ header .btn_dangki {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   letter-spacing: 4px;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
 }
 
 .DangNhap .DN__content .DN__btn button {
   outline: none;
   width: 100%;
+  padding: 10px 20px;
+  background-color: #ff5252bd;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: 700;
 }
 
-.DangNhap .DN__content .DN__btn:hover {
-  background: #ff5252;
-  color: #fff;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ff5252, 0 0 25px #ff5252, 0 0 50px #ff5252, 0 0 100px #ff5252;
-          box-shadow: 0 0 5px #ff5252, 0 0 25px #ff5252, 0 0 50px #ff5252, 0 0 100px #ff5252;
-}
-
-.DangNhap .DN__content .DN__btn span {
-  position: absolute;
-  display: block;
-}
-
-.DangNhap .DN__content .DN__btn span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#ff5252));
-  background: linear-gradient(90deg, transparent, #ff5252);
-  -webkit-animation: btn-anim1 1s linear infinite;
-          animation: btn-anim1 1s linear infinite;
-}
-
-.DangNhap .DN__content .DN__btn span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#ff5252));
-  background: linear-gradient(180deg, transparent, #ff5252);
-  -webkit-animation: btn-anim2 1s linear infinite;
-          animation: btn-anim2 1s linear infinite;
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
-}
-
-.DangNhap .DN__content .DN__btn span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#ff5252));
-  background: linear-gradient(270deg, transparent, #ff5252);
-  -webkit-animation: btn-anim3 1s linear infinite;
-          animation: btn-anim3 1s linear infinite;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
-
-.DangNhap .DN__content .DN__btn span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#ff5252));
-  background: linear-gradient(360deg, transparent, #ff5252);
-  -webkit-animation: btn-anim4 1s linear infinite;
-          animation: btn-anim4 1s linear infinite;
-  -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
-}
-
-@-webkit-keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,
-  100% {
-    left: 100%;
-  }
-}
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,
-  100% {
-    left: 100%;
-  }
-}
-
-@-webkit-keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,
-  100% {
-    top: 100%;
-  }
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,
-  100% {
-    top: 100%;
-  }
-}
-
-@-webkit-keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,
-  100% {
-    right: 100%;
-  }
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,
-  100% {
-    right: 100%;
-  }
-}
-
-@-webkit-keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,
-  100% {
-    bottom: 100%;
-  }
-}
-
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,
-  100% {
-    bottom: 100%;
-  }
+.DangNhap .DN__content .DN__btn button:hover {
+  background-color: #ff5252;
 }
 
 .DangKy .DK__content {
@@ -1591,7 +1520,7 @@ header .btn_dangki {
 .DangKy .DK__content .form__user input:focus ~ label, .DangKy .DK__content .form__user input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #ff5252;
+  color: #555ee4;
   font-size: 12px;
 }
 
@@ -1600,11 +1529,7 @@ header .btn_dangki {
 }
 
 .DangKy .DK__content .DN__btn {
-  cursor: pointer;
-  position: relative;
   display: inline-block;
-  padding: 10px 20px;
-  color: #ff5252;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -1614,114 +1539,21 @@ header .btn_dangki {
   letter-spacing: 4px;
   margin-top: 30px;
   width: 100%;
+  color: white;
 }
 
 .DangKy .DK__content .DN__btn button {
   outline: none;
   width: 100%;
+  padding: 10px 20px;
+  background-color: #5272ffbd;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: 700;
 }
 
-.DangKy .DK__content .DN__btn:hover {
-  background: #ff5252;
-  color: #fff;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ff5252, 0 0 25px #ff5252, 0 0 50px #ff5252, 0 0 100px #ff5252;
-          box-shadow: 0 0 5px #ff5252, 0 0 25px #ff5252, 0 0 50px #ff5252, 0 0 100px #ff5252;
-}
-
-.DangKy .DK__content .DN__btn span {
-  position: absolute;
-  display: block;
-}
-
-.DangKy .DK__content .DN__btn span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#ff5252));
-  background: linear-gradient(90deg, transparent, #ff5252);
-  -webkit-animation: btn-anim1 1s linear infinite;
-          animation: btn-anim1 1s linear infinite;
-}
-
-.DangKy .DK__content .DN__btn span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#ff5252));
-  background: linear-gradient(180deg, transparent, #ff5252);
-  -webkit-animation: btn-anim2 1s linear infinite;
-          animation: btn-anim2 1s linear infinite;
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
-}
-
-.DangKy .DK__content .DN__btn span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#ff5252));
-  background: linear-gradient(270deg, transparent, #ff5252);
-  -webkit-animation: btn-anim3 1s linear infinite;
-          animation: btn-anim3 1s linear infinite;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
-
-.DangKy .DK__content .DN__btn span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#ff5252));
-  background: linear-gradient(360deg, transparent, #ff5252);
-  -webkit-animation: btn-anim4 1s linear infinite;
-          animation: btn-anim4 1s linear infinite;
-  -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
-}
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,
-  100% {
-    left: 100%;
-  }
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,
-  100% {
-    top: 100%;
-  }
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,
-  100% {
-    right: 100%;
-  }
-}
-
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,
-  100% {
-    bottom: 100%;
-  }
+.DangKy .DK__content .DN__btn button:hover {
+  background-color: #5272ff;
 }
 
 .ThongTinCaNhan {
@@ -1873,5 +1705,20 @@ header .btn_dangki {
 .ThongTin .TT__content p span {
   font-weight: 400;
   margin-left: 20px;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loading .loader {
+  top: 30%;
+  left: 35%;
+  z-index: 1000;
+  position: absolute;
 }
 /*# sourceMappingURL=main.css.map */

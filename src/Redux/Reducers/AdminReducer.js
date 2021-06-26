@@ -19,6 +19,10 @@ export const AdminReducer = (state = stateDefault, action) => {
             state.thongTinNguoiDung = action.thongTinNguoiDung;
             return { ...state }
         }
+        case 'SET_MANG_TIM_KIEM_NGUOI_DUNG': {
+            state.mangNguoiDung = action.mangNguoiDung;
+            return { ...state }
+        }
         default: return { ...state }
     }
 

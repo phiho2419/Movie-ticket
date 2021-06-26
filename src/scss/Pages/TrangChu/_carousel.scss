@@ -57,9 +57,29 @@
     .search_form{
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%,-30px);
         z-index: 20;
         box-shadow: 5px 5px 5px 5px #1b1b1b4f;
-        
+        .ant-btn-primary[disabled], .ant-btn-primary[disabled]:hover, .ant-btn-primary[disabled]:focus, .ant-btn-primary[disabled]:active{
+            background-color: $color-red-primary;
+            color: rgb(230, 230, 230);
+            cursor: default;
+        }
+        .ant-btn{
+            border: none;
+            background-color: $color-red-primary;
+            font-weight: 700;
+            height: 60px;
+            line-height: 60px;
+        }
+        .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector{
+            height: 60px;
+        }
+        .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector::after, .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-item, .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-placeholder{
+            line-height: 60px;
+        }
+        .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+            border: none;
+        }
     }
 }

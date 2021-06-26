@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Table, Space, Popover, Button } from 'antd';
-import { layDanhSachNguoiDungAction, xoaNguoiDung } from '../../Redux/Actions/AdminAction';
+import { layDanhSachNguoiDungAction, timKiemNguoiDungAction, xoaNguoiDung } from '../../Redux/Actions/AdminAction';
 import EditNguoiDung from './EditNguoiDung';
+import { useFormik } from 'formik';
 
 const { Column } = Table;
 const popoverDelete = (
@@ -21,17 +22,25 @@ export default function AdminQuanLyNguoiDung() {
 
     const { mangNguoiDung } = useSelector(state => state.AdminReducer);
     // console.log('mangNguoiDung :', mangNguoiDung);
+    const formik = useFormik({
+        initialValues: {
+            tuKhoa:''
+        },
+        onSubmit: values => {
+            dispatch(timKiemNguoiDungAction(values));
+        },
+    });
     return (
         <div className="pageQuanLyPhim mt-4">
             <h1 className="admin_title mt-4 text-center">Quản lý người dùng</h1>
-            <form className="search_form">
+            <form  className="search_form" onSubmit={formik.handleSubmit}>
                 <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Nhập vào tài khoản hoặc họ tên người dùng" />
-                    <div className="input-group-append">
+                    <input type="text" className="form-control" placeholder="Nhập vào tài khoản hoặc họ tên người dùng" name="tuKhoa" onChange={formik.handleChange}/>
+                    <button type="submit" className="input-group-append">
                         <span className="input-group-text" id="basic-addon2">
                             <i className="fa fa-search" />
                         </span>
-                    </div>
+                    </button>
                 </div>
             </form>
 

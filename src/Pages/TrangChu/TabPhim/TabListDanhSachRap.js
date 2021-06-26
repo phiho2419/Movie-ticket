@@ -72,6 +72,7 @@ export default function TabListDanhSachRap(props) {
 
     const renderTheaterDetails = () => {
         return props.heThongRap?.map((ctr, index) => {
+            console.log('maHeThongRap',ctr);
             return <TabPane tab={<div className=" tabpane_tabs d-flex" style={{ width: "250px" }} >
                 {hanleLogoRap(ctr.tenCumRap)}
                 <div className=" pl-2 pt-2 text-left tabpane_thongTinRap " style={{ width: "200px" }}>

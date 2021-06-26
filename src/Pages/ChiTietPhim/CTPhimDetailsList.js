@@ -10,22 +10,22 @@ export default function CTPhimDetailsList(props) {
     const renderLogoChiTiet = () => {
         let tenLogo = logo.substr(0, 3).trim()
         if (tenLogo === 'BHD') {
-            return <img src="../../../img/BHDStar_theater.jpg" width={80} height={100} />
+            return <img src="../../../img/BHDStar_theater.jpg" width={100} height={100} />
         }
         else if (tenLogo === 'cgv') {
-            return <img src="../../../img/CGV_theater.jpg" width={80} height={100} />
+            return <img src="../../../img/CGV_theater.jpg" width={80} height={80} />
         }
         else if (tenLogo === 'Gal') {
-            return <img src="../../../img/Galaxy_theater.jpg" width={80} height={100} />
+            return <img src="../../../img/Galaxy_theater.jpg" width={80} height={80} />
         }
         else if (tenLogo === 'Cin') {
-            return <img src="../../../img/CineStar_theater.jpg" width={80} height={100} />
+            return <img src="../../../img/CineStar_theater.jpg" width={80} height={80} />
         }
         else if (tenLogo === 'Lot') {
-            return <img src="../../../img/LotteCinima_theater.jpg" width={80} height={100} />
+            return <img src="../../../img/LotteCinima_theater.jpg" width={80} height={80} />
         }
         else if (tenLogo === 'Meg') {
-            return <img src="../../../img/MegaGS_theater.jpg" width={100} height={100} />
+            return <img src="../../../img/MegaGS_theater.jpg" width={80} height={80} />
         }
     }
     const handleTenCumRap = (tenCumRap) => {
@@ -74,7 +74,7 @@ export default function CTPhimDetailsList(props) {
         return cumRapChieu?.map((rap, index) => {
             if (index < 1) {
                 return <Fragment>
-                    <div className="d-flex my-3 " key={index}>
+                    <div className="d-flex my-3 align-items-center" key={index}>
                         {renderLogoChiTiet()}
                         <div className='mx-2'>
                             {handleTenCumRap(rap.tenCumRap)}

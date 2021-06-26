@@ -76,4 +76,19 @@
         .btn_dangki{
             border-right: 1px solid $color-red-dark;
         }
+        .navbar-expand-lg .navbar-collapse{
+            flex-direction: row-reverse;
+        }
 }
+@include responsible("large") {
+    
+    header .navbar .navbar-nav .nav-item{
+        text-align: center;
+        .nav-link{
+            display: inline-block;
+            font-size: 20px;
+        }
+    } 
+    
+}
+
