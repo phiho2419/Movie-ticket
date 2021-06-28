@@ -7,6 +7,9 @@ import Header from '../../Components/Header/Header'
 import { thongTinAction } from '../../Redux/Actions/NguoiDungAction'
 import { useDispatch } from 'react-redux'
 import { USERLOGIN } from '../../Util/setting'
+import News from './News/News'
+import Ungdung from './Ungdung/Ungdung'
+
 
 export default function TrangChu() {
     // const dispatch = useDispatch();
@@ -20,6 +23,8 @@ export default function TrangChu() {
             <Carousel />
             <ListPhim />
             <TabPhim />
+            <News/>
+            <Ungdung/>
         </div>
     )
 }

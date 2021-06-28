@@ -1,0 +1,58 @@
+.ungDung {
+    padding: 120px 0 80px;
+    margin-top: 50px;
+    .ungDung__content {
+        margin: 0 auto;
+        max-width: 940px;
+        width: calc(100% - 20px);
+        color: white;
+        .ud__title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .ud__text {
+            margin: 0;
+            font-size: 16px;
+        }
+        .btnDownload {
+            border: 1px solid #fb4226;
+            border-radius: 4px;
+            font-size: 16px;
+            background: #fb4226;
+            padding: 10px 20px;
+            font-weight: 700;
+        }
+        .sub {
+            padding-top: 10px;
+            margin: 0;
+            font-size: 16px;
+        }
+        .ud__img {
+            width: 100%;
+            margin: auto;
+            padding: 0 28%;
+            border-radius: 4px;
+            max-width: 100%;
+            display: block;
+        }
+        .ud__content {
+            z-index: 9;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            padding: 1.8% 30.6% 1.5%;
+            img {
+                border-radius: 22px;
+            }
+        }
+    }
+}
+@include responsible("medium") {
+    .ungDung {
+        padding: 60px 0 80px;
+    }
+}
