@@ -44,6 +44,26 @@ export const LayChiTietRapApiAction = (maRap) => {
         }
     }
 }
+export const LayThongTinHeThongRapApiAction = (maHeThongRap) => {
+    return async dispatch => {
+        try {
+            const result = await axios({
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`,
+                method: 'GET'
+            });
+            dispatch({
+                type: 'SET_HE_THONG_RAP',
+                heThongRap: result.data
+            })
+        } catch (errors) {
+            if (errors.response.status === 400) {
+                alert('Không hợp lệ!');
+                // history.push('/');
+            }
+            // console.log('error', error.reponse.status);
+        }
+    }
+}
 export const ChangeRap =(ten,diaChi)=>{
     return dispatch =>{
         dispatch({

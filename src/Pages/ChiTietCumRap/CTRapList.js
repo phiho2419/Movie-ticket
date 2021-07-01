@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React,{ useEffect }  from 'react';
 import { Tabs, Radio, Space, Tag } from 'antd';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment'
@@ -71,6 +70,7 @@ export default function CTRapList(props) {
             </div>
         }
     }
+
 
     const renderChiTietRap = () => {
         return chiTietRap?.map((ctr) => {

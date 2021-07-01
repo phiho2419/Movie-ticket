@@ -10,7 +10,7 @@ import { Redirect } from 'react-router';
 
 export default function ChiTietPhongVe(props) {
 
-    const { maPhim } = props.match.params;
+    const { malichChieu } = props.match.params;
     const dispatch = useDispatch();
 
 
@@ -20,12 +20,12 @@ export default function ChiTietPhongVe(props) {
 
     //Call api 
     useEffect(() => {
-        dispatch(layThongTinLichChieuAction(maPhim));
+        dispatch(layThongTinLichChieuAction(malichChieu));
         return dispatch({
-            type:'XOA_LICH_SU_DATVE',
+            type: 'XOA_LICH_SU_DATVE',
         })
     }, [])
-    
+
 
     //Lấy thông tin người dùng
     let dataUser = JSON.parse(localStorage.getItem(USERLOGIN));
@@ -53,7 +53,7 @@ export default function ChiTietPhongVe(props) {
             let loiDi = index === 7 || index === 23 || index === 39 || index === 55 || index === 71 || index === 87 || index === 103 || index === 119 || index === 135 || index === 151 || index === 167;
 
             return <Fragment key={index}>
-                <button style={{color:'white'}} disabled={ghe.daDat} className={` ghe ${gheVip} ${gheDaDat} ${classGheDangDat}`}
+                <button style={{ color: 'white' }} disabled={ghe.daDat} className={` ghe ${gheVip} ${gheDaDat} ${classGheDangDat}`}
                     onClick={
                         () => {
                             dispatch({
@@ -77,7 +77,11 @@ export default function ChiTietPhongVe(props) {
 
     }
 
-    console.log('lichChieu', lichChieu);
+    // console.log('lichChieu', lichChieu);
+    console.log('mã lịch chiếu',malichChieu);
+    console.log('danh sách vé',danhSachGheDangDat);
+    console.log('tài khoản',dataUser.taiKhoan);
+
     return (
         <Fragment>
             <div className="pageChiTietPhongVe">
@@ -87,7 +91,7 @@ export default function ChiTietPhongVe(props) {
                             <div className="ghe_manhinh">
                                 <div className="man_hinh">
                                     SCREEN
-                            </div>
+                                </div>
                                 <div className="cumGhe text-center">
                                     {renderDanhSachGhe()}
                                 </div>
@@ -106,12 +110,12 @@ export default function ChiTietPhongVe(props) {
                                 <p className="mb-1 tt_sdt">Số điện thoại</p>
                                 <p className=""> {dataUser.soDT} </p>
                                 <hr />
-                                <p className="tt_datGhe "> Ghế: 
-                                {danhSachGheDangDat.map((gheDD, index) => {
-                                    return <Fragment >
-                                        {index <= 4 ? <span className="tt_soGheDat" key={index} className="mr-2">  {gheDD.stt}</span> : (index == 5 ? '...' : '')}
-                                    </Fragment>
-                                })}
+                                <p className="tt_datGhe "> Ghế:
+                                    {danhSachGheDangDat.map((gheDD, index) => {
+                                        return <Fragment >
+                                            {index <= 4 ? <span className="tt_soGheDat" key={index} className="mr-2">  {gheDD.stt}</span> : (index == 5 ? '...' : '')}
+                                        </Fragment>
+                                    })}
                                 </p>
                                 <p className="tt_giaVe">Giá: <span className="tt_tongGiaVe">
                                     {danhSachGheDangDat.reduce((tongTien, gheDD, index) => {
@@ -126,25 +130,32 @@ export default function ChiTietPhongVe(props) {
                                             <label className="form-check-label">
                                                 <input type="radio" className="form-check-input" name="optradio" defaultChecked />
                                                 <img src="../../../img/Icon-app_white-bg.png" /> Thanh toán qua ZaloPay
-                                        </label>
+                                            </label>
                                         </div>
                                         <div className="form-check">
                                             <label className="form-check-label">
                                                 <input type="radio" className="form-check-input" name="optradio" />
                                                 <img src="../../../img/visa.png" /> Visa, Master
-                                        </label>
+                                            </label>
                                         </div>
                                         <div className="form-check ">
                                             <label className="form-check-label">
                                                 <input type="radio" className="form-check-input" name="optradio" />
                                                 <img src="../../../img/atm.png" /> Thẻ ATM nội địa
-                                        </label>
+                                            </label>
                                         </div>
 
                                     </div>
 
                                 </div>
-
+                                <button onClick={() => {
+                                    let objectApi = {
+                                        "maLichChieu": malichChieu,
+                                        "danhSachVe": danhSachGheDangDat,
+                                        "taiKhoanNguoiDung": dataUser.taiKhoan
+                                    }
+                                    dispatch(datVeAction(objectApi))
+                                }} className="btn btn-success w-100">Đặt vé</button>
                             </div>
                         </div>
                     </div>

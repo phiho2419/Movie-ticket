@@ -168,7 +168,7 @@ export default function CTRapDanhGiaRap() {
             {renderComment()}
             <div className=" text-center p-3">
                 {numberItem !== 3 ? <button className="less_btn" onClick={readLess}>Rút gọn</button> : null}
-                {cmt.length > 3 ? <button className="ml-3 more_btn less_btn" onClick={readMore}>Xem thêm</button> : null}
+                {cmt.length > 3 ? <button className="ml-3 more_btn " onClick={readMore}>Xem thêm</button> : null}
             </div>
         </div>
     )

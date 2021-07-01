@@ -56,7 +56,7 @@ export default function Header() {
                                 <a className="nav-link" href="#">Cụm Rạp</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Tin Tức</a>
+                                <NavLink className="nav-link" to="/#tintuc">Tin Tức</NavLink>
                             </li>
                             <li className="nav-item ">
                                 <a className="nav-link" href="#">Ứng Dụng</a>

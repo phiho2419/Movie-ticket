@@ -27,7 +27,7 @@ export default function EditNguoiDung() {
     return (
         <div>
             <div className="modal-header">
-                <h2>Cập nhật người dùng</h2>
+                <h2 style={{ margin: "0" }}>Cập nhật người dùng</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -92,16 +92,18 @@ export default function EditNguoiDung() {
 
                             </div>
                         </div>
-                
-                        <div className="Edit__button">
-                            <button type="submit" className="btn btn-success">Cập Nhật</button>
+
+                        <div className="col-12 mt-3">
+                            <div className="text-right">
+                                <Button type="primary" htmlType="submit" className=" btn btn-primary" >Cập nhật người dùng</Button>
+                            </div>
                         </div>
                     </div>
                 </form>
 
 
             </div>
-          
+
         </div>
     )
 }

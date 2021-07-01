@@ -44,6 +44,7 @@ export const AdminTemplate = (props) => { //props.path, props.component
                                         <NavLink to="/admin/quanlynguoidung" className="py-2">  Quản lý người dùng</NavLink>
                                         <NavLink to="/admin/themphim" className="py-2">  Thêm phim </NavLink>
                                         <NavLink to="/admin/themnguoidung" className="py-2">  Thêm người dùng</NavLink>
+                                        <NavLink to="/admin/taolichchieu" className="py-2">  Tạo lịch chiếu</NavLink>
                                     </div>
                                 </div>
                             </div>
