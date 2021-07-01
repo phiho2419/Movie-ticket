@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import moment from 'moment'
 import { Fragment } from 'react';
 import CTPhimDetailsList from './CTPhimDetailsList'
+import CTPhimDanhGiaPhim from './CTPhimDanhGiaPhim'
 
 const { TabPane } = Tabs;
 
@@ -55,9 +56,7 @@ export default function CTPhimList(props) {
         </div>
     }
 
-    const renderDanhGia = () =>{
-        
-    }
+    
 
     return (
         <div className="ctp_list py-5">
@@ -83,7 +82,7 @@ export default function CTPhimList(props) {
                         {renderMoTa()}
                     </div>
                     <div className="tab-pane fade" id="comment" role="tabpanel" >
-
+                        <CTPhimDanhGiaPhim />
                     </div>
                 </div>
             </div>

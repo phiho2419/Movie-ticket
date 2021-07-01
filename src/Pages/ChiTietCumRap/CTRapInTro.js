@@ -1,42 +1,80 @@
-import React from 'react'
-import Rap from '../../assets/img/rap/rap.jpg'
-import lotte_cinema from '../../assets/img/rap/lotte-cinema.jpg'
+import React, { Fragment } from 'react'
 import { Progress, Rate } from 'antd';
-import { useSelector } from 'react-redux';
-export default function CTRapInTro() {
-    const { tenRap,diaChiRap } = useSelector(state => state.QuanLyRapReducer);
+import { renderIMDb } from '../../Util/services';
 
+export default function CTRapInTro(props) {
+
+    const renderTenRap = () => {
+        return props.chiTietRap?.map((cumRap, index) => {
+            return cumRap.lstCumRap?.map((rap, index) => {
+                if (rap.maCumRap === props.maCumRap) {
+                    return <Fragment key={index}>
+                        <p className="tenCumRap">{rap.tenCumRap}</p>
+                        <p className="diaChi">{rap.diaChi}</p>
+                    </Fragment>
+                }
+            })
+        })
+    }
+    const renderLogoChiTiet = (mcr) => {
+        let tenLogo = mcr.substr(0, 3).trim()
+        if (tenLogo === 'bhd') {
+            return "../../../img/ctrbhd.png"
+        }
+        else if (tenLogo === 'cgv') {
+            return "../../../img/ctrcgv.png"
+        }
+        else if (tenLogo === 'glx') {
+            return "../../../img/ctrglx.jpg"
+        }
+        else if (tenLogo === 'cns') {
+            return "../../../img/ctrcns.jpg"
+        }
+        else if (tenLogo === 'lot') {
+            return "../../../img/ctrlot.jpg"
+        }
+        else if (tenLogo === 'meg') {
+            return "../../../img/ctrmeg.jpg"
+        }
+    }
+    const styleBgImage = {
+        backgroundImage: `url(${renderLogoChiTiet(props.maCumRap)})`,
+    }
 
     return (
-        <div className="Ctr__InTro" style={{ backgroundImage: `url(${Rap})` }}>
-            <div className="bgBlack"></div>
-            <div className="Ctr__content row">
-                <div className="col-12 col-sm-8">
-                    <div className="ctr__img">
-                        <img src={lotte_cinema} />
+        <div className='ctp_intro_wrapper' style={{ position: 'relative', overflow: 'hidden' }} >
+            <div className='Chitiet_intro' style={styleBgImage}><div className="ctr_overlay"></div></div>
+            <div className="Chitiet_container">
+                <div className="intro_content row align-items-center">
+                    <div className="intro_img col-6 col-lg-4">
+                        <img src={renderLogoChiTiet(props.maCumRap)} atl="intro_img" />
                     </div>
-                    <div className="ctr__text">
-                        <h2>{tenRap}</h2>
-                        <p>{diaChiRap}</p>
-                        <button><a href="#listCumRap">Mua Vé</a> </button>
+                    <div className="intro_infor col-6 col-lg-5">
+                        {renderTenRap()}
+                        <p className="btnDatVe  d-md-inline-flex">ĐẶT VÉ</p>
                     </div>
-                </div>
-                <div className="col-4 rate">
-                    <Progress
-                        type="circle"
-                        strokeColor={{
-                            '0%': '#108ee9',
-                            '100%': '#87d068',
-                        }}
-                        percent={90}
-                    />
-                    <br />
-                    <div className="star">
-                    <Rate disabled defaultValue={4.0} />
-
+                    <div className="intro_rate d-none d-lg-block col-lg-3" >
+                        <div className="rate_cirle">
+                            <Progress
+                                type="circle"
+                                strokeColor={{
+                                    '0%': '#108ee9',
+                                    '100%': '#87d068',
+                                }}
+                                percent={90}
+                                format={(percent) => { return percent / 10 }}
+                            />
+                        </div>
+                        <div className="rate_star mt-3">
+                            {renderIMDb(9)}
+                        </div>
+                        <p className='nguoiDg'>65 người đánh giá</p>
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }
+
+

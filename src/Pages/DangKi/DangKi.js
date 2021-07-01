@@ -62,7 +62,7 @@ export default function DangKi() {
                                 <span className="text-danger"> {formik.errors.matKhauConfirm}</span>
                             </div>
                         </div>
-                        <div className="col-6" style={{ paddingLeft: '0' }}>
+                        <div className="col-12" style={{ padding: '0' }}>
                             <div className="form__user">
                                 <input required name="hoTen" onChange={formik.handleChange} />
                                 <label>Họ tên</label>
@@ -70,7 +70,7 @@ export default function DangKi() {
 
                             </div>
                         </div>
-                        <div className="col-6" style={{ paddingRight: '0' }}>
+                        <div className="col-6" style={{ paddingLeft: '0' }}>
                             <div className="form__user">
                                 <input required type="email" name="email" onChange={formik.handleChange} />
                                 <label>Email</label>
@@ -78,32 +78,15 @@ export default function DangKi() {
 
                             </div>
                         </div>
-                        <div className="col-6" style={{ paddingLeft: '0' }}>
+                        <div className="col-6" style={{ paddingRight: '0' }}>
                             <div className="form__user" >
-                                <input required type="number" name="soDt" onChange={formik.handleChange} />
+                                <input  name="soDt" onChange={formik.handleChange} />
                                 <label>Số điện thoại</label>
                                 <span className="text-danger"> {formik.errors.soDt}</span>
 
                             </div>
                         </div>
-                        <div className="col-6" style={{ paddingRight: '0' }}>
-                            <div className="form__user">
-                                {/* <label>Nhóm</label> */}
-                                <select name="maNhom" onChange={formik.handleChange} >
-                                    <option >GP01</option>
-                                    <option >GP02</option>
-                                    <option >GP03</option>
-                                    <option >GP04</option>
-                                    <option >GP05</option>
-                                    <option >GP06</option>
-                                    <option >GP07</option>
-                                    <option >GP08</option>
-                                    <option >GP09</option>
-                                    <option >GP10</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="DN__btn">
+                         <div className="DN__btn">
                             <button type="submit">ĐĂNG KÝ</button>
                         </div>
                     </div>

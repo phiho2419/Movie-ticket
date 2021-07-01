@@ -18,6 +18,7 @@ import DangNhap from './Pages/DangNhap/DangNhap';
 import ThongTinCaNhan from './Pages/ThongTinCaNhan/ThongTinCaNhan';
 import { useEffect, useState } from 'react';
 import Loading from './Components/Loading/Loading'
+import Demo from './Pages/Demo';
 export const history = createBrowserHistory();
 
 function App() {
@@ -43,11 +44,11 @@ function App() {
             <UserTemplate path="/dangky" component={DangKi} />
 
             <HomeTemplate path='/chitietphim/:maPhim' component={ChiTietPhim} />
-            <HomeTemplate path='/chitietcumrap/:maRap' component={ChiTietCumRap} />
+            <HomeTemplate path='/chitietcumrap/:maHeThongRap/:maCumRap' component={ChiTietCumRap} />
             <HomeTemplate path='/thongtincanhan' component={ThongTinCaNhan} />
+            <Route path='/demo' exact component={Demo} />
 
             <HomeTemplate path='/' exact component={TrangChu} />
-
           </Switch>
         </div>
       ) : (

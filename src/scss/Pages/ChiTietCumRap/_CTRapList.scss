@@ -1,86 +1,87 @@
-.ctr__List {
-    background-color: #ff857fc5;
-    padding: 30px 0;
-    .Ctr__content {
-        width: 85%;
-        margin: auto;
-        background-color: $color-white-0;
-        min-height: 500px;
-        padding: 0 30px 30px 0;
-        border-radius: 10px;
-        .ant-tabs-tab {
-            max-width: 300px;
-        }
-        .Rap {
-            text-align: left;
-            max-width: 300px;
-            h2 {
-                font-size: 20px;
-                color: black;
-                font-weight: 500;
-                padding-bottom: 5px;
-                margin-bottom: 0;
-                white-space: normal;
+.ctr_list{
+    background:#0a2029;
+    #tab_ht_rap{
+        border: 1px solid rgb(215, 216, 218);
+        background: white;
+        .tabs_day{
+            text-align: center;
+            width: 80px;
+            p:first-child{
+                font-weight: 700;
+                margin-bottom: 3px;
             }
-            p {
-                font-size: 14px;
-                color: $color-white-1;
-                margin-bottom: 0;
-                max-width: 300px;
-                white-space: normal;
+            p:last-child{
+                margin: 0;
             }
         }
-        .ctr__day {
-            .day {
-                padding: 70px auto;
-                font-size: 20px;
-                font-weight: 600;
-            }
-            .ant-tabs-nav-list {
-                width: 100%;
-                height: 60px;
-                padding-left: 15px;
-
-                &::before {
-                    display: none;
-                }
-                .ant-tabs-tab {
-                    width: 100%;
-                    height: 60px;
-                }
-                .ant-tabs-tab-active {
-                    .day {
-                        color: red;
-                    }
-                }
-            }
-            .Ctr__phim {
-                margin: 15px 0;
-                box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);
-                .ctr__img {
-                    padding: 0;
-
-                    img {
-                        width: auto;
-                        height: auto;
-                    }
-                }
-                h2 {
-                    font-size: 24px;
-                    margin-bottom: 10px;
-                }
-                p {
-                    color: $color-white-1;
-                }
-                .ctp__gio {
-                    .text_time {
-                        @include styleText($color-red-primary, $fs-2, $fw-bold);
-                        padding: 5px 8px;
-                        background-color: white;
-                        border: none;
-                    }
-                }
+        .tenCumRap{
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .tag_thoigian{
+            color: #000;
+        }
+        .ant-tabs-tab:hover{
+            color: $color-red-primary !important;
+        }
+        .tab_chi_tiet_rap{
+            min-height: 400px;
+            overflow: auto;
+            padding-left: 20px;
+        }
+    }
+    .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active, .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active{
+        color: $color-red-primary
+    }
+    .ant-tabs-dropdown-menu-item{
+        font-weight: 700
+    }
+    .nav_tabs_chiTietPhim{
+        margin-bottom: 30px;
+        border-bottom: none;
+        justify-content: center;
+        font-size: 20px;
+        .nav-link{
+            color: white;
+            border: none;
+            font-weight: 700;
+            &:hover{
+                color: $color-red-primary;
             }
         }
     }
+    .ant-tabs-left > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ant-tabs-bottom > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ant-tabs-bottom > div > .ant-tabs-nav .ant-tabs-ink-bar-animated{
+        background: unset !important;
+        
+    }
+    .tabpane_ctr{
+        width: 200px;
+        color: black;
+        .tab_tenCumRap{
+            margin: 0;
+            margin-top: 10px;
+            font-weight: 700;
+        }
+    }
+    .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab, .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab, .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab, .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab{
+        margin: 0;
+    }
+    .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab, .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab, .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab, .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab{
+        padding:10px 12px 0px 12px;
+    }
+    .ant-tabs-tab{
+        opacity: 0.5;
+    }
+    .ant-tabs-tab.ant-tabs-tab-active{
+        opacity: 1;
+    }
+    .hr_logo{
+        margin: 3px;
+    }
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+        background-color: unset;
+        color: $color-red-primary;
+    }   
 }
+
+

@@ -3,9 +3,8 @@
     font-size : $fs ;
     font-weight: $fw;
 }
-@mixin  styleButton( $bg-color , $bd-color , $pd-y , $pd-x  , $radius ) {
+@mixin  styleButton( $bg-color, $pd-y , $pd-x  , $radius ) {
     background-color: $bg-color ;
-    border: 1px solid $bd-color ;
     padding: $pd-y $pd-x ;
     border-radius: $radius ;
     transition: .5s ;

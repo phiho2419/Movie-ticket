@@ -6,6 +6,7 @@
 html,body{
     font-family: 'Quicksand', sans-serif !important;
     font-size: $fs-1;
+    color: black;
 }
 
 a{
@@ -15,53 +16,4 @@ a{
 li{
     list-style: none;
 }
-.ant-tabs-left > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane, .ant-tabs-left > div > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane{
-    padding: unset !important;
-}
-.ant-tabs-tab:hover,.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,.ant-tabs-tab-btn:focus, .ant-tabs-tab-remove:focus, .ant-tabs-tab-btn:active, .ant-tabs-tab-remove:active{
-    color: unset !important;
-    
-}
-.ant-table-pagination-right{
-    justify-content: center !important;
-}
-.ant-table-thead > tr > th{
-    background: rgb(117, 117, 250) !important;
-}
 
-.ant-table-thead .ant-table-cell{
-    font-weight: 700;
-    min-width: 100px;
-    text-align: center !important;
-}
-.ant-table-row .ant-table-cell{
-    font-weight: 700;
-    min-width: 100px;
-}
-.ant-table-row .ant-table-cell .ant-image-img{
-    width: 50px;
-    height: 60px;
-    margin-left: 10px;
-    border-radius: 5px;
-    border: 1px solid bisque;
-}
-.ant-table.ant-table-bordered > .ant-table-container{
-    box-shadow: 0 0 10px rgb(114, 107, 99);
-}
-.yel__star{
-    color: rgba(241, 241, 55, 0.836);
-}
-.gray__star{
-    color: rgba(187, 186, 186, 0.822);
-}
-.tag_thoigian{
-    padding: 4px 8px;
-    font-size: 16px;
-}
-button{
-    outline: none;
-    border: none;
-    :focus{
-        outline: none !important;
-    }
-}

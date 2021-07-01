@@ -12,10 +12,13 @@
 @import './Components/text';
 @import './Components/button';
 @import './Components//tagPhim';
+@import './Components/ratingStar';
 
 //LAYOUTS
 @import './Layouts/Header';
 @import './Layouts/AdminTemplate';
+@import './Layouts/load';
+
 
 //PAGES
 
@@ -46,5 +49,3 @@
 @import './Pages/ThongTinCaNhan/ThongTinCaNhan';
 @import './Pages/ThongTinCaNhan/LichSu';
 @import './Pages/ThongTinCaNhan/ThongTin';
-
-@import './Layouts/load';

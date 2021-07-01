@@ -1,0 +1,17 @@
+#rating_bar > span:before{
+    content:'\2605';
+    color: #c7c5c5;
+    cursor:pointer;
+   font-size:3em;
+}
+#rating_bar:hover > span:before {
+   color: rgb(255, 115, 0);
+}
+
+#rating_bar > span.commit_star::before{
+    color: rgb(255, 115, 0);
+}
+
+#rating_bar > span:hover ~ span:before {
+   color: #c7c5c5;
+}

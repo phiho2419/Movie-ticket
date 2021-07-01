@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Tabs } from 'antd';
-import { Tag } from 'antd';
 import TabDanhSachPhim from './TabDanhSachPhim';
+import { NavLink } from 'react-router-dom';
+
 
 const { TabPane } = Tabs;
 
@@ -39,7 +40,6 @@ export default function TabListDanhSachRap(props) {
 
     const hanleLogoRap = (tenCumRap) => {
         let string = tenCumRap.substr(0, tenCumRap.indexOf('-')).replace('Star Cineplex', '');
-
         let string_handled = string.trim()
 
         if(string_handled.trim() === 'BHD'){
@@ -72,12 +72,12 @@ export default function TabListDanhSachRap(props) {
 
     const renderTheaterDetails = () => {
         return props.heThongRap?.map((ctr, index) => {
-            console.log('maHeThongRap',ctr);
             return <TabPane tab={<div className=" tabpane_tabs d-flex" style={{ width: "250px" }} >
                 {hanleLogoRap(ctr.tenCumRap)}
                 <div className=" pl-2 pt-2 text-left tabpane_thongTinRap " style={{ width: "200px" }}>
                     <p className="m-0 tabpane_tenRap" > {handlePreString_TheaterName(ctr.tenCumRap)} <span >{handleAfterString_TheaterName(ctr.tenCumRap)}</span></p>
                     <p className="m-0 tabpane_diaChiRap" >{ctr.diaChi}</p>
+                    <p className="m-0" ><NavLink to={`/chitietcumrap/${props.maHeThongRap}/${ctr.maCumRap}`}>[Chi tiết rạp]</NavLink></p>
                 </div>
             </div>} key={index} >
                 <div className="pl-3">

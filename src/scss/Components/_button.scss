@@ -1,1 +1,12 @@
 
+.less_btn{
+    @include styleText($color-white-0,$fs-1,$fw-bold);
+    @include styleButton($color-red-primary,3px,4px,5px);
+    min-width: 100px;
+}
+
+.more_btn{
+    @include styleText($color-red-primary,$fs-1,$fw-bold);
+    @include styleButton($color-white-0,3px,4px,5px);
+    min-width: 100px;
+}

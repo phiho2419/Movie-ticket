@@ -6,19 +6,27 @@ import CTRapList from './CTRapList'
 
 export default function ChiTietCumRap(props) {
     const { chiTietRap } = useSelector(state => state.QuanLyRapReducer);
-    const { maRap } = props.match.params;
+    const { maCumRap,maHeThongRap } = props.match.params;
     const dispatch = useDispatch();
 
+
+    //cinestar
+    //cgv
+    //MegaGS
+    //LotteCinima
+    //BHDStar
+    //Galaxy
     useEffect(() => {
         // Call API
-        dispatch(LayChiTietRapApiAction(maRap));
-
+        dispatch(LayChiTietRapApiAction(maHeThongRap));
     }, [])
+
+    console.log('chiTietRap',chiTietRap);
+
     return (
         <div>
-            <CTRapInTro />
-            <CTRapList chiTietRap={chiTietRap} />
-            
+            <CTRapInTro chiTietRap={chiTietRap} maCumRap={maCumRap}/>
+            <CTRapList chiTietRap={chiTietRap} maCumRap={maCumRap} maHeThongRap={maHeThongRap}/>
         </div>
     )
 }
