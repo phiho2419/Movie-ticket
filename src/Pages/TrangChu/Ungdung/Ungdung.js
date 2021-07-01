@@ -1,4 +1,5 @@
 import React from 'react'
+import Slider from "react-slick";
 import Background from '../../../assets/img/ungDung/background.jpg'
 import moblie from '../../../assets/img/ungDung/mobile.png'
 import slide1 from '../../../assets/img/ungDung/slide1.jpg'
@@ -21,6 +22,13 @@ import slide16 from '../../../assets/img/ungDung/slide16.jpg'
 
 
 export default function Ungdung() {
+    const settings = {
+        autoplay: true,
+        arrows:false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
     return (
         <div className="ungDung" style={{ backgroundImage: `url(${Background})` }}>
             <div className="ungDung__content">
@@ -45,66 +53,56 @@ export default function Ungdung() {
                     <div className="col-12 col-lg-6 ">
                         <img className="ud__img" src={moblie} />
                         <div className="ud__content">
-                            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div className="carousel-item active">
-                                        <img src={slide1} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide2} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide3} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide4} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide5} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide6} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide7} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide8} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide9} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide10} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide11} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide12} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide13} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide14} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide15} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={slide16} className="d-block w-100" alt="..." />
-                                    </div>
+                            <Slider {...settings}>
+                                <div>
+                                    <img src={slide1} className="d-block w-100" alt="..." />
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
+                                <div>
+                                    <img src={slide2} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide3} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide4} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide5} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide6} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide7} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide8} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide9} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide10} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide11} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide12} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide13} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide14} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide15} className="d-block w-100" alt="..." />
+                                </div>
+                                <div>
+                                    <img src={slide16} className="d-block w-100" alt="..." />
+                                </div>
+                            </Slider>
 
                         </div>
                     </div>
