@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Select, DatePicker } from 'antd';
+import { Select, DatePicker, Button } from 'antd';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
@@ -80,17 +80,18 @@ export default function AdminTaoLichChieu() {
 
     return (
         <div>
-            <div className="container">
+            <div>
+                <div className="admin__title text-center">
+                    <h1 >Thêm Lịch Chiếu</h1>
+                </div>
                 <form onSubmit={formik.handleSubmit}>
-                    <div className="row mt-5">
-                        <div className="col-10">
-                            <h1 className="admin_title">Tạo lịch chiếu</h1>
-                        </div>
-                        <div className="col-5">
-                            <Select size='large' placeholder="Chọn phim" style={{ minWidth: '100%' }} onChange={handleChangeChonPhim}>
+                    <div className="row">
+
+                        <div className="col-6">
+                            <Select className="mt-3" size='large' placeholder="Chọn phim" style={{ minWidth: '100%' }} onChange={handleChangeChonPhim}>
                                 {renderDropDownPhim()}
                             </Select>
-                            <Select size='large' placeholder="Chọn hệ thống rạp" style={{ minWidth: '100%' }} onChange={handleChangeHeThongRap}>
+                            <Select className="mt-3" size='large' placeholder="Chọn hệ thống rạp" style={{ minWidth: '100%' }} onChange={handleChangeHeThongRap}>
                                 <Option value="CGV">CGV</Option>
                                 <Option value="BHDStar">BHDStar</Option>
                                 <Option value="CineStar">CineStar</Option>
@@ -98,24 +99,25 @@ export default function AdminTaoLichChieu() {
                                 <Option value="LotteCinima">LotteCinima</Option>
                                 <Option value="MegaGS">MegaGS</Option>
                             </Select>
-                            <Select size='large' placeholder="Chọn cụm rạp" style={{ minWidth: '100%' }} onChange={handleChangeCumRap} notFoundContent={'Chọn hệ thống rạp trước'}>
+                            <Select className="mt-3" size='large' placeholder="Chọn cụm rạp" style={{ minWidth: '100%' }} onChange={handleChangeCumRap} notFoundContent={'Chọn hệ thống rạp trước'}>
                                 {renderDropDownCumRap()}
                             </Select>
                         </div>
-                        <div className="col-5">
-                            <Select size='large' placeholder="Chọn rạp" style={{ minWidth: '100%' }} onChange={handleChangeRap} notFoundContent={'Chọn cụm rạp trước'}>
+                        <div className="col-6">
+                            <Select className="mt-3" size='large' placeholder="Chọn rạp" style={{ minWidth: '100%' }} onChange={handleChangeRap} notFoundContent={'Chọn cụm rạp trước'}>
                                 {renderDropDownRap()}
                             </Select>
                             <DatePicker
-                                style={{ minWidth: '100%' }}
+                            className="mt-3"
+                                style={{ minWidth: '100%', height: "38px" }}
                                 format="DD/MM/YYYY hh:mm:ss"
                                 disabledDate={disabledDate}
-                                showTime={{ defaultValue: moment('DD/MM/YYYY hh:mm:ss')}}
+                                showTime={{ defaultValue: moment('DD/MM/YYYY hh:mm:ss') }}
                                 onChange={(value, dateString) => {
                                     formik.values.ngayChieuGioChieu = dateString
                                 }}
                             />
-                            <Select size='large' placeholder="Chọn giá vé" style={{ minWidth: '100%' }} name="giaVe" onChange={handleChangeGiaVe}>
+                            <Select className="mt-3" size='large' placeholder="Chọn giá vé" style={{ minWidth: '100%' }} name="giaVe" onChange={handleChangeGiaVe}>
                                 <Option value="70000">70k</Option>
                                 <Option value="90000">90k</Option>
                                 <Option value="110000">110k</Option>
@@ -123,9 +125,12 @@ export default function AdminTaoLichChieu() {
                                 <Option value="150000">150k</Option>
                             </Select>
                         </div>
-                        <div classNam="col-10">
-                            <button type="submit" className="btn btn-success">Đặt lịch</button>
+                        <div className="col-12 mt-3">
+                            <div className="text-right">
+                                <Button type="primary" htmlType="submit">Đặt lịch</Button>
+                            </div>
                         </div>
+
                     </div>
                 </form>
             </div>

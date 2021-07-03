@@ -1,33 +1,91 @@
 .dashboard {
-    .db_select {
+    .dashboard__left {
         position: sticky;
-        z-index: 10;
+        z-index: 100;
         top: 0;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        background: #272635;
-        .db_selectContent {
-            .db_logo {
-                font-family: "Dancing Script", sans-serif;
-                font-weight: 700;
-                font-size: 60px;
-                color: $color-red-light;
-                text-align: center;
+        left: 0;
+        height: 100%;
+        padding: 20px 0;
+        max-width: 22%;
+        // box-shadow: 0.05px 0 10px $color-black-1;
+        .dashboard__img {
+            text-align: center;
+            margin-top: 20px;
+            img {
+                width: 60%;
+                height: auto;
+            }
+        }
+        .db__zoom {
+            position: absolute;
+            top: 5px;
+            button {
+                background: none;
+                font-size: 25px;
+            }
+            i {
+                width: 100%;
+            }
+        }
+        .dashboard__list {
+            margin-top: 10px;
+            .db__item {
+                font-size: 16px;
+                font-weight: 600;
+                color: $color-black-1;
+                display: inline-block;
+                padding: 15px 0;
+                width: 100%;
+                max-width: 300px;
+                transition: 0.5s;
+                &:hover {
+                    background-color: #f3f5ff;
+                }
+            }
+            .active {
+                color: #3f51b5;
+                background-color: #f3f5ff;
+            }
+            i {
+                min-width: 70px;
+                padding-left: 15px;
             }
         }
     }
-    .db_nameBar {
-        position: sticky;
-        width: 100%;
-        top: 0;
-        z-index: 10;
-        height: 40px;
-        background: #f1f3f5;
-        line-height: 40px;
+    .dashboard__right {
+        padding: 30px 15px 0px 15px;
+        margin: 0 auto;
     }
-    .admin_title{
-        font-weight: 700;
-        font-size: 30px;
+}
+@include responsible("extra-large") {
+    .dashboard {
+        .dashboard__left {
+        max-width: 25%;
+        }
+    }
+}
+@include responsible("large") {
+    .dashboard {
+        .dashboard__left {
+            .dashboard__list {
+                .db__item {
+                    font-size: 15px;
+                }
+                i {
+                    min-width: 40px;
+                }
+            }
+        }
+    }
+}
+@include responsible("medium") {
+    .dashboard {
+        .dashboard__left {
+            .dashboard__img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
     }
 }

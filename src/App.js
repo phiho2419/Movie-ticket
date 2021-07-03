@@ -1,5 +1,5 @@
-import '../src/scss/main.css'
-// import '../src/css/main.css'
+// import '../src/scss/main.css'
+import '../src/css/main.css'
 import { Route, Switch, Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import ChiTietPhongVe from './Pages/ChiTietPhongVe/ChiTietPhongVe';
@@ -49,7 +49,6 @@ function App() {
             <HomeTemplate path='/chitietcumrap/:maHeThongRap/:maCumRap' component={ChiTietCumRap} />
             <HomeTemplate path='/thongtincanhan' component={ThongTinCaNhan} />
             
-
             <HomeTemplate path='/' exact component={TrangChu} />
           </Switch>
         </div>
