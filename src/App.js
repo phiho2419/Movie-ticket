@@ -50,6 +50,8 @@ function App() {
             <HomeTemplate path='/thongtincanhan' component={ThongTinCaNhan} />
             
             <HomeTemplate path='/' exact component={TrangChu} />
+            <Route component={Demo} />
+            
           </Switch>
         </div>
       ) : (
