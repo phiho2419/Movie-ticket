@@ -21,12 +21,18 @@ export default function TrangChu() {
     return (
         <div>
             <Carousel />
-            <ListPhim />
-            <TabPhim />
-            <div id="tintuc">
+            <div id="listPhim">
+                <ListPhim />
+            </div>
+            <div id="tabPhim">
+                <TabPhim />
+            </div>
+            <div id="tinTuc">
                 <News />
             </div>
-            <Ungdung />
+            <div id="ungDung">
+                <Ungdung />
+            </div>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import Swal from 'sweetalert2';
 import { history } from '../../App';
 // import logo from './img/logob.jpg'
-
+import { Link, animateScroll as scroll, scroller } from "react-scroll";
 export default function Header() {
     let dataUser = JSON.parse(localStorage.getItem('userLogin'));
 
@@ -50,16 +50,85 @@ export default function Header() {
                         <ul className="navbar-nav m-auto  ">
 
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Lịch Chiếu</a>
+                                <Link
+                                    className="nav-link"
+                                    activeClass="active"
+                                    to="listPhim"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500}
+                                    onClick={() => {
+                                        history.push('/')
+                                        setTimeout(function () {
+                                            scroller.scrollTo('listPhim', {
+                                                duration: 500,
+                                                smooth: true,
+                                            })
+                                        }, 100);
+                                    }}
+                                >Lịch Chiếu</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Cụm Rạp</a>
+                                <Link
+                                    className="nav-link"
+                                    activeClass="active"
+                                    to="tabPhim"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500}
+                                    onClick={() => {
+                                        history.push('/')
+                                        setTimeout(function () {
+                                            scroller.scrollTo('tabPhim', {
+                                                duration: 500,
+                                                smooth: true,
+                                            })
+                                        }, 100);
+                                    }}
+                                >Cụm Rạp</Link>
+
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/#tintuc">Tin Tức</NavLink>
+                                <Link
+                                    className="nav-link"
+                                    activeClass="active"
+                                    to="tinTuc"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500}
+                                    onClick={() => {
+                                        history.push('/')
+                                        setTimeout(function () {
+                                            scroller.scrollTo('tinTuc', {
+                                                duration: 500,
+                                                smooth: true,
+                                            })
+                                        }, 100);
+                                    }}
+                                >Tin Tức</Link>
                             </li>
                             <li className="nav-item ">
-                                <a className="nav-link" href="#">Ứng Dụng</a>
+                                <Link
+                                    className="nav-link"
+                                    activeClass="active"
+                                    to="ungDung"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500}
+                                    onClick={() => {
+                                        history.push('/')
+                                        setTimeout(function () {
+                                            scroller.scrollTo('ungDung', {
+                                                duration: 500,
+                                                smooth: true,
+                                            })
+                                        }, 100);
+                                    }}
+                                >Ứng dụng</Link>
                             </li>
                         </ul>
                     </div>

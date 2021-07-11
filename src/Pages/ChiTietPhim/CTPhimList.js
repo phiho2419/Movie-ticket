@@ -59,7 +59,7 @@ export default function CTPhimList(props) {
     
 
     return (
-        <div className="ctp_list py-5">
+        <div className="ctp_list py-5" id="datVe">
             <div className="container">
                 <ul className="nav nav-tabs nav_tabs_chiTietPhim" id="myTab" role="tablist">
                     <li className="nav-item">

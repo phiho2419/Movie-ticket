@@ -20,6 +20,7 @@ import { useEffect, useState } from 'react';
 import Loading from './Components/Loading/Loading'
 import AdminTaoLichChieu from './Pages/AdminTaoLichChieu/AdminTaoLichChieu';
 import Demo from './Pages/Demo';
+import Error from './Components/Error/Error';
 export const history = createBrowserHistory();
 
 function App() {
@@ -48,9 +49,11 @@ function App() {
             <HomeTemplate path='/chitietphim/:maPhim' component={ChiTietPhim} />
             <HomeTemplate path='/chitietcumrap/:maHeThongRap/:maCumRap' component={ChiTietCumRap} />
             <HomeTemplate path='/thongtincanhan' component={ThongTinCaNhan} />
+
+            <Route path='/demo' component={Demo} />
             
             <HomeTemplate path='/' exact component={TrangChu} />
-            <Route component={Demo} />
+            <Route component={Error} />
             
           </Switch>
         </div>

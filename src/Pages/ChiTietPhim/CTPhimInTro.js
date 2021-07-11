@@ -3,6 +3,8 @@ import { Tabs, Progress, Rate } from 'antd';
 import ModalVideo from 'react-modal-video';
 import moment from 'moment'
 import { renderIMDb } from '../../Util/services'
+import { Link, animateScroll as scroll } from "react-scroll";
+
 
 const { TabPane } = Tabs;
 export default function CTPhimInTro(props) {
@@ -32,7 +34,17 @@ export default function CTPhimInTro(props) {
                             <span className="infor_tenPhim ml-2">{chiTietPhim.tenPhim}</span>
                         </p>
                         <p >105p - {chiTietPhim.danhGia} IMDb - 2D/Digital</p>
-                        <p className="btnDatVe  d-md-inline-flex">ĐẶT VÉ</p>
+                        {/* <p  className="btnDatVe  d-md-inline-flex">ĐẶT VÉ</p> */}
+                        <Link
+                            className="btnDatVe  d-md-inline-flex"
+                            activeClass="active"
+                            style={{color:"white"}}
+                            to="datVe"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                        >ĐẶT VÉ</Link>
                     </div>
                     <div className="intro_rate d-none d-lg-block col-lg-3" >
                         <div className="rate_cirle">

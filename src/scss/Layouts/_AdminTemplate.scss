@@ -89,3 +89,41 @@
         }
     }
 }
+
+.header__admin{
+    text-align: right;
+    margin-bottom: 20px;
+    .btn_header{
+        padding: 10px 15px;
+        margin: 0 5px;
+        color: $color-black-1;
+        border-radius: 50px;
+        min-width: 80px;
+        &:hover{
+            color: $color-red-dark;
+            border-color: black;
+        }
+        
+        i{
+            color: $color-black-1;
+        }
+    }
+    .btn_dangnhap{
+        border-left: 1px solid $color-red-dark;
+        position: relative;
+        &::after{
+            position: absolute;
+            right: -3px;
+            top: 5px;
+            z-index: 5;
+            content: '';
+            display: inline-block;
+            height: 80%;
+            width: 1px;
+            background-color: $color-white-1;
+        }
+    }
+    .btn_dangki{
+        border-right: 1px solid $color-red-dark;
+    }
+}

@@ -7,8 +7,26 @@ import { callAPI_layDanhSachPhimAction } from '../../../Redux/Actions/QuanLyPhim
 import { Fragment } from 'react';
 import Slider from 'react-slick';
 
-
-
+function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className}
+            style={{ ...style, display: "block" }}
+            onClick={onClick}
+        />
+    );
+}
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className}
+            style={{ ...style, display: "block"}}
+            onClick={onClick}
+        />
+    );
+}
 export default function ListPhim() {
     const dispatch = useDispatch();
     const { mangPhim } = useSelector(state => state.QuanLyPhimReducer);
@@ -42,31 +60,33 @@ export default function ListPhim() {
         arrows: true,
         responsive: [
             {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                arrows: false
-              }
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    arrows: false
+                }
             },
             {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                initialSlide: 2,
-                arrows: false
-              }
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2,
+                    arrows: false
+                }
             },
             {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false
-              }
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false
+                }
             }
-          ]
+        ],
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />
     };
     return (
         <section className=" container sectionListPhim">

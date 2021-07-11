@@ -2,28 +2,20 @@ import { Fragment, useState } from "react"
 import { Route } from "react-router-dom"
 import { NavLink } from 'react-router-dom';
 import { Menu, Dropdown } from 'antd';
-const menuDropdownUser = (
-    <Menu>
-        <Menu.Item key="0">
-            <NavLink to="#">Cập nhật thông tin</NavLink>
-        </Menu.Item>
-        <Menu.Item key="1">
-            <NavLink to="#">Đăng xuất</NavLink>
-        </Menu.Item>
-    </Menu>
-);
-
+import Swal from "sweetalert2";
+import { history } from "../App";
 
 export const AdminTemplate = (props) => { //props.path, props.component
     const [zoom, setZoom] = useState(true);
+    let dataUser = JSON.parse(localStorage.getItem('userLogin'));
 
     return <Route path={props.path} exact render={(propsRoute) => {
         return <Fragment>
             <div className="dashboard">
-                <div className="row" style={{margin:0,flexWrap:"initial"}}>
+                <div className="row" style={{ margin: 0, flexWrap: "initial" }}>
                     <div className={zoom ? "col-1 col-md-3 dashboard__left" : "col-1 dashboard__left"}>
                         <div className="dashboard__img">
-                            <NavLink to="/"><img src="../../img/logob.jpg"/></NavLink>
+                            <NavLink to="/"><img src="../../img/logob.jpg" /></NavLink>
                         </div>
                         <div className="db__zoom d-none d-md-block" style={zoom ? { right: "50px" } : { left: "15px" }}>
                             <button onClick={() => {
@@ -62,9 +54,31 @@ export const AdminTemplate = (props) => { //props.path, props.component
                         </ul>
                     </div>
                     <div className={zoom ? "col-11 col-md-9 dashboard__right" : "col-11 dashboard__right"}>
+                    <div className="header__admin">
+                    <Fragment>
+                        <NavLink to='/thongtincanhan' className="btn_header btn_dangnhap">{dataUser.hoTen}</NavLink>
+                        <NavLink to="#" style={{ outline: 'none' }} className="btn_header btn_dangki" onClick={() => {
+                            Swal.fire({
+                                icon: 'question',
+                                title: 'Bạn có chắc muốn đăng xuất?',
+                                showCancelButton: true,
+                                cancelButtonText: 'Hủy bỏ',
+                                confirmButtonText: ' Xác Nhận',
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    localStorage.removeItem('userLogin');
+                                    localStorage.removeItem('accesstoken');
+                                    history.push('/');
+                                }
+                            })
+
+                        }}>Đăng Xuất</NavLink>
+                    </Fragment>
+                </div>
                         <props.component {...propsRoute} />
                     </div>
                 </div>
+          
             </div>
 
         </Fragment>

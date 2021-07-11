@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Progress, Rate } from 'antd';
 import { renderIMDb } from '../../Util/services';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function CTRapInTro(props) {
 
@@ -51,7 +52,17 @@ export default function CTRapInTro(props) {
                     </div>
                     <div className="intro_infor col-6 col-lg-5">
                         {renderTenRap()}
-                        <p className="btnDatVe  d-md-inline-flex">ĐẶT VÉ</p>
+                        {/* <p className="btnDatVe  d-md-inline-flex">ĐẶT VÉ</p> */}
+                        <Link
+                            className="btnDatVe  d-md-inline-flex"
+                            style={{color:"white"}}
+                            activeClass="active"
+                            to="datVe"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                        >ĐẶT VÉ</Link>
                     </div>
                     <div className="intro_rate d-none d-lg-block col-lg-3" >
                         <div className="rate_cirle">
