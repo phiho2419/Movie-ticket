@@ -13,13 +13,6 @@
                 color: white;
             }
         }
-        .header-logo {
-            font-family: "Dancing Script", sans-serif;
-            font-weight: 700;
-            font-size: 90px;
-            line-height: 90px;
-            color: $color-red-light !important;
-        }
         .navbar {
             padding: 0;
             .navbar-nav {
@@ -78,6 +71,20 @@
         }
         .navbar-expand-lg .navbar-collapse{
             flex-direction: row-reverse;
+        }
+        #logo_circle{
+            animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotate(0);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
         }
 }
 @include responsible("large") {

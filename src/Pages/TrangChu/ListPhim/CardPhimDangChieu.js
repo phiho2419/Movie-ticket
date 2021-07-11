@@ -1,9 +1,9 @@
-import { Button, Rate  } from 'antd';
+import { Button, Rate } from 'antd';
 import React, { useState } from 'react'
 import { Fragment } from 'react';
 import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
-import {renderIMDb} from '../../../Util/services'
+import { renderIMDb } from '../../../Util/services'
 
 Modal.defaultStyles.overlay.backgroundColor = 'rgb(0,0,0,0.75)';
 Modal.defaultStyles.overlay.zIndex = '100';
@@ -34,7 +34,7 @@ export default function CardPhimDangChieu(props) {
         right: '0px',
         top: '0px',
         outline: 'none',
-        background:'unset'
+        background: 'unset'
     }
 
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -45,7 +45,7 @@ export default function CardPhimDangChieu(props) {
         setIsOpen(false);
     }
 
-    
+
 
 
 
@@ -63,7 +63,14 @@ export default function CardPhimDangChieu(props) {
                     <iframe width="800" height="500" src={phim.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </Modal>
                 <div className="overlay" onClick={openModal} >
-                    <span className="icon_play" ><i className="fa fa-play"></i> </span>
+                    <span className="icon_play">
+                        <a href="#" className="playBut">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
+                                <polygon className="triangle" id="XMLID_18_" fill="none" strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} points="73.5,62.5 148.5,105.8 73.5,149.1 " />
+                                <circle className="circle" id="XMLID_17_" fill="none" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} cx="106.8" cy="106.8" r="103.3" />
+                            </svg>
+                        </a>
+                    </span>
                 </div>
             </div>
             <div className="card-body" style={{ padding: 'unset' }}>

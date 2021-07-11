@@ -27,7 +27,7 @@ export default function ListPhim() {
     }
     const renderPhimDangChieu = () => {
         return mangPhim.map((phim, index) => {
-            if (index >= 1 && index <= 31) {
+            if (index >= 1 && index <= 32) {
                 return <CardPhimDangChieu phim={phim} index={phim.maPhim} />
             }
         })

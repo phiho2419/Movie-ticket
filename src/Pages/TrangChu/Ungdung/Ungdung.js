@@ -31,7 +31,7 @@ export default function Ungdung() {
     };
     return (
         <div className="ungDung" style={{ backgroundImage: `url(${Background})` }}>
-            <div className="ungDung__content">
+            <div className="ungDung__content container-fluid">
                 <div className="row">
                     <div className="col-12 col-lg-6 text-center text-lg-left ">
                         <p className="ud__title">

@@ -117,6 +117,7 @@ export default function CTPhimDanhGiaPhim() {
                     <div>
                         <p style={{ fontWeight: '400', textTransform: '' }}>{bl.commentDanhGia}</p>
                     </div>
+                    <hr/>
                 </div>
 
             }
@@ -128,7 +129,7 @@ export default function CTPhimDanhGiaPhim() {
             <div className="user_area" onClick={openModal}>
                 <div >
                     <img style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={`https://i.pravatar.cc/150?u=${dataUser.hoTen}`} />
-                    <span className="yourThink">Bạn nghĩ gì về phim này ?</span>
+                    <span className="yourThink ml-2">Bạn nghĩ gì về phim này ?</span>
                 </div>
                 <div className="user_star">
                     <i class="fa fa-star yel__star"></i>
@@ -168,7 +169,7 @@ export default function CTPhimDanhGiaPhim() {
             {renderComment()}
             <div className=" text-center p-3">
                 {numberItem !== 3 ? <button className="less_btn" onClick={readLess}>Rút gọn</button> : null}
-                <button className="ml-3 more_btn less_btn" onClick={readMore}>Xem thêm</button>
+                {cmt.length > 3 ? <button className="ml-3 more_btn " onClick={readMore}>Xem thêm</button> : null}
             </div>
         </div>
     )

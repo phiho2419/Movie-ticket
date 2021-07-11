@@ -1,0 +1,71 @@
+.information{
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    .infor-background{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 600px;
+        background-image: url("../assets/img/bginforB.jpg");
+        animation: showBlock 2s forwards;
+    }
+    .infor-content{
+        color: white;
+        position: relative;
+        height: 100%;
+        margin: 0 auto;
+        padding-top: 80px;
+        .infor-details{
+            #tttk{
+                height: 300px;
+            }
+            #lsdv{
+                height: 0;
+                overflow: hidden;
+            }
+        }
+        
+    }
+    .showLichSuDatVe{
+        animation: hideTable 2s forwards;
+    }
+}
+    
+ @keyframes showBlock {
+    0%{
+        transform: scale(1) ;
+    }
+    100%{
+        transform: scale(1.1) ;
+    }
+ }
+ 
+ @keyframes showTable {
+     0%{
+        height: 0;
+     }
+     100%{
+        height: 300px;
+     }
+ }
+ @keyframes hideTable {
+    0%{
+       height: 300px;
+    }
+    100%{
+       height: 0;
+    }
+}
+
+.block{
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 100px auto;
+}
+ 

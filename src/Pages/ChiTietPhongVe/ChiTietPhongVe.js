@@ -7,6 +7,7 @@ import { layThongTinLichChieuAction, datVeAction } from '../../Redux/Actions/Lic
 import { USERLOGIN } from '../../Util/setting';
 import Swal from 'sweetalert2';
 import { Redirect } from 'react-router';
+import { handleSttGhe } from '../../Util/services';
 
 export default function ChiTietPhongVe(props) {
 
@@ -16,7 +17,7 @@ export default function ChiTietPhongVe(props) {
 
     //Lấy reducer
     const { lichChieu, danhSachGheDangDat } = useSelector(state => state.LichChieuReducer);
-
+    console.log(lichChieu);
 
     //Call api 
     useEffect(() => {
@@ -41,10 +42,7 @@ export default function ChiTietPhongVe(props) {
         return lichChieu.danhSachGhe?.map((ghe, index) => {
 
             let indexGheDD = danhSachGheDangDat.findIndex(gheDD => gheDD.maGhe === ghe.maGhe);
-            let classGheDangDat = '';
-            if (indexGheDD !== -1) {
-                classGheDangDat = 'gheDangDat';
-            }
+
             let gheVip = ghe.loaiGhe === 'Vip' ? 'gheVip' : '';
             let gheDaDat = ghe.daDat === true ? 'gheDaDat' : '';
 
@@ -53,16 +51,16 @@ export default function ChiTietPhongVe(props) {
             let loiDi = index === 7 || index === 23 || index === 39 || index === 55 || index === 71 || index === 87 || index === 103 || index === 119 || index === 135 || index === 151 || index === 167;
 
             return <Fragment key={index}>
-                <button style={{ color: 'white' }} disabled={ghe.daDat} className={` ghe ${gheVip} ${gheDaDat} ${classGheDangDat}`}
-                    onClick={
-                        () => {
-                            dispatch({
-                                type: 'DAT_GHE',
-                                gheDangDat: ghe
-                            })
-                        }
+                <button disabled={ghe.daDat} style={{ background: "transparent" }} onClick={
+                    () => {
+                        dispatch({
+                            type: 'DAT_GHE',
+                            gheDangDat: ghe
+                        })
                     }
-                > {index + 1}</button>
+                }>
+                    <img src={indexGheDD !== -1 ? "../../../img/gheDangDat.png" : gheDaDat ? "../../../img/gheDaDat.png" : gheVip ? '../../../img/gheVip.png' : "../../../img/gheThuong.png"} alt="ghe" style={{ margin: "2px", cursor: 'pointer' }} />
+                </button>
 
                 {/* Xuống dòng  */}
                 {(index + 1) % 16 === 0 ? <br /> : ''}
@@ -77,76 +75,141 @@ export default function ChiTietPhongVe(props) {
 
     }
 
-    // console.log('lichChieu', lichChieu);
-    console.log('mã lịch chiếu',malichChieu);
-    console.log('danh sách vé',danhSachGheDangDat);
-    console.log('tài khoản',dataUser.taiKhoan);
+
 
     return (
         <Fragment>
             <div className="pageChiTietPhongVe">
-                <div className="container-fluid">
+                <div className="bg-image"></div>
+                <div className="container-fluid bg-content">
                     <div className='row'>
-                        <div className=" col-9 ">
+                        <div className=" col-12 col-lg-8 ">
                             <div className="ghe_manhinh">
                                 <div className="man_hinh">
-                                    SCREEN
+                                    {/* <img src="../../../img/screen.png" alt="screen" /> */}
                                 </div>
                                 <div className="cumGhe text-center">
-                                    {renderDanhSachGhe()}
+
+                                    <div className="d-flex justify-content-center">
+                                        <div className="soCotGhe">
+                                            <p>A</p>
+                                            <p>B</p>
+                                            <p>C</p>
+                                            <p>D</p>
+                                            <p>E</p>
+                                            <p>F</p>
+                                            <p>G</p>
+                                            <p>H</p>
+                                            <p>I</p>
+                                            <p>J</p>
+                                        </div>
+                                        <div>
+                                            <div className="soHangGhe" style={{ color: 'white', fontWeight: '700' }}>
+                                                <span>1</span>
+                                                <span>2</span>
+                                                <span>3</span>
+                                                <span>4</span>
+                                                <span>5</span>
+                                                <span>6</span>
+                                                <span>7</span>
+                                                <span>8</span>
+                                                <span>9</span>
+                                                <span>10</span>
+                                                <span>11</span>
+                                                <span>12</span>
+                                                <span>13</span>
+                                                <span>14</span>
+                                                <span>15</span>
+                                                <span>16</span>
+                                            </div>
+                                            {renderDanhSachGhe()}
+                                        </div>
+                                    </div>
+                                    <div className="chuThichGhe mt-3">
+                                        <div className="d-flex justify-content-center font-weight-bold ">
+                                            <div className="mx-2">
+                                                <img src="../../../img/gheThuong16.png" alt="ghe" />
+                                                <span style={{ color: "white", marginLeft: '2px' }}>Ghế thường</span>
+                                            </div >
+                                            <div className="mx-2">
+                                                <img src="../../../img/gheVip16.png" alt="ghe" />
+                                                <span style={{ color: "white", marginLeft: '2px' }}>Ghế VIP</span>
+                                            </div>
+                                            <div className="mx-2">
+                                                <img src="../../../img/gheDaDat16.png" alt="ghe" />
+                                                <span style={{ color: "white", marginLeft: '2px' }}>Ghế đã đặt</span>
+                                            </div>
+                                            <div className="mx-2">
+                                                <img src="../../../img/gheDangDat16.png" alt="ghe" />
+                                                <span style={{ color: "white", marginLeft: '2px' }}>Ghế đang đặt</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
                         </div>
-                        <div className=" col-3 ">
+                        <div className=" d-none d-lg-block col-lg-4 ">
                             <div className="thongtin_datve">
-                                <p className="tt_tenPhim"> {lichChieu.thongTinPhim?.tenPhim} </p>
-                                <p className="tt_tenRap"> {lichChieu.thongTinPhim?.tenCumRap}</p>
-                                <p className="tt_thoiGianChieu">{lichChieu.thongTinPhim?.ngayChieu} {lichChieu.thongTinPhim?.gioChieu}</p>
+                                {/* <div className="ticket_tag"><img src="../../../img/tickettagC.png" alt="ghe" /></div> */}
+                                <div className="wrap_content_datve">
+                                    <p className="tt_tenRap text-center"> {lichChieu.thongTinPhim?.tenCumRap}</p>
+                                    <div  >
+                                        <div>
+                                            <p className="tt_tenPhim"> {lichChieu.thongTinPhim?.tenPhim} </p>
+                                            <p className="tt_thoiGianChieu">{lichChieu.thongTinPhim?.ngayChieu} {lichChieu.thongTinPhim?.gioChieu} - {lichChieu.thongTinPhim?.tenRap}</p>
 
-                                <hr />
-                                <p className="mb-1 tt_email">Email</p>
+                                        </div>
+                                        {/* <div style={{flexGrow:'1'}} className="logo_ticket" style={{position:'relative'}}>
+                                        <img id="logo_circle" style={{ width: '78px', objectFit: 'cover', height: '60px' }} className="navbar-brand header-logo p-0 pr-1 img-fluid" src="../../img/logoheader.png" alt="logo" />
+                                        <img style={{ position: 'absolute', top: '0', left: '0', width: '85px', objectFit: 'cover', height: '60px' }} className="navbar-brand header-logo p-0 pr-1 img-fluid" src="../../img/logoheaderA.png" alt="logo" />
+                                    </div> */}
+                                    </div>
+                                    {/* <p className="mb-1 tt_email">Email</p>
                                 <p className=""> {dataUser.email}</p>
                                 <p className="mb-1 tt_sdt">Số điện thoại</p>
-                                <p className=""> {dataUser.soDT} </p>
-                                <hr />
-                                <p className="tt_datGhe "> Ghế:
-                                    {danhSachGheDangDat.map((gheDD, index) => {
-                                        return <Fragment >
-                                            {index <= 4 ? <span className="tt_soGheDat" key={index} className="mr-2">  {gheDD.stt}</span> : (index == 5 ? '...' : '')}
-                                        </Fragment>
-                                    })}
-                                </p>
-                                <p className="tt_giaVe">Giá: <span className="tt_tongGiaVe">
-                                    {danhSachGheDangDat.reduce((tongTien, gheDD, index) => {
-                                        return tongTien += gheDD.giaVe;
-                                    }, 0).toLocaleString()} VND
-                                </span></p>
-                                <hr />
-                                <div className="tt_httt">
-                                    <h4 className="tt_tithttt">Hình thức thanh toán</h4>
-                                    <div className="form-check">
+                                <p className=""> {dataUser.soDT} </p> */}
+
+                                    <hr />
+                                    <p className="tt_datGhe "> Ghế:
+                                        {danhSachGheDangDat.map((gheDD, index) => {
+                                            return <span className="tt_soGheDat" key={index} className="mr-2">  {handleSttGhe(gheDD.stt)}</span>
+
+                                        })}
+                                    </p>
+                                    <hr />
+                                    <p className="tt_giaVe">Giá: <span className="tt_tongGiaVe">
+                                        {danhSachGheDangDat.reduce((tongTien, gheDD, index) => {
+                                            return tongTien += gheDD.giaVe;
+                                        }, 0).toLocaleString()}  VND
+                                    </span></p>
+                                    <hr />
+                                    <div className="tt_httt">
+                                        <h5 className="tt_tithttt">Thanh toán</h5>
                                         <div className="form-check">
-                                            <label className="form-check-label">
-                                                <input type="radio" className="form-check-input" name="optradio" defaultChecked />
-                                                <img src="../../../img/Icon-app_white-bg.png" /> Thanh toán qua ZaloPay
-                                            </label>
-                                        </div>
-                                        <div className="form-check">
-                                            <label className="form-check-label">
-                                                <input type="radio" className="form-check-input" name="optradio" />
-                                                <img src="../../../img/visa.png" /> Visa, Master
-                                            </label>
-                                        </div>
-                                        <div className="form-check ">
-                                            <label className="form-check-label">
-                                                <input type="radio" className="form-check-input" name="optradio" />
-                                                <img src="../../../img/atm.png" /> Thẻ ATM nội địa
-                                            </label>
+                                            <div className="form-check">
+                                                <label className="form-check-label">
+                                                    <input type="radio" className="form-check-input" name="optradio" defaultChecked />
+                                                    <img src="../../../img/viDienTu.png" /> Ví điện tử
+                                                </label>
+                                            </div>
+                                            <div className="form-check">
+                                                <label className="form-check-label">
+                                                    <input type="radio" className="form-check-input" name="optradio" />
+                                                    <img src="../../../img/creditCard.png" /> Visa, Master
+                                                </label>
+                                            </div>
+                                            <div className="form-check ">
+                                                <label className="form-check-label">
+                                                    <input type="radio" className="form-check-input" name="optradio" />
+                                                    <img src="../../../img/atmMachine.png" /> Thẻ ATM nội địa
+                                                </label>
+                                            </div>
+
                                         </div>
 
                                     </div>
-
+                                    
                                 </div>
                                 <button onClick={() => {
                                     let objectApi = {
@@ -155,13 +218,15 @@ export default function ChiTietPhongVe(props) {
                                         "taiKhoanNguoiDung": dataUser.taiKhoan
                                     }
                                     dispatch(datVeAction(objectApi))
-                                }} className="btn btn-success w-100">Đặt vé</button>
+                                }} class="btnDatVe">ĐẶT VÉ</button>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </Fragment>
     )
 }

@@ -12,14 +12,15 @@ export default function Header() {
         <header>
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light ">
-                    <NavLink to='/'>
-                        <img className="navbar-brand header-logo p-0 pr-1 img-fluid" style={{ width: '70px', objectFit: 'cover', height: '60px' }} src="../../../img/logob.jpg" />
+                    <NavLink to='/' style={{position:'relative'}}>
+                        <img id="logo_circle" style={{width: '78px', objectFit: 'cover', height: '60px'}} className="navbar-brand header-logo p-0 pr-1 img-fluid"  src="../../../img/logoheader.png" alt="logo"/>
+                        <img style={{position:'absolute',top:'0',left:'0',width: '85px', objectFit: 'cover', height: '60px'}} className="navbar-brand header-logo p-0 pr-1 img-fluid"  src="../../../img/logoheaderA.png" alt="logo" />
                     </NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i className="fa fa-bars"></i>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <form className="form-inline my-2 justify-content-center">
+                        <form className="form-inline my-3 justify-content-center">
                             {
                                 localStorage.getItem('userLogin') ?
                                     <Fragment>

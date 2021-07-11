@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../../Components/Header/Header'
 import ModalVideo from 'react-modal-video';
 import SearchForm from '../SearchForm/SearchForm';
+
 export default function Carousel() {
     const [isOpen, setOpen] = useState(false);
+
+
     return (
-        <div className="carousel_TrangChu">
-            {/* <Header /> */}
+        <div className="carousel_TrangChu" >
             <div id="carouselTrangChu" className="carousel slide" data-ride="carousel" data-interval="3000" >
                 <ol className="carousel-indicators">
                     <li data-target="#carouselTrangChu" data-slide-to={0} className="active" />
@@ -18,22 +20,36 @@ export default function Carousel() {
                         <img className="d-block w-100 carousel_poster" src="./img/ps1.jpg" alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
-                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="jluSu8Rw6YE" onClose={() => setOpen(false)} />
+                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="odM92ap8_c0" onClose={() => setOpen(false)} />
                             <a className="text-white" onClick={() => setOpen(true)} >
-                                <div className="carousel-caption d-none d-md-block">
-                                    <span className="icon_play"><i className="fa fa-play"></i> </span>
+                                <div className="carousel-caption ">
+                                    <span className="icon_play">
+                                        <a href="#" className="playBut">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
+                                                <polygon className="triangle" id="XMLID_18_" fill="none" strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} points="73.5,62.5 148.5,105.8 73.5,149.1 " />
+                                                <circle className="circle" id="XMLID_17_" fill="none" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} cx="106.8" cy="106.8" r="103.3" />
+                                            </svg>
+                                        </a>
+                                    </span>
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100 carousel_poster " src="./img/ps2.jpg" alt="First slide" />
+                        <img className="d-block w-100 carousel_poster " src="./img/wprampage.jpg" alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
-                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="jluSu8Rw6YE" onClose={() => setOpen(false)} />
+                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="coOKvrsmQiI" onClose={() => setOpen(false)} />
                             <a className="text-white  " onClick={() => setOpen(true)}>
-                                <div className="carousel-caption d-none d-md-block">
-                                    <span className="icon_play"><i className="fa fa-play"></i> </span>
+                                <div className="carousel-caption ">
+                                    <span className="icon_play">
+                                        <a href="#" className="playBut">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
+                                                <polygon className="triangle" id="XMLID_18_" fill="none" strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} points="73.5,62.5 148.5,105.8 73.5,149.1 " />
+                                                <circle className="circle" id="XMLID_17_" fill="none" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} cx="106.8" cy="106.8" r="103.3" />
+                                            </svg>
+                                        </a>
+                                    </span>
 
                                 </div>
                             </a>
@@ -43,12 +59,20 @@ export default function Carousel() {
                         <img className="d-block w-100 carousel_poster " src="./img/img1.png" alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
-                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="jluSu8Rw6YE" onClose={() => setOpen(false)} />
+                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="" onClose={() => setOpen(false)} />
                             <a className="text-white  " onClick={() => setOpen(true)}>
-                                <div className="carousel-caption d-none d-md-block">
-                                    <span className="icon_play"><i className="fa fa-play"></i> </span>
+                                <div className="carousel-caption ">
+                                    <span className="icon_play">
+                                        <a href="#" className="playBut">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
+                                                <polygon className="triangle" id="XMLID_18_" fill="none" strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} points="73.5,62.5 148.5,105.8 73.5,149.1 " />
+                                                <circle className="circle" id="XMLID_17_" fill="none" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} cx="106.8" cy="106.8" r="103.3" />
+                                            </svg>
+                                        </a>
+                                    </span>
 
-                                </div></a>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -60,13 +84,13 @@ export default function Carousel() {
                     <span className="carousel-control-next-icon" aria-hidden="true" />
                     <span className="sr-only">Next</span>
                 </a>
-
-
             </div>
-            <div className="search_form d-none d-md-block " style={{background:'white'}}>
+
+            <div className="search_form d-none d-md-block " style={{ background: 'white' }}>
                 <SearchForm />
             </div>
 
         </div>
     )
 }
+

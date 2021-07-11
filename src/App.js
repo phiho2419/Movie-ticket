@@ -49,6 +49,7 @@ function App() {
             <HomeTemplate path='/chitietcumrap/:maHeThongRap/:maCumRap' component={ChiTietCumRap} />
             <HomeTemplate path='/thongtincanhan' component={ThongTinCaNhan} />
             
+            <Route path="/demo" component={Demo} />
 
             <HomeTemplate path='/' exact component={TrangChu} />
           </Switch>

@@ -91,62 +91,7 @@
         }
     }
 }
-.user_comment{
-        width: 500px;
-        margin: 0 auto;
-        padding: 0 12px;
-    .user_area{
-        height: 60px;
-        background-color: white;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 10px;
-        cursor: pointer;
-        .yourThink{
-            margin-left: 2px;
-        }
-        .user_star{
-            font-size: 20px;
-        }
-    }
-    .user_area_cmt{
-        height: 120px;
-        background-color: white;
-        border-radius: 5px;
-        padding: 0 10px;
-        .danhGia_imbd{
-            .yel__star{
-                color:rgb(255, 115, 0)
-            }
-        }
-    }
-    
-}
-#modal_comment{
-    #danhGia{
-        color: $color-red-primary;
-        font-size: 15px;
-        text-align: center;
-        margin-bottom: 0;
-    }
-    .ant-input:focus, .ant-input-focused,.ant-input:hover{
-        border-color: unset;
-        box-shadow: none;
-    }
-    textarea{
-        resize: none
-    }
-}
 
-#rating_bar{
-	width:100px;
-	height:100px;
-	margin: 4px 175px !important;    
-    display:inline-block;
-    display:inline;
-}
 
 
 @include responsible("extra-large") {

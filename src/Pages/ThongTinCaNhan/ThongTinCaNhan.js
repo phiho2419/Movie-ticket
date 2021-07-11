@@ -1,31 +1,78 @@
 import React, { useEffect, useState } from 'react'
-import LichSu from './LichSu'
-import ThongTin from './ThongTin'
+import { Button } from 'antd'
 import { Tabs } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { CapNhatNguoiDungAction, thongTinAction } from '../../Redux/Actions/NguoiDungAction';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Header from '../../Components/Header/Header';
-import Footer from '../../Components/Footer/Footer';
 import { USERLOGIN } from '../../Util/setting';
 
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+import { NavLink } from 'react-router-dom';
+import LichSuDatVe from './LichSuDatVe';
+
+
+const customStylesDoiMatKhau = {
+    content: {
+        width: '350px',
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+};
 
 const { TabPane } = Tabs;
 
 export default function ThongTinCaNhan() {
-    const [edit, setEdit] = useState(false);
     const dispatch = useDispatch();
     const { user } = useSelector(state => state.NguoiDungReducer);
+    console.log('..', user);
     let usLogin = '';
     if (localStorage.getItem(USERLOGIN)) {
         usLogin = JSON.parse(localStorage.getItem(USERLOGIN));
     }
 
+
+    const [modalMatKhau, setModalMatKhau] = React.useState(false);
+    function openDoiMatKhau() {
+        setModalMatKhau(true);
+    }
+    function closeDoiMatKhau() {
+        setModalMatKhau(false);
+    }
+
+    const [modalHoTen, setModalHoTen] = React.useState(false);
+    function openDoiHoTen() {
+        setModalHoTen(true);
+    }
+    function closeDoiHoTen() {
+        setModalHoTen(false);
+    }
+
+    const [modalEmail, setModalEmail] = React.useState(false);
+    function openDoiEmail() {
+        setModalEmail(true);
+    }
+    function closeDoiEmail() {
+        setModalEmail(false);
+    }
+
+    const [modalSdt, setModalSdt] = React.useState(false);
+    function openDoiSdt() {
+        setModalSdt(true);
+    }
+    function closeDoiSdt() {
+        setModalSdt(false);
+    }
+
+
     useEffect(() => {
         dispatch(thongTinAction(usLogin.taiKhoan));
     }, [])
-    console.log(user);
     const formik = useFormik({
         initialValues: {
             taiKhoan: user.taiKhoan,
@@ -39,11 +86,10 @@ export default function ThongTinCaNhan() {
         },
         enableReinitialize: true,
         validationSchema: Yup.object().shape({
-            matKhau: Yup.string().required('Mật khẩu không được bỏ trống').min(6, 'Mật khẩu tối thiểu 6 ký tự').max(32, 'mật khẩu tối đa 32 kí tự!'),
-            email: Yup.string().required('Email không được bỏ trống').email('Phải đúng dịnh dạng @email'),
-            soDt: Yup.string().required('Số điện thoại không được bỏ trống'),
-            soDt: Yup.number().positive('Số điện thoại phải là dạng số'),
-            matKhauConfirm: Yup.string().required('Mật khẩu không được bỏ trống').min(6, 'Mật khẩu tối thiểu 6 ký tự').max(32, 'mật khẩu tối đa 32 kí tự!').oneOf([Yup.ref("matKhau"), null], "Mật khẩu nhập lại không đúng"),
+            matKhau: Yup.string().min(6, 'Mật khẩu tối thiểu 6 ký tự').max(32, 'mật khẩu tối đa 32 kí tự!'),
+            email: Yup.string().email('Phải đúng dịnh dạng @email'),
+            soDt: Yup.number().typeError('Số điện thoại phải là dạng số'),
+            matKhauConfirm: Yup.string().min(6, 'Mật khẩu tối thiểu 6 ký tự').max(32, 'mật khẩu tối đa 32 kí tự!').oneOf([Yup.ref("matKhau"), null], "Mật khẩu nhập lại không đúng"),
             hoTen: Yup.string().required('Họ tên không được bỏ trống'),
 
         }),
@@ -51,110 +97,148 @@ export default function ThongTinCaNhan() {
             dispatch(CapNhatNguoiDungAction(values));
         },
     });
+
+
+
     return (
-        <div className="ThongTinCaNhan">
-           
-            <div className="TT_content">
-                <Tabs defaultActiveKey="1">
-                    <TabPane tab={<p>Thông Tin Chi Tiết</p>} key="1">
-                        <ThongTin user={user} />
-                        <div className="Edit__button">
-                            <button className="TT__button" onClick={() => {
-                                if (edit) {
-                                    document.querySelector('.Edit').style.display = 'none';
-                                    document.querySelector('.TT__button').style.backgroundColor = '#ff867f';
-                                } else {
-                                    document.querySelector('.Edit').style.display = 'block';
-                                    document.querySelector('.TT__button').style.backgroundColor = '#ff5252';
-                                }
-                                setEdit(!edit)
-                            }}>Chỉnh Sửa</button>
+        <div className="ThongTinCaNhan" >
+            <div className="content_paper container">
+                <div className="bg_image ">
+                    <div className="row ">
+                        <div className="col-3 text-center col-avatar">
+                            <img className="avatar" src={`https://i.pravatar.cc/150?u=${usLogin.soDT}`} alt="avatar" />
+                            {/* <img className="circle" src="../../img/circleAvaA.png" alt="circle" /> */}
                         </div>
-                    </TabPane>
-                    <TabPane tab={<p>Lịch Sử Đặt Vé</p>} key="2">
-                        <LichSu ThongTinDatVe={user.thongTinDatVe} />
-                    </TabPane>
+                        <div className="col-8 infor_details pt-2">
+                            <hr />
+                            <p className="row">
+                                <span className="col-3">Họ tên : </span>
+                                <span className="col-4">{user.hoTen}</span>
+                                <span className="col-4">
+                                    <Button className="chinhSua" onClick={openDoiHoTen}> Chỉnh sửa </Button>
+                                </span>
+                            </p>
+                            <hr />
 
-                </Tabs>
-            </div>
-            <div className="Edit">
-                <div className="Edit__content">
-                    <h2>Chỉnh Sửa Thông Tin</h2>
-                    <form onSubmit={formik.handleSubmit}>
-                        <div className="form-group">
-                            <label>Tài Khoản</label>
-                            <input value={formik.values.taiKhoan} disabled className="form-control" name="taiKhoan" onChange={formik.handleChange} />
+                            <p className="row">
+                                <span className="col-3">Email :</span>
+                                <span className="col-4">{user.email}</span>
+                                <span className="col-4">
+                                    <Button className="chinhSua" onClick={openDoiEmail}> Chỉnh sửa </Button>
+                                </span>
+                            </p>
+                            <hr />
+                            <p className="row">
+                                <span className="col-3"> Số điện thoại :</span>
+                                <span className="col-4">{user.soDT}</span>
+                                <span className="col-4">
+                                    <Button className="chinhSua" onClick={openDoiSdt}> Chỉnh sửa </Button>
+                                </span>
+                            </p>
+                            <hr />
+                            <p className="row">
+                                <span className="col-3"> {usLogin.maLoaiNguoiDung === "KhachHang" ? "Tài khoản khách" : "Tài khoản Admin"}</span>
+                                <span className="col-4">
+                                    {usLogin.maLoaiNguoiDung === "QuanTri" ? <Button><NavLink to="/admin">Quyền Admin</NavLink></Button> : ''}
+                                </span>
+                                <span className="col-4">
+                                    <Button className="doiMatKhau" onClick={openDoiMatKhau}> Đổi mật khẩu </Button>
+                                </span>
+                            </p>
+
                         </div>
-                        <div className="form-group">
-                            <label>Email</label>
-                            <input type="email" value={formik.values.email} className="form-control" name="email" onChange={formik.handleChange} />
-                            <p className="text-danger"> {formik.errors.email}</p>
+                    </div>
 
-                        </div>
-                        <div className="form-group">
-                            <label>Số điện thoại</label>
-                            <input type="number" value={formik.values.soDt} className="form-control" name="soDt" onChange={formik.handleChange} />
-                            <p className="text-danger"> {formik.errors.soDt}</p>
-
-                        </div>
-
-
-                        <div class="row">
-                            <div className="col-6">
-                                <div className="form-group">
-                                    <label>Họ Tên</label>
-                                    <input value={formik.values.hoTen} className="form-control" name="hoTen" onChange={formik.handleChange} />
-                                    <p className="text-danger"> {formik.errors.hoTen}</p>
-
-                                </div>
-                            </div>
-                            <div className="col-6">
-                                <div className="form-group">
-                                    <label>Nhóm</label>
-                                    <select value={formik.values.maNhom} className="form-control" name="maNhom" onChange={formik.handleChange} >
-                                        <option value="Gp01">Gp01</option>
-                                        <option value="Gp02">Gp02</option>
-                                        <option value="Gp03">Gp03</option>
-                                        <option value="Gp04">Gp04</option>
-                                        <option value="Gp05">Gp05</option>
-                                        <option value="Gp06">Gp06</option>
-                                        <option value="Gp07">Gp07</option>
-                                        <option value="Gp08">Gp08</option>
-                                        <option value="Gp09">Gp09</option>
-                                        <option value="Gp10">Gp10</option>
-                                    </select>
-                                    <p className="text-danger"> {formik.errors.maNhom}</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div className="col-6">
-                                <div className="form-group">
-                                    <label>Mật khẩu</label>
-                                    <input type="password" value={formik.values.matKhau} className="form-control" name="matKhau" onChange={formik.handleChange} />
-                                    <p className="text-danger"> {formik.errors.matKhau}</p>
-
-                                </div>
-
-                            </div>
-                            <div className="col-6">
-                                <div className="form-group">
-                                    <label> Nhập lại mật khẩu</label>
-                                    <input type="password" name="matKhauConfirm" className="form-control" onChange={formik.handleChange} />
-                                    <p className="text-danger"> {formik.errors.matKhauConfirm}</p>
-
-                                </div>
-                            </div>
-                            <div className="Edit__button">
-                                <button type="submit" className="TT__button">Cập Nhật</button>
-                            </div>
-                        </div>
-                    </form>
 
                 </div>
+                <LichSuDatVe thongTinDatVe={user.thongTinDatVe} />
             </div>
-        </div>
+
+
+            {/* MODAL ĐỔI MẬT KHẨU  */}
+            <Modal
+                isOpen={modalMatKhau}
+                onRequestClose={closeDoiMatKhau}
+                style={customStylesDoiMatKhau}
+            >
+                <h2 className="text-center font-weight-bold">Đổi mật khẩu</h2>
+                <form onSubmit={formik.handleSubmit}>
+                    <div className="form__user">
+                        <input type="password" name="matKhau" onChange={formik.handleChange} required />
+                        <label>Mật khẩu mới</label>
+                        <p className="text-danger"> {formik.errors.matKhau}</p>
+                    </div>
+                    <div className="form__user">
+                        <input type="password" name="matKhauConfirm" onChange={formik.handleChange} required />
+                        <label> Nhập lại mật khẩu</label>
+                        <p className="text-danger"> {formik.errors.matKhauConfirm}</p>
+                    </div>
+                    <div className="btn_doiMatKhau text-center">
+                        <button type="submit" className="btn_doi">OK</button>
+                    </div>
+                </form>
+            </Modal>
+
+            {/* MODAL ĐỔI HỌ TÊN */}
+            <Modal
+                isOpen={modalHoTen}
+                onRequestClose={closeDoiHoTen}
+                style={customStylesDoiMatKhau}
+            >
+                <h2 className="text-center font-weight-bold">Đổi Họ Tên</h2>
+                <form onSubmit={formik.handleSubmit}>
+                    <div className="form__user">
+                        <input value={formik.values.hoTen} name="hoTen" onChange={formik.handleChange} required />
+                        <label>Họ tên mới</label>
+                        <p className="text-danger"> {formik.errors.hoTen}</p>
+                    </div>
+                    <div className="btn_doiMatKhau text-center">
+                        <button type="submit" className="btn_doi">OK</button>
+                    </div>
+                </form>
+            </Modal>
+
+            {/* MODAL ĐỔI EMAIL */}
+            <Modal
+                isOpen={modalEmail}
+                onRequestClose={closeDoiEmail}
+                style={customStylesDoiMatKhau}
+            >
+                <h2 className="text-center font-weight-bold">Đổi EMAIL</h2>
+                <form onSubmit={formik.handleSubmit}>
+                    <div className="form__user">
+                        <input type="email" value={formik.values.email} name="email" onChange={formik.handleChange} required />
+                        <p className="text-danger"> {formik.errors.email}</p>
+                        <label>Email mới</label>
+                        {/* <p className="text-danger"> {formik.errors.matKhau}</p> */}
+                    </div>
+                    <div className="btn_doiMatKhau text-center">
+                        <button type="submit" className="btn_doi">OK</button>
+                    </div>
+                </form>
+            </Modal>
+
+            {/* MODAL ĐỔI SĐT */}
+            <Modal
+                isOpen={modalSdt}
+                onRequestClose={closeDoiSdt}
+                style={customStylesDoiMatKhau}
+            >
+                <h2 className="text-center font-weight-bold">Đổi số điện thoại</h2>
+                <form onSubmit={formik.handleSubmit}>
+                    <div className="form__user">
+                        <input value={formik.values.soDt} name="soDt" onChange={formik.handleChange} required />
+                        <label>Số điện thoại mới</label>
+                        <p className="text-danger"> {formik.errors.soDt}</p>
+                    </div>
+                    <div className="btn_doiMatKhau text-center">
+                        <button type="submit" className="btn_doi">OK</button>
+                    </div>
+                </form>
+            </Modal>
+
+
+        </div >
 
     )
 }

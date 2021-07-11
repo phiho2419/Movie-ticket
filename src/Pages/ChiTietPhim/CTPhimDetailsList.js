@@ -13,16 +13,16 @@ export default function CTPhimDetailsList(props) {
             return <img src="../../../img/BHDStar_theater.jpg" width={100} height={100} />
         }
         else if (tenLogo === 'cgv') {
-            return <img src="../../../img/CGV_theater.jpg" width={80} height={80} />
+            return <img src="../../../img/CGV_theater.jpg" width={100} height={100} />
         }
         else if (tenLogo === 'Gal') {
-            return <img src="../../../img/Galaxy_theater.jpg" width={80} height={80} />
+            return <img src="../../../img/Galaxy_theater.jpg" width={100} height={100} />
         }
         else if (tenLogo === 'Cin') {
-            return <img src="../../../img/CineStar_theater.jpg" width={80} height={80} />
+            return <img src="../../../img/CineStar_theater.jpg" width={100} height={100} />
         }
         else if (tenLogo === 'Lot') {
-            return <img src="../../../img/LotteCinima_theater.jpg" width={80} height={80} />
+            return <img src="../../../img/LotteCinima_theater.jpg" width={100} height={100} />
         }
         else if (tenLogo === 'Meg') {
             return <img src="../../../img/MegaGS_theater.jpg" width={80} height={80} />

@@ -14,10 +14,6 @@ export default function DangNhap() {
             taiKhoan: '',
             matKhau: '',
         },
-        validationSchema: Yup.object().shape({
-            taiKhoan: Yup.string().required('Tài khoản không được bỏ trống!'),
-            matKhau: Yup.string().required('Mật khẩu khộng được bỏ trống')
-        }),
         onSubmit: values => {
             const action = dangNhapAction(values);
             dispatch(action);

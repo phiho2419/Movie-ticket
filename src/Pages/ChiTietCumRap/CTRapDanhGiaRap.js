@@ -115,8 +115,9 @@ export default function CTRapDanhGiaRap() {
                         </div>
                     </div>
                     <div>
-                        <p style={{ fontWeight: '400', textTransform: '' }}>{bl.commentDanhGia}</p>
+                        <p style={{ fontWeight: '400' }}>{bl.commentDanhGia}</p>
                     </div>
+                    <hr/>
                 </div>
 
             }
@@ -128,7 +129,7 @@ export default function CTRapDanhGiaRap() {
             <div className="user_area" onClick={openModal}>
                 <div >
                     <img style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={`https://i.pravatar.cc/150?u=${dataUser.hoTen}`} />
-                    <span className="yourThink">Hãy chấm điểm cho rạp bạn nhé</span>
+                    <span className="yourThink ml-2">Hãy chấm điểm cho rạp bạn nhé</span>
                 </div>
                 <div className="user_star">
                     <i class="fa fa-star yel__star"></i>
@@ -142,7 +143,7 @@ export default function CTRapDanhGiaRap() {
                 onRequestClose={closeModal}
                 style={userAreaStyle} >
                 <div id="modal_comment">
-                    <p id="danhGia">Hãy cho mọi người biết cảm nhận của bạn</p>
+                    <p id="danhGia" >Hãy cho mọi người biết cảm nhận của bạn</p>
                     <div id="rating_bar">
                         <span id="rate_1" onClick={() => { commitStar(1); setDanhGia({ ...danhGia, diemDanhGia: 2 }) }}></span>
                         <span id="rate_2" onClick={() => { commitStar(2); setDanhGia({ ...danhGia, diemDanhGia: 4 }) }}></span>
@@ -164,7 +165,6 @@ export default function CTRapDanhGiaRap() {
                     </div>
                 </div>
             </Modal>
-
             {renderComment()}
             <div className=" text-center p-3">
                 {numberItem !== 3 ? <button className="less_btn" onClick={readLess}>Rút gọn</button> : null}

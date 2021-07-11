@@ -23,9 +23,7 @@ export default function TrangChu() {
             <Carousel />
             <ListPhim />
             <TabPhim />
-            <div id="tintuc">
-                <News />
-            </div>
+            <News />
             <Ungdung />
         </div>
     )

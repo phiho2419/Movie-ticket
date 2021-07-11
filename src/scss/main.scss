@@ -13,6 +13,9 @@
 @import './Components/button';
 @import './Components//tagPhim';
 @import './Components/ratingStar';
+@import './Components/_playIcon';
+@import './Components/demo';
+
 
 //LAYOUTS
 @import './Layouts/Header';
@@ -50,5 +53,3 @@
 @import './Pages/DangKy/DangKy';
 
 @import './Pages/ThongTinCaNhan/ThongTinCaNhan';
-@import './Pages/ThongTinCaNhan/LichSu';
-@import './Pages/ThongTinCaNhan/ThongTin';
