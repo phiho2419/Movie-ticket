@@ -22,7 +22,7 @@ export default function AdminThemPhim() {
             danhGia: 0,
             moTa: '',
             hinhAnh: '',
-            maNhom:'Gp01',
+            maNhom: 'Gp01',
         },
         validationSchema: Yup.object().shape({
             maPhim: Yup.number().moreThan(0),
@@ -51,13 +51,14 @@ export default function AdminThemPhim() {
 
     return (
         <div>
-            <div className="container">
+            <div>
+                <div className="admin__title text-center">
+                    <h1 >Thêm Phim</h1>
+                </div>
                 <form onSubmit={formik.handleSubmit}>
-                    <div className="row mt-5">
-                        <div className="col-10">
-                            <h1 className="admin_title">Thêm phim</h1>
-                        </div>
-                        <div className="col-5">
+                    <div className="row">
+
+                        <div className="col-6">
                             <label className="font-weight-bold mt-2">Mã phim</label>
                             <Input type="text" placeholder="Nhập mã phim" className="mb-3 d-block" name='maPhim' onChange={formik.handleChange} />
                             <p className="text-danger">{formik.errors.maPhim}</p>
@@ -71,12 +72,8 @@ export default function AdminThemPhim() {
                             <p className="text-danger">{formik.errors.trailer}</p>
 
                         </div>
-                        <div className="col-5">
+                        <div className="col-6">
                             <label className="font-weight-bold mt-2">Ngày khởi chiếu</label>
-
-                            {/* <DatePicker onChange={(date,dateString)=>{
-                                formik.setFieldValue('ngayKhoiChieu',dateString)
-                                }} name="ngayKhoiChieu"  defaultValue={moment(today.toISOString(), dateFormatList[0])} format={dateFormatList}  className="d-block mb-3 " />  */}
                             <DatePicker id="ngayKhoiChieu" name="ngayKhoiChieu" format={dateFormatList} onChange={(value, dateString) => {
                                 formik.values.ngayKhoiChieu = dateString
                             }} className="d-block mb-3 " />
@@ -91,15 +88,10 @@ export default function AdminThemPhim() {
                             <p className="text-danger">{formik.errors.hinhAnh}</p>
 
                         </div>
-                        <div className="col-10">
-                            <label className="font-weight-bold mt-2">Mô tả</label>
-                            <TextArea rows={4} placeholder="Thêm mô tả " onChange={formik.handleChange} name="moTa" className="d-block" />
-                            <p className="text-danger">{formik.errors.moTa}</p>
-
-                        </div>
+                     
                         <div className="col-12" >
-                                <label>Nhóm</label>
-                                <select name="maNhom" onChange={formik.handleChange} >
+                            <label className="font-weight-bold mt-2">Mã Nhóm</label>
+                            <select className="form-control" name="maNhom" onChange={formik.handleChange} >
                                 <option value="GP01" >GP01</option>
                                 <option value="GP02" >GP02</option>
                                 <option value="GP03" >GP03</option>
@@ -110,9 +102,14 @@ export default function AdminThemPhim() {
                                 <option value="GP08" >GP08</option>
                                 <option value="GP09" >GP09</option>
                                 <option value="GP10" >GP10</option>
-                                </select>
+                            </select>
                         </div>
-                        <div className="col-10 mt-3">
+                        <div className="col-12">
+                            <label className="font-weight-bold mt-2">Mô tả</label>
+                            <TextArea rows={4} placeholder="Thêm mô tả " onChange={formik.handleChange} name="moTa" className="d-block" />
+                            <p className="text-danger">{formik.errors.moTa}</p>
+                        </div>
+                        <div className="col-12 mt-3">
                             <div className="text-right">
                                 <Button type="primary" htmlType="submit" className=" btn btn-primary" >Thêm phim</Button>
                             </div>

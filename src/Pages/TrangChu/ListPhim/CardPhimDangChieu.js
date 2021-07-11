@@ -4,6 +4,8 @@ import { Fragment } from 'react';
 import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
 import { renderIMDb } from '../../../Util/services'
+import { Link, animateScroll as scroll, scroller } from "react-scroll";
+import { history } from '../../../App';
 
 Modal.defaultStyles.overlay.backgroundColor = 'rgb(0,0,0,0.75)';
 Modal.defaultStyles.overlay.zIndex = '100';
@@ -86,7 +88,25 @@ export default function CardPhimDangChieu(props) {
                 </div>
                 <div className="card__btnDatve" >
                     <Button className="btn__datve" danger type="primary">
-                        <NavLink to={`/chitietphim/${phim.maPhim}`} style={{ fontWeight: '700' }}>ĐẶT VÉ</NavLink>
+                        {/* <NavLink to={`/chitietphim/${phim.maPhim}`} style={{ fontWeight: '700' }}>ĐẶT VÉ</NavLink> */}
+                        <Link
+                            activeClass="active"
+                            to="detail"
+                            style={{ fontWeight: '700' }}
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                            onClick={() => {
+                                history.push(`/chitietphim/${phim.maPhim}`)
+                                setTimeout(function () {
+                                    scroller.scrollTo('detail', {
+                                        duration: 500,
+                                        smooth: true,
+                                    })
+                                }, 100);
+                            }}
+                        >ĐẶT VÉ</Link>
                     </Button>
                 </div>
             </div>

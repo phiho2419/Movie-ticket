@@ -24,28 +24,32 @@ export default function AdminQuanLyNguoiDung() {
     // console.log('mangNguoiDung :', mangNguoiDung);
     const formik = useFormik({
         initialValues: {
-            tuKhoa:''
+            tuKhoa: ''
         },
         onSubmit: values => {
             dispatch(timKiemNguoiDungAction(values));
         },
     });
     return (
-        <div className="pageQuanLyPhim mt-4">
-            <h1 className="admin_title mt-4 text-center">Quản lý người dùng</h1>
-            <form  className="search_form" onSubmit={formik.handleSubmit}>
+        <div className="pageQuanLyPhim">
+            <div className="admin__title text-center">
+                <h1 >Quản Lý Người Dùng</h1>
+            </div>
+            <form className="search_form" onSubmit={formik.handleSubmit}>
                 <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Nhập vào tài khoản hoặc họ tên người dùng" name="tuKhoa" onChange={formik.handleChange}/>
-                    <button type="submit" className="input-group-append">
-                        <span className="input-group-text" id="basic-addon2">
-                            <i className="fa fa-search" />
-                        </span>
-                    </button>
+                    <input type="text" className="form-control" placeholder="Nhập vào tài khoản hoặc họ tên người dùng" name="tuKhoa" onChange={formik.handleChange} />
+                    <div className="input-group-append">
+                        <button type="submit" style={{ border: "none" }}>
+                            <span className="input-group-text" id="basic-addon2" style={{height:"100%"}}>
+                                <i className="fa fa-search" />
+                            </span>
+                        </button>
+
+                    </div>
                 </div>
             </form>
 
-            <div className="container mt-4">
-
+            <div className="mt-4 px-2">
                 <Table dataSource={mangNguoiDung} bordered="true" pagination={{ onChange(current) { setPage(current) } }} pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15'] }}>
                     <Column align={'center'} title="STT" key="STT" render={(value, item, index) => (page - 1) * 10 + index + 1} />
                     <Column title="Tài khoản" dataIndex="taiKhoan" key="taiKhoan" />
@@ -57,23 +61,23 @@ export default function AdminQuanLyNguoiDung() {
                         key="action"
                         render={(text, record) => (
                             <Space size="small">
-                                    <Button type="primary" size="small" onClick={() => {
-                                          dispatch({
-                                            type: 'SET_NGUOI_DUNG',
-                                            thongTinNguoiDung: record
-                                        })
-                                    }} data-toggle="modal" data-target="#EditNguoiDung"><i class="fa fa-edit"></i></Button>
-                               <div class="modal fade" id="EditNguoiDung" tabindex="-1" aria-labelledby="EditNguoiDung" aria-hidden="true">
+                                <Button type="primary" size="small" onClick={() => {
+                                    dispatch({
+                                        type: 'SET_NGUOI_DUNG',
+                                        thongTinNguoiDung: record
+                                    })
+                                }} data-toggle="modal" data-target="#EditNguoiDung"><i class="fa fa-edit"></i></Button>
+                                <div class="modal fade" id="EditNguoiDung" tabindex="-1" aria-labelledby="EditNguoiDung" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <EditNguoiDung />
                                         </div>
                                     </div>
                                 </div>
-                                    <Button type="primary" danger size="small" onClick={() => {
-                                       dispatch(xoaNguoiDung(record.taiKhoan))
-                                        
-                                    }}><i class="fa fa-trash-alt"></i></Button>
+                                <Button type="primary" danger size="small" onClick={() => {
+                                    dispatch(xoaNguoiDung(record.taiKhoan))
+
+                                }}><i class="fa fa-trash-alt"></i></Button>
                             </Space>
                         )}
                     />

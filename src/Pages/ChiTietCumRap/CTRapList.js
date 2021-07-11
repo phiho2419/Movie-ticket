@@ -1,9 +1,12 @@
-import React,{ useEffect }  from 'react';
+import React, { useEffect } from 'react';
 import { Tabs, Radio, Space, Tag } from 'antd';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment'
 import CTRapDetailsList from './CTRapDetailsList'
 import CTRapDanhGiaRap from './CTRapDanhGiaRap'
+import { Link, animateScroll as scroll, scroller } from "react-scroll";
+import { history } from '../../App';
+
 const { TabPane } = Tabs;
 export default function CTRapList(props) {
     let { chiTietRap, maCumRap, maHeThongRap } = props;
@@ -75,18 +78,47 @@ export default function CTRapList(props) {
     const renderChiTietRap = () => {
         return chiTietRap?.map((ctr) => {
             return ctr.lstCumRap?.map((rap) => {
-                return <TabPane tab={<NavLink to={`/chitietcumrap/${maHeThongRap}/${rap.maCumRap}`}>
-                    <div className="d-flex  ">
-                        <div>
-                            <img src={renderLogoChiTiet(rap.maCumRap)} alt="rap" width={60} height={60} style={{objectFit:'cover'}}/>
+                return <TabPane tab={
+                    <Link
+                        activeClass="active"
+                        to="detail"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+                        onClick={() => {
+                            history.push(`/chitietcumrap/${maHeThongRap}/${rap.maCumRap}`)
+                            setTimeout(function () {
+                                scroller.scrollTo('detail', {
+                                    duration: 500,
+                                    smooth: true,
+                                })
+                            }, 100);
+                        }}
+                    ><div className="d-flex  ">
+                            <div>
+                                <img src={renderLogoChiTiet(rap.maCumRap)} alt="rap" width={60} height={60} style={{ objectFit: 'cover' }} />
+                            </div>
+                            <div className="tabpane_ctr pl-2">
+                                {handleTenCumRap(rap.tenCumRap?.replace('Star Cineplex', ''))}
+                                <p className="textOver text-left">{rap.diaChi}</p>
+                            </div>
                         </div>
-                        <div className="tabpane_ctr pl-2">
-                            {handleTenCumRap(rap.tenCumRap?.replace('Star Cineplex',''))}
-                            <p className="textOver text-left">{rap.diaChi}</p>
-                        </div>
-                    </div>
-                    <hr className="hr_logo" />
-                </NavLink>} key={rap.maCumRap}>
+                        <hr className="hr_logo" />
+                    </Link>}  
+                // <NavLink to={`/chitietcumrap/${maHeThongRap}/${rap.maCumRap}`}>
+                //     <div className="d-flex  ">
+                //         <div>
+                //             <img src={renderLogoChiTiet(rap.maCumRap)} alt="rap" width={60} height={60} style={{objectFit:'cover'}}/>
+                //         </div>
+                //         <div className="tabpane_ctr pl-2">
+                //             {handleTenCumRap(rap.tenCumRap?.replace('Star Cineplex',''))}
+                //             <p className="textOver text-left">{rap.diaChi}</p>
+                //         </div>
+                //     </div>
+                //     <hr className="hr_logo" />
+                // </NavLink>
+                key={rap.maCumRap}>
                     <CTRapDetailsList danhSachPhim={rap.danhSachPhim} />
                 </TabPane>
             })
@@ -137,7 +169,7 @@ export default function CTRapList(props) {
     }
 
     return (
-        <div className="ctr_list py-5">
+        <div className="ctr_list py-5" id="datVe">
             <div className="container">
                 <ul className="nav nav-tabs nav_tabs_chiTietPhim" id="myTab" role="tablist">
                     <li className="nav-item">

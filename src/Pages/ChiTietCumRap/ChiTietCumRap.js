@@ -24,7 +24,7 @@ export default function ChiTietCumRap(props) {
     console.log('chiTietRap',chiTietRap);
 
     return (
-        <div>
+        <div id="detail">
             <CTRapInTro chiTietRap={chiTietRap} maCumRap={maCumRap}/>
             <CTRapList chiTietRap={chiTietRap} maCumRap={maCumRap} maHeThongRap={maHeThongRap}/>
         </div>

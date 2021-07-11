@@ -37,13 +37,14 @@ export default function AdminThemNguoiDung() {
     }
     return (
         <div>
-            <div className="container">
+            <div>
+                <div className="admin__title text-center">
+                    <h1 >Thêm Người Dùng</h1>
+                </div>
                 <form onSubmit={formik.handleSubmit}>
-                    <div className="row mt-5">
-                        <div className="col-10">
-                            <h1 className="admin_title">Thêm người dùng</h1>
-                        </div>
-                        <div className="col-5">
+                    <div className="row ">
+
+                        <div className="col-6">
                             <label className="font-weight-bold mt-2">Tài khoản</label>
                             <Input placeholder="Nhập tài khoản" className="mb-3" name="taiKhoan" onChange={formik.handleChange} />
                             <p className="text-danger">{formik.errors.taiKhoan}</p>
@@ -57,7 +58,7 @@ export default function AdminThemNguoiDung() {
                             <p className="text-danger">{formik.errors.hoTen}</p>
 
                         </div>
-                        <div className="col-5">
+                        <div className="col-6">
                             <label className="font-weight-bold mt-2">Email</label>
                             <Input placeholder="Nhập email" className="mb-3" name="email" onChange={formik.handleChange} />
                             <p className="text-danger">{formik.errors.email}</p>
@@ -75,7 +76,8 @@ export default function AdminThemNguoiDung() {
                         </div>
                         <div className="col-6">
 
-                            <select name="maNhom" onChange={formik.handleChange} >
+                        <label className="font-weight-bold mt-2">Mã nhóm</label>
+                            <select className="form-control" name="maNhom" onChange={formik.handleChange} >
                                 <option value="GP01" >GP01</option>
                                 <option value="GP02" >GP02</option>
                                 <option value="GP03" >GP03</option>
@@ -88,7 +90,7 @@ export default function AdminThemNguoiDung() {
                                 <option value="GP10" >GP10</option>
                             </select>
                         </div>
-                        <div className="col-10 mt-3">
+                        <div className="col-12 mt-3">
                             <div className="text-right">
                                 <Button type="primary" htmlType="submit">Thêm người dùng</Button>
                             </div>
