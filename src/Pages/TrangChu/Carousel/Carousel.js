@@ -21,7 +21,7 @@ export default function Carousel() {
                         <div>
                             <div className="carousel__overlay" />
                             <ModalVideo channel='youtube'  isOpen={isOpen} videoId="odM92ap8_c0" onClose={() => setOpen(false)} />
-                            <p className="text-white" onClick={() => setOpen(true)} >
+                            <div className="text-white" onClick={() => setOpen(true)} >
                                 <div className="carousel-caption ">
                                     <span className="icon_play">
                                         <p className="playBut" style={{cursor:'pointer'}}>
@@ -32,7 +32,7 @@ export default function Carousel() {
                                         </p>
                                     </span>
                                 </div>
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div className="carousel-item">
@@ -40,7 +40,7 @@ export default function Carousel() {
                         <div>
                             <div className="carousel__overlay" />
                             <ModalVideo channel='youtube'  isOpen={isOpen} videoId="coOKvrsmQiI" onClose={() => setOpen(false)} />
-                            <p className="text-white  " onClick={() => setOpen(true)}>
+                            <div className="text-white  " onClick={() => setOpen(true)}>
                                 <div className="carousel-caption ">
                                     <span className="icon_play">
                                         <p style={{cursor:'pointer'}} className="playBut">
@@ -52,7 +52,7 @@ export default function Carousel() {
                                     </span>
 
                                 </div>
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div className="carousel-item">
@@ -60,7 +60,7 @@ export default function Carousel() {
                         <div>
                             <div className="carousel__overlay" />
                             <ModalVideo channel='youtube'  isOpen={isOpen} videoId="8jraVtX821Q" onClose={() => setOpen(false)} />
-                            <p className="text-white  " onClick={() => setOpen(true)}>
+                            <div className="text-white  " onClick={() => setOpen(true)}>
                                 <div className="carousel-caption ">
                                     <span className="icon_play">
                                         <p style={{cursor:'pointer'}} className="playBut">
@@ -72,7 +72,7 @@ export default function Carousel() {
                                     </span>
 
                                 </div>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>

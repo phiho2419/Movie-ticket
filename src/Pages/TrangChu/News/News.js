@@ -30,13 +30,13 @@ export default function News() {
     return (
         <div className="news" >
             <div className="newContainer">
-                <div class="nav nav-tabs news__tab" id="nav-tab" role="tablist">
-                    <a class="nav-link active" id="dien-anh-24h" data-toggle="tab" href="#dien-anh" role="tab" aria-controls="dien-anh" aria-selected="true">Điện ảnh 24h</a>
-                    <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Review</a>
-                    <a class="nav-link" id="khuyen-mai-tab" data-toggle="tab" href="#khuyen-mai" role="tab" aria-controls="khuyen-mai" aria-selected="false">Khuyến mãi</a>
+                <div className="nav nav-tabs news__tab" id="nav-tab" role="tablist">
+                    <a className="nav-link active" id="dien-anh-24h" data-toggle="tab" href="#dien-anh" role="tab" aria-controls="dien-anh" aria-selected="true">Điện ảnh 24h</a>
+                    <a className="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Review</a>
+                    <a className="nav-link" id="khuyen-mai-tab" data-toggle="tab" href="#khuyen-mai" role="tab" aria-controls="khuyen-mai" aria-selected="false">Khuyến mãi</a>
                 </div>
-                <div class="tab-content news__content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="dien-anh" role="tabpanel" aria-labelledby="dien-anh-24h">
+                <div className="tab-content news__content" id="nav-tabContent">
+                    <div className="tab-pane fade show active" id="dien-anh" role="tabpanel" aria-labelledby="dien-anh-24h">
                         <div className="news__item">
                             <div className="item__img">
                                 <a href="/" target="_blank">
@@ -183,7 +183,7 @@ export default function News() {
                         </div>
 
                     </div>
-                    <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                    <div className="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                         <div className="news__item">
                             <div className="item__img">
                                 <a href="/" target="_blank">
@@ -331,7 +331,7 @@ export default function News() {
                         </div>
 
                     </div>
-                    <div class="tab-pane fade" id="khuyen-mai" role="tabpanel" aria-labelledby="khuyen-mai-tab">
+                    <div className="tab-pane fade" id="khuyen-mai" role="tabpanel" aria-labelledby="khuyen-mai-tab">
                         <div className="news__item">
                             <div className="item__img">
                                 <a href="/" target="_blank">

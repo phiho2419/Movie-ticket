@@ -52,7 +52,7 @@ function App() {
             
             
 
-            <Route path='/demo' component={Demo} />
+            {/* <Route path='/demo' component={Demo} /> */}
             
             <HomeTemplate path='/' exact component={TrangChu} />
             <Route component={Error} />

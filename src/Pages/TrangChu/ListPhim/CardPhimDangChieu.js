@@ -61,7 +61,7 @@ export default function CardPhimDangChieu(props) {
                     contentLabel="Example Modal"
                     onRequestClose={closeModal}
                 >
-                    <button style={buttonCloseStyle} onClick={closeModal}><i class="fa fa-times"></i></button>
+                    <button style={buttonCloseStyle} onClick={closeModal}><i className="fa fa-times"></i></button>
                     <iframe width="800" height="500" src={phim.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </Modal>
                 <div className="overlay" onClick={openModal} >
@@ -90,7 +90,7 @@ export default function CardPhimDangChieu(props) {
                     <Button className="btn__datve" danger type="primary">
                         {/* <NavLink to={`/chitietphim/${phim.maPhim}`} style={{ fontWeight: '700' }}>ĐẶT VÉ</NavLink> */}
                         <Link
-                            activeClass="active"
+                            activeclassname="active"
                             to="detail"
                             style={{ fontWeight: '700' }}
                             spy={true}

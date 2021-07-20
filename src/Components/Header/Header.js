@@ -1,14 +1,11 @@
 import React from 'react'
 import { Fragment } from 'react';
-// import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import Swal from 'sweetalert2';
 import { history } from '../../App';
-// import logo from './img/logob.jpg'
-import { Link, animateScroll as scroll, scroller } from "react-scroll";
+import { Link,  scroller } from "react-scroll";
 export default function Header() {
     let dataUser = JSON.parse(localStorage.getItem('userLogin'));
-    // const { user } = useSelector(state => state.NguoiDungReducer);
 
     return (
         <header>
