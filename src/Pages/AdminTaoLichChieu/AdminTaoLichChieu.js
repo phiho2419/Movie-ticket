@@ -16,9 +16,10 @@ export default function AdminTaoLichChieu() {
     useEffect(() => {
         dispatch(callAPI_layDanhSachPhimAction());
 
-    }, [])
+    }, [dispatch])
+    document.title = "Admin | Tạo Lịch Chiếu";
+
     function disabledDate(current) {
-        // Can not select days before today and today
         return current && current < moment().endOf('day');
     }
     const formik = useFormik({
@@ -29,7 +30,7 @@ export default function AdminTaoLichChieu() {
             giaVe: ''
 
         },
-        onSubmit: (values, actions) => {
+        onSubmit: (values) => {
             console.log('values', values);
             console.log('ngayChieuGioChieu', values.ngayChieuGioChieu);
 
@@ -108,7 +109,7 @@ export default function AdminTaoLichChieu() {
                                 {renderDropDownRap()}
                             </Select>
                             <DatePicker
-                            className="mt-3"
+                                className="mt-3"
                                 style={{ minWidth: '100%', height: "38px" }}
                                 format="DD/MM/YYYY hh:mm:ss"
                                 disabledDate={disabledDate}

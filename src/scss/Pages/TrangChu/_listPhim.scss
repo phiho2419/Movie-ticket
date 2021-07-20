@@ -121,4 +121,8 @@
         }
     }
 }
-
+@include responsible("medium") {
+    .sectionListPhim{
+        margin-top: 40px;
+    }
+}

@@ -96,7 +96,7 @@ export default function CTRapList(props) {
                             }, 100);
                         }}
                     ><div className="d-flex  ">
-                            <div>
+                            <div className="diaChiRap">
                                 <img src={renderLogoChiTiet(rap.maCumRap)} alt="rap" width={60} height={60} style={{ objectFit: 'cover' }} />
                             </div>
                             <div className="tabpane_ctr pl-2">
@@ -106,18 +106,6 @@ export default function CTRapList(props) {
                         </div>
                         <hr className="hr_logo" />
                     </Link>}  
-                // <NavLink to={`/chitietcumrap/${maHeThongRap}/${rap.maCumRap}`}>
-                //     <div className="d-flex  ">
-                //         <div>
-                //             <img src={renderLogoChiTiet(rap.maCumRap)} alt="rap" width={60} height={60} style={{objectFit:'cover'}}/>
-                //         </div>
-                //         <div className="tabpane_ctr pl-2">
-                //             {handleTenCumRap(rap.tenCumRap?.replace('Star Cineplex',''))}
-                //             <p className="textOver text-left">{rap.diaChi}</p>
-                //         </div>
-                //     </div>
-                //     <hr className="hr_logo" />
-                // </NavLink>
                 key={rap.maCumRap}>
                     <CTRapDetailsList danhSachPhim={rap.danhSachPhim} />
                 </TabPane>

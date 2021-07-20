@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Tabs, Progress, Rate } from 'antd';
 import ModalVideo from 'react-modal-video';
 import moment from 'moment'
@@ -12,6 +12,7 @@ export default function CTPhimInTro(props) {
     let { chiTietPhim } = props;
     const [isOpen, setOpen] = useState(false)
 
+    document.title = `${chiTietPhim.tenPhim}`;
 
     const styleBgImage = {
         backgroundImage: `url(${chiTietPhim.hinhAnh})`,

@@ -1,14 +1,11 @@
 import { useFormik } from 'formik';
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import * as Yup from 'yup';
-import { Input, Button, DatePicker } from 'antd';
-import moment from 'moment';
+import { Button } from 'antd';
 import { CapNhatNguoiDungAction } from '../../Redux/Actions/NguoiDungAction';
 export default function EditNguoiDung() {
     const { thongTinNguoiDung } = useSelector(state => state.AdminReducer);
     const dispatch = useDispatch();
-    // console.log(thongTinNguoiDung);
     const formik = useFormik({
         initialValues: {
             taiKhoan: thongTinNguoiDung.taiKhoan,
@@ -73,7 +70,6 @@ export default function EditNguoiDung() {
                                     <option value="Gp09">Gp09</option>
                                     <option value="Gp10">Gp10</option>
                                 </select>
-
                             </div>
                         </div>
                     </div>
@@ -83,16 +79,13 @@ export default function EditNguoiDung() {
                                 <label>Mật khẩu</label>
                                 <input type="text" value={formik.values.matKhau} className="form-control" name="matKhau" onChange={formik.handleChange} />
                             </div>
-
                         </div>
                         <div className="col-6">
                             <div className="form-group">
                                 <label> Loại Người Dùng</label>
                                 <input type="text" value={formik.values.maLoaiNguoiDung} className="form-control" disabled name="matKhau" onChange={formik.handleChange} />
-
                             </div>
                         </div>
-
                         <div className="col-12 mt-3">
                             <div className="text-right">
                                 <Button type="primary" htmlType="submit" className=" btn btn-primary" >Cập nhật người dùng</Button>
@@ -100,10 +93,7 @@ export default function EditNguoiDung() {
                         </div>
                     </div>
                 </form>
-
-
             </div>
-
         </div>
     )
 }

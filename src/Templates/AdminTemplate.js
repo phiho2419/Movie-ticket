@@ -1,12 +1,15 @@
 import { Fragment, useState } from "react"
-import { Route } from "react-router-dom"
+import { Redirect, Route } from "react-router-dom"
 import { NavLink } from 'react-router-dom';
-import { Menu, Dropdown } from 'antd';
 import Swal from "sweetalert2";
 import { history } from "../App";
+import { USERLOGIN } from "../Util/setting";
 
 export const AdminTemplate = (props) => { //props.path, props.component
     const [zoom, setZoom] = useState(true);
+    if (!localStorage.getItem(USERLOGIN)) {
+        return <Redirect to="/dangnhap" />
+    }
     let dataUser = JSON.parse(localStorage.getItem('userLogin'));
 
     return <Route path={props.path} exact render={(propsRoute) => {

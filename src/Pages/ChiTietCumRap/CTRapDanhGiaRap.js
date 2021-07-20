@@ -4,13 +4,18 @@ import Modal from 'react-modal';
 import { Input, Button } from 'antd';
 import moment from 'moment'
 import { renderIMDb } from '../../Util/services';
+import { USERLOGIN } from '../../Util/setting';
+import Swal from 'sweetalert2';
 const { TextArea } = Input;
 const timeElapsed = Date.now();
 const today = new Date(timeElapsed);
 
 
 export default function CTRapDanhGiaRap() {
-    let dataUser = JSON.parse(localStorage.getItem('userLogin'));
+    let dataUser = { hoTen: "" }
+    if (localStorage.getItem(USERLOGIN)) {
+        dataUser = JSON.parse(localStorage.getItem('userLogin'));
+    }
     const dispatch = useDispatch();
     const [numberItem, setNumberItem] = useState(3);
 
@@ -117,7 +122,7 @@ export default function CTRapDanhGiaRap() {
                     <div>
                         <p style={{ fontWeight: '400' }}>{bl.commentDanhGia}</p>
                     </div>
-                    <hr/>
+                    <hr />
                 </div>
 
             }
@@ -157,7 +162,14 @@ export default function CTRapDanhGiaRap() {
                     <div style={{ textAlign: 'center', marginTop: '10px' }}>
                         <Button style={{ fontWeight: '700' }} type="primary" danger onClick={() => {
                             console.log('danhGia', danhGia);
-                            dispatch({ type: 'COMMENT_RAP', danhGia: danhGia });
+                            if (!localStorage.getItem(USERLOGIN)) {
+                                Swal.fire({
+                                    icon: 'error',
+                                    text: 'Vui lòng đăng nhập để bình luận !',
+                                })
+                            } else {
+                                dispatch({ type: 'COMMENT_PHIM', danhGia: danhGia });
+                            }
                             closeModal()
                         }}>
                             Đăng

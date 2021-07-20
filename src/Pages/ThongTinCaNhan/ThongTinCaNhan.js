@@ -30,6 +30,7 @@ const { TabPane } = Tabs;
 export default function ThongTinCaNhan() {
     const dispatch = useDispatch();
     const { user } = useSelector(state => state.NguoiDungReducer);
+    document.title = "Thông Tin Cá Nhân";
     console.log('..', user);
     let usLogin = '';
     if (localStorage.getItem(USERLOGIN)) {

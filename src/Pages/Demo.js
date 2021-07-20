@@ -10,15 +10,24 @@ import { USERLOGIN } from '../Util/setting';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
+import LoadingScreen from 'react-loading-screen';
+import Load from '../assets/git/load.gif'
+
 export default function Demo() {
-    
+
 
     return (
-        <div className="demo" >
-           <div className="block">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/zSOaBJcuxzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-           </div>
-        </div >
+        <LoadingScreen
+            loading={true}
+            bgColor='transparent'
+            spinnerColor='#9ee5f8'
+            textColor='#676767'
+            logoSrc={Load}
+            text='Here an introduction sentence (Optional)'
+        >
+           <div>Loadable content</div>
+        </LoadingScreen>
+
 
     )
 }

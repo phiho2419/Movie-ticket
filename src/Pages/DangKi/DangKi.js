@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function DangKi() {
     const dispatch = useDispatch()
+    document.title = "Đăng Ký";
     const formik = useFormik({
         initialValues: {
             taiKhoan: '',
@@ -80,13 +81,13 @@ export default function DangKi() {
                         </div>
                         <div className="col-6" style={{ paddingRight: '0' }}>
                             <div className="form__user" >
-                                <input  name="soDt" onChange={formik.handleChange} />
+                                <input required name="soDt" onChange={formik.handleChange} />
                                 <label>Số điện thoại</label>
                                 <span className="text-danger"> {formik.errors.soDt}</span>
 
                             </div>
                         </div>
-                         <div className="DN__btn">
+                        <div className="DN__btn">
                             <button type="submit">ĐĂNG KÝ</button>
                         </div>
                     </div>

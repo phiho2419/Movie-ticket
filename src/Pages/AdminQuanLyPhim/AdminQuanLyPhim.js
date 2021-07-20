@@ -1,31 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Table, Space, Image, Tag } from 'antd';
-import { Button, Modal } from 'antd';
-import { callAPI_layDanhSachPhimAction, LayThongTinPhimAction } from '../../Redux/Actions/QuanLyPhimAction';
+import { Button} from 'antd';
+import { callAPI_layDanhSachPhimAction} from '../../Redux/Actions/QuanLyPhimAction';
 import Edit from './Edit';
 import { xoaPhim } from '../../Redux/Actions/AdminAction';
 import { USERLOGIN } from '../../Util/setting';
 import { Redirect } from 'react-router';
 import Swal from 'sweetalert2';
-
 const { Column } = Table;
-
 export default function AdminQuanLyPhim() {
     const dispatch = useDispatch();
     const { mangPhim } = useSelector(state => state.QuanLyPhimReducer);
     useEffect(() => {
         dispatch(callAPI_layDanhSachPhimAction());
 
-    }, [])
-    // console.log(mangPhim);
+    }, [dispatch])
+    document.title = "Admin | Quản Lý Phim";
+
     let dataUser = JSON.parse(localStorage.getItem(USERLOGIN));
-    console.log(dataUser);
     if (!localStorage.getItem(USERLOGIN)) {
-        // Swal.fire({
-        //     icon: 'error',
-        //     text: 'Bạn vui lòng đăng nhập !',
-        // })
         return <Redirect to="/dangnhap" />
     } else if (dataUser.maLoaiNguoiDung !== "QuanTri") {
         Swal.fire({
@@ -33,7 +27,6 @@ export default function AdminQuanLyPhim() {
             text: 'Không có quyền quản trị !',
         })
         return <Redirect to="/" />
-        // console.log(dataUser.maLoaiNguoiDung);
     }
     return (
         <div className="pageQuanLyPhim">
@@ -62,10 +55,10 @@ export default function AdminQuanLyPhim() {
                             </Space>
                         )}
                     />
-                    <Column title="Mô tả"  key="moTa" render={(record,i)=>{
+                    <Column title="Mô tả"  key="moTa" render={(record)=>{
                         return <p>{`${record.moTa.substr(0,100)} ...` }</p>
                     }} />
-                    <Column title="Ngày khởi chiếu" key="ngayKhoiChieu" render={(text, record) => (
+                    <Column title="Ngày khởi chiếu" key="ngayKhoiChieu" render={(record) => (
                         <Space size="small">
                             <Tag color="gold">{record.ngayKhoiChieu.substr(0, 10)}</Tag>
                         </Space>
@@ -74,7 +67,7 @@ export default function AdminQuanLyPhim() {
                     <Column
 
                         key="action"
-                        render={(text, record) => (
+                        render={( record) => (
                             <Space size="small">
                                 <Button type="primary" size="small" onClick={() => {
                                     dispatch({
@@ -83,7 +76,7 @@ export default function AdminQuanLyPhim() {
                                     })
 
                                 }} data-toggle="modal" data-target="#EditPhim"><i class="fa fa-edit" ></i></Button>
-                                <div class="modal fade" id="EditPhim" tabindex="-1" aria-labelledby="EditPhimLabel" aria-hidden="true">
+                                <div class="modal fade" id="EditPhim" tabIndex="-1" aria-labelledby="EditPhimLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <Edit />

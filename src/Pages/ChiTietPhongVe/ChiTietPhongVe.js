@@ -13,11 +13,12 @@ export default function ChiTietPhongVe(props) {
 
     const { malichChieu } = props.match.params;
     const dispatch = useDispatch();
+    document.title = "Đặt Vé";
 
 
     //Lấy reducer
     const { lichChieu, danhSachGheDangDat } = useSelector(state => state.LichChieuReducer);
-    console.log(lichChieu);
+    // console.log(lichChieu);
 
     //Call api 
     useEffect(() => {
@@ -42,6 +43,7 @@ export default function ChiTietPhongVe(props) {
         return lichChieu.danhSachGhe?.map((ghe, index) => {
 
             let indexGheDD = danhSachGheDangDat.findIndex(gheDD => gheDD.maGhe === ghe.maGhe);
+            console.log("abc", danhSachGheDangDat);
 
             let gheVip = ghe.loaiGhe === 'Vip' ? 'gheVip' : '';
             let gheDaDat = ghe.daDat === true ? 'gheDaDat' : '';
@@ -209,15 +211,23 @@ export default function ChiTietPhongVe(props) {
                                         </div>
 
                                     </div>
-                                    
+
                                 </div>
                                 <button onClick={() => {
-                                    let objectApi = {
-                                        "maLichChieu": malichChieu,
-                                        "danhSachVe": danhSachGheDangDat,
-                                        "taiKhoanNguoiDung": dataUser.taiKhoan
+
+                                    if (danhSachGheDangDat.length == 0) {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            text: 'Vui lòng chọn ghế !',
+                                        })
+                                    } else {
+                                        let objectApi = {
+                                            "maLichChieu": malichChieu,
+                                            "danhSachVe": danhSachGheDangDat,
+                                            "taiKhoanNguoiDung": dataUser.taiKhoan
+                                        }
+                                        dispatch(datVeAction(objectApi))
                                     }
-                                    dispatch(datVeAction(objectApi))
                                 }} class="btnDatVe">ĐẶT VÉ</button>
                             </div>
 

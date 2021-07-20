@@ -1,10 +1,5 @@
-
-
 import axios from 'axios';
-import { history } from '../../App'
 import Swal from 'sweetalert2';
-
-
 
 export const themPhimAction = (phimDuocThem) => {
     return async (dispatch) => {

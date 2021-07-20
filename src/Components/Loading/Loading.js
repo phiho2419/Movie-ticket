@@ -1,10 +1,16 @@
 import React from 'react'
 import Load from '../../assets/git/load.gif'
+import LoadingScreen from 'react-loading-screen';
 
 export default function Loading() {
+    document.title = "Loading...";
+
     return (
-        <div className="loading">
-            <img src={Load} className="loader"/>
-        </div>
+
+        <LoadingScreen
+            loading={true}
+            logoSrc={Load}
+        >
+        </LoadingScreen>
     )
 }
