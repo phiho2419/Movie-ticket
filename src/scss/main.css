@@ -901,8 +901,8 @@ header #logo_circle {
           transform: translate(-50%, -50%);
   color: white;
   opacity: 0;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .carousel_TrangChu .carousel-item .carousel-caption:hover {
@@ -937,7 +937,10 @@ header #logo_circle {
           box-shadow: 5px 5px 5px 5px #1b1b1b4f;
 }
 
-.carousel_TrangChu .search_form .ant-btn-primary[disabled], .carousel_TrangChu .search_form .ant-btn-primary[disabled]:hover, .carousel_TrangChu .search_form .ant-btn-primary[disabled]:focus, .carousel_TrangChu .search_form .ant-btn-primary[disabled]:active {
+.carousel_TrangChu .search_form .ant-btn-primary[disabled],
+.carousel_TrangChu .search_form .ant-btn-primary[disabled]:hover,
+.carousel_TrangChu .search_form .ant-btn-primary[disabled]:focus,
+.carousel_TrangChu .search_form .ant-btn-primary[disabled]:active {
   background-color: #ff5252;
   color: #e6e6e6;
   cursor: default;
@@ -955,7 +958,13 @@ header #logo_circle {
   height: 60px;
 }
 
-.carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector::after, .carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-item, .carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-placeholder {
+.carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector::after,
+.carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input)
+.ant-select-selector
+.ant-select-selection-item,
+.carousel_TrangChu .search_form .ant-select-single.ant-select-lg:not(.ant-select-customize-input)
+.ant-select-selector
+.ant-select-selection-placeholder {
   line-height: 60px;
 }
 
@@ -964,9 +973,22 @@ header #logo_circle {
 }
 
 @media screen and (max-width: 992px) {
-  .carousel_poster {
+  .carousel_TrangChu .carousel-item .carousel_poster {
+    height: 400px;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel_TrangChu .carousel-item .carousel_poster {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .carousel_TrangChu .carousel-item .carousel_poster {
+    height: 250px;
   }
 }
 
@@ -1109,6 +1131,12 @@ header #logo_circle {
 .sectionListPhim .card:hover .card-body .card__btnDatve .btn__datve {
   height: 100%;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .sectionListPhim {
+    margin-top: 40px;
+  }
 }
 
 .sectionTabPhim .tabpane_thongTinRap .tabpane_tenRap, .ctp_list .tabpane_thongTinRap .tabpane_tenRap {
@@ -2281,7 +2309,9 @@ header #logo_circle {
   margin-bottom: 0;
 }
 
-#modal_comment .ant-input:focus, #modal_comment .ant-input-focused, #modal_comment .ant-input:hover {
+#modal_comment .ant-input:focus,
+#modal_comment .ant-input-focused,
+#modal_comment .ant-input:hover {
   border-color: unset;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2315,6 +2345,29 @@ header #logo_circle {
 @media screen and (max-width: 992px) {
   .ctp_container {
     width: 80%;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .ctp_container .intro_content img {
+    width: 150px;
+    height: 200px;
+  }
+  .ctp_container .intro_content .intro_infor .infor_tenPhim {
+    font-size: 18px;
+  }
+  .ctp_intro {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .ctp_container .intro_content img {
+    width: 120px;
+    height: 180px;
+  }
+  .ctp_container .intro_content .intro_infor .infor_tenPhim {
+    font-size: 15px;
   }
 }
 
@@ -2534,6 +2587,37 @@ header #logo_circle {
   }
 }
 
+@media screen and (max-width: 499px) {
+  .Chitiet_container .intro_content img {
+    width: 150px;
+    height: 200px;
+  }
+  .Chitiet_container .intro_content .intro_infor .tenCumRap {
+    font-size: 16px;
+  }
+  .Chitiet_container .intro_content .intro_infor .diaChi {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .Chitiet_intro {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .Chitiet_container .intro_content img {
+    width: 120px;
+    height: 180px;
+  }
+  .Chitiet_container .intro_content .intro_infor .tenCumRap {
+    font-size: 14px;
+  }
+  .Chitiet_container .intro_content .intro_infor .diaChi {
+    font-size: 10px;
+    font-weight: 500;
+  }
+}
+
 .ctr_list {
   background: #0a2029;
 }
@@ -2588,16 +2672,25 @@ header #logo_circle {
   border-radius: 20%;
 }
 
-.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-nav-list, .ctr_list .ant-tabs-right > .ant-tabs-nav .ant-tabs-nav-list, .ctr_list .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-nav-list, .ctr_list .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-nav-list, .ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-nav-operations, .ctr_list .ant-tabs-right > .ant-tabs-nav .ant-tabs-nav-operations, .ctr_list .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-nav-operations, .ctr_list .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-nav-operations {
+.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-nav-list,
+.ctr_list .ant-tabs-right > .ant-tabs-nav .ant-tabs-nav-list,
+.ctr_list .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-nav-list,
+.ctr_list .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-nav-list,
+.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-nav-operations,
+.ctr_list .ant-tabs-right > .ant-tabs-nav .ant-tabs-nav-operations,
+.ctr_list .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-nav-operations,
+.ctr_list .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-nav-operations {
   height: 400px;
   overflow: auto;
 }
 
-.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-nav-operations, .ctr_list .ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-operations {
+.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-nav-operations,
+.ctr_list .ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-operations {
   display: none;
 }
 
-.ctr_list .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active, .ctr_list .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active {
+.ctr_list .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active,
+.ctr_list .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active {
   color: #ff5252;
 }
 
@@ -2624,7 +2717,10 @@ header #logo_circle {
   color: #ff5252;
 }
 
-.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ctr_list .ant-tabs-bottom > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ctr_list .ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar-animated, .ctr_list .ant-tabs-bottom > div > .ant-tabs-nav .ant-tabs-ink-bar-animated {
+.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-ink-bar-animated,
+.ctr_list .ant-tabs-bottom > .ant-tabs-nav .ant-tabs-ink-bar-animated,
+.ctr_list .ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar-animated,
+.ctr_list .ant-tabs-bottom > div > .ant-tabs-nav .ant-tabs-ink-bar-animated {
   background: unset !important;
 }
 
@@ -2639,11 +2735,17 @@ header #logo_circle {
   font-weight: 700;
 }
 
-.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab, .ctr_list .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab, .ctr_list .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab, .ctr_list .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+.ctr_list .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+.ctr_list .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+.ctr_list .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
   margin: 0;
 }
 
-.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab, .ctr_list .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab, .ctr_list .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab, .ctr_list .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+.ctr_list .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
+.ctr_list .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
+.ctr_list .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
+.ctr_list .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
   padding: 10px 12px 0px 12px;
 }
 
@@ -2659,9 +2761,16 @@ header #logo_circle {
   margin: 3px;
 }
 
-.ctr_list .nav-tabs .nav-item.show .nav-link, .ctr_list .nav-tabs .nav-link.active {
+.ctr_list .nav-tabs .nav-item.show .nav-link,
+.ctr_list .nav-tabs .nav-link.active {
   background-color: unset;
   color: #ff5252;
+}
+
+.ant-tabs-left > .ant-tabs-content-holder,
+.ant-tabs-left > div > .ant-tabs-content-holder {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .user_comment {
@@ -2713,7 +2822,9 @@ header #logo_circle {
   margin-bottom: 0;
 }
 
-#modal_comment .ant-input:focus, #modal_comment .ant-input-focused, #modal_comment .ant-input:hover {
+#modal_comment .ant-input:focus,
+#modal_comment .ant-input-focused,
+#modal_comment .ant-input:hover {
   border-color: unset;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2729,6 +2840,15 @@ header #logo_circle {
   margin: 4px 175px !important;
   display: inline-block;
   display: inline;
+}
+
+@media screen and (max-width: 499px) {
+  .diaChiRap {
+    display: none;
+  }
+  .ctr_list .tabpane_ctr {
+    width: 120px;
+  }
 }
 
 .DangNhap .DN__content {

@@ -10,6 +10,7 @@ export default function CTRapInTro(props) {
             return cumRap.lstCumRap?.map((rap, index) => {
                 if (rap.maCumRap === props.maCumRap) {
                     return <Fragment key={index}>
+                        {    document.title = `${rap.tenCumRap}`}
                         <p className="tenCumRap">{rap.tenCumRap}</p>
                         <p className="diaChi">{rap.diaChi}</p>
                     </Fragment>

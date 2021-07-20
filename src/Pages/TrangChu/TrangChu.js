@@ -8,7 +8,8 @@ import Ungdung from './Ungdung/Ungdung'
 
 export default function TrangChu() {
     
-
+    document.title = "Trang Chủ";
+    
     return (
         <div>
             <Carousel />

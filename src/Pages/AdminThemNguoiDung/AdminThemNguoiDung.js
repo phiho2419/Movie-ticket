@@ -8,6 +8,8 @@ import { themNguoiDungAction } from '../../Redux/Actions/AdminAction';
 const { Option } = Select;
 export default function AdminThemNguoiDung() {
     const dispatch = useDispatch();
+    document.title = "Admin | Thêm Người Dùng";
+
     const formik = useFormik({
         initialValues: {
             taiKhoan: '',
@@ -22,9 +24,8 @@ export default function AdminThemNguoiDung() {
             email: Yup.string().email('Email không đúng định dạng'),
             soDt: Yup.number().typeError("That doesn't look like a phone number"),
         }),
-        onSubmit: (values, actions) => {
+        onSubmit: (values) => {
             dispatch(themNguoiDungAction(values));
-
         }
     })
 

@@ -11,6 +11,7 @@ export default function ChiTietPhongVe(props) {
 
     const { malichChieu } = props.match.params;
     const dispatch = useDispatch();
+    document.title = "Đặt Vé";
 
 
     //Lấy reducer
@@ -39,6 +40,7 @@ export default function ChiTietPhongVe(props) {
         return lichChieu.danhSachGhe?.map((ghe, index) => {
 
             let indexGheDD = danhSachGheDangDat.findIndex(gheDD => gheDD.maGhe === ghe.maGhe);
+            console.log("abc", danhSachGheDangDat);
 
             let gheVip = ghe.loaiGhe === 'Vip' ? 'gheVip' : '';
             let gheDaDat = ghe.daDat === true ? 'gheDaDat' : '';
@@ -163,15 +165,9 @@ export default function ChiTietPhongVe(props) {
                                                 <p className="tt_thoiGianChieu">{lichChieu.thongTinPhim?.ngayChieu} {lichChieu.thongTinPhim?.gioChieu} - {lichChieu.thongTinPhim?.tenRap}</p>
 
                                             </div>
-                                            {/* <div style={{flexGrow:'1'}} className="logo_ticket" style={{position:'relative'}}>
-                        <img id="logo_circle" style={{ width: '78px', objectFit: 'cover', height: '60px' }} className="navbar-brand header-logo p-0 pr-1 img-fluid" src="../../img/logoheader.png" alt="logo" />
-                        <img style={{ position: 'absolute', top: '0', left: '0', width: '85px', objectFit: 'cover', height: '60px' }} className="navbar-brand header-logo p-0 pr-1 img-fluid" src="../../img/logoheaderA.png" alt="logo" />
-                    </div> */}
+                                            
                                         </div>
-                                        {/* <p className="mb-1 tt_email">Email</p>
-                <p className=""> {dataUser.email}</p>
-                <p className="mb-1 tt_sdt">Số điện thoại</p>
-                <p className=""> {dataUser.soDT} </p> */}
+                                        
 
                                         <hr />
                                         <p className="tt_datGhe "> Ghế:
@@ -214,15 +210,25 @@ export default function ChiTietPhongVe(props) {
                                         </div>
 
                                     </div>
-                                    <button onClick={() => {
+
+                                </div>
+                                <button onClick={() => {
+
+                                    if (danhSachGheDangDat.length == 0) {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            text: 'Vui lòng chọn ghế !',
+                                        })
+                                    } else {
                                         let objectApi = {
                                             "maLichChieu": malichChieu,
                                             "danhSachVe": danhSachGheDangDat,
                                             "taiKhoanNguoiDung": dataUser.taiKhoan
                                         }
                                         dispatch(datVeAction(objectApi))
-                                    }} class="btnDatVe">ĐẶT VÉ</button>
-                                </div>
+                                    }
+                                }} class="btnDatVe">ĐẶT VÉ</button>
+                            </div>
 
 
                             </div>
@@ -231,7 +237,7 @@ export default function ChiTietPhongVe(props) {
 
 
 
-                </div>
+                
             
         </Fragment>
 

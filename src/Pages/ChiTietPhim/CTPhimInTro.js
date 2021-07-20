@@ -12,6 +12,7 @@ export default function CTPhimInTro(props) {
     let { chiTietPhim } = props;
     // const [isOpen, setOpen] = useState(false)
 
+    document.title = `${chiTietPhim.tenPhim}`;
 
     const styleBgImage = {
         backgroundImage: `url(${chiTietPhim.hinhAnh})`,

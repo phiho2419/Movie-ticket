@@ -10,7 +10,6 @@ const {Option} = Select
 export default function EditNguoiDung() {
     const { thongTinNguoiDung } = useSelector(state => state.AdminReducer);
     const dispatch = useDispatch();
-    // console.log(thongTinNguoiDung);
     const formik = useFormik({
         initialValues: {
             taiKhoan: thongTinNguoiDung.taiKhoan,
@@ -84,7 +83,6 @@ export default function EditNguoiDung() {
                                 <label>Mật khẩu</label>
                                 <Input type="text" value={formik.values.matKhau}  name="matKhau" onChange={formik.handleChange} />
                             </div>
-
                         </div>
                         <div className="col-6">
                             <div className="form-group">
@@ -93,7 +91,6 @@ export default function EditNguoiDung() {
 
                             </div>
                         </div>
-
                         <div className="col-12 mt-3">
                             <div className="text-right">
                                 <Button type="primary" htmlType="submit" className=" btn btn-primary" >Cập nhật người dùng</Button>
@@ -101,10 +98,7 @@ export default function EditNguoiDung() {
                         </div>
                     </div>
                 </form>
-
-
             </div>
-
         </div>
     )
 }

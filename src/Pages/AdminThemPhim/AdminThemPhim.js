@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Input, Button, DatePicker } from 'antd';
-// import moment from 'moment';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { themPhimAction } from '../../Redux/Actions/AdminAction';
@@ -9,10 +8,9 @@ export default function AdminThemPhim() {
     const { TextArea } = Input;
 
     const dispatch = useDispatch();
+    document.title = "Admin | Thêm Phim";
 
     const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
-    // const today = new Date();
-
     const formik = useFormik({
         initialValues: {
             maPhim: 0,
@@ -34,7 +32,7 @@ export default function AdminThemPhim() {
             // hinhAnh: Yup.string().required('Required !'),
 
         }),
-        onSubmit: (values, actions) => {
+        onSubmit: (values) => {
             console.log(values);
             let form_data = new FormData();
             for (var key in values) {
@@ -43,11 +41,6 @@ export default function AdminThemPhim() {
             dispatch(themPhimAction(form_data));
         }
     })
-
-
-
-
-    //dateFormatList và today dùng để lấy ngày hiện tại
 
     return (
         <div>

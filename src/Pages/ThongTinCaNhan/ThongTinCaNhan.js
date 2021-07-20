@@ -30,7 +30,7 @@ const customStylesDoiMatKhau = {
 export default function ThongTinCaNhan() {
     const dispatch = useDispatch();
     const { user } = useSelector(state => state.NguoiDungReducer);
-    // console.log('..', user);
+    document.title = "Thông Tin Cá Nhân";
     let usLogin = '';
     if (localStorage.getItem(USERLOGIN)) {
         usLogin = JSON.parse(localStorage.getItem(USERLOGIN));

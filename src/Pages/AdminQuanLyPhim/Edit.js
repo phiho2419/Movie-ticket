@@ -26,7 +26,7 @@ export default function Edit() {
         },
         enableReinitialize: true,
 
-        onSubmit: (values, actions) => {
+        onSubmit: (values) => {
             console.log('values', { ...values, ngayKhoiChieu: values.ngayKhoiChieu + 'T00:00:00' });
             let form_data = new FormData();
             for (var key in values) {
@@ -65,12 +65,9 @@ export default function Edit() {
 
                         </div>
                         <div className="col-6">
-                            <label className="font-weight-bold">Ngày khởi chiếu</label>
+                         <label className="font-weight-bold">Ngày khởi chiếu</label>
 
-                            {/* <DatePicker onChange={(date,dateString)=>{
-                                formik.setFieldValue('ngayKhoiChieu',dateString)
-                                }} name="ngayKhoiChieu"  defaultValue={moment(today.toISOString(), dateFormatList[0])} format={dateFormatList}  className="d-block mb-3 " />  */}
-                            <DatePicker id="ngayKhoiChieu" name="ngayKhoiChieu" format={dateFormatList} onChange={(value, dateString) => {
+                                <DatePicker id="ngayKhoiChieu" name="ngayKhoiChieu" format={dateFormatList} onChange={(value, dateString) => {
                                 formik.values.ngayKhoiChieu = dateString
                             }} className="d-block mb-3 " />
                             <p className="text-danger">{formik.errors.ngayKhoiChieu}</p>

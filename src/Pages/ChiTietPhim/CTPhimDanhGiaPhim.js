@@ -4,19 +4,27 @@ import Modal from 'react-modal';
 import { Input, Button } from 'antd';
 import moment from 'moment'
 import { renderIMDb } from '../../Util/services';
+import { USERLOGIN } from '../../Util/setting';
+import Swal from 'sweetalert2';
 const { TextArea } = Input;
 const timeElapsed = Date.now();
 const today = new Date(timeElapsed);
 
 
 export default function CTPhimDanhGiaPhim() {
-    let dataUser = JSON.parse(localStorage.getItem('userLogin'));
     const dispatch = useDispatch();
     const [numberItem, setNumberItem] = useState(3);
 
     const cmt = useSelector(state => state.CommentReducer.commentPhim);
+    let dataUser = { hoTen: "" }
+    if (localStorage.getItem(USERLOGIN)) {
+        dataUser = JSON.parse(localStorage.getItem('userLogin'));
+
+    }
     const [danhGia, setDanhGia] = useState({ userName: dataUser.hoTen, thoiGianDanhGia: `${moment(today.toISOString()).format('DD-MM')} ${moment(today).format('LT')}`, diemDanhGia: 0, commentDanhGia: '' });
+
     const [modalIsOpen, setIsOpen] = useState(false);
+
     function openModal() {
         setIsOpen(true);
     }
@@ -117,7 +125,7 @@ export default function CTPhimDanhGiaPhim() {
                     <div>
                         <p style={{ fontWeight: '400', textTransform: '' }}>{bl.commentDanhGia}</p>
                     </div>
-                    <hr/>
+                    <hr />
                 </div>
 
             }
@@ -158,7 +166,14 @@ export default function CTPhimDanhGiaPhim() {
                     <div style={{ textAlign: 'center', marginTop: '10px' }}>
                         <Button style={{ fontWeight: '700' }} type="primary" danger onClick={() => {
                             console.log('danhGia', danhGia);
-                            dispatch({ type: 'COMMENT_PHIM', danhGia: danhGia });
+                            if (!localStorage.getItem(USERLOGIN)) {
+                                Swal.fire({
+                                    icon: 'error',
+                                    text: 'Vui lòng đăng nhập để bình luận !',
+                                })
+                            } else {
+                                dispatch({ type: 'COMMENT_PHIM', danhGia: danhGia });
+                            }
                             closeModal()
                         }}>
                             Đăng

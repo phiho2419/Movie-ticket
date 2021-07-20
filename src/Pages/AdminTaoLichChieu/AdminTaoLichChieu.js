@@ -16,9 +16,10 @@ export default function AdminTaoLichChieu() {
     useEffect(() => {
         dispatch(callAPI_layDanhSachPhimAction());
 
-    })
+    }, [dispatch])
+    document.title = "Admin | Tạo Lịch Chiếu";
+
     function disabledDate(current) {
-        // Can not select days before today and today
         return current && current < moment().endOf('day');
     }
     const formik = useFormik({
@@ -113,7 +114,7 @@ export default function AdminTaoLichChieu() {
                                 {renderDropDownRap()}
                             </Select>
                             <DatePicker
-                            className="mt-3"
+                                className="mt-3"
                                 style={{ minWidth: '100%', height: "38px" }}
                                 format="DD/MM/YYYY hh:mm:ss"
                                 disabledDate={disabledDate}
@@ -123,11 +124,11 @@ export default function AdminTaoLichChieu() {
                                 }}
                             />
                             <Select className="mt-3" size='large' placeholder="Chọn giá vé" style={{ minWidth: '100%' }} name="giaVe" onChange={handleChangeGiaVe}>
-                                <Option value="70000">70k</Option>
-                                <Option value="90000">90k</Option>
-                                <Option value="110000">110k</Option>
-                                <Option value="130000">130k</Option>
-                                <Option value="150000">150k</Option>
+                                <Option value="70000">70 VND</Option>
+                                <Option value="90000">90 VND</Option>
+                                <Option value="110000">110 VND</Option>
+                                <Option value="130000">130 VND</Option>
+                                <Option value="150000">150 VND</Option>
                             </Select>
                         </div>
                         <div className="col-12 mt-3">

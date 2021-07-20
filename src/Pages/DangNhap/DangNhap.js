@@ -9,6 +9,8 @@ import { NavLink } from 'react-router-dom';
 import Swal from 'sweetalert2';
 export default function DangNhap() {
     const dispatch = useDispatch()
+    document.title = "Đăng Nhập";
+
     const formik = useFormik({
         initialValues: {
             taiKhoan: '',

@@ -113,5 +113,47 @@
         width: 80%;
     }
 }
-
+@media screen and (max-width: 499px) {
+    .Chitiet_container {
+        .intro_content {
+            img {
+                width: 150px;
+                height: 200px;
+            }
+            .intro_infor {
+                .tenCumRap {
+                    font-size: 16px;
+                }
+                .diaChi{
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+        
+    }
+    .Chitiet_intro{
+        height: 300px;
+    }
+}
+@media screen and (max-width: 300px) {
+    .Chitiet_container {
+        .intro_content {
+            img {
+                width: 120px;
+                height: 180px;
+            }
+            .intro_infor {
+                .tenCumRap {
+                    font-size: 14px;
+                }
+                .diaChi{
+                    font-size: 10px;
+                    font-weight: 500;
+                }
+            }
+        }
+        
+    }
+}
 

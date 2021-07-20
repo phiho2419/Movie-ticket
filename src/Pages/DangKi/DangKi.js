@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function DangKi() {
     const dispatch = useDispatch()
+    document.title = "Đăng Ký";
     const formik = useFormik({
         initialValues: {
             taiKhoan: '',
@@ -86,7 +87,7 @@ export default function DangKi() {
 
                             </div>
                         </div>
-                         <div className="DN__btn">
+                        <div className="DN__btn">
                             <button type="submit">ĐĂNG KÝ</button>
                         </div>
                     </div>

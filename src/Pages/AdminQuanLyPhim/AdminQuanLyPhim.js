@@ -8,9 +8,7 @@ import { xoaPhim } from '../../Redux/Actions/AdminAction';
 import { USERLOGIN } from '../../Util/setting';
 import { Redirect } from 'react-router';
 import Swal from 'sweetalert2';
-
 const { Column } = Table;
-// const { Search } = Input;
 export default function AdminQuanLyPhim() {
     const dispatch = useDispatch();
     const { mangPhim } = useSelector(state => state.QuanLyPhimReducer);
@@ -18,16 +16,11 @@ export default function AdminQuanLyPhim() {
     useEffect(() => {
         dispatch(callAPI_layDanhSachPhimAction());
 
-    })
+    }, [dispatch])
+    document.title = "Admin | Quản Lý Phim";
 
-    
     let dataUser = JSON.parse(localStorage.getItem(USERLOGIN));
-  
     if (!localStorage.getItem(USERLOGIN)) {
-        Swal.fire({
-            icon: 'error',
-            text: 'Bạn vui lòng đăng nhập !',
-        })
         return <Redirect to="/dangnhap" />
     } else if (dataUser.maLoaiNguoiDung !== "QuanTri") {
         Swal.fire({
@@ -58,7 +51,7 @@ export default function AdminQuanLyPhim() {
                     <Column title="Mô tả" key="moTa" render={(record, i) => {
                         return <p>{`${record.moTa.substr(0, 80)} ...`}</p>
                     }} />
-                    <Column title="Ngày khởi chiếu" key="ngayKhoiChieu" render={(text, record) => (
+                    <Column title="Ngày khởi chiếu" key="ngayKhoiChieu" render={(record) => (
                         <Space size="small">
                             <Tag color="gold">{record.ngayKhoiChieu.substr(0, 10)}</Tag>
                         </Space>
@@ -67,7 +60,7 @@ export default function AdminQuanLyPhim() {
                     <Column
 
                         key="action"
-                        render={(text, record) => (
+                        render={( record) => (
                             <Space size="small">
                                 <Button type="primary" size="small" onClick={() => {
                                     dispatch({
@@ -76,7 +69,7 @@ export default function AdminQuanLyPhim() {
                                     })
 
                                 }} data-toggle="modal" data-target="#EditPhim"><i class="fa fa-edit" ></i></Button>
-                                <div class="modal fade" id="EditPhim" tabindex="-1" aria-labelledby="EditPhimLabel" aria-hidden="true">
+                                <div class="modal fade" id="EditPhim" tabIndex="-1" aria-labelledby="EditPhimLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <Edit />

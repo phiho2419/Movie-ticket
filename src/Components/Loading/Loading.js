@@ -2,6 +2,8 @@ import React from 'react'
 import Header from '../Header/Header'
 
 export default function Loading() {
+    document.title = "Loading...";
+
     return (
         <div className="loading">
             <Header />
