@@ -19,7 +19,7 @@ export default function ChiTietCumRap(props) {
     useEffect(() => {
         // Call API
         dispatch(LayChiTietRapApiAction(maHeThongRap));
-    }, [])
+    },[dispatch,maHeThongRap]);
 
     console.log('chiTietRap',chiTietRap);
 

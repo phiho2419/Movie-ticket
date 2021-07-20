@@ -10,7 +10,7 @@ export default function CTRapDetailsList(props) {
         return props.danhSachPhim?.map((phim, index) => {
             return <Fragment>
                 <div className="d-flex my-3 align-items-center" key={index}>
-                    <img src={phim.hinhAnh} alt='film-picture' width={100} height={100} />
+                    <img src={phim.hinhAnh} alt='film_picture' width={100} height={100} />
                     <div className='mx-2'>
                         <p className="font-weight-bold mb-0" style={{ fontSize: '20px' }}>{phim.tenPhim}</p>
                         <p className="m-0">Các suất chiếu:</p>
@@ -20,6 +20,9 @@ export default function CTRapDetailsList(props) {
                                     return <Tag style={{ padding: '4px 8px', fontSize: '16px' }} color="magenta" className="tag_thoigian" key={indexLstLichChieuTheoPhim}>
                                         <NavLink to={`/chitietphongve/${lichChieu.maLichChieu}`}>{lichChieu.ngayChieuGioChieu.slice(11, 16)}</NavLink>
                                     </Tag>
+                                }
+                                else{
+                                    return null
                                 }
                             })}
                         </div>

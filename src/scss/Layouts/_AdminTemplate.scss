@@ -7,13 +7,25 @@
         height: 100%;
         padding: 20px 0;
         max-width: 22%;
-        // box-shadow: 0.05px 0 10px $color-black-1;
+        background: rgb(197, 247, 97);
         .dashboard__img {
+            margin: 20px 0;
             text-align: center;
-            margin-top: 20px;
-            img {
-                width: 60%;
-                height: auto;
+            
+            #logo_circle{
+                animation: rotate 3s linear infinite;
+            }
+            
+            @keyframes rotate {
+                0%{
+                    transform: rotate(0);
+                }
+                50%{
+                    transform: rotate(180deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
             }
         }
         .db__zoom {
@@ -57,42 +69,19 @@
         margin: 0 auto;
     }
 }
-@include responsible("extra-large") {
-    .dashboard {
-        .dashboard__left {
-        max-width: 25%;
-        }
-    }
-}
-@include responsible("large") {
-    .dashboard {
-        .dashboard__left {
-            .dashboard__list {
-                .db__item {
-                    font-size: 15px;
-                }
-                i {
-                    min-width: 40px;
-                }
-            }
-        }
-    }
-}
-@include responsible("medium") {
-    .dashboard {
-        .dashboard__left {
-            .dashboard__img {
-                img {
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
+
 
 .header__admin{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: $color-red-primary;
+    z-index: 99;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
     text-align: right;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     .btn_header{
         padding: 10px 15px;
         margin: 0 5px;
@@ -125,5 +114,37 @@
     }
     .btn_dangki{
         border-right: 1px solid $color-red-dark;
+    }
+}
+@include responsible("extra-large") {
+    .dashboard {
+        .dashboard__left {
+        max-width: 25%;
+        }
+    }
+}
+@include responsible("large") {
+    .dashboard {
+        .dashboard__left {
+            .dashboard__list {
+                .db__item {
+                    font-size: 15px;
+                }
+                i {
+                    min-width: 40px;
+                }
+            }
+        }
+    }
+}
+@include responsible("medium") {
+    .dashboard {
+        .dashboard__left {
+            .dashboard__img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
     }
 }

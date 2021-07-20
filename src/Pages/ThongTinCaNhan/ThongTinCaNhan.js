@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Button } from 'antd'
-import { Tabs } from 'antd';
+// import { Tabs } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { CapNhatNguoiDungAction, thongTinAction } from '../../Redux/Actions/NguoiDungAction';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { USERLOGIN } from '../../Util/setting';
 
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
 import LichSuDatVe from './LichSuDatVe';
@@ -25,12 +25,12 @@ const customStylesDoiMatKhau = {
     },
 };
 
-const { TabPane } = Tabs;
+// const { TabPane } = Tabs;
 
 export default function ThongTinCaNhan() {
     const dispatch = useDispatch();
     const { user } = useSelector(state => state.NguoiDungReducer);
-    console.log('..', user);
+    // console.log('..', user);
     let usLogin = '';
     if (localStorage.getItem(USERLOGIN)) {
         usLogin = JSON.parse(localStorage.getItem(USERLOGIN));
@@ -72,7 +72,7 @@ export default function ThongTinCaNhan() {
 
     useEffect(() => {
         dispatch(thongTinAction(usLogin.taiKhoan));
-    }, [])
+    }, [dispatch,usLogin.taiKhoan])
     const formik = useFormik({
         initialValues: {
             taiKhoan: user.taiKhoan,
@@ -80,7 +80,7 @@ export default function ThongTinCaNhan() {
             email: user.email,
             soDt: user.soDT,
             maNhom: user.maNhom,
-            maLoaiNguoiDung: 'KhachHang',
+            maLoaiNguoiDung: 'QuanTri',
             hoTen: user.hoTen,
             matKhauConfirm: '',
         },
@@ -102,46 +102,46 @@ export default function ThongTinCaNhan() {
 
     return (
         <div className="ThongTinCaNhan" >
-            <div className="content_paper container">
+            <div className="content_paper container-lg">
                 <div className="bg_image ">
                     <div className="row ">
-                        <div className="col-3 text-center col-avatar">
-                            <img className="avatar" src={`https://i.pravatar.cc/150?u=${usLogin.soDT}`} alt="avatar" />
+                        <div className="d-none d-lg-block col-lg-3 text-center col-avatar">
+                            <img className="avatar" src={`https://i.pravatar.cc/150?u=${user.taiKhoan}`} alt="avatar" />
                             {/* <img className="circle" src="../../img/circleAvaA.png" alt="circle" /> */}
                         </div>
-                        <div className="col-8 infor_details pt-2">
+                        <div className="col-12 col-lg-8 infor_details pt-2">
                             <hr />
-                            <p className="row">
-                                <span className="col-3">Họ tên : </span>
-                                <span className="col-4">{user.hoTen}</span>
-                                <span className="col-4">
+                            <p className="row justify-content-center">
+                                <span className="col-3 col-lg-3">Họ tên : </span>
+                                <span className="col-5 col-lg-4 ">{user.hoTen}</span>
+                                <span className="col-3 col-lg-4">
                                     <Button className="chinhSua" onClick={openDoiHoTen}> Chỉnh sửa </Button>
                                 </span>
                             </p>
                             <hr />
 
-                            <p className="row">
-                                <span className="col-3">Email :</span>
-                                <span className="col-4">{user.email}</span>
-                                <span className="col-4">
+                            <p className="row justify-content-center">
+                                <span className="col-3 col-lg-3">Email :</span>
+                                <span className="col-5 col-lg-4">{user.email}</span>
+                                <span className="col-3 col-lg-4">
                                     <Button className="chinhSua" onClick={openDoiEmail}> Chỉnh sửa </Button>
                                 </span>
                             </p>
                             <hr />
-                            <p className="row">
-                                <span className="col-3"> Số điện thoại :</span>
-                                <span className="col-4">{user.soDT}</span>
-                                <span className="col-4">
+                            <p className="row justify-content-center">
+                                <span className="col-3 col-lg-3"> Số điện thoại :</span>
+                                <span className="col-5 col-lg-4">{user.soDT}</span>
+                                <span className="col-3 col-lg-4">
                                     <Button className="chinhSua" onClick={openDoiSdt}> Chỉnh sửa </Button>
                                 </span>
                             </p>
                             <hr />
-                            <p className="row">
-                                <span className="col-3"> {usLogin.maLoaiNguoiDung === "KhachHang" ? "Tài khoản khách" : "Tài khoản Admin"}</span>
-                                <span className="col-4">
-                                    {usLogin.maLoaiNguoiDung === "QuanTri" ? <Button><NavLink to="/admin">Quyền Admin</NavLink></Button> : ''}
+                            <p className="row justify-content-center">
+                                <span className="col-3 col-lg-3"> {usLogin.maLoaiNguoiDung === "KhachHang" ? "Tài khoản khách" : "Tài khoản Admin"}</span>
+                                <span className="col-5 col-lg-4">
+                                    {usLogin.maLoaiNguoiDung === "QuanTri" ? <Button className="chinhSua"><NavLink to="/admin/quanlyphim">Quyền Admin</NavLink></Button> : ''}
                                 </span>
-                                <span className="col-4">
+                                <span className="col-3 col-lg-4">
                                     <Button className="doiMatKhau" onClick={openDoiMatKhau}> Đổi mật khẩu </Button>
                                 </span>
                             </p>
@@ -151,7 +151,9 @@ export default function ThongTinCaNhan() {
 
 
                 </div>
-                <LichSuDatVe thongTinDatVe={user.thongTinDatVe} />
+                <div className="mt-3">
+                    <LichSuDatVe thongTinDatVe={user.thongTinDatVe} />
+                </div>
             </div>
 
 

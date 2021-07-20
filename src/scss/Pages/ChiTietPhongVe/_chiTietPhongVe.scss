@@ -28,6 +28,7 @@
         top: 0;
         left: 0;
         z-index: 11;
+        width: 100%;
         .ghe_manhinh{
             height: 500px;
             margin: 0 auto;
@@ -36,6 +37,7 @@
             margin-top: 100px;
             border-radius: 5px;
             padding: 15px;
+            
             .man_hinh{
                 background-image: url("../assets/img/screen.png");
                 background-position: center;
@@ -112,12 +114,12 @@
                 }
                 
             }
+            
         }
         .thongtin_datve{
             position: relative;
             width: 90%;
             height: 500px;
-            
             .btnDatVe{
                 font-weight: 700;
                 position: absolute;
@@ -223,6 +225,103 @@
         }
         .form-check-label{
             cursor: pointer;
+        }
+    }
+}
+
+
+@include responsible("large") {
+    .pageChiTietPhongVe{
+        height: 1200px;
+        .thongtin_datve{
+            margin: 0 auto;
+            .btnDatVe{
+                width: 400px !important;
+                left: 50% !important;
+                transform: translateX(-50%);
+            }
+            .wrap_content_datve{
+                margin-top: 50px !important;
+                width: 400px !important;
+                margin: 50px auto !important;            
+            }
+        }
+        .wrap_ghemanhinh{
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-left: 0 !important;
+            &::-webkit-scrollbar {
+                height: 5px;
+                margin-left: 15px;
+              }
+              
+              /* Track */
+            &::-webkit-scrollbar-track {
+                background: rgb(173, 173, 173);
+                border-radius: 10px;
+
+              }
+              
+              /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background:rgb(104, 27, 27);
+                border-radius: 10px;
+
+              }
+            .ghe_manhinh{
+                width: 95%;
+                white-space: nowrap;
+                
+            }
+        }
+    }
+}
+@include responsible("medium") {
+    .pageChiTietPhongVe{
+        height: 1200px;
+        .thongtin_datve{
+            margin: 0 auto;
+            .btnDatVe{
+                width: 300px !important;
+                left: 50% !important;
+                transform: translateX(-50%);
+            }
+            .wrap_content_datve{
+                margin-top: 50px !important;
+                width: 300px !important;
+                margin: 50px auto !important;            
+            }
+            
+        }
+        .wrap_ghemanhinh{
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-left: 0 !important;
+            &::-webkit-scrollbar {
+                height: 5px;
+                margin-left: 15px;
+              }
+              
+              /* Track */
+            &::-webkit-scrollbar-track {
+                background: rgb(173, 173, 173);
+                border-radius: 10px;
+
+              }
+              
+              /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background:rgb(104, 27, 27);
+                border-radius: 10px;
+
+              }
+            .ghe_manhinh{
+                width: 600px;
+                white-space: nowrap;
+                
+            }
         }
     }
 }

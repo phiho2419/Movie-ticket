@@ -19,14 +19,10 @@ export default function AdminThemNguoiDung() {
             hoTen: '',
         },
         validationSchema: Yup.object().shape({
-            taiKhoan: Yup.string().required('Required !'),
-            matKhau: Yup.string().required('Required !'),
-            hoTen: Yup.string().required('Required !'),
-            email: Yup.string().required('Required !'),
-            soDt: Yup.string().required('Required !'),
+            email: Yup.string().email('Email không đúng định dạng'),
+            soDt: Yup.number().typeError("That doesn't look like a phone number"),
         }),
         onSubmit: (values, actions) => {
-            console.log('values', values);
             dispatch(themNguoiDungAction(values));
 
         }
@@ -37,37 +33,37 @@ export default function AdminThemNguoiDung() {
     }
     return (
         <div>
-            <div>
+            <div style={{ marginTop: '40px' }}>
                 <div className="admin__title text-center">
-                    <h1 >Thêm Người Dùng</h1>
+                    <h1 className="font-weight-bold">Thêm người dùng</h1>
                 </div>
                 <form onSubmit={formik.handleSubmit}>
                     <div className="row ">
 
                         <div className="col-6">
-                            <label className="font-weight-bold mt-2">Tài khoản</label>
-                            <Input placeholder="Nhập tài khoản" className="mb-3" name="taiKhoan" onChange={formik.handleChange} />
+                            <label className="font-weight-bold">Tài khoản</label>
+                            <Input placeholder="Nhập tài khoản" name="taiKhoan" onChange={formik.handleChange} required />
                             <p className="text-danger">{formik.errors.taiKhoan}</p>
 
-                            <label className="font-weight-bold mt-2">Mật khẩu</label>
-                            <Input placeholder="Nhập mật khẩu" className="mb-3" name="matKhau" onChange={formik.handleChange} />
+                            <label className="font-weight-bold">Mật khẩu</label>
+                            <Input placeholder="Nhập mật khẩu" name="matKhau" onChange={formik.handleChange} required />
                             <p className="text-danger">{formik.errors.matKhau}</p>
 
-                            <label className="font-weight-bold mt-2">Họ tên</label>
-                            <Input placeholder="Nhập họ tên" className="mb-3" name="hoTen" onChange={formik.handleChange} />
+                            <label className="font-weight-bold">Họ tên</label>
+                            <Input placeholder="Nhập họ tên" name="hoTen" onChange={formik.handleChange} required />
                             <p className="text-danger">{formik.errors.hoTen}</p>
 
                         </div>
                         <div className="col-6">
-                            <label className="font-weight-bold mt-2">Email</label>
-                            <Input placeholder="Nhập email" className="mb-3" name="email" onChange={formik.handleChange} />
+                            <label className="font-weight-bold ">Email</label>
+                            <Input placeholder="Nhập email" name="email" onChange={formik.handleChange} required />
                             <p className="text-danger">{formik.errors.email}</p>
 
-                            <label className="font-weight-bold mt-2">Số điện thoại</label>
-                            <Input placeholder="Nhập số điện thoại" className="mb-3" name="soDt" onChange={formik.handleChange} />
+                            <label className="font-weight-bold ">Số điện thoại</label>
+                            <Input placeholder="Nhập số điện thoại" name="soDt" onChange={formik.handleChange} required />
                             <p className="text-danger">{formik.errors.soDt}</p>
 
-                            <label className="font-weight-bold mt-2">Loại tài khoản</label>
+                            <label className="font-weight-bold ">Loại tài khoản</label>
                             <Select defaultValue="KhachHang" className="d-block" placeholder="- Chọn loại tài khoản -" name="loaiNguoiDung" onChange={onChangeLoaiNguoiDung}>
                                 <Option value="KhachHang">Khách hàng</Option>
                                 <Option value="QuanTri">Quản trị</Option>
@@ -76,7 +72,7 @@ export default function AdminThemNguoiDung() {
                         </div>
                         <div className="col-6">
 
-                        <label className="font-weight-bold mt-2">Mã nhóm</label>
+                            <label className="font-weight-bold ">Mã nhóm</label>
                             <select className="form-control" name="maNhom" onChange={formik.handleChange} >
                                 <option value="GP01" >GP01</option>
                                 <option value="GP02" >GP02</option>

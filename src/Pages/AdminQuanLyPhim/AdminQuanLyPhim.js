@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Table, Space, Image, Tag } from 'antd';
-import { Button, Modal } from 'antd';
-import { callAPI_layDanhSachPhimAction, LayThongTinPhimAction } from '../../Redux/Actions/QuanLyPhimAction';
+import { Button } from 'antd';
+import { callAPI_layDanhSachPhimAction } from '../../Redux/Actions/QuanLyPhimAction';
 import Edit from './Edit';
 import { xoaPhim } from '../../Redux/Actions/AdminAction';
 import { USERLOGIN } from '../../Util/setting';
@@ -10,22 +10,24 @@ import { Redirect } from 'react-router';
 import Swal from 'sweetalert2';
 
 const { Column } = Table;
-
+// const { Search } = Input;
 export default function AdminQuanLyPhim() {
     const dispatch = useDispatch();
     const { mangPhim } = useSelector(state => state.QuanLyPhimReducer);
+    // console.log('mangPhim',mangPhim);
     useEffect(() => {
         dispatch(callAPI_layDanhSachPhimAction());
 
-    }, [])
-    // console.log(mangPhim);
+    })
+
+    
     let dataUser = JSON.parse(localStorage.getItem(USERLOGIN));
-    console.log(dataUser);
+  
     if (!localStorage.getItem(USERLOGIN)) {
-        // Swal.fire({
-        //     icon: 'error',
-        //     text: 'Bạn vui lòng đăng nhập !',
-        // })
+        Swal.fire({
+            icon: 'error',
+            text: 'Bạn vui lòng đăng nhập !',
+        })
         return <Redirect to="/dangnhap" />
     } else if (dataUser.maLoaiNguoiDung !== "QuanTri") {
         Swal.fire({
@@ -33,23 +35,14 @@ export default function AdminQuanLyPhim() {
             text: 'Không có quyền quản trị !',
         })
         return <Redirect to="/" />
-        // console.log(dataUser.maLoaiNguoiDung);
     }
     return (
         <div className="pageQuanLyPhim">
-            <div className="admin__title text-center">
-                <h1 >Quản Lý Phim</h1>
+            <div className="admin__title  px-2">
+                    <h1 className="font-weight-bold text-center">Quản lý phim</h1>
+                
             </div>
-            <form className="search_form">
-                <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Nhập vào tài khoản hoặc họ tên người dùng" />
-                    <div className="input-group-append">
-                        <span className="input-group-text" id="basic-addon2">
-                            <i className="fa fa-search" />
-                        </span>
-                    </div>
-                </div>
-            </form>
+
             <div className="mt-4 px-2">
                 <Table dataSource={mangPhim} bordered="true" pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15'] }}>
                     <Column align="center" title="Mã phim" dataIndex="maPhim" key="maPhim" />
@@ -62,8 +55,8 @@ export default function AdminQuanLyPhim() {
                             </Space>
                         )}
                     />
-                    <Column title="Mô tả"  key="moTa" render={(record,i)=>{
-                        return <p>{`${record.moTa.substr(0,100)} ...` }</p>
+                    <Column title="Mô tả" key="moTa" render={(record, i) => {
+                        return <p>{`${record.moTa.substr(0, 80)} ...`}</p>
                     }} />
                     <Column title="Ngày khởi chiếu" key="ngayKhoiChieu" render={(text, record) => (
                         <Space size="small">

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, {  useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Modal from 'react-modal';
 import { Input, Button } from 'antd';
@@ -97,13 +97,14 @@ export default function CTRapDanhGiaRap() {
     const readLess = () => {
         setNumberItem(numberItem - 3);
     }
+
     const renderComment = () => {
         return [...cmt].reverse().map((bl, index) => {
             if (index < numberItem) {
                 return <div className="user_area_cmt mt-3  pt-2" key={index}>
                     <div className="d-flex justify-content-between">
                         <div className="d-flex">
-                            <img style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={`https://i.pravatar.cc/150?u=${bl.userName}`} />
+                            <img alt="avatar" style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={`https://i.pravatar.cc/150?u=${bl.userName}`} />
                             <p className="d-flex flex-column ml-2">
                                 <span style={{ fontWeight: '700' }}>{bl.userName}</span>
                                 <span style={{ fontSize: '11px' }}>{bl.thoiGianDanhGia}</span>
@@ -121,6 +122,9 @@ export default function CTRapDanhGiaRap() {
                 </div>
 
             }
+            else {
+                return null
+            }
 
         })
     }
@@ -128,7 +132,7 @@ export default function CTRapDanhGiaRap() {
         <div className="container user_comment">
             <div className="user_area" onClick={openModal}>
                 <div >
-                    <img style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={`https://i.pravatar.cc/150?u=${dataUser.hoTen}`} />
+                    <img alt="avater" style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={`https://i.pravatar.cc/150?u=${dataUser.soDT}`} />
                     <span className="yourThink ml-2">Hãy chấm điểm cho rạp bạn nhé</span>
                 </div>
                 <div className="user_star">

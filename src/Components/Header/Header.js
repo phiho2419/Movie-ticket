@@ -1,5 +1,6 @@
 import React from 'react'
-import { Fragment } from 'react'
+import { Fragment } from 'react';
+// import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import Swal from 'sweetalert2';
 import { history } from '../../App';
@@ -7,6 +8,7 @@ import { history } from '../../App';
 import { Link, animateScroll as scroll, scroller } from "react-scroll";
 export default function Header() {
     let dataUser = JSON.parse(localStorage.getItem('userLogin'));
+    // const { user } = useSelector(state => state.NguoiDungReducer);
 
     return (
         <header>
@@ -24,7 +26,7 @@ export default function Header() {
                             {
                                 localStorage.getItem('userLogin') ?
                                     <Fragment>
-                                        <NavLink to='/thongtincanhan' className="btn_header btn_dangnhap">{dataUser.hoTen}</NavLink>
+                                        <NavLink to='/thongtincanhan' className="btn_header btn_dangnhap"> <img className="avatar" src={`https://i.pravatar.cc/150?u=${dataUser.taiKhoan}`} alt="avatar" /> {dataUser.hoTen} </NavLink>
                                         <NavLink to="#" style={{ outline: 'none' }} className="btn_header btn_dangki" onClick={() => {
                                             Swal.fire({
                                                 icon: 'question',
@@ -40,7 +42,7 @@ export default function Header() {
                                                 }
                                             })
 
-                                        }}>Đăng Xuất</NavLink>
+                                        }}>Đăng xuất</NavLink>
                                     </Fragment> :
                                     <Fragment>
                                         <NavLink to="/dangnhap" className="btn_header btn_dangnhap"><i className="fa fa-user-circle" style={{ fontSize: '20px', paddingBottom: '3px' }}></i> <span>Đăng Nhập</span></NavLink>

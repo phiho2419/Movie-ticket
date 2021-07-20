@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Progress, Rate } from 'antd';
+import { Progress } from 'antd';
 import { renderIMDb } from '../../Util/services';
 import { Link, animateScroll as scroll } from "react-scroll";
 
@@ -13,6 +13,9 @@ export default function CTRapInTro(props) {
                         <p className="tenCumRap">{rap.tenCumRap}</p>
                         <p className="diaChi">{rap.diaChi}</p>
                     </Fragment>
+                }
+                else{
+                    return null
                 }
             })
         })
@@ -48,7 +51,7 @@ export default function CTRapInTro(props) {
             <div className="Chitiet_container">
                 <div className="intro_content row align-items-center">
                     <div className="intro_img col-6 col-lg-4">
-                        <img src={renderLogoChiTiet(props.maCumRap)} atl="intro_img" />
+                        <img src={renderLogoChiTiet(props.maCumRap)} alt="intro_img" />
                     </div>
                     <div className="intro_infor col-6 col-lg-5">
                         {renderTenRap()}

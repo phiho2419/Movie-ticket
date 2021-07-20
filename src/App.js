@@ -17,7 +17,7 @@ import DangKi from './Pages/DangKi/DangKi';
 import DangNhap from './Pages/DangNhap/DangNhap';
 import ThongTinCaNhan from './Pages/ThongTinCaNhan/ThongTinCaNhan';
 import { useEffect, useState } from 'react';
-import Loading from './Components/Loading/Loading'
+import Loading from './Components/Loading/Loading';
 import AdminTaoLichChieu from './Pages/AdminTaoLichChieu/AdminTaoLichChieu';
 import Demo from './Pages/Demo';
 import Error from './Components/Error/Error';
@@ -26,12 +26,12 @@ export const history = createBrowserHistory();
 function App() {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000)
+    setTimeout(() => setLoading(false), 2000)
   }, [])
   return (
 
     <Router history={history}>
-      {loading === false ? (
+      { !loading  ? (
         <div className="App">
           <Switch>
             <HomeTemplate path='/chitietphongve/:malichChieu' exact component={ChiTietPhongVe} />
@@ -41,7 +41,7 @@ function App() {
             <AdminTemplate path='/admin/themnguoidung' exact component={AdminThemNguoiDung} />
             <AdminTemplate path='/admin/quanlynguoidung' exact component={AdminQuanLyNguoiDung} />
             <AdminTemplate path='/admin/taolichchieu' exact component={AdminTaoLichChieu} />
-            <AdminTemplate path='/admin' exact component={AdminQuanLyPhim} />
+            {/* <AdminTemplate path='/admin' exact component={AdminQuanLyPhim} /> */}
 
             <UserTemplate path="/dangnhap" component={DangNhap} />
             <UserTemplate path="/dangky" component={DangKi} />
@@ -59,10 +59,7 @@ function App() {
             
           </Switch>
         </div>
-      ) : (
-
-        <Loading />
-      )}
+      ) : ( <Loading />  )}
     </Router>
   );
 }

@@ -1,21 +1,42 @@
 import { Fragment, useState } from "react"
+import {useSelector} from 'react-redux'
 import { Route } from "react-router-dom"
 import { NavLink } from 'react-router-dom';
 import { Menu, Dropdown } from 'antd';
 import Swal from "sweetalert2";
 import { history } from "../App";
+import { Redirect } from 'react-router';
 
 export const AdminTemplate = (props) => { //props.path, props.component
     const [zoom, setZoom] = useState(true);
     let dataUser = JSON.parse(localStorage.getItem('userLogin'));
-
+    const { user } = useSelector(state => state.NguoiDungReducer);
+    // let dataUser = JSON.parse(localStorage.getItem(USERLOGIN));
+  
+    if (!localStorage.getItem('userLogin')) {
+        Swal.fire({
+            icon: 'error',
+            text: 'Bạn vui lòng đăng nhập !',
+        })
+        return <Redirect to="/dangnhap" />
+    } else if (dataUser.maLoaiNguoiDung !== "QuanTri") {
+        Swal.fire({
+            icon: 'error',
+            text: 'Không có quyền quản trị !',
+        })
+        return <Redirect to="/" />
+    }
+    
     return <Route path={props.path} exact render={(propsRoute) => {
         return <Fragment>
             <div className="dashboard">
                 <div className="row" style={{ margin: 0, flexWrap: "initial" }}>
-                    <div className={zoom ? "col-1 col-md-3 dashboard__left" : "col-1 dashboard__left"} style={{height:'100vh'}}>
-                        <div className="dashboard__img">
-                            <NavLink to="/"><img src="../../img/logob.jpg" /></NavLink>
+                    <div className={zoom ? "col-1 col-md-3 dashboard__left" : "col-1 dashboard__left"} style={{ height: '100vh' }}>
+                        <div className="dashboard__img" style={{ position: 'relative' }}>
+                            <NavLink to='/' >
+                                <img id="logo_circle" style={{ width: '90px', objectFit: 'cover', height: '90px' }} className="navbar-brand header-logo p-0 pr-1 img-fluid" src="../../../img/logoheader.png" alt="logo" />
+                                <img  style={{ position: 'absolute', top: '0', left: '50%',transform:'translateX(-55%)', width: '90px', objectFit: 'cover', height: '90px' }} className=" header-logo p-0 pr-1 img-fluid" src="../../../img/logoheaderA.png" alt="logo" />
+                            </NavLink>
                         </div>
                         <div className="db__zoom d-none d-md-block" style={zoom ? { right: "50px" } : { left: "15px" }}>
                             <button onClick={() => {
@@ -54,31 +75,31 @@ export const AdminTemplate = (props) => { //props.path, props.component
                         </ul>
                     </div>
                     <div className={zoom ? "col-11 col-md-9 dashboard__right" : "col-11 dashboard__right"}>
-                    <div className="header__admin">
-                    <Fragment>
-                        <NavLink to='/thongtincanhan' className="btn_header btn_dangnhap">{dataUser.hoTen}</NavLink>
-                        <NavLink to="#" style={{ outline: 'none' }} className="btn_header btn_dangki" onClick={() => {
-                            Swal.fire({
-                                icon: 'question',
-                                title: 'Bạn có chắc muốn đăng xuất?',
-                                showCancelButton: true,
-                                cancelButtonText: 'Hủy bỏ',
-                                confirmButtonText: ' Xác Nhận',
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    localStorage.removeItem('userLogin');
-                                    localStorage.removeItem('accesstoken');
-                                    history.push('/');
-                                }
-                            })
+                        <div className="header__admin font-weight-bold "  >
+                            <div>
+                                <NavLink to='/thongtincanhan' className="btn_header btn_dangnhap" style={{color:'white',minWidth:'150px'}}>{dataUser.hoTen}</NavLink>
+                                <NavLink to="#" style={{ outline: 'none' }} className="btn_header btn_dangki" onClick={() => {
+                                    Swal.fire({
+                                        icon: 'question',
+                                        title: 'Bạn có chắc muốn đăng xuất?',
+                                        showCancelButton: true,
+                                        cancelButtonText: 'Hủy bỏ',
+                                        confirmButtonText: ' Xác Nhận',
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            localStorage.removeItem('userLogin');
+                                            localStorage.removeItem('accesstoken');
+                                            history.push('/');
+                                        }
+                                    })
 
-                        }}>Đăng Xuất</NavLink>
-                    </Fragment>
-                </div>
+                                }} style={{color:'white'}}>Đăng Xuất</NavLink>
+                            </div>
+                        </div>
                         <props.component {...propsRoute} />
                     </div>
                 </div>
-          
+
             </div>
 
         </Fragment>

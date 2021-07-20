@@ -1,24 +1,23 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { Table, Space, Popover, Button } from 'antd';
+import { Table, Space, Button,Input } from 'antd';
 import { layDanhSachNguoiDungAction, timKiemNguoiDungAction, xoaNguoiDung } from '../../Redux/Actions/AdminAction';
 import EditNguoiDung from './EditNguoiDung';
 import { useFormik } from 'formik';
 
 const { Column } = Table;
-const popoverDelete = (
-    <small>Delete</small>
-);
-const popoverEdit = (
-    <small>Edit</small>
-);
+// const popoverDelete = (
+//     <small>Delete</small>
+// );
+// const popoverEdit = (
+//     <small>Edit</small>
+// );
 
 export default function AdminQuanLyNguoiDung() {
-    const [page, setPage] = React.useState(1);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(layDanhSachNguoiDungAction());
-    }, []);
+    });
 
     const { mangNguoiDung } = useSelector(state => state.AdminReducer);
     // console.log('mangNguoiDung :', mangNguoiDung);
@@ -33,11 +32,11 @@ export default function AdminQuanLyNguoiDung() {
     return (
         <div className="pageQuanLyPhim">
             <div className="admin__title text-center">
-                <h1 >Quản Lý Người Dùng</h1>
+                <h1 className="font-weight-bold">Quản lý người dùng</h1>
             </div>
             <form className="search_form" onSubmit={formik.handleSubmit}>
                 <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Nhập vào tài khoản hoặc họ tên người dùng" name="tuKhoa" onChange={formik.handleChange} />
+                    <Input  placeholder="Nhập vào tài khoản hoặc họ tên người dùng" name="tuKhoa" onChange={formik.handleChange} />
                     <div className="input-group-append">
                         <button type="submit" style={{ border: "none" }}>
                             <span className="input-group-text" id="basic-addon2" style={{height:"100%"}}>
@@ -50,8 +49,8 @@ export default function AdminQuanLyNguoiDung() {
             </form>
 
             <div className="mt-4 px-2">
-                <Table dataSource={mangNguoiDung} bordered="true" pagination={{ onChange(current) { setPage(current) } }} pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15'] }}>
-                    <Column align={'center'} title="STT" key="STT" render={(value, item, index) => (page - 1) * 10 + index + 1} />
+                <Table dataSource={mangNguoiDung} bordered="true"  pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15'] }}>
+                    <Column align={'center'} title="STT" key="STT" render={(value, item, index) =>  index + 1} />
                     <Column title="Tài khoản" dataIndex="taiKhoan" key="taiKhoan" />
                     <Column title="Mật khẩu" dataIndex="matKhau" key="matKhau" />
                     <Column title="Họ tên" dataIndex="hoTen" key="hoTen" />

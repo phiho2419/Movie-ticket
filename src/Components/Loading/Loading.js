@@ -1,10 +1,18 @@
 import React from 'react'
-import Load from '../../assets/git/load.gif'
+import Header from '../Header/Header'
 
 export default function Loading() {
     return (
         <div className="loading">
-            <img src={Load} className="loader"/>
+            <Header />
+            <div className="loader">
+                <span className="ball" />
+                <span className="ball2" />
+                <ul>
+                    <li /><li /><li /><li /><li />
+                </ul>
+            </div>
+
         </div>
     )
 }

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { Tabs, Radio, Space, Tag } from 'antd';
-import { NavLink } from 'react-router-dom';
-import moment from 'moment'
+import React from 'react';
+import { Tabs } from 'antd';
+// import { NavLink } from 'react-router-dom';
+// import moment from 'moment'
 import CTRapDetailsList from './CTRapDetailsList'
 import CTRapDanhGiaRap from './CTRapDanhGiaRap'
 import { Link, animateScroll as scroll, scroller } from "react-scroll";
@@ -162,6 +162,7 @@ export default function CTRapList(props) {
                         </div>
                     </div>
                 }
+                else{ return null }
 
             })
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Fragment } from 'react';
+// import { Fragment } from 'react';
 import Modal from 'react-modal';
-import buttonCloseStyle from './CardPhimDangChieu'
+// import buttonCloseStyle from './CardPhimDangChieu'
 
 
 Modal.defaultStyles.overlay.backgroundColor = 'rgb(0,0,0,0.75)';
@@ -49,7 +49,7 @@ export default function CardPhimSapChieu(props) {
     return (
         <div className="card" style={{ padding: '10px' }}>
             <div className="overlay_link">
-                <img style={{ objectFit: 'cover', width: '100%' }} className="card-img-top card_img_listphim" src={phim.hinhAnh} alt="Card image cap" />
+                <img style={{ objectFit: 'cover', width: '100%' }} className="card-img-top card_img_listphim" src={phim.hinhAnh} alt="Card_image_cap" />
                 <Modal
                     isOpen={modalIsOpen}
                     style={customStyles}
@@ -61,12 +61,12 @@ export default function CardPhimSapChieu(props) {
                 </Modal>
                 <div className="overlay" onClick={openModal} >
                     <span className="icon_play">
-                        <a href="#" className="playBut">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
+                        <p style={{cursor:'pointer'}} className="playBut">
+                            <svg version="1.1"  xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
                                 <polygon className="triangle" id="XMLID_18_" fill="none" strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} points="73.5,62.5 148.5,105.8 73.5,149.1 " />
                                 <circle className="circle" id="XMLID_17_" fill="none" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} cx="106.8" cy="106.8" r="103.3" />
                             </svg>
-                        </a>
+                        </p>
                     </span>
                 </div>
             </div>

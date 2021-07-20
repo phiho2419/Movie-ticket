@@ -21,11 +21,13 @@ export default function TabDanhSachPhim(props) {
                                 <p className="tag_phim_c18 m-0">C16</p>
                                 <p className='film_name m-0 ml-2'>{phim.tenPhim}</p>
                             </div>
-                            <p className="film_details"> 105p IMDb - 8.0{phim.danhGia}</p>
+                            <p className="film_details mb-2"> 105p IMDb - 8.0{phim.danhGia}</p>
                             {phim.lstLichChieuTheoPhim.slice(0, 6).map((lichChieu, index) => {
-                                return <Tag key={index} color="magenta" className="tag_thoigian" style={{ padding: '4px 8px', fontSize: '16px', marginTop:'2px' }}>
-                                    <NavLink to={`/chitietphongve/${lichChieu.maLichChieu}`} >{lichChieu.ngayChieuGioChieu.slice(11, 16)}</NavLink>
-                                </Tag>
+                                return <span key={index} className="ticket">
+                                    <NavLink to={`/chitietphongve/${lichChieu.maLichChieu}`} className="font-weight-bold" style={{color:'white'}}>{lichChieu.ngayChieuGioChieu.slice(11, 16)}</NavLink>
+                                    {/* {lichChieu.ngayChieuGioChieu.slice(11, 16)} */}
+                                    {/* <img  style={{objectFit:'cover',filter:'saturate(2)',position:'relative'}} width="90" src="../../../../img/ticket.png" alt="ticket" /> */}
+                                </span>
                             })}
                         </div>
 

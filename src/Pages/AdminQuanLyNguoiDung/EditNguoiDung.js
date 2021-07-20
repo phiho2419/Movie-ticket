@@ -1,10 +1,12 @@
 import { useFormik } from 'formik';
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import * as Yup from 'yup';
-import { Input, Button, DatePicker } from 'antd';
-import moment from 'moment';
+// import * as Yup from 'yup';
+import { Input, Button,Select } from 'antd';
+// import moment from 'moment';
 import { CapNhatNguoiDungAction } from '../../Redux/Actions/NguoiDungAction';
+
+const {Option} = Select
 export default function EditNguoiDung() {
     const { thongTinNguoiDung } = useSelector(state => state.AdminReducer);
     const dispatch = useDispatch();
@@ -37,16 +39,16 @@ export default function EditNguoiDung() {
                 <form onSubmit={formik.handleSubmit}>
                     <div className="form-group">
                         <label>Tài Khoản</label>
-                        <input value={formik.values.taiKhoan} disabled className="form-control" name="taiKhoan" onChange={formik.handleChange} />
+                        <Input value={formik.values.taiKhoan} disabled  name="taiKhoan" onChange={formik.handleChange} />
                     </div>
                     <div className="form-group">
                         <label>Email</label>
-                        <input type="email" value={formik.values.email} className="form-control" name="email" onChange={formik.handleChange} />
+                        <Input type="email" value={formik.values.email}  name="email" onChange={formik.handleChange} />
 
                     </div>
                     <div className="form-group">
                         <label>Số điện thoại</label>
-                        <input type="number" value={formik.values.soDt} className="form-control" name="soDt" onChange={formik.handleChange} />
+                        <Input type="number" value={formik.values.soDt}  name="soDt" onChange={formik.handleChange} />
                     </div>
 
 
@@ -54,25 +56,24 @@ export default function EditNguoiDung() {
                         <div className="col-6">
                             <div className="form-group">
                                 <label>Họ Tên</label>
-                                <input value={formik.values.hoTen} className="form-control" name="hoTen" onChange={formik.handleChange} />
-
+                                <Input value={formik.values.hoTen}  name="hoTen" onChange={formik.handleChange} />
                             </div>
                         </div>
                         <div className="col-6">
                             <div className="form-group">
                                 <label>Nhóm</label>
-                                <select value={formik.values.maNhom} className="form-control" name="maNhom" onChange={formik.handleChange} >
-                                    <option value="Gp01">Gp01</option>
-                                    <option value="Gp02">Gp02</option>
-                                    <option value="Gp03">Gp03</option>
-                                    <option value="Gp04">Gp04</option>
-                                    <option value="Gp05">Gp05</option>
-                                    <option value="Gp06">Gp06</option>
-                                    <option value="Gp07">Gp07</option>
-                                    <option value="Gp08">Gp08</option>
-                                    <option value="Gp09">Gp09</option>
-                                    <option value="Gp10">Gp10</option>
-                                </select>
+                                <Select className="d-block" value={formik.values.maNhom} name="maNhom" onChange={formik.handleChange} >
+                                    <Option value="Gp01">GP01</Option>
+                                    <Option value="Gp02">GP02</Option>
+                                    <Option value="Gp03">GP03</Option>
+                                    <Option value="Gp04">GP04</Option>
+                                    <Option value="Gp05">GP05</Option>
+                                    <Option value="Gp06">GP06</Option>
+                                    <Option value="Gp07">GP07</Option>
+                                    <Option value="Gp08">GP08</Option>
+                                    <Option value="Gp09">GP09</Option>
+                                    <Option value="Gp10">GP10</Option>
+                                </Select>
 
                             </div>
                         </div>
@@ -81,14 +82,14 @@ export default function EditNguoiDung() {
                         <div className="col-6">
                             <div className="form-group">
                                 <label>Mật khẩu</label>
-                                <input type="text" value={formik.values.matKhau} className="form-control" name="matKhau" onChange={formik.handleChange} />
+                                <Input type="text" value={formik.values.matKhau}  name="matKhau" onChange={formik.handleChange} />
                             </div>
 
                         </div>
                         <div className="col-6">
                             <div className="form-group">
                                 <label> Loại Người Dùng</label>
-                                <input type="text" value={formik.values.maLoaiNguoiDung} className="form-control" disabled name="matKhau" onChange={formik.handleChange} />
+                                <Input type="text" value={formik.values.maLoaiNguoiDung}  disabled name="matKhau" onChange={formik.handleChange} />
 
                             </div>
                         </div>

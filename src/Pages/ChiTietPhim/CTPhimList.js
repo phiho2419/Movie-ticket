@@ -1,8 +1,8 @@
 import React from 'react'
-import { Tabs, Tag } from 'antd';
-import { NavLink } from 'react-router-dom';
-import moment from 'moment'
-import { Fragment } from 'react';
+import { Tabs } from 'antd';
+// import { NavLink } from 'react-router-dom';
+// import moment from 'moment'
+// import { Fragment } from 'react';
 import CTPhimDetailsList from './CTPhimDetailsList'
 import CTPhimDanhGiaPhim from './CTPhimDanhGiaPhim'
 
@@ -14,7 +14,7 @@ export default function CTPhimList(props) {
     const renderTabPhim = () => {
         return props.heThongRap?.map((rap, index) => {
             return <TabPane tab={<div>
-                <img src={rap.logo} width={62} />
+                <img src={rap.logo} width={62} alt="logoRap"/>
                 <hr className="hr_logo" />
             </div>} key={index}>
                 <CTPhimDetailsList cumRapChieu={rap.cumRapChieu} logo={rap.tenHeThongRap} />

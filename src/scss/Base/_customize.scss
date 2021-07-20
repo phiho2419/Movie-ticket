@@ -9,9 +9,11 @@
     justify-content: center !important;
 }
 .ant-table-thead > tr > th{
-    background: rgb(117, 117, 250) !important;
+    background:$color-red-light  !important;
 }
-
+.ant-table-thead > tr > th, .ant-table-tbody > tr > td, .ant-table tfoot > tr > th, .ant-table tfoot > tr > td p{
+    margin: 0 !important;
+}
 .ant-table-thead .ant-table-cell{
     font-weight: 700;
     min-width: 100px;

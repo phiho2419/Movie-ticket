@@ -16,7 +16,7 @@ export default function AdminTaoLichChieu() {
     useEffect(() => {
         dispatch(callAPI_layDanhSachPhimAction());
 
-    }, [])
+    })
     function disabledDate(current) {
         // Can not select days before today and today
         return current && current < moment().endOf('day');
@@ -30,8 +30,8 @@ export default function AdminTaoLichChieu() {
 
         },
         onSubmit: (values, actions) => {
-            console.log('values', values);
-            console.log('ngayChieuGioChieu', values.ngayChieuGioChieu);
+            // console.log('values', values);
+            // console.log('ngayChieuGioChieu', values.ngayChieuGioChieu);
 
             dispatch(TaoLichChieuAction(values))
         }
@@ -48,16 +48,21 @@ export default function AdminTaoLichChieu() {
         })
     }
     const renderDropDownRap = () => {
-        return thongTinHeThongRap.map((cumRap) => {
-            if (maCumRap == cumRap.maCumRap) {
-                console.log(cumRap.danhSachRap);
-                return cumRap.danhSachRap.map((rap, index) => {
-                    return <Option value={rap.maRap} key={index} >{rap.tenRap}</Option>
-                })
-            }
+        // return thongTinHeThongRap.map((cumRap) => {
+            // if (maCumRap === cumRap.maCumRap) {
+            //     // console.log(cumRap.danhSachRap);
+            //     return cumRap.danhSachRap.map((rap, index) => {
+            //         return <Option value={rap.maRap} key={index} >{rap.tenRap}</Option>
+            //     })
+            // }
+            return  thongTinHeThongRap.filter(cumRap => cumRap.maCumRap === maCumRap).map((cr,index)=> {
+                return cr.danhSachRap.map((rap, index) => {
+                            return <Option value={rap.maRap} key={index} >{rap.tenRap}</Option>
+                        })
+            }) 
 
-        })
-    }
+        }
+    // }
 
 
     const handleChangeChonPhim = (maPhim) => {
@@ -80,9 +85,9 @@ export default function AdminTaoLichChieu() {
 
     return (
         <div>
-            <div>
+            <div style={{marginTop:"40px"}}>
                 <div className="admin__title text-center">
-                    <h1 >Thêm Lịch Chiếu</h1>
+                    <h1 className="font-weight-bold">Thêm lịch chiếu</h1>
                 </div>
                 <form onSubmit={formik.handleSubmit}>
                     <div className="row">

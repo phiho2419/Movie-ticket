@@ -42,7 +42,7 @@ export default function DangKi() {
                         <div className="col-12" style={{ padding: 0 }}>
                             <div className="form__user">
                                 <input required name="taiKhoan" onChange={formik.handleChange} />
-                                <label>Tài khoản</label>
+                                <label>Tài khoản *</label>
                                 <span className="text-danger"> {formik.errors.taiKhoan}</span>
 
                             </div>
@@ -51,21 +51,21 @@ export default function DangKi() {
                         <div className="col-6" style={{ paddingLeft: '0' }}>
                             <div className="form__user">
                                 <input required type="password" name="matKhau" onChange={formik.handleChange} />
-                                <label>Mật khẩu</label>
+                                <label>Mật khẩu *</label>
                                 <span className="text-danger"> {formik.errors.matKhau}</span>
                             </div>
                         </div>
                         <div className="col-6" style={{ paddingRight: '0' }}>
                             <div className="form__user">
                                 <input required type="password" name="matKhauConfirm" onChange={formik.handleChange} />
-                                <label> Nhập lại mật khẩu</label>
+                                <label> Nhập lại mật khẩu *</label>
                                 <span className="text-danger"> {formik.errors.matKhauConfirm}</span>
                             </div>
                         </div>
                         <div className="col-12" style={{ padding: '0' }}>
                             <div className="form__user">
                                 <input required name="hoTen" onChange={formik.handleChange} />
-                                <label>Họ tên</label>
+                                <label>Họ tên *</label>
                                 <span className="text-danger"> {formik.errors.hoTen}</span>
 
                             </div>
@@ -73,15 +73,15 @@ export default function DangKi() {
                         <div className="col-6" style={{ paddingLeft: '0' }}>
                             <div className="form__user">
                                 <input required type="email" name="email" onChange={formik.handleChange} />
-                                <label>Email</label>
+                                <label>Email *</label>
                                 <span className="text-danger"> {formik.errors.email}</span>
 
                             </div>
                         </div>
                         <div className="col-6" style={{ paddingRight: '0' }}>
                             <div className="form__user" >
-                                <input  name="soDt" onChange={formik.handleChange} />
-                                <label>Số điện thoại</label>
+                                <input required  name="soDt" onChange={formik.handleChange} />
+                                <label>Số điện thoại *</label>
                                 <span className="text-danger"> {formik.errors.soDt}</span>
 
                             </div>

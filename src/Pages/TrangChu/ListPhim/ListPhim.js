@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CardPhimDangChieu from './CardPhimDangChieu';
 import CardPhimSapChieu from './CardPhimSapChieu';
 import { callAPI_layDanhSachPhimAction } from '../../../Redux/Actions/QuanLyPhimAction';
-import { Fragment } from 'react';
+// import { Fragment } from 'react';
 import Slider from 'react-slick';
 
 function SamplePrevArrow(props) {
@@ -33,7 +33,7 @@ export default function ListPhim() {
 
     useEffect(() => {
         dispatch(callAPI_layDanhSachPhimAction());
-    }, [])
+    }, [dispatch])
 
 
     const renderPhimSapChieu = () => {
@@ -41,6 +41,7 @@ export default function ListPhim() {
             if (index <= 15) {
                 return <CardPhimSapChieu phim={phim} index={index} />
             }
+            else{return null}
         })
     }
     const renderPhimDangChieu = () => {
@@ -48,6 +49,8 @@ export default function ListPhim() {
             if (index >= 1 && index <= 32) {
                 return <CardPhimDangChieu phim={phim} index={phim.maPhim} />
             }
+            else{return null}
+
         })
     }
 
@@ -89,7 +92,7 @@ export default function ListPhim() {
         prevArrow: <SamplePrevArrow />
     };
     return (
-        <section className=" container sectionListPhim">
+        <section className=" container-lg sectionListPhim">
             <div>
                 <ul className="nav nav-tabs " id="listPhimTab" role="tablist">
                     <li className="nav-item">

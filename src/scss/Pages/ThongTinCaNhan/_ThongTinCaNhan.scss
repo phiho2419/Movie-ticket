@@ -18,7 +18,7 @@
     .content_paper{
         width: 100%;
         height: 100%;
-        margin: 75px auto;
+        margin: 60px auto;
         .bg_image{
             padding-top: 20px;
             .infor_details{
@@ -65,6 +65,7 @@
                 background-color: white;
                 border:1px solid rgb(49, 102, 216);
                 font-weight: 700;
+                transition: all .1s;
                 &:hover{
                     border:1px solid rgb(49, 102, 216);
                     color: white;
@@ -86,6 +87,10 @@
             width: 500px;
             margin: 0 auto;
         }
+        .ant-table-thead > tr > th{
+            background: $color-red-primary !important;
+            color: white;
+        }
     }
     
 }
@@ -101,5 +106,11 @@
         &:hover{
             background-color: #ff5252;
         }
+    }
+}
+
+@include responsible("medium") {
+    .ThongTinCaNhan {
+        height: 800px;
     }
 }

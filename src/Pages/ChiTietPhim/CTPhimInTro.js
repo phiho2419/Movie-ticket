@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
-import { Tabs, Progress, Rate } from 'antd';
-import ModalVideo from 'react-modal-video';
-import moment from 'moment'
+import React  from 'react'
+import {  Progress } from 'antd';
+// import ModalVideo from 'react-modal-video';
+// import moment from 'moment'
 import { renderIMDb } from '../../Util/services'
 import { Link, animateScroll as scroll } from "react-scroll";
 
 
-const { TabPane } = Tabs;
+// const { TabPane } = Tabs;
 export default function CTPhimInTro(props) {
 
     let { chiTietPhim } = props;
-    const [isOpen, setOpen] = useState(false)
+    // const [isOpen, setOpen] = useState(false)
 
 
     const styleBgImage = {
@@ -25,7 +25,7 @@ export default function CTPhimInTro(props) {
             <div className="ctp_container">
                 <div className="intro_content row align-items-center">
                     <div className="intro_img col-6 col-lg-4">
-                        <img src={chiTietPhim.hinhAnh} atl="intro_img" />
+                        <img src={chiTietPhim.hinhAnh} alt="intro_img" />
                     </div>
                     <div className="intro_infor col-6 col-lg-5">
                         <p className="ngayKhoiChieu "> {chiTietPhim.ngayKhoiChieu?.substr(0, 10)}</p>

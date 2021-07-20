@@ -1,6 +1,7 @@
 .sectionListPhim{
     margin-top: 70px;
     max-width: 1040px;
+    padding: 0 10px;
     .nav{
         justify-content: center ;
         border:none;
@@ -92,7 +93,10 @@
             top: 45%;
         }
         .slick-prev{
-            left: -52px;
+            left: -48px;
+        }
+        .slick-next{
+            right: -48px;
         }
     }
     .card{

@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Select } from 'antd';
 import { LayThongTinLichChieuPhim_Action } from '../../../Redux/Actions/QuanLyRapAction'
 import moment from 'moment';
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 
 const { Option } = Select;
 
@@ -36,13 +36,19 @@ export default function SearchForm() {
     const handleMangDropDownNgay = () => {
         return thongTinLichChieu.heThongRapChieu?.map((heThongRap) => {
             return heThongRap.cumRapChieu?.map((rap) => {
-                if (rap.maCumRap == maCumRapState) {
+                if (rap.maCumRap === maCumRapState) {
                     return rap.lichChieuPhim?.map((lichChieu, index) => {
                         let findIndex = mangDropDownNgay.findIndex(item => item === lichChieu.ngayChieuGioChieu?.substr(0, 10));
                         if (findIndex === -1) {
                             mangDropDownNgay.push(lichChieu.ngayChieuGioChieu?.substr(0, 10));
                         }
+                        else{
+                            return null
+                        }
                     })
+                }
+                else{
+                    return null
                 }
             })
         })
@@ -56,12 +62,18 @@ export default function SearchForm() {
     const renderDropDownGio = () => {
         return thongTinLichChieu.heThongRapChieu?.map((heThongRap) => {
             return heThongRap.cumRapChieu?.map((rap) => {
-                if (rap.maCumRap == maCumRapState) {
+                if (rap.maCumRap === maCumRapState) {
                     return rap.lichChieuPhim?.map((lichChieu, indexLichChieu) => {
-                        if (lichChieu.ngayChieuGioChieu?.substr(0, 10) == ngayChieuState) {
+                        if (lichChieu.ngayChieuGioChieu?.substr(0, 10) === ngayChieuState) {
                             return <Option key={indexLichChieu} value={lichChieu.maLichChieu} >{lichChieu.ngayChieuGioChieu?.slice(11, 16)}</Option>
                         }
+                        else{
+                            return null
+                        }
                     })
+                }
+                else{
+                    return null
                 }
             })
         })

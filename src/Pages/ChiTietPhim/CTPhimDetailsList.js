@@ -10,22 +10,22 @@ export default function CTPhimDetailsList(props) {
     const renderLogoChiTiet = () => {
         let tenLogo = logo.substr(0, 3).trim()
         if (tenLogo === 'BHD') {
-            return <img src="../../../img/BHDStar_theater.jpg" width={100} height={100} />
+            return <img src="../../../img/BHDStar_theater.jpg" width={100} height={100} alt="hinhRap"/>
         }
         else if (tenLogo === 'cgv') {
-            return <img src="../../../img/CGV_theater.jpg" width={100} height={100} />
+            return <img src="../../../img/CGV_theater.jpg" width={100} height={100} alt="hinhRap"/>
         }
         else if (tenLogo === 'Gal') {
-            return <img src="../../../img/Galaxy_theater.jpg" width={100} height={100} />
+            return <img src="../../../img/Galaxy_theater.jpg" width={100} height={100} alt="hinhRap"/>
         }
         else if (tenLogo === 'Cin') {
-            return <img src="../../../img/CineStar_theater.jpg" width={100} height={100} />
+            return <img src="../../../img/CineStar_theater.jpg" width={100} height={100} alt="hinhRap"/>
         }
         else if (tenLogo === 'Lot') {
-            return <img src="../../../img/LotteCinima_theater.jpg" width={100} height={100} />
+            return <img src="../../../img/LotteCinima_theater.jpg" width={100} height={100} alt="hinhRap"/>
         }
         else if (tenLogo === 'Meg') {
-            return <img src="../../../img/MegaGS_theater.jpg" width={80} height={80} />
+            return <img src="../../../img/MegaGS_theater.jpg" width={80} height={80} alt="hinhRap"/>
         }
     }
     const handleTenCumRap = (tenCumRap) => {
@@ -86,6 +86,7 @@ export default function CTPhimDetailsList(props) {
                                             <NavLink to={`/chitietphongve/${lichChieu.maLichChieu}`}>{lichChieu.ngayChieuGioChieu.slice(11, 16)}</NavLink>
                                         </Tag>
                                     }
+                                    else{ return null }
                                 })}
                             </div>
                         </div>
@@ -93,6 +94,7 @@ export default function CTPhimDetailsList(props) {
                     <hr style={{ width: '80%' }} />
                 </Fragment>
             }
+            else{ return null }
         })
     }
     const tagNullList = () => {
