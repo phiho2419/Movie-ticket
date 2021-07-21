@@ -29,7 +29,7 @@ export default function EditNguoiDung() {
         <div>
             <div className="modal-header">
                 <h2 style={{ margin: "0" }}>Cập nhật người dùng</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -51,7 +51,7 @@ export default function EditNguoiDung() {
                     </div>
 
 
-                    <div class="row">
+                    <div className="row">
                         <div className="col-6">
                             <div className="form-group">
                                 <label>Họ Tên</label>
@@ -77,7 +77,7 @@ export default function EditNguoiDung() {
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div className="row">
                         <div className="col-6">
                             <div className="form-group">
                                 <label>Mật khẩu</label>

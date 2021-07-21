@@ -10,10 +10,7 @@ export const AdminTemplate = (props) => { //props.path, props.component
     if (!localStorage.getItem(USERLOGIN)) {
         return <Redirect to="/dangnhap" />
     }
-    let dataUser = JSON.parse(localStorage.getItem('userLogin'));
-    // const { user } = useSelector(state => state.NguoiDungReducer);
-    // let dataUser = JSON.parse(localStorage.getItem(USERLOGIN));
-  
+    let dataUser = JSON.parse(localStorage.getItem('userLogin'));  
     if (!localStorage.getItem('userLogin')) {
         Swal.fire({
             icon: 'error',
@@ -42,34 +39,34 @@ export const AdminTemplate = (props) => { //props.path, props.component
                         <div className="db__zoom d-none d-md-block" style={zoom ? { right: "50px" } : { left: "15px" }}>
                             <button onClick={() => {
                                 setZoom(!zoom);
-                            }}><i class={zoom ? "fas fa-long-arrow-alt-left" : "fas fa-long-arrow-alt-right"}></i></button>
+                            }}><i className={zoom ? "fas fa-long-arrow-alt-left" : "fas fa-long-arrow-alt-right"}></i></button>
                         </div>
-                        <ul class="navbar-nav mr-auto dashboard__list">
-                            <li class="nav-item">
-                                <NavLink className="db__item" to="/admin/quanlyphim" aria-selected="true"> <i class="fas fa-video"></i>
+                        <ul className="navbar-nav mr-auto dashboard__list">
+                            <li className="nav-item">
+                                <NavLink className="db__item" to="/admin/quanlyphim" aria-selected="true"> <i className="fas fa-video"></i>
                                     {zoom ? <span className="d-none d-md-inline">Quản Lý Phim</span> : ''}
                                 </NavLink>
                             </li>
-                            <li class="nav-item">
-                                <NavLink className="db__item" to="/admin/quanlynguoidung" aria-selected="false"> <i class="fas fa-user"></i>
+                            <li className="nav-item">
+                                <NavLink className="db__item" to="/admin/quanlynguoidung" aria-selected="false"> <i className="fas fa-user"></i>
                                     {zoom ? <span className="d-none d-md-inline">Quản Lý Người Dùng</span> : ''}
 
                                 </NavLink>
                             </li>
-                            <li class="nav-item">
-                                <NavLink className="db__item" to="/admin/taolichchieu" aria-selected="false"><i class="fas fa-clock"></i>
+                            <li className="nav-item">
+                                <NavLink className="db__item" to="/admin/taolichchieu" aria-selected="false"><i className="fas fa-clock"></i>
                                     {zoom ? <span className="d-none d-md-inline">Thêm Lịch Chiếu</span> : ''}
 
                                 </NavLink>
                             </li>
-                            <li class="nav-item">
-                                <NavLink className="db__item" to="/admin/themnguoidung" aria-selected="false"><i class="fas fa-users"></i>
+                            <li className="nav-item">
+                                <NavLink className="db__item" to="/admin/themnguoidung" aria-selected="false"><i className="fas fa-users"></i>
                                     {zoom ? <span className="d-none d-md-inline">Thêm Người Dùng</span> : ''}
 
                                 </NavLink>
                             </li>
-                            <li class="nav-item">
-                                <NavLink className="db__item" to="/admin/themphim" aria-selected="false"><i class="fas fa-film"></i>
+                            <li className="nav-item">
+                                <NavLink className="db__item" to="/admin/themphim" aria-selected="false"><i className="fas fa-film"></i>
                                     {zoom ? <span className="d-none d-md-inline">Thêm Phim</span> : ''}
                                 </NavLink>
                             </li>
@@ -79,7 +76,7 @@ export const AdminTemplate = (props) => { //props.path, props.component
                         <div className="header__admin font-weight-bold "  >
                             <div>
                                 <NavLink to='/thongtincanhan' className="btn_header btn_dangnhap" style={{color:'white',minWidth:'150px'}}>{dataUser.hoTen}</NavLink>
-                                <NavLink to="#" style={{ outline: 'none' }} className="btn_header btn_dangki" onClick={() => {
+                                <NavLink to="#" style={{ outline: 'none',color:'white' }} className="btn_header btn_dangki" onClick={() => {
                                     Swal.fire({
                                         icon: 'question',
                                         title: 'Bạn có chắc muốn đăng xuất?',
@@ -94,7 +91,7 @@ export const AdminTemplate = (props) => { //props.path, props.component
                                         }
                                     })
 
-                                }} style={{color:'white'}}>Đăng Xuất</NavLink>
+                                }}>Đăng Xuất</NavLink>
                             </div>
                         </div>
                         <props.component {...propsRoute} />

@@ -11,8 +11,7 @@ import { USERLOGIN } from '../../Util/setting';
 import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
 import LichSuDatVe from './LichSuDatVe';
-import Swal from 'sweetalert2';
-import { Redirect } from 'react-router';
+
 
 
 

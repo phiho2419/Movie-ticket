@@ -40,13 +40,13 @@ export default function Edit() {
     }
     return (
         <div>
-            <div class="modal-header">
+            <div className="modal-header">
                 <h2 style={{ margin: "0" }}>Cập nhật phim</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
                 <form onSubmit={formik.handleSubmit}>
                     <div className="row">
 
@@ -65,9 +65,9 @@ export default function Edit() {
 
                         </div>
                         <div className="col-6">
-                         <label className="font-weight-bold">Ngày khởi chiếu</label>
+                            <label className="font-weight-bold">Ngày khởi chiếu</label>
 
-                                <DatePicker  name="ngayKhoiChieu" format={dateFormatList} onChange={(value, dateString) => {
+                            <DatePicker name="ngayKhoiChieu" format={dateFormatList} onChange={(value, dateString) => {
                                 formik.values.ngayKhoiChieu = dateString
                             }} className="d-block mb-3 " />
                             <p className="text-danger">{formik.errors.ngayKhoiChieu}</p>

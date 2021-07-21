@@ -16,6 +16,12 @@
                 &:hover {
                     transform: scale(1);
                 }
+                @media screen and (max-width: 499px) {
+                    font-size: 18px;
+                }
+                @media screen and (max-width: 300px) {
+                    font-size: 12px;
+                }
             }
             .active {
                 transform: scale(1);
