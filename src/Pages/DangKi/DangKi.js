@@ -39,7 +39,7 @@ export default function DangKi() {
             <div className="DK__content">
                 <h2 className="font-weight-bold">ĐĂNG KÝ</h2>
                 <form onSubmit={formik.handleSubmit} className="container-fluid">
-                    <div class="row">
+                    <div className="row">
                         <div className="col-12" style={{ padding: 0 }}>
                             <div className="form__user">
                                 <input required name="taiKhoan" onChange={formik.handleChange} />
@@ -92,7 +92,7 @@ export default function DangKi() {
                         </div>
                     </div>
 
-                    <p className="text-right mt-3"><NavLink to="/dangnhap">Đã có tài khoản ? Đăng nhập ngay !</NavLink></p>
+                    <p className="text-right mt-3 user__tt"><NavLink to="/dangnhap">Đã có tài khoản ? Đăng nhập ngay !</NavLink></p>
                 </form>
             </div>
         </div>

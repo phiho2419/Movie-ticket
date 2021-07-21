@@ -1,10 +1,17 @@
 .DangKy {
-    .DK__content{
+    .DK__content {
         position: absolute;
         top: 50%;
         left: 50%;
         width: 400px;
         padding: 40px;
+        @media screen and (max-width: 499px) {
+            width: 340px;
+        }
+        @media screen and (max-width: 300px) {
+            width: 270px;
+            padding: 25px;
+        }
         transform: translate(-50%, -50%);
         background: $color-white-0;
         box-sizing: border-box;
@@ -21,7 +28,8 @@
         .form__user {
             position: relative;
 
-            input,select {
+            input,
+            select {
                 width: 100%;
                 padding: 10px 0;
                 font-size: 16px;
@@ -38,17 +46,24 @@
                 left: 0;
                 padding: 10px 0;
                 font-size: 15px;
+                @media screen and (max-width: 499px) {
+                    font-size: 12px;
+                }
+                @media screen and (max-width: 300px) {
+                    font-size: 10px;
+                }
                 color: $color-black-0;
                 pointer-events: none;
                 transition: 0.5s;
             }
-            input:focus ~ label,input:valid ~ label {
+            input:focus ~ label,
+            input:valid ~ label {
                 top: -20px;
                 left: 0;
                 color: rgb(85, 94, 228);
                 font-size: 12px;
             }
-            span{
+            span {
                 font-size: 12px;
             }
         }
@@ -63,20 +78,22 @@
             margin-top: 30px;
             width: 100%;
             color: white;
-            button{
+            button {
                 outline: none;
                 width: 100%;
                 padding: 10px 20px;
                 background-color: #5272ffbd;
-                transition: all .2s;
+                transition: all 0.2s;
                 font-weight: 700;
-                &:hover{
+                &:hover {
                     background-color: #5272ff;
                 }
             }
-            
-           
         }
     }
 }
-
+@media screen and (max-width: 300px) {
+    .user__tt {
+        font-size: 12px;
+    }
+}

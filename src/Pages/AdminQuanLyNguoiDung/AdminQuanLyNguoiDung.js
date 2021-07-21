@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { Table, Space, Button,Input } from 'antd';
+import { Table, Space, Button, Input } from 'antd';
 import { layDanhSachNguoiDungAction, timKiemNguoiDungAction, xoaNguoiDung } from '../../Redux/Actions/AdminAction';
 import EditNguoiDung from './EditNguoiDung';
 import { useFormik } from 'formik';
@@ -12,8 +12,8 @@ export default function AdminQuanLyNguoiDung() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(layDanhSachNguoiDungAction());
-    },[dispatch]);
-    
+    }, [dispatch]);
+
     document.title = "Admin | Quản Lý Người Dùng";
 
     const { mangNguoiDung } = useSelector(state => state.AdminReducer);
@@ -22,7 +22,11 @@ export default function AdminQuanLyNguoiDung() {
             tuKhoa: ''
         },
         onSubmit: values => {
-            dispatch(timKiemNguoiDungAction(values));
+            if (!values.tuKhoa) {
+                dispatch(layDanhSachNguoiDungAction());
+            } else {
+                dispatch(timKiemNguoiDungAction(values));
+            }
         },
     });
     return (
@@ -32,10 +36,10 @@ export default function AdminQuanLyNguoiDung() {
             </div>
             <form className="search_form" onSubmit={formik.handleSubmit}>
                 <div className="input-group">
-                    <Input  placeholder="Nhập vào tài khoản hoặc họ tên người dùng" name="tuKhoa" onChange={formik.handleChange} />
+                    <Input placeholder="Nhập vào tài khoản hoặc họ tên người dùng" name="tuKhoa" onChange={formik.handleChange} />
                     <div className="input-group-append">
                         <button type="submit" style={{ border: "none" }}>
-                            <span className="input-group-text" id="basic-addon2" style={{height:"100%"}}>
+                            <span className="input-group-text" id="basic-addon2" style={{ height: "100%" }}>
                                 <i className="fa fa-search" />
                             </span>
                         </button>
@@ -44,8 +48,8 @@ export default function AdminQuanLyNguoiDung() {
                 </div>
             </form>
             <div className="mt-4 px-2">
-                <Table dataSource={mangNguoiDung} bordered="true"  pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15'] }}>
-                    <Column align={'center'} title="STT" key="STT" render={(value, item, index) =>  index + 1} />
+                <Table rowKey="taiKhoan" dataSource={mangNguoiDung} bordered="true" pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15'] }}>
+                    <Column align={'center'} title="STT" key="STT" render={(value, item, index) => index + 1} />
                     <Column title="Tài khoản" dataIndex="taiKhoan" key="taiKhoan" />
                     <Column title="Mật khẩu" dataIndex="matKhau" key="matKhau" />
                     <Column title="Họ tên" dataIndex="hoTen" key="hoTen" />
@@ -60,17 +64,17 @@ export default function AdminQuanLyNguoiDung() {
                                         type: 'SET_NGUOI_DUNG',
                                         thongTinNguoiDung: record
                                     })
-                                }} data-toggle="modal" data-target="#EditNguoiDung"><i class="fa fa-edit"></i></Button>
-                                <div class="modal fade" id="EditNguoiDung" tabIndex="-1" aria-labelledby="EditNguoiDung" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
+                                }} data-toggle="modal" data-target="#EditNguoiDung"><i className="fa fa-edit"></i></Button>
+                                <div className="modal fade" id="EditNguoiDung" tabIndex="-1" aria-labelledby="EditNguoiDung" aria-hidden="true">
+                                    <div className="modal-dialog">
+                                        <div className="modal-content">
                                             <EditNguoiDung />
                                         </div>
                                     </div>
                                 </div>
                                 <Button type="primary" danger size="small" onClick={() => {
                                     dispatch(xoaNguoiDung(record.taiKhoan))
-                                }}><i class="fa fa-trash-alt"></i></Button>
+                                }}><i className="fa fa-trash-alt"></i></Button>
                             </Space>
                         )}
                     />

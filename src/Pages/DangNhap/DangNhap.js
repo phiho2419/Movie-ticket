@@ -48,7 +48,7 @@ export default function DangNhap() {
                     <div className="DN__btn">
                         <button type="submit">ĐĂNG NHẬP</button>
                     </div>
-                    <p className="text-right mt-3"><NavLink to="/dangky">Chưa có tài khoản ? Đăng ký ngay !</NavLink></p>
+                    <p className="text-right mt-3 user__tt"><NavLink to="/dangky">Chưa có tài khoản ? Đăng ký ngay !</NavLink></p>
                 </form>
 
             </div>

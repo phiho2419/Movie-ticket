@@ -32,12 +32,12 @@ export default function AdminQuanLyPhim() {
     return (
         <div className="pageQuanLyPhim">
             <div className="admin__title  px-2">
-                    <h1 className="font-weight-bold text-center">Quản lý phim</h1>
-                
+                <h1 className="font-weight-bold text-center">Quản lý phim</h1>
+
             </div>
 
             <div className="mt-4 px-2">
-                <Table dataSource={mangPhim} bordered="true" pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15'] }}>
+                <Table rowKey="maPhim" dataSource={mangPhim} bordered="true" pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ['5', '10', '15'] }}>
                     <Column align="center" title="Mã phim" dataIndex="maPhim" key="maPhim" />
                     <Column align="center" title="Tên phim" dataIndex="tenPhim" key="tenPhim" />
                     <Column title="Hình ảnh"
@@ -60,7 +60,7 @@ export default function AdminQuanLyPhim() {
                     <Column
 
                         key="action"
-                        render={( record) => (
+                        render={(record) => (
                             <Space size="small">
                                 <Button type="primary" size="small" onClick={() => {
                                     dispatch({
@@ -68,15 +68,15 @@ export default function AdminQuanLyPhim() {
                                         thongTinPhim: record
                                     })
 
-                                }} data-toggle="modal" data-target="#EditPhim"><i class="fa fa-edit" ></i></Button>
-                                <div class="modal fade" id="EditPhim" tabIndex="-1" aria-labelledby="EditPhimLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
+                                }} data-toggle="modal" data-target="#EditPhim"><i className="fa fa-edit" ></i></Button>
+                                <div className="modal fade" id="EditPhim" tabIndex="-1" aria-labelledby="EditPhimLabel" aria-hidden="true">
+                                    <div className="modal-dialog">
+                                        <div className="modal-content">
                                             <Edit />
                                         </div>
                                     </div>
                                 </div>
-                                <Button type="primary" danger size="small"><i class="fa fa-trash-alt" onClick={() => {
+                                <Button type="primary" danger size="small"><i className="fa fa-trash-alt" onClick={() => {
                                     dispatch(xoaPhim(record.maPhim))
                                 }}></i></Button>
                             </Space>
