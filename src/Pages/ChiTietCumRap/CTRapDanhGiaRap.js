@@ -12,7 +12,7 @@ const today = new Date(timeElapsed);
 
 
 export default function CTRapDanhGiaRap() {
-    let dataUser = { hoTen: "" }
+    let dataUser = "" ;
     if (localStorage.getItem(USERLOGIN)) {
         dataUser = JSON.parse(localStorage.getItem('userLogin'));
     }
@@ -20,7 +20,7 @@ export default function CTRapDanhGiaRap() {
     const [numberItem, setNumberItem] = useState(3);
 
     const cmt = useSelector(state => state.CommentReducer.commentRap);
-    const [danhGia, setDanhGia] = useState({ userName: dataUser.hoTen, thoiGianDanhGia: `${moment(today.toISOString()).format('DD-MM')} ${moment(today).format('LT')}`, diemDanhGia: 0, commentDanhGia: '' });
+    const [danhGia, setDanhGia] = useState({ userName: dataUser.taiKhoan, thoiGianDanhGia: `${moment(today.toISOString()).format('DD-MM')} ${moment(today).format('LT')}`, diemDanhGia: 0, commentDanhGia: '' });
     const [modalIsOpen, setIsOpen] = useState(false);
     function openModal() {
         setIsOpen(true);
@@ -121,7 +121,7 @@ export default function CTRapDanhGiaRap() {
                         </div>
                     </div>
                     <div>
-                        <p style={{ fontWeight: '400' }}>{bl.commentDanhGia}</p>
+                        <p style={{ fontWeight: '400',textOverflow:'ellipsis',whiteSpace:'nowrap',overflow:'hidden',wordWrap:'break-word' }}>{bl.commentDanhGia}</p>
                     </div>
                     <hr />
                 </div>
@@ -133,19 +133,30 @@ export default function CTRapDanhGiaRap() {
 
         })
     }
+    const checkOpenModal = () => {
+        if(!dataUser){
+            Swal.fire({
+                icon:'error',
+                title:'Bạn cần đăng nhập để bình luận'
+            })
+        }
+        else{
+            openModal()
+        }
+    }
     return (
-        <div className="container user_comment">
-            <div className="user_area" onClick={openModal}>
+        <div className="container-md user_comment">
+            <div className="user_area" onClick={checkOpenModal}>
                 <div >
-                    <img alt="avater" style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={`https://i.pravatar.cc/150?u=${dataUser.soDT}`} />
+                    <img alt="avater" style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={dataUser ? `https://i.pravatar.cc/150?u=${dataUser.taiKhoan}` : "../../../img/avatarFalsy.png"} />
                     <span className="yourThink ml-2">Hãy chấm điểm cho rạp bạn nhé</span>
                 </div>
                 <div className="user_star">
-                    <i class="fa fa-star yel__star"></i>
-                    <i class="fa fa-star yel__star"></i>
-                    <i class="fa fa-star yel__star"></i>
-                    <i class="fa fa-star yel__star"></i>
-                    <i class="fa fa-star yel__star"></i>
+                    <i className="fa fa-star yel__star"></i>
+                    <i className="fa fa-star yel__star"></i>
+                    <i className="fa fa-star yel__star"></i>
+                    <i className="fa fa-star yel__star"></i>
+                    <i className="fa fa-star yel__star"></i>
                 </div>
             </div>
             <Modal isOpen={modalIsOpen}
@@ -164,17 +175,9 @@ export default function CTRapDanhGiaRap() {
                         <TextArea rows={3} placeholder="Nhận xét ở đây nè" onChange={(e) => { handleComment(e) }} />
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '10px' }}>
-                        <Button style={{ fontWeight: '700' }} type="primary" danger onClick={() => {
-                            console.log('danhGia', danhGia);
-                            if (!localStorage.getItem(USERLOGIN)) {
-                                Swal.fire({
-                                    icon: 'error',
-                                    text: 'Vui lòng đăng nhập để bình luận !',
-                                })
-                            } else {
-                                dispatch({ type: 'COMMENT_PHIM', danhGia: danhGia });
-                            }
-                            closeModal()
+                        <Button style={{ fontWeight: '700' }} type="primary" danger onClick={() => {  
+                                dispatch({ type: 'COMMENT_RAP', danhGia: danhGia });                           
+                                closeModal()
                         }}>
                             Đăng
                         </Button>

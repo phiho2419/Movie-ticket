@@ -346,38 +346,16 @@ circle {
   display: inline-block;
   font-size: 18px;
   width: 90px;
-  height: 60px;
+  height: 46px;
   text-align: center;
-  line-height: 50px;
-  padding: 4px 8px;
+  line-height: 46px;
+  padding: 0px 8px;
   margin-left: 8px;
   background-image: url("../assets/img/ticket.png");
   -webkit-filter: saturate(2);
           filter: saturate(2);
   background-position: center;
   background-size: cover;
-}
-
-@-webkit-keyframes rotate {
-  0% {
-    -webkit-transform: rotateX(2deg);
-            transform: rotateX(2deg);
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    -webkit-transform: rotateX(2deg);
-            transform: rotateX(2deg);
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
 }
 
 header {
@@ -481,6 +459,21 @@ header #logo_circle {
           animation: rotate 3s linear infinite;
 }
 
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 @keyframes rotate {
   0% {
     -webkit-transform: rotate(0);
@@ -515,7 +508,7 @@ header #logo_circle {
   height: 100%;
   padding: 20px 0;
   max-width: 22%;
-  background: #c5f761;
+  background: #42415a;
 }
 
 .dashboard .dashboard__left .dashboard__img {
@@ -564,7 +557,7 @@ header #logo_circle {
 .dashboard .dashboard__left .dashboard__list .db__item {
   font-size: 16px;
   font-weight: 600;
-  color: #1b1b1b;
+  color: rgba(255, 255, 255, 0.801);
   display: inline-block;
   padding: 15px 0;
   width: 100%;
@@ -596,8 +589,8 @@ header #logo_circle {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: #ff5252;
-  z-index: 99;
+  background-color: #272635d5;
+  z-index: 90;
   height: 50px;
   line-height: 50px;
   width: 100%;
@@ -2445,6 +2438,21 @@ header #logo_circle {
   color: #ff5252;
 }
 
+@media screen and (max-width: 768px) {
+  .ctp_list .nav_tabs_chiTietPhim {
+    font-size: 16 !important;
+  }
+  .user_comment .user_star {
+    font-size: 13px !important;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .ctp_list .nav_tabs_chiTietPhim {
+    font-size: 14px !important;
+  }
+}
+
 .Chitiet_intro {
   height: 500px;
   margin-top: 60px;
@@ -2805,7 +2813,7 @@ header #logo_circle {
 }
 
 .user_comment .user_area_cmt {
-  height: 120px;
+  min-height: 120px;
   background-color: white;
   border-radius: 5px;
   padding: 0 10px;
@@ -2843,11 +2851,48 @@ header #logo_circle {
 }
 
 @media screen and (max-width: 499px) {
+  #modal_comment {
+    width: 300px;
+  }
   .diaChiRap {
     display: none;
   }
   .ctr_list .tabpane_ctr {
     width: 120px;
+  }
+  .ctr_list .nav_tabs_chiTietPhim {
+    font-size: 18px;
+  }
+  .user_comment {
+    max-width: 350px;
+  }
+  .user_comment .user_star {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #rating_bar {
+    width: 100px;
+    height: 100px;
+    margin: 4px 70px !important;
+    display: inline-block;
+    display: inline;
+  }
+  .ctr_list .tabpane_ctr {
+    width: 180px !important;
+  }
+  .user_comment {
+    max-width: 400px;
+  }
+  .user_comment .user_star {
+    font-size: 13px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .ctr_list .tabpane_ctr {
+    width: 150px !important;
   }
 }
 
@@ -3047,7 +3092,7 @@ header #logo_circle {
 }
 
 .ThongTinCaNhan {
-  height: 700px;
+  min-height: 700px;
   background-image: url("../assets/img/bginforB.jpg");
   background-position: center;
   background-size: cover;
@@ -3057,6 +3102,7 @@ header #logo_circle {
   width: 100%;
   height: 100%;
   margin: 60px auto;
+  margin-bottom: 0;
 }
 
 .ThongTinCaNhan .content_paper .bg_image {
@@ -3102,8 +3148,8 @@ header #logo_circle {
   background-color: white;
   border: 1px solid #3166d8;
   font-weight: 700;
-  -webkit-transition: all .1s;
-  transition: all .1s;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
 }
 
 .ThongTinCaNhan .content_paper .bg_image .chinhSua:hover {
@@ -3139,8 +3185,8 @@ header #logo_circle {
   width: 100%;
   padding: 10px 20px;
   background-color: #ff5252bd;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   font-weight: 700;
   color: white;
 }
@@ -3149,9 +3195,26 @@ header #logo_circle {
   background-color: #ff5252;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
   .ThongTinCaNhan {
-    height: 800px;
+    height: 900px;
+  }
+  .ThongTinCaNhan .thongTinDatVe {
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  .ThongTinCaNhan .thongTinDatVe ::-webkit-scrollbar {
+    height: 7px;
+  }
+  .ThongTinCaNhan .thongTinDatVe ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .ThongTinCaNhan .thongTinDatVe ::-webkit-scrollbar-thumb {
+    background: #9c3e3e;
+  }
+  .ThongTinCaNhan .thongTinDatVe ::-webkit-scrollbar-thumb:hover {
+    background: #a10909;
   }
 }
 

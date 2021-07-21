@@ -16,12 +16,11 @@ export default function CTPhimDanhGiaPhim() {
     const [numberItem, setNumberItem] = useState(3);
 
     const cmt = useSelector(state => state.CommentReducer.commentPhim);
-    let dataUser = { hoTen: "" }
+    let dataUser = "";
     if (localStorage.getItem(USERLOGIN)) {
         dataUser = JSON.parse(localStorage.getItem('userLogin'));
-
     }
-    const [danhGia, setDanhGia] = useState({ userName: dataUser.hoTen, thoiGianDanhGia: `${moment(today.toISOString()).format('DD-MM')} ${moment(today).format('LT')}`, diemDanhGia: 0, commentDanhGia: '' });
+    const [danhGia, setDanhGia] = useState({ userName: dataUser.taiKhoan, thoiGianDanhGia: `${moment(today.toISOString()).format('DD-MM')} ${moment(today).format('LT')}`, diemDanhGia: 0, commentDanhGia: '' });
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -133,19 +132,33 @@ export default function CTPhimDanhGiaPhim() {
 
         })
     }
+
+    const checkOpenModal = () => {
+        if(!dataUser){
+            Swal.fire({
+                icon:'error',
+                title:'Bạn cần đăng nhập để bình luận'
+            })
+        }
+        else{
+            openModal()
+        }
+    }
     return (
         <div className="container user_comment">
-            <div className="user_area" onClick={openModal}>
+            <div className="user_area" onClick={
+                checkOpenModal }
+            >
                 <div >
-                    <img alt="avatar" style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={`https://i.pravatar.cc/150?u=${dataUser.soDT}`} />
+                    <img alt="avatar" style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={ dataUser ? `https://i.pravatar.cc/150?u=${dataUser.taiKhoan}` : "../../../img/avatarFalsy.png"} />
                     <span className="yourThink ml-2">Bạn nghĩ gì về phim này ?</span>
                 </div>
                 <div className="user_star">
-                    <i class="fa fa-star yel__star"></i>
-                    <i class="fa fa-star yel__star"></i>
-                    <i class="fa fa-star yel__star"></i>
-                    <i class="fa fa-star yel__star"></i>
-                    <i class="fa fa-star yel__star"></i>
+                    <i className="fa fa-star yel__star"></i>
+                    <i className="fa fa-star yel__star"></i>
+                    <i className="fa fa-star yel__star"></i>
+                    <i className="fa fa-star yel__star"></i>
+                    <i className="fa fa-star yel__star"></i>
                 </div>
             </div>
             <Modal isOpen={modalIsOpen}
@@ -165,15 +178,9 @@ export default function CTPhimDanhGiaPhim() {
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '10px' }}>
                         <Button style={{ fontWeight: '700' }} type="primary" danger onClick={() => {
-                            console.log('danhGia', danhGia);
-                            if (!localStorage.getItem(USERLOGIN)) {
-                                Swal.fire({
-                                    icon: 'error',
-                                    text: 'Vui lòng đăng nhập để bình luận !',
-                                })
-                            } else {
+                            
                                 dispatch({ type: 'COMMENT_PHIM', danhGia: danhGia });
-                            }
+                            
                             closeModal()
                         }}>
                             Đăng

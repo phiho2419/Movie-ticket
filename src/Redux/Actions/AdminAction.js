@@ -20,7 +20,6 @@ export const themPhimAction = (phimDuocThem) => {
                 })
             }
         } catch (err) {
-            console.log(err.response);
             Swal.fire({
                 icon: 'error',
                 text: `${err.response.data}`,
@@ -52,7 +51,6 @@ export const capNhatPhimAction = (phimCapNhat) => {
                 })
             }
         } catch (err) {
-            console.log(err.response);
             Swal.fire({
                 icon: 'error',
                 text: `${err.response.data}`,
@@ -80,7 +78,6 @@ export const themNguoiDungAction = (nguoiDungDuocThem) => {
 
             }
         } catch (errors) {
-            console.log(errors.response);
             Swal.fire({
                 icon: 'error',
                 text: `${errors.response?.data}`,
@@ -147,7 +144,6 @@ export const xoaPhim = (maPhim) => {
 
             }
         } catch (errors) {
-            console.log(errors.response);
             Swal.fire({
                 icon: 'error',
                 text: `${errors.response?.data}`,
@@ -179,7 +175,6 @@ export const xoaNguoiDung = (maTaiKhoan) => {
 
             }
         } catch (errors) {
-            console.log(errors.response);
             Swal.fire({
                 icon: 'error',
                 text: `${errors.response?.data}`,

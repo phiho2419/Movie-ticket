@@ -1,8 +1,7 @@
 import React from 'react';
 import { Tabs } from 'antd';
 import TabDanhSachPhim from './TabDanhSachPhim';
-import { NavLink } from 'react-router-dom';
-import { Link, animateScroll as scroll, scroller } from "react-scroll";
+import { Link, scroller } from "react-scroll";
 import { history } from '../../../App';
 
 
@@ -18,7 +17,6 @@ export default function TabListDanhSachRap(props) {
     //handlePreString_TheaterName xử lý trên rạp đằng trước dấu gạch và chọn màu 
     function handlePreString_TheaterName(stringTenRap) {
         let string = stringTenRap.substr(0, stringTenRap.indexOf('-')).replace('Star Cineplex', '');
-
         let string_handled = string.trim()
         if (string_handled.trim() === 'BHD') {
             return <span style={{ color: '#80eb34' }}>{string_handled}</span>
@@ -45,26 +43,26 @@ export default function TabListDanhSachRap(props) {
         let string_handled = string.trim()
 
         if (string_handled.trim() === 'BHD') {
-            return <img src="../../../../img/BHDStar_theater.jpg" width={50} />
+            return <img src="../../../../img/BHDStar_theater.jpg" width={50} alt="Theater_Picture"/>
         }
         else if (string_handled.trim() === 'CGV') {
-            return <img src="../../../../img/CGV_theater.jpg" width={50} />
+            return <img src="../../../../img/CGV_theater.jpg" width={50} alt="Theater_Picture"/>
 
         }
         else if (string_handled.trim() === 'CNS') {
-            return <img src="../../../../img/CineStar_theater.jpg" width={50} />
+            return <img src="../../../../img/CineStar_theater.jpg" width={50} alt="Theater_Picture"/>
 
         }
         else if (string_handled.trim() === 'GLX') {
-            return <img src="../../../../img/Galaxy_theater.jpg" width={50} />
+            return <img src="../../../../img/Galaxy_theater.jpg" width={50} alt="Theater_Picture"/>
 
         }
         else if (string_handled.trim() === 'Lotte') {
-            return <img src="../../../../img/LotteCinima_theater.jpg" width={50} />
+            return <img src="../../../../img/LotteCinima_theater.jpg" width={50} alt="Theater_Picture"/>
 
         }
         else if (string_handled.trim() === 'MegaGS') {
-            return <img src="../../../../img/MegaGS_theater.jpg" width={50} />
+            return <img src="../../../../img/MegaGS_theater.jpg" width={50} alt="Theater_Picture"/>
 
         }
     }

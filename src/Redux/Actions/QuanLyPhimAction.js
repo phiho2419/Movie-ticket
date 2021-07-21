@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { history } from '../../App'
 
 
 export const callAPI_layDanhSachPhimAction =  () => {
@@ -32,7 +31,6 @@ export const LayChiTietPhimAppiAction = (maPhim) => {
                 alert('Không hợp lệ!');
                 // history.push('/');
             }
-            // console.log('error', error.reponse.status);
         }
     }
 }
@@ -52,7 +50,6 @@ export const LayThongTinPhimAction = (maPhim) => {
                 alert('Không hợp lệ!');
                 // history.push('/');
             }
-            // console.log('error', error.reponse.status);
         }
     }
 }

@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 import CardPhimDangChieu from './CardPhimDangChieu';
 import CardPhimSapChieu from './CardPhimSapChieu';
 import { callAPI_layDanhSachPhimAction } from '../../../Redux/Actions/QuanLyPhimAction';
-// import { Fragment } from 'react';
 import Slider from 'react-slick';
 
 function SamplePrevArrow(props) {
@@ -41,7 +39,9 @@ export default function ListPhim() {
             if (index <= 15) {
                 return <CardPhimSapChieu phim={phim} key={index} />
             }
-            else{return null}
+            else{
+                return null
+            }
         })
     }
     const renderPhimDangChieu = () => {
@@ -49,7 +49,9 @@ export default function ListPhim() {
             if (index >= 1 && index <= 32) {
                 return <CardPhimDangChieu phim={phim} key={index} />
             }
-            else{return null}
+            else{
+                return null
+            }
 
         })
     }

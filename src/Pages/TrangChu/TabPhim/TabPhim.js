@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { connect, useDispatch, useSelector } from 'react-redux';
+import React, {  useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Tabs } from 'antd';
 import TabListDanhSachRap from './TabListDanhSachRap';
@@ -18,12 +18,12 @@ export default function TabPhim() {
 
     useEffect(() => {
         dispatch(callApi_layThongTinHeThongRap())
-    }, [])
+    }, [dispatch])
 
 
     const renderMangRap = () => {
         return mangRap.map((rap, index) => {
-            return <TabPane  tab={<Fragment> <img className="logo__rap"  src={rap.logo}  /> <hr className="hr_logo"/></Fragment>} key={index} centered="true">
+            return <TabPane  tab={<Fragment> <img className="logo__rap"  src={rap.logo}  alt="logo"/> <hr className="hr_logo"/></Fragment>} key={index} centered="true">
                 <TabListDanhSachRap heThongRap={rap.lstCumRap} logoRap={rap.logo} maHeThongRap={rap.maHeThongRap}/>
             </TabPane>
         })

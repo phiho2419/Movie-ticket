@@ -1,9 +1,8 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Select } from 'antd';
 import { LayThongTinLichChieuPhim_Action } from '../../../Redux/Actions/QuanLyRapAction'
 import moment from 'moment';
-// import { NavLink } from 'react-router-dom'
 
 const { Option } = Select;
 
@@ -35,20 +34,14 @@ export default function SearchForm() {
     let mangDropDownNgay = [];
     const handleMangDropDownNgay = () => {
         return thongTinLichChieu.heThongRapChieu?.map((heThongRap) => {
-            return heThongRap.cumRapChieu?.map((rap) => {
+            return heThongRap.cumRapChieu?.forEach((rap) => {
                 if (rap.maCumRap === maCumRapState) {
-                    return rap.lichChieuPhim?.map((lichChieu, index) => {
+                    return rap.lichChieuPhim?.forEach((lichChieu) => {
                         let findIndex = mangDropDownNgay.findIndex(item => item === lichChieu.ngayChieuGioChieu?.substr(0, 10));
                         if (findIndex === -1) {
                             mangDropDownNgay.push(lichChieu.ngayChieuGioChieu?.substr(0, 10));
                         }
-                        else{
-                            return null
-                        }
                     })
-                }
-                else{
-                    return null
                 }
             })
         })
@@ -67,12 +60,12 @@ export default function SearchForm() {
                         if (lichChieu.ngayChieuGioChieu?.substr(0, 10) === ngayChieuState) {
                             return <Option key={indexLichChieu} value={lichChieu.maLichChieu} >{lichChieu.ngayChieuGioChieu?.slice(11, 16)}</Option>
                         }
-                        else{
+                        else {
                             return null
                         }
                     })
                 }
-                else{
+                else {
                     return null
                 }
             })
@@ -99,22 +92,22 @@ export default function SearchForm() {
 
     return (
         <form className="search_bar " style={{ display: "flex" }} id='formChon'>
-                <Select style={{height:'60px'}} size='large' placeholder="Chọn phim" onChange={handleChangeChonPhim} style={{ minWidth: '150px' }}>
-                    {renderDropDownPhim()}
-                </Select>
-                <Select size='large' placeholder="Chọn rạp" onChange={handleChangeChonRap} notFoundContent={'Chọn phim trước'} style={{ minWidth: '150px' }}>
-                    {renderDropDownRap()}
-                </Select>
-                <Select size='large' placeholder="Chọn ngày" onChange={handleChangeChonNgay} style={{ minWidth: '150px' }} notFoundContent={'Chọn rạp trước'}>
-                    {handleMangDropDownNgay()}
-                    {renderDropDownNgay()}
-                </Select>
-                <Select size='large' placeholder="Chọn giờ" onChange={handleDatVe} style={{ minWidth: '150px' }} notFoundContent={'Chọn ngày trước'}>
-                    {renderDropDownGio()}
-                </Select>
-                <Button size='large' type='primary' htmlType="submit" disabled={checkDisable} href={`/chitietphongve/${maLichChieuState}`}>
-                    ĐẶT VÉ NGAY
-                </Button>
+            <Select style={{ height: '60px',minWidth: '150px' }} size='large' placeholder="Chọn phim" onChange={handleChangeChonPhim} >
+                {renderDropDownPhim()}
+            </Select>
+            <Select size='large' placeholder="Chọn rạp" onChange={handleChangeChonRap} notFoundContent={'Chọn phim trước'} style={{ minWidth: '150px' }}>
+                {renderDropDownRap()}
+            </Select>
+            <Select size='large' placeholder="Chọn ngày" onChange={handleChangeChonNgay} style={{ minWidth: '150px' }} notFoundContent={'Chọn rạp trước'}>
+                {handleMangDropDownNgay()}
+                {renderDropDownNgay()}
+            </Select>
+            <Select size='large' placeholder="Chọn giờ" onChange={handleDatVe} style={{ minWidth: '150px' }} notFoundContent={'Chọn ngày trước'}>
+                {renderDropDownGio()}
+            </Select>
+            <Button size='large' type='primary' htmlType="submit" disabled={checkDisable} href={`/chitietphongve/${maLichChieuState}`}>
+                ĐẶT VÉ NGAY
+            </Button>
         </form>
     )
 }

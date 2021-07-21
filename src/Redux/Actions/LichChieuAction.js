@@ -78,7 +78,6 @@ export const TaoLichChieuAction =(thonTinLichChieu) =>{
                 icon: 'error',
                 text: err.response?.data,
             })
-            console.log(err.response?.data);
         }
     }
 }

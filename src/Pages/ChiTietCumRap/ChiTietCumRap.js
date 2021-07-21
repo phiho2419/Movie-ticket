@@ -9,7 +9,7 @@ export default function ChiTietCumRap(props) {
     const { maCumRap,maHeThongRap } = props.match.params;
     const dispatch = useDispatch();
 
-
+    document.title = maHeThongRap
     //cinestar
     //cgv
     //MegaGS
@@ -21,11 +21,9 @@ export default function ChiTietCumRap(props) {
         dispatch(LayChiTietRapApiAction(maHeThongRap));
     },[dispatch,maHeThongRap]);
 
-    console.log('chiTietRap',chiTietRap);
-
     return (
         <div id="detail">
-            <CTRapInTro chiTietRap={chiTietRap} maCumRap={maCumRap}/>
+            <CTRapInTro chiTietRap={chiTietRap} maCumRap={maCumRap} maHeThongRap={maHeThongRap}/>
             <CTRapList chiTietRap={chiTietRap} maCumRap={maCumRap} maHeThongRap={maHeThongRap}/>
         </div>
     )

@@ -4,7 +4,7 @@ import { Tabs } from 'antd';
 // import moment from 'moment'
 import CTRapDetailsList from './CTRapDetailsList'
 import CTRapDanhGiaRap from './CTRapDanhGiaRap'
-import { Link, animateScroll as scroll, scroller } from "react-scroll";
+import { Link, scroller } from "react-scroll";
 import { history } from '../../App';
 
 const { TabPane } = Tabs;
@@ -78,9 +78,9 @@ export default function CTRapList(props) {
     const renderChiTietRap = () => {
         return chiTietRap?.map((ctr) => {
             return ctr.lstCumRap?.map((rap) => {
-                return <TabPane tab={
+                return <TabPane key={rap.maCumRap} tab={
                     <Link
-                        activeClass="active"
+                        activeclassname="active"
                         to="detail"
                         spy={true}
                         smooth={true}
@@ -106,7 +106,7 @@ export default function CTRapList(props) {
                         </div>
                         <hr className="hr_logo" />
                     </Link>}  
-                key={rap.maCumRap}>
+                >
                     <CTRapDetailsList danhSachPhim={rap.danhSachPhim} />
                 </TabPane>
             })
@@ -117,13 +117,13 @@ export default function CTRapList(props) {
 
     const renderMoTa = () => {
         return chiTietRap?.map((ctr) => {
-            return ctr.lstCumRap?.map((rap) => {
+            return ctr.lstCumRap?.map((rap,indexRap) => {
                 if (rap.maCumRap === props.maCumRap) {
-                    return <div style={{ maxHeight: '400px', color: 'white', padding: '0 50px' }}>
+                    return <div key={indexRap} style={{ maxHeight: '500px', color: 'white', padding: '0 50px' }}>
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-12 col-md-6">
                                 <p className="row">
-                                    <span className="col-4 font-weight-bold">Địa điểm</span>
+                                    <span className="col-4 font-weight-bold">Địa chỉ</span>
                                     <span className="col-6">{rap.diaChi}</span>
                                 </p>
                                 <p className="row">
@@ -143,7 +143,7 @@ export default function CTRapList(props) {
                                     <span className="col-6">8:00 - 24:00</span>
                                 </p>
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-md-6">
                                 <p className="font-weight-bold">Giới thiệu</p>
                                 <p >Với tổng diện tích hơn 2.000 m2, bao gồm 7 phòng chiếu được trang bị theo tiêu chuẩn quốc tế. Âm thanh đạt chuẩn Dolby 7.1 với hệ thống cách âm hiện đại, trong đó có 4 phòng 3D,  cùng hơn 1.000 ghế ngồi được thiết kế theo kiểu dáng đẹp mắt và tiện dụng để mang lại sự thoải mái nhất cho khán giả.</p>
                             </div>
@@ -159,7 +159,7 @@ export default function CTRapList(props) {
 
     return (
         <div className="ctr_list py-5" id="datVe">
-            <div className="container">
+            <div className="container-md">
                 <ul className="nav nav-tabs nav_tabs_chiTietPhim" id="myTab" role="tablist">
                     <li className="nav-item">
                         <a className="nav-link active" id="film-tab" data-toggle="tab" href="#film" role="tab" aria-controls="home" aria-selected="true">Lịch chiếu</a>

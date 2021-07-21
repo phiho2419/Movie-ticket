@@ -67,7 +67,7 @@ export default function Edit() {
                         <div className="col-6">
                          <label className="font-weight-bold">Ngày khởi chiếu</label>
 
-                                <DatePicker id="ngayKhoiChieu" name="ngayKhoiChieu" format={dateFormatList} onChange={(value, dateString) => {
+                                <DatePicker  name="ngayKhoiChieu" format={dateFormatList} onChange={(value, dateString) => {
                                 formik.values.ngayKhoiChieu = dateString
                             }} className="d-block mb-3 " />
                             <p className="text-danger">{formik.errors.ngayKhoiChieu}</p>

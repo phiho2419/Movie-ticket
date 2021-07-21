@@ -51,7 +51,7 @@ export default function Ungdung() {
                         </p>
                     </div>
                     <div className="col-12 col-lg-6 ">
-                        <img className="ud__img" src={moblie} />
+                        <img className="ud__img" src={moblie} alt="img"/>
                         <div className="ud__content">
                             <Slider {...settings}>
                                 <div>

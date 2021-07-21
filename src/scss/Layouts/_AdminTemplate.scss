@@ -7,7 +7,7 @@
         height: 100%;
         padding: 20px 0;
         max-width: 22%;
-        background: rgb(197, 247, 97);
+        background: #42415a;
         .dashboard__img {
             margin: 20px 0;
             text-align: center;
@@ -44,7 +44,7 @@
             .db__item {
                 font-size: 16px;
                 font-weight: 600;
-                color: $color-black-1;
+                color: rgba(255, 255, 255, 0.801);
                 display: inline-block;
                 padding: 15px 0;
                 width: 100%;
@@ -75,8 +75,8 @@
     position: fixed;
     top: 0;
     right: 0;
-    background-color: $color-red-primary;
-    z-index: 99;
+    background-color: #272635d5;
+    z-index: 90;
     height: 50px;
     line-height: 50px;
     width: 100%;

@@ -1,10 +1,8 @@
 import { Button } from 'antd';
 import React, { useState } from 'react'
-// import { Fragment } from 'react';
 import Modal from 'react-modal';
-// import { NavLink } from 'react-router-dom';
 import { renderIMDb } from '../../../Util/services'
-import { Link, animateScroll as scroll, scroller } from "react-scroll";
+import { Link, scroller } from "react-scroll";
 import { history } from '../../../App';
 
 Modal.defaultStyles.overlay.backgroundColor = 'rgb(0,0,0,0.75)';
@@ -88,7 +86,6 @@ export default function CardPhimDangChieu(props) {
                 </div>
                 <div className="card__btnDatve" >
                     <Button className="btn__datve" danger type="primary">
-                        {/* <NavLink to={`/chitietphim/${phim.maPhim}`} style={{ fontWeight: '700' }}>ĐẶT VÉ</NavLink> */}
                         <Link
                             activeclassname="active"
                             to="detail"
@@ -110,6 +107,7 @@ export default function CardPhimDangChieu(props) {
                     </Button>
                 </div>
             </div>
+        
         </div>
 
     )

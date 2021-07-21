@@ -2,33 +2,14 @@
     display: inline-block;
     font-size: 18px;
     width: 90px;
-    height: 60px;
+    height: 46px;
     text-align: center;
-    line-height: 50px;
-    padding: 4px 8px;
+    line-height: 46px;
+    padding: 0px 8px;
     margin-left: 8px;
     background-image: url("../assets/img/ticket.png");
     filter: saturate(2);
     background-position: center;
     background-size: cover;
-    // animation: rotate 3s infinite linear;
-    // transform: rotateX(10deg);
 }
 
-@keyframes rotate {
-    0%{
-        transform: rotateX(2deg);
-    }
-    100%{
-        transform: rotateX(0deg);
-    }
-    // 50%{
-    //     transform: rotateX(-2deg);
-    // }
-    // 75%{
-    //     transform: rotateX(0deg);
-    // }
-    // 100%{
-    //     transform: rotateX(2deg);
-    // }
-}

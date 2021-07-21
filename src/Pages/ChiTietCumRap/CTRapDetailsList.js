@@ -8,18 +8,18 @@ export default function CTRapDetailsList(props) {
 
     const renderChiTietPhim = () => {
         return props.danhSachPhim?.map((phim, index) => {
-            return <Fragment>
-                <div className="d-flex my-3 align-items-center" key={index}>
-                    <img src={phim.hinhAnh} alt='film_picture' width={100} height={100} />
+            return <Fragment key={index}>
+                <div className="d-md-flex my-3 " >
+                    <img src={phim.hinhAnh} alt='film_picture' width={120} height={150} />
                     <div className='mx-2'>
                         <p className="font-weight-bold mb-0" style={{ fontSize: '20px' }}>{phim.tenPhim}</p>
                         <p className="m-0">Các suất chiếu:</p>
                         <div className="mt-2 ml-2">
                             {phim.lstLichChieuTheoPhim?.map((lichChieu, indexLstLichChieuTheoPhim) => {
                                 if (indexLstLichChieuTheoPhim <= 5) {
-                                    return <Tag style={{ padding: '4px 8px', fontSize: '16px' }} color="magenta" className="tag_thoigian" key={indexLstLichChieuTheoPhim}>
-                                        <NavLink to={`/chitietphongve/${lichChieu.maLichChieu}`}>{lichChieu.ngayChieuGioChieu.slice(11, 16)}</NavLink>
-                                    </Tag>
+                                    return <span key={indexLstLichChieuTheoPhim} className="ticket">
+                                    <NavLink to={`/chitietphongve/${lichChieu.maLichChieu}`} className="font-weight-bold" style={{color:'white'}}>{lichChieu.ngayChieuGioChieu.slice(11, 16)}</NavLink>
+                                </span>
                                 }
                                 else{
                                     return null

@@ -10,22 +10,22 @@ export default function CTPhimDetailsList(props) {
     const renderLogoChiTiet = () => {
         let tenLogo = logo.substr(0, 3).trim()
         if (tenLogo === 'BHD') {
-            return <img src="../../../img/BHDStar_theater.jpg" width={100} height={100} alt="hinhRap"/>
+            return <img src="../../../img/BHDStar_theater.jpg" width={120} height={140} alt="hinhRap"/>
         }
         else if (tenLogo === 'cgv') {
-            return <img src="../../../img/CGV_theater.jpg" width={100} height={100} alt="hinhRap"/>
+            return <img src="../../../img/CGV_theater.jpg" width={120} height={140} alt="hinhRap"/>
         }
         else if (tenLogo === 'Gal') {
-            return <img src="../../../img/Galaxy_theater.jpg" width={100} height={100} alt="hinhRap"/>
+            return <img src="../../../img/Galaxy_theater.jpg" width={120} height={140} alt="hinhRap"/>
         }
         else if (tenLogo === 'Cin') {
-            return <img src="../../../img/CineStar_theater.jpg" width={100} height={100} alt="hinhRap"/>
+            return <img src="../../../img/CineStar_theater.jpg" width={120} height={140} alt="hinhRap"/>
         }
         else if (tenLogo === 'Lot') {
-            return <img src="../../../img/LotteCinima_theater.jpg" width={100} height={100} alt="hinhRap"/>
+            return <img src="../../../img/LotteCinima_theater.jpg" width={120} height={140} alt="hinhRap"/>
         }
         else if (tenLogo === 'Meg') {
-            return <img src="../../../img/MegaGS_theater.jpg" width={80} height={80} alt="hinhRap"/>
+            return <img src="../../../img/MegaGS_theater.jpg" width={120} height={140} alt="hinhRap"/>
         }
     }
     const handleTenCumRap = (tenCumRap) => {
@@ -73,8 +73,8 @@ export default function CTPhimDetailsList(props) {
     const renderChiTietPhim = () => {
         return cumRapChieu?.map((rap, index) => {
             if (index < 1) {
-                return <Fragment>
-                    <div className="d-flex my-3 align-items-center" key={index}>
+                return <Fragment key={index}>
+                    <div className="d-md-flex my-3 align-items-center" >
                         {renderLogoChiTiet()}
                         <div className='mx-2'>
                             {handleTenCumRap(rap.tenCumRap)}
@@ -82,9 +82,9 @@ export default function CTPhimDetailsList(props) {
                             <div className="mt-2 ml-2">
                                 {rap.lichChieuPhim?.map((lichChieu, index) => {
                                     if (index <= 5) {
-                                        return <Tag style={{ padding: '4px 8px', fontSize: '16px' }} color="magenta" className="tag_thoigian" key={index}>
-                                            <NavLink to={`/chitietphongve/${lichChieu.maLichChieu}`}>{lichChieu.ngayChieuGioChieu.slice(11, 16)}</NavLink>
-                                        </Tag>
+                                        return <span key={index} className="ticket">
+                                        <NavLink to={`/chitietphongve/${lichChieu.maLichChieu}`} className="font-weight-bold" style={{color:'white'}}>{lichChieu.ngayChieuGioChieu.slice(11, 16)}</NavLink>
+                                    </span>
                                     }
                                     else{ return null }
                                 })}

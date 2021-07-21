@@ -55,5 +55,32 @@
         color: $color-red-primary;
     }
 }
+@include responsible("medium") {
+    .ctp_list {
+        .nav_tabs_chiTietPhim{
+            font-size: 16 !important;
+        }
+        
+    }
+    .user_comment{
+        .user_star {
+            font-size: 13px !important;
+        }
+    }
+}
+// @include responsible("small") {
+//     .ctp_list {
+//         .nav_tabs_chiTietPhim{
+//             font-size: 16px !important;
+//         }
+//     }
+// }
+@media screen and (max-width: 499px) {
+    .ctp_list {
+        .nav_tabs_chiTietPhim{
+            font-size: 14px !important;
+        }
+    }
+}
 
 

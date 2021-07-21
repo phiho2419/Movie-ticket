@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Header from '../../Components/Header/Header';
-import Footer from '../../Components/Footer/Footer';
 import { layThongTinLichChieuAction, datVeAction } from '../../Redux/Actions/LichChieuAction';
 import { USERLOGIN } from '../../Util/setting';
 import Swal from 'sweetalert2';
-import { Redirect } from 'react-router';
+// import { Redirect } from 'react-router';
 import { handleSttGhe } from '../../Util/services';
 
 export default function ChiTietPhongVe(props) {
@@ -18,7 +16,6 @@ export default function ChiTietPhongVe(props) {
 
     //Lấy reducer
     const { lichChieu, danhSachGheDangDat } = useSelector(state => state.LichChieuReducer);
-    // console.log(lichChieu);
 
     //Call api 
     useEffect(() => {
@@ -26,24 +23,17 @@ export default function ChiTietPhongVe(props) {
         return dispatch({
             type: 'XOA_LICH_SU_DATVE',
         })
-    }, [])
+    }, [dispatch, malichChieu])
 
 
     //Lấy thông tin người dùng
     let dataUser = JSON.parse(localStorage.getItem(USERLOGIN));
-    if (!localStorage.getItem(USERLOGIN)) {
-        // Swal.fire({
-        //     icon: 'error',
-        //     text: 'Bạn vui lòng đăng nhập !',
-        // })
-        return <Redirect to="/dangnhap" />
-    }
+    
 
     const renderDanhSachGhe = () => {
         return lichChieu.danhSachGhe?.map((ghe, index) => {
 
             let indexGheDD = danhSachGheDangDat.findIndex(gheDD => gheDD.maGhe === ghe.maGhe);
-            console.log("abc", danhSachGheDangDat);
 
             let gheVip = ghe.loaiGhe === 'Vip' ? 'gheVip' : '';
             let gheDaDat = ghe.daDat === true ? 'gheDaDat' : '';
@@ -175,7 +165,7 @@ export default function ChiTietPhongVe(props) {
                                     <hr />
                                     <p className="tt_datGhe "> Ghế:
                                         {danhSachGheDangDat.map((gheDD, index) => {
-                                            return <span className="tt_soGheDat" key={index} className="mr-2">  {handleSttGhe(gheDD.stt)}</span>
+                                            return <span className="tt_soGheDat mr-2" key={index}>  {handleSttGhe(gheDD.stt)}</span>
 
                                         })}
                                     </p>
@@ -192,19 +182,19 @@ export default function ChiTietPhongVe(props) {
                                             <div className="form-check">
                                                 <label className="form-check-label">
                                                     <input type="radio" className="form-check-input" name="optradio" defaultChecked />
-                                                    <img src="../../../img/viDienTu.png" /> Ví điện tử
+                                                    <img src="../../../img/viDienTu.png" alt="viDienTu" /> Ví điện tử
                                                 </label>
                                             </div>
                                             <div className="form-check">
                                                 <label className="form-check-label">
                                                     <input type="radio" className="form-check-input" name="optradio" />
-                                                    <img src="../../../img/creditCard.png" /> Visa, Master
+                                                    <img src="../../../img/creditCard.png" alt="viSa" /> Visa, Master
                                                 </label>
                                             </div>
                                             <div className="form-check ">
                                                 <label className="form-check-label">
                                                     <input type="radio" className="form-check-input" name="optradio" />
-                                                    <img src="../../../img/atmMachine.png" /> Thẻ ATM nội địa
+                                                    <img src="../../../img/atmMachine.png" alt="atm" /> Thẻ ATM nội địa
                                                 </label>
                                             </div>
 
@@ -214,10 +204,16 @@ export default function ChiTietPhongVe(props) {
 
                                 </div>
                                 <button onClick={() => {
-                                    if (danhSachGheDangDat.length === 0) {
+                                    if (!localStorage.getItem(USERLOGIN)) {
                                         Swal.fire({
-                                            icon:'error',
-                                            title:'Bạn chưa chọn ghế !',
+                                            icon: 'error',
+                                            text: 'Cần đăng nhập để đặt vé !',
+                                        })
+                                    }
+                                    else if (danhSachGheDangDat.length === 0) {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Bạn chưa chọn ghế !',
                                         })
                                     }
                                     else {
@@ -236,7 +232,7 @@ export default function ChiTietPhongVe(props) {
                                     // }
                                     // dispatch(datVeAction(objectApi))
 
-                                }} class="btnDatVe">ĐẶT VÉ</button>
+                                }} className="btnDatVe">ĐẶT VÉ</button>
                             </div>
                         </div>
                     </div>

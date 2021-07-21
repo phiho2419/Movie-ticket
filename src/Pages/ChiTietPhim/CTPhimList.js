@@ -24,9 +24,9 @@ export default function CTPhimList(props) {
 
 
     const renderMoTa = () => {
-        return <div style={{ maxHeight: '400px', color: 'white', padding: '0 50px' }}>
+        return <div style={{ minHeight: '200px', color: 'white', padding: '0 50px' }}>
             <div className="row">
-                <div className="col-6">
+                <div className="col-12 col-md-6">
                     <p className="row">
                         <span className="col-4 font-weight-bold">Ngày khởi chiếu</span>
                         <span className="col-6">{props.ngayKhoiChieu?.substr(0, 10)}</span>
@@ -48,7 +48,7 @@ export default function CTPhimList(props) {
                         <span className="col-6">2D, 3D MAX</span>
                     </p>
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-md-6">
                     <p className="font-weight-bold">Nội dung</p>
                     <p >{props.moTa}</p>
                 </div>

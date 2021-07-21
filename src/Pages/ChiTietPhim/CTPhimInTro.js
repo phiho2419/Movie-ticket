@@ -3,7 +3,7 @@ import {  Progress } from 'antd';
 // import ModalVideo from 'react-modal-video';
 // import moment from 'moment'
 import { renderIMDb } from '../../Util/services'
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 
 // const { TabPane } = Tabs;

@@ -145,7 +145,7 @@
         }
     }
     .user_area_cmt {
-        height: 120px;
+        min-height: 120px;
         background-color: white;
         border-radius: 5px;
         padding: 0 10px;
@@ -181,11 +181,53 @@
     display: inline-block;
     display: inline;
 }
+
 @media screen and (max-width: 499px) {
+    #modal_comment {
+        width: 300px;
+    }
     .diaChiRap {
         display: none;
     }
-    .ctr_list .tabpane_ctr {
-        width: 120px;
+    .ctr_list {
+        .tabpane_ctr {
+            width: 120px;
+        }
+        .nav_tabs_chiTietPhim {
+            font-size: 18px;
+        }
+    }
+    .user_comment {
+        max-width: 350px;
+        .user_star {
+            font-size: 13px;
+        }
+    }
+}
+@include responsible("medium") {
+    #rating_bar {
+        width: 100px;
+        height: 100px;
+        margin: 4px 70px !important;
+        display: inline-block;
+        display: inline;
+    }
+    .ctr_list {
+        .tabpane_ctr {
+            width: 180px !important;
+        }
+    }
+    .user_comment {
+        max-width: 400px;
+        .user_star {
+            font-size: 13px !important;
+        }
+    }
+}
+@include responsible("small") {
+    .ctr_list {
+        .tabpane_ctr {
+            width: 150px !important;
+        }
     }
 }

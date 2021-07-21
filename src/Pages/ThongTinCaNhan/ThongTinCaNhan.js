@@ -11,6 +11,9 @@ import { USERLOGIN } from '../../Util/setting';
 import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
 import LichSuDatVe from './LichSuDatVe';
+import Swal from 'sweetalert2';
+import { Redirect } from 'react-router';
+
 
 
 const customStylesDoiMatKhau = {
@@ -35,7 +38,6 @@ export default function ThongTinCaNhan() {
     if (localStorage.getItem(USERLOGIN)) {
         usLogin = JSON.parse(localStorage.getItem(USERLOGIN));
     }
-
 
     const [modalMatKhau, setModalMatKhau] = React.useState(false);
     function openDoiMatKhau() {
@@ -107,7 +109,6 @@ export default function ThongTinCaNhan() {
                     <div className="row ">
                         <div className="d-none d-lg-block col-lg-3 text-center col-avatar">
                             <img className="avatar" src={`https://i.pravatar.cc/150?u=${user.taiKhoan}`} alt="avatar" />
-                            {/* <img className="circle" src="../../img/circleAvaA.png" alt="circle" /> */}
                         </div>
                         <div className="col-12 col-lg-8 infor_details pt-2">
                             <hr />

@@ -1,16 +1,15 @@
 import React, { Fragment } from 'react'
 import { Progress } from 'antd';
 import { renderIMDb } from '../../Util/services';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 export default function CTRapInTro(props) {
-
     const renderTenRap = () => {
         return props.chiTietRap?.map((cumRap, index) => {
             return cumRap.lstCumRap?.map((rap, index) => {
                 if (rap.maCumRap === props.maCumRap) {
                     return <Fragment key={index}>
-                        {    document.title = `${rap.tenCumRap}`}
+                        
                         <p className="tenCumRap">{rap.tenCumRap}</p>
                         <p className="diaChi">{rap.diaChi}</p>
                     </Fragment>
