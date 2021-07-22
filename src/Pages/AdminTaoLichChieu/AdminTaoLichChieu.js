@@ -28,7 +28,6 @@ export default function AdminTaoLichChieu() {
             ngayChieuGioChieu: '',
             maRap: '',
             giaVe: ''
-
         },
         onSubmit: (values, actions) => {
             // console.log('values', values);
@@ -118,17 +117,16 @@ export default function AdminTaoLichChieu() {
                                 style={{ minWidth: '100%', height: "38px" }}
                                 format="DD/MM/YYYY hh:mm:ss"
                                 disabledDate={disabledDate}
-                                showTime={{ defaultValue: moment('DD/MM/YYYY hh:mm:ss') }}
                                 onChange={(value, dateString) => {
                                     formik.values.ngayChieuGioChieu = dateString
                                 }}
                             />
                             <Select className="mt-3" size='large' placeholder="Chọn giá vé" style={{ minWidth: '100%' }} name="giaVe" onChange={handleChangeGiaVe}>
-                                <Option value="70000">70 VND</Option>
-                                <Option value="90000">90 VND</Option>
-                                <Option value="110000">110 VND</Option>
-                                <Option value="130000">130 VND</Option>
-                                <Option value="150000">150 VND</Option>
+                                <Option value="70000">70.000 VND</Option>
+                                <Option value="90000">90.000 VND</Option>
+                                <Option value="110000">110.000 VND</Option>
+                                <Option value="130000">130.000 VND</Option>
+                                <Option value="150000">150.000 VND</Option>
                             </Select>
                         </div>
                         <div className="col-12 mt-3">

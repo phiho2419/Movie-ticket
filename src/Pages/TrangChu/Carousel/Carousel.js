@@ -1,11 +1,52 @@
-import React, {  useState } from 'react';
-// import Header from '../../../Components/Header/Header'
-import ModalVideo from 'react-modal-video';
+import React, { useState } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
+import Modal from 'react-modal';
 
 export default function Carousel() {
-    const [isOpen, setOpen] = useState(false);
-
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: 'rgb(0,0,0,0)',
+            padding: '40px',
+            border: 'unset',
+        }
+    };
+    let buttonCloseStyle = {
+        display: 'inline-block',
+        color: 'white',
+        fontSize: '30px',
+        position: 'absolute',
+        right: '0px',
+        top: '0px',
+        outline: 'none',
+        background: 'transparent'
+    }
+    const [modalIsOpenOne, setIsOpenOne] = useState(false);
+    function openModalOne() {
+        setIsOpenOne(true);
+    }
+    function closeModalOne() {
+        setIsOpenOne(false);
+    }
+    const [modalIsOpenTwo, setIsOpenTwo] = useState(false);
+    function openModalTwo() {
+        setIsOpenTwo(true);
+    }
+    function closeModalTwo() {
+        setIsOpenTwo(false);
+    }
+    const [modalIsOpenThree, setIsOpenThree] = useState(false);
+    function openModalThree() {
+        setIsOpenThree(true);
+    }
+    function closeModalThree() {
+        setIsOpenThree(false);
+    }
 
     return (
         <div className="carousel_TrangChu" >
@@ -20,12 +61,22 @@ export default function Carousel() {
                         <img className="d-block w-100 carousel_poster" src="./img/ps1.jpg" alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
-                            <ModalVideo channel='youtube'  isOpen={isOpen} videoId="odM92ap8_c0" onClose={() => setOpen(false)} />
-                            <div className="text-white" onClick={() => setOpen(true)} >
+                            <Modal
+                                isOpen={modalIsOpenOne}
+                                style={customStyles}
+                                onRequestClose={closeModalOne}
+                                ariaHideApp={false}
+                            >
+                                <div className="modal_video" >
+                                    <button style={buttonCloseStyle} onClick={closeModalOne}><i className="fa fa-times"></i></button>
+                                    <iframe style={{ width: '100%', height: "90%" }} src="https://www.youtube.com/embed/odM92ap8_c0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                </div>
+                            </Modal>
+                            <div className="text-white"onClick={openModalOne} >
                                 <div className="carousel-caption ">
                                     <span className="icon_play">
-                                        <p className="playBut" style={{cursor:'pointer'}}>
-                                            <svg version="1.1"  xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
+                                        <p className="playBut" style={{ cursor: 'pointer' }}>
+                                            <svg version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
                                                 <polygon className="triangle" id="XMLID_18_" fill="none" strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} points="73.5,62.5 148.5,105.8 73.5,149.1 " />
                                                 <circle className="circle" id="XMLID_17_" fill="none" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} cx="106.8" cy="106.8" r="103.3" />
                                             </svg>
@@ -39,11 +90,21 @@ export default function Carousel() {
                         <img className="d-block w-100 carousel_poster " src="./img/wprampage.jpg" alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
-                            <ModalVideo channel='youtube'  isOpen={isOpen} videoId="coOKvrsmQiI" onClose={() => setOpen(false)} />
-                            <div className="text-white  " onClick={() => setOpen(true)}>
+                            <Modal
+                                isOpen={modalIsOpenTwo}
+                                style={customStyles}
+                                onRequestClose={closeModalTwo}
+                                ariaHideApp={false}
+                            >
+                                <div className="modal_video" >
+                                    <button style={buttonCloseStyle} onClick={closeModalTwo}><i className="fa fa-times"></i></button>
+                                    <iframe style={{ width: '100%', height: "90%" }} src="https://www.youtube.com/embed/-43MBOJnVks" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                </div>
+                            </Modal>
+                            <div className="text-white  " onClick={openModalTwo}>
                                 <div className="carousel-caption ">
                                     <span className="icon_play">
-                                        <p style={{cursor:'pointer'}} className="playBut">
+                                        <p style={{ cursor: 'pointer' }} className="playBut">
                                             <svg version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
                                                 <polygon className="triangle" id="XMLID_18_" fill="none" strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} points="73.5,62.5 148.5,105.8 73.5,149.1 " />
                                                 <circle className="circle" id="XMLID_17_" fill="none" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} cx="106.8" cy="106.8" r="103.3" />
@@ -59,12 +120,22 @@ export default function Carousel() {
                         <img className="d-block w-100 carousel_poster " src="./img/img1.png" alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
-                            <ModalVideo channel='youtube'  isOpen={isOpen} videoId="8jraVtX821Q" onClose={() => setOpen(false)} />
-                            <div className="text-white  " onClick={() => setOpen(true)}>
+                            <Modal
+                                isOpen={modalIsOpenThree}
+                                style={customStyles}
+                                onRequestClose={closeModalThree}
+                                ariaHideApp={false}
+                            >
+                                <div className="modal_video" >
+                                    <button style={buttonCloseStyle} onClick={closeModalThree}><i className="fa fa-times"></i></button>
+                                    <iframe style={{ width: '100%', height: "90%" }} src="https://www.youtube.com/embed/8jraVtX821Q" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                </div>
+                            </Modal>
+                            <div className="text-white  " onClick={openModalThree}>
                                 <div className="carousel-caption ">
                                     <span className="icon_play">
-                                        <p style={{cursor:'pointer'}} className="playBut">
-                                            <svg version="1.1"  xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
+                                        <p style={{ cursor: 'pointer' }} className="playBut">
+                                            <svg version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
                                                 <polygon className="triangle" id="XMLID_18_" fill="none" strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} points="73.5,62.5 148.5,105.8 73.5,149.1 " />
                                                 <circle className="circle" id="XMLID_17_" fill="none" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} cx="106.8" cy="106.8" r="103.3" />
                                             </svg>

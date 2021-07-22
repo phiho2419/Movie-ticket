@@ -1,15 +1,3 @@
-@keyframes brightness {
-    0% {
-        filter: brightness(1);
-    }
-    50% {
-        filter: brightness(1.5);
-    }
-    100% {
-        filter: brightness(1);
-    }
-}
-
 .ThongTinCaNhan {
     min-height: 700px;
     background-image: url("../assets/img/bginforB.jpg");
@@ -82,6 +70,10 @@
         .ant-table-thead > tr > th {
             background: $color-red-primary !important;
             color: white;
+            padding: 13px !important;
+        }
+        .ant-table-tbody > tr > td {
+            padding: 13px !important;
         }
     }
 }
@@ -89,7 +81,7 @@
     button {
         outline: none;
         width: 100%;
-        padding: 10px 20px;
+        // padding: 10px 20px;
         background-color: #ff5252bd;
         transition: all 0.2s;
         font-weight: 700;
@@ -106,8 +98,28 @@
 //     }
 // }
 @include responsible("small") {
+    .ThongTinCaNhan .content_paper .bg_image .chinhSua {
+        width: 80px;
+        font-size: 12px;
+        padding: 2px 2px;
+    }
+    .ThongTinCaNhan .content_paper .bg_image .doiMatKhau {
+        width: 80px;
+        font-size: 12px;
+        padding: 2px 0;
+        // margin: 0 2px;
+    }
     .ThongTinCaNhan {
         height: 900px;
+        .content_paper {
+            .bg_image {
+                .infor_details {
+                    p {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
         .thongTinDatVe {
             ::-webkit-scrollbar {
                 height: 7px;
@@ -130,4 +142,10 @@
         }
     }
 }
-
+@media screen and (max-width: 500px) {
+    
+    
+    .ThongTinCaNhan {
+        background-image: unset;
+    }
+}

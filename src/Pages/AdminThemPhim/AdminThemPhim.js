@@ -4,6 +4,8 @@ import { Input, Button, DatePicker } from 'antd';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { themPhimAction } from '../../Redux/Actions/AdminAction';
+import moment from 'moment';
+
 export default function AdminThemPhim() {
     const { TextArea } = Input;
 
@@ -41,10 +43,13 @@ export default function AdminThemPhim() {
             dispatch(themPhimAction(form_data));
         }
     })
+    function disabledDate(current) {
+        return current && current < moment().endOf('day');
+    }
 
     return (
         <div>
-            <div style={{marginTop:'40px'}}>
+            <div style={{ marginTop: '40px' }}>
                 <div className="admin__title text-center">
                     <h1 className="font-weight-bold">Thêm phim</h1>
                 </div>
@@ -67,7 +72,7 @@ export default function AdminThemPhim() {
                         </div>
                         <div className="col-6">
                             <label className="font-weight-bold ">Ngày khởi chiếu</label>
-                            <DatePicker  id="ngayKhoiChieu" name="ngayKhoiChieu" format={dateFormatList} onChange={(value, dateString) => {
+                            <DatePicker disabledDate={disabledDate} id="ngayKhoiChieu" name="ngayKhoiChieu" format={dateFormatList} onChange={(value, dateString) => {
                                 formik.values.ngayKhoiChieu = dateString
                             }} className="d-block mb-3 " />
                             <p className="text-danger m-0">{formik.errors.ngayKhoiChieu}</p>
@@ -81,7 +86,7 @@ export default function AdminThemPhim() {
                             <p className="text-danger m-0">{formik.errors.hinhAnh}</p>
 
                         </div>
-                     
+
                         <div className="col-12" >
                             <label className="font-weight-bold ">Mã Nhóm</label>
                             <select className="form-control" name="maNhom" onChange={formik.handleChange} >

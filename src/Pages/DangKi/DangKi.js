@@ -22,12 +22,10 @@ export default function DangKi() {
 
         },
         validationSchema: Yup.object().shape({
-            taiKhoan: Yup.string().required('Tài khoản không được bỏ trống!'),
-            matKhau: Yup.string().required('Không được bỏ trống').min(6, 'Mật khẩu tối thiểu 6 ký tự').max(32, ' tối đa 32 kí tự!'),
-            email: Yup.string().required('Email không được bỏ trống').email('Phải đúng dịnh dạng @email'),
-            soDt: Yup.number().required('Số điện thoại không được bỏ trống').positive('Số điện thoại phải là dạng số'),
-            matKhauConfirm: Yup.string().required('Không được bỏ trống').min(6, 'mật khẩu tối thiểu 6 ký tự').max(32, ' tối đa 32 kí tự!').oneOf([Yup.ref("matKhau"), null], " nhập lại không đúng"),
-            hoTen: Yup.string().required('Họ tên không được bỏ trống'),
+            matKhau: Yup.string().min(6, 'Mật khẩu tối thiểu 6 ký tự').max(32, ' tối đa 32 kí tự!'),
+            email: Yup.string().email('Phải đúng dịnh dạng @email'),
+            soDt: Yup.number().positive('Số điện thoại phải là dạng số'),
+            matKhauConfirm: Yup.string().min(6, 'mật khẩu tối thiểu 6 ký tự').max(32, ' tối đa 32 kí tự!').oneOf([Yup.ref("matKhau"), null], " nhập lại không đúng"),
 
         }),
         onSubmit: values => {

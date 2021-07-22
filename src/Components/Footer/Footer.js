@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="footer__content">
                 <div className="row">
                     <div className="col-4 d-none d-sm-block col-lg-3">
-                        <p>CyberSoft</p>
+                        <p>Tic and Chill</p>
                         <ul>
                             <li><a href="/">Giới Thiệu</a></li>
                             <li><a href="/">FAQ</a></li>

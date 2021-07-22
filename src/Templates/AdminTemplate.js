@@ -39,7 +39,7 @@ export const AdminTemplate = (props) => { //props.path, props.component
                         <div className="db__zoom d-none d-md-block" style={zoom ? { right: "50px" } : { left: "15px" }}>
                             <button onClick={() => {
                                 setZoom(!zoom);
-                            }}><i className={zoom ? "fas fa-long-arrow-alt-left" : "fas fa-long-arrow-alt-right"}></i></button>
+                            }}><i style={{color:'white'}} className={zoom ? "fas fa-long-arrow-alt-left" : "fas fa-long-arrow-alt-right"}></i></button>
                         </div>
                         <ul className="navbar-nav mr-auto dashboard__list">
                             <li className="nav-item">

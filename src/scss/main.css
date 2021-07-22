@@ -358,6 +358,44 @@ circle {
   background-size: cover;
 }
 
+.ant-back-top-content {
+  background-color: #ff867f !important;
+}
+
+.ant-back-top-content:hover {
+  background-color: #ff5252 !important;
+}
+
+.ant-back-top-icon {
+  line-height: 35px !important;
+}
+
+.modal_video {
+  width: 900px;
+  height: 550px;
+}
+
+@media screen and (max-width: 992px) {
+  .modal_video {
+    width: 700px;
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal_video {
+    width: 600px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .modal_video {
+    width: 400px;
+    height: 300px;
+  }
+}
+
 header {
   -webkit-box-shadow: 0 0 15px black;
           box-shadow: 0 0 15px black;
@@ -568,6 +606,7 @@ header #logo_circle {
 
 .dashboard .dashboard__left .dashboard__list .db__item:hover {
   background-color: #f3f5ff;
+  color: #3f51b5;
 }
 
 .dashboard .dashboard__left .dashboard__list .active {
@@ -987,7 +1026,7 @@ header #logo_circle {
 
 .sectionListPhim {
   margin-top: 70px;
-  max-width: 1040px;
+  max-width: 1020px;
   padding: 0 10px;
 }
 
@@ -1084,7 +1123,7 @@ header #logo_circle {
 }
 
 .sectionListPhim .slick-slider .slick-prev:before, .sectionListPhim .slick-slider .slick-next:before {
-  color: #c50e29;
+  color: #ff5252;
   font-size: 30px;
 }
 
@@ -1265,6 +1304,18 @@ header #logo_circle {
 .news .newContainer .news__tab a:hover {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+@media screen and (max-width: 499px) {
+  .news .newContainer .news__tab a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .news .newContainer .news__tab a {
+    font-size: 12px;
+  }
 }
 
 .news .newContainer .news__tab .active {
@@ -2449,7 +2500,7 @@ header #logo_circle {
 
 @media screen and (max-width: 499px) {
   .ctp_list .nav_tabs_chiTietPhim {
-    font-size: 14px !important;
+    font-size: 15px !important;
   }
 }
 
@@ -2850,6 +2901,12 @@ header #logo_circle {
   display: inline;
 }
 
+@media screen and (max-width: 399px) {
+  .user_comment {
+    max-width: 325px !important;
+  }
+}
+
 @media screen and (max-width: 499px) {
   #modal_comment {
     width: 300px;
@@ -2864,7 +2921,7 @@ header #logo_circle {
     font-size: 18px;
   }
   .user_comment {
-    max-width: 350px;
+    max-width: 340px;
   }
   .user_comment .user_star {
     font-size: 13px;
@@ -2896,6 +2953,12 @@ header #logo_circle {
   }
 }
 
+@media screen and (max-width: 499px) {
+  .ctr_list .nav_tabs_chiTietPhim {
+    font-size: 15px !important;
+  }
+}
+
 .DangNhap .DN__content {
   position: absolute;
   top: 50%;
@@ -2910,6 +2973,19 @@ header #logo_circle {
   -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
           box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
+}
+
+@media screen and (max-width: 499px) {
+  .DangNhap .DN__content {
+    width: 340px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .DangNhap .DN__content {
+    width: 270px;
+    padding: 25px;
+  }
 }
 
 .DangNhap .DN__content h2 {
@@ -2940,8 +3016,8 @@ header #logo_circle {
   width: 100%;
   padding: 10px 20px;
   background-color: #ff5252bd;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   font-weight: 700;
 }
 
@@ -2977,11 +3053,18 @@ header #logo_circle {
   transition: 0.5s;
 }
 
-.form__user input:focus ~ label, .form__user input:valid ~ label {
+.form__user input:focus ~ label,
+.form__user input:valid ~ label {
   top: -20px;
   left: 0;
   color: #555ee4;
   font-size: 11px;
+}
+
+@media screen and (max-width: 300px) {
+  .user__tt {
+    font-size: 12px;
+  }
 }
 
 .DangKy .DK__content {
@@ -3000,6 +3083,19 @@ header #logo_circle {
   border-radius: 10px;
 }
 
+@media screen and (max-width: 499px) {
+  .DangKy .DK__content {
+    width: 340px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .DangKy .DK__content {
+    width: 270px;
+    padding: 25px;
+  }
+}
+
 .DangKy .DK__content h2 {
   margin: 0 0 30px;
   padding: 0;
@@ -3013,7 +3109,8 @@ header #logo_circle {
   position: relative;
 }
 
-.DangKy .DK__content .form__user input, .DangKy .DK__content .form__user select {
+.DangKy .DK__content .form__user input,
+.DangKy .DK__content .form__user select {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -3037,7 +3134,20 @@ header #logo_circle {
   transition: 0.5s;
 }
 
-.DangKy .DK__content .form__user input:focus ~ label, .DangKy .DK__content .form__user input:valid ~ label {
+@media screen and (max-width: 499px) {
+  .DangKy .DK__content .form__user label {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .DangKy .DK__content .form__user label {
+    font-size: 10px;
+  }
+}
+
+.DangKy .DK__content .form__user input:focus ~ label,
+.DangKy .DK__content .form__user input:valid ~ label {
   top: -20px;
   left: 0;
   color: #555ee4;
@@ -3067,8 +3177,8 @@ header #logo_circle {
   width: 100%;
   padding: 10px 20px;
   background-color: #5272ffbd;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   font-weight: 700;
 }
 
@@ -3076,18 +3186,9 @@ header #logo_circle {
   background-color: #5272ff;
 }
 
-@keyframes brightness {
-  0% {
-    -webkit-filter: brightness(1);
-            filter: brightness(1);
-  }
-  50% {
-    -webkit-filter: brightness(1.5);
-            filter: brightness(1.5);
-  }
-  100% {
-    -webkit-filter: brightness(1);
-            filter: brightness(1);
+@media screen and (max-width: 300px) {
+  .user__tt {
+    font-size: 12px;
   }
 }
 
@@ -3178,12 +3279,16 @@ header #logo_circle {
 .ThongTinCaNhan .content_paper .ant-table-thead > tr > th {
   background: #ff5252 !important;
   color: white;
+  padding: 13px !important;
+}
+
+.ThongTinCaNhan .content_paper .ant-table-tbody > tr > td {
+  padding: 13px !important;
 }
 
 .btn_doiMatKhau button {
   outline: none;
   width: 100%;
-  padding: 10px 20px;
   background-color: #ff5252bd;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -3196,8 +3301,21 @@ header #logo_circle {
 }
 
 @media screen and (max-width: 576px) {
+  .ThongTinCaNhan .content_paper .bg_image .chinhSua {
+    width: 80px;
+    font-size: 12px;
+    padding: 2px 2px;
+  }
+  .ThongTinCaNhan .content_paper .bg_image .doiMatKhau {
+    width: 80px;
+    font-size: 12px;
+    padding: 2px 0;
+  }
   .ThongTinCaNhan {
     height: 900px;
+  }
+  .ThongTinCaNhan .content_paper .bg_image .infor_details p {
+    font-size: 13px;
   }
   .ThongTinCaNhan .thongTinDatVe {
     /* Track */
@@ -3215,6 +3333,12 @@ header #logo_circle {
   }
   .ThongTinCaNhan .thongTinDatVe ::-webkit-scrollbar-thumb:hover {
     background: #a10909;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ThongTinCaNhan {
+    background-image: unset;
   }
 }
 

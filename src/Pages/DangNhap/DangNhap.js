@@ -41,7 +41,7 @@ export default function DangNhap() {
                         <p className="text-danger"> {formik.errors.taiKhoan}</p>
                     </div>
                     <div className="form__user">
-                        <input type="password" name="matKhau" onChange={formik.handleChange} required />
+                        <input autoComplete="on" type="password" name="matKhau" onChange={formik.handleChange} required />
                         <label>Mật khẩu</label>
                         <p className="text-danger"> {formik.errors.matKhau}</p>
                     </div>

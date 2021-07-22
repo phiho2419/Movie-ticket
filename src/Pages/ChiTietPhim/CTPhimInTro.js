@@ -21,7 +21,7 @@ export default function CTPhimInTro(props) {
 
 
     return (
-        <div className='ctp_intro_wrapper' style={{ position: 'relative', overflow: 'hidden' }} >
+        <div id="detail" className='ctp_intro_wrapper' style={{ position: 'relative', overflow: 'hidden' }} >
             <div className='ctp_intro' style={styleBgImage}><div className="ctp_overlay"></div></div>
             <div className="ctp_container">
                 <div className="intro_content row align-items-center">

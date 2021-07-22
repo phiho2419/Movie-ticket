@@ -181,6 +181,11 @@
     display: inline-block;
     display: inline;
 }
+@media screen and (max-width: 399px) {
+    .user_comment {
+        max-width: 325px !important;
+    }
+}
 
 @media screen and (max-width: 499px) {
     #modal_comment {
@@ -198,7 +203,7 @@
         }
     }
     .user_comment {
-        max-width: 350px;
+        max-width: 340px;
         .user_star {
             font-size: 13px;
         }
@@ -228,6 +233,13 @@
     .ctr_list {
         .tabpane_ctr {
             width: 150px !important;
+        }
+    }
+}
+@media screen and (max-width: 499px) {
+    .ctr_list {
+        .nav_tabs_chiTietPhim{
+            font-size: 15px !important;
         }
     }
 }

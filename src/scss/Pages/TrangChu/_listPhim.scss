@@ -1,6 +1,6 @@
 .sectionListPhim{
     margin-top: 70px;
-    max-width: 1040px;
+    max-width: 1020px;
     padding: 0 10px;
     .nav{
         justify-content: center ;
@@ -84,7 +84,7 @@
     }
     .slick-slider{
         .slick-prev:before, .slick-next:before{
-            color: $color-red-dark ;
+            color: $color-red-primary ;
             font-size: 30px;
         }
         .slick-prev, .slick-next{
@@ -124,6 +124,7 @@
             }
         }
     }
+    
 }
 @include responsible("medium") {
     .sectionListPhim{

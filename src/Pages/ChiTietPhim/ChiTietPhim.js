@@ -13,7 +13,7 @@ export default function ChiTietPhim(props) {
         dispatch(LayChiTietPhimAppiAction(maPhim))
     });
     return (
-        <div className="ChiTietPhim" id="detail">
+        <div className="ChiTietPhim" >
             <CTPhimInTro chiTietPhim={chiTietPhim}/>
             <CTPhimList heThongRap={chiTietPhim.heThongRapChieu} ngayKhoiChieu={chiTietPhim.ngayKhoiChieu} moTa={chiTietPhim.moTa}/>
         </div>

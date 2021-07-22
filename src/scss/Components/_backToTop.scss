@@ -1,0 +1,9 @@
+.ant-back-top-content {
+    background-color: $color-red-light !important;
+    &:hover {
+        background-color: $color-red-primary !important;
+    }
+}
+.ant-back-top-icon{
+    line-height: 35px !important;
+}

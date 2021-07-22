@@ -2,6 +2,7 @@ import axios from 'axios'
 import { history } from '../../App'
 import { TOKEN, USERLOGIN } from '../../Util/setting';
 import Swal from 'sweetalert2';
+import { Redirect } from 'react-router';
 
 export const dangNhapAction = (userLogin) => {
     return async (dispatch) => {
@@ -11,9 +12,6 @@ export const dangNhapAction = (userLogin) => {
                 method: 'POST',
                 data: userLogin
             });
-
-            console.log('result', result.data);
-
 
             dispatch({
                 type: 'DANG_NHAP',
@@ -25,11 +23,7 @@ export const dangNhapAction = (userLogin) => {
             history.push('/');
 
         } catch (err) {
-            Swal.fire({
-                icon: 'error',
-                text: `${err.response?.data}`,
-            })
-
+            console.log('error');
         }
     }
 }
@@ -75,8 +69,9 @@ export const thongTinAction = (taiKhoan) => {
         } catch (err) {
             Swal.fire({
                 icon: 'error',
-                text: `${err.response?.data}`,
+                text: 'Bạn chưa đăng nhập !',
             })
+            return <Redirect to="/dangnhap" />
         }
     }
 }

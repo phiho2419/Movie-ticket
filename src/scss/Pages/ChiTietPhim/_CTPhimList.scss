@@ -68,19 +68,13 @@
         }
     }
 }
-// @include responsible("small") {
-//     .ctp_list {
-//         .nav_tabs_chiTietPhim{
-//             font-size: 16px !important;
-//         }
-//     }
-// }
 @media screen and (max-width: 499px) {
     .ctp_list {
         .nav_tabs_chiTietPhim{
-            font-size: 14px !important;
+            font-size: 15px !important;
         }
     }
 }
+
 
 

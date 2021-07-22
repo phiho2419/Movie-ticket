@@ -1,0 +1,22 @@
+.modal_video{
+    width: 900px;
+    height: 550px;
+}
+@include responsible("large") {
+    .modal_video{
+        width: 700px;
+        height: 450px;
+    }
+}
+@include responsible("medium") {
+    .modal_video{
+        width: 600px;
+        height: 300px;
+    }
+}
+@include responsible("small") {
+    .modal_video{
+        width: 400px;
+        height: 300px;
+    }
+}

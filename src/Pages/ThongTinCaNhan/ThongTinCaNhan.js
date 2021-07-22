@@ -11,6 +11,8 @@ import { USERLOGIN } from '../../Util/setting';
 import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
 import LichSuDatVe from './LichSuDatVe';
+import { Redirect } from 'react-router';
+import Swal from 'sweetalert2';
 
 
 
@@ -37,6 +39,8 @@ export default function ThongTinCaNhan() {
     if (localStorage.getItem(USERLOGIN)) {
         usLogin = JSON.parse(localStorage.getItem(USERLOGIN));
     }
+    
+    
 
     const [modalMatKhau, setModalMatKhau] = React.useState(false);
     function openDoiMatKhau() {
@@ -100,7 +104,13 @@ export default function ThongTinCaNhan() {
     });
 
 
-
+    if(!localStorage.getItem(USERLOGIN)){
+        Swal.fire({
+            icon:'error',
+            title:'Bạn chưa đăng nhập !'
+        });
+        return <Redirect to="/dangnhap" />
+    }
     return (
         <div className="ThongTinCaNhan" >
             <div className="content_paper container-lg">
@@ -139,7 +149,7 @@ export default function ThongTinCaNhan() {
                             <p className="row justify-content-center">
                                 <span className="col-3 col-lg-3"> {usLogin.maLoaiNguoiDung === "KhachHang" ? "Tài khoản khách" : "Tài khoản Admin"}</span>
                                 <span className="col-5 col-lg-4">
-                                    {usLogin.maLoaiNguoiDung === "QuanTri" ? <Button className="chinhSua"><NavLink to="/admin/quanlyphim">Quyền Admin</NavLink></Button> : ''}
+                                    {usLogin.maLoaiNguoiDung === "QuanTri" ? <Button className="chinhSua"><NavLink to="/admin/quanlyphim">Admin</NavLink></Button> : ''}
                                 </span>
                                 <span className="col-3 col-lg-4">
                                     <Button className="doiMatKhau" onClick={openDoiMatKhau}> Đổi mật khẩu </Button>

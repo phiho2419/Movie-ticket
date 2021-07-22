@@ -28,7 +28,7 @@ export default function ChiTietPhongVe(props) {
 
     //Lấy thông tin người dùng
     let dataUser = JSON.parse(localStorage.getItem(USERLOGIN));
-    
+
 
     const renderDanhSachGhe = () => {
         return lichChieu.danhSachGhe?.map((ghe, index) => {
@@ -76,67 +76,70 @@ export default function ChiTietPhongVe(props) {
                 <div className="container-fluid bg-content">
                     <div className='row'>
                         <div className=" col-12 col-lg-8 ">
-                            <div className="ghe_manhinh">
-                                <div className="man_hinh">
-                                    {/* <img src="../../../img/screen.png" alt="screen" /> */}
-                                </div>
-                                <div className="cumGhe text-center">
+                            <div className="wrap_ghemanhinh">
+                                <div className="ghe_manhinh">
+                                    <div className="man_hinh">
+                                        {/* <img src="../../../img/screen.png" alt="screen" /> */}
+                                    </div>
+                                    <div className="cumGhe text-center">
 
-                                    <div className="d-flex justify-content-center">
-                                        <div className="soCotGhe">
-                                            <p>A</p>
-                                            <p>B</p>
-                                            <p>C</p>
-                                            <p>D</p>
-                                            <p>E</p>
-                                            <p>F</p>
-                                            <p>G</p>
-                                            <p>H</p>
-                                            <p>I</p>
-                                            <p>J</p>
-                                        </div>
-                                        <div>
-                                            <div className="soHangGhe" style={{ color: 'white', fontWeight: '700' }}>
-                                                <span>1</span>
-                                                <span>2</span>
-                                                <span>3</span>
-                                                <span>4</span>
-                                                <span>5</span>
-                                                <span>6</span>
-                                                <span>7</span>
-                                                <span>8</span>
-                                                <span>9</span>
-                                                <span>10</span>
-                                                <span>11</span>
-                                                <span>12</span>
-                                                <span>13</span>
-                                                <span>14</span>
-                                                <span>15</span>
-                                                <span>16</span>
+                                        <div className="d-flex justify-content-center">
+                                            <div className="soCotGhe">
+                                                <p>A</p>
+                                                <p>B</p>
+                                                <p>C</p>
+                                                <p>D</p>
+                                                <p>E</p>
+                                                <p>F</p>
+                                                <p>G</p>
+                                                <p>H</p>
+                                                <p>I</p>
+                                                <p>J</p>
                                             </div>
-                                            {renderDanhSachGhe()}
+                                            <div>
+                                                <div className="soHangGhe" style={{ color: 'white', fontWeight: '700' }}>
+                                                    <span>1</span>
+                                                    <span>2</span>
+                                                    <span>3</span>
+                                                    <span>4</span>
+                                                    <span>5</span>
+                                                    <span>6</span>
+                                                    <span>7</span>
+                                                    <span>8</span>
+                                                    <span>9</span>
+                                                    <span>10</span>
+                                                    <span>11</span>
+                                                    <span>12</span>
+                                                    <span>13</span>
+                                                    <span>14</span>
+                                                    <span>15</span>
+                                                    <span>16</span>
+                                                </div>
+                                                {renderDanhSachGhe()}
+                                            </div>
+                                        </div>
+                                        <div className="chuThichGhe mt-3">
+                                            <div className="d-flex justify-content-center font-weight-bold ">
+                                                <div className="mx-2">
+                                                    <img src="../../../img/gheThuong16.png" alt="ghe" />
+                                                    <span style={{ color: "white", marginLeft: '2px' }}>Ghế thường</span>
+                                                </div >
+                                                <div className="mx-2">
+                                                    <img src="../../../img/gheVip16.png" alt="ghe" />
+                                                    <span style={{ color: "white", marginLeft: '2px' }}>Ghế VIP</span>
+                                                </div>
+                                                <div className="mx-2">
+                                                    <img src="../../../img/gheDaDat16.png" alt="ghe" />
+                                                    <span style={{ color: "white", marginLeft: '2px' }}>Ghế đã đặt</span>
+                                                </div>
+                                                <div className="mx-2">
+                                                    <img src="../../../img/gheDangDat16.png" alt="ghe" />
+                                                    <span style={{ color: "white", marginLeft: '2px' }}>Ghế đang đặt</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="chuThichGhe mt-3">
-                                        <div className="d-flex justify-content-center font-weight-bold ">
-                                            <div className="mx-2">
-                                                <img src="../../../img/gheThuong16.png" alt="ghe" />
-                                                <span style={{ color: "white", marginLeft: '2px' }}>Ghế thường</span>
-                                            </div >
-                                            <div className="mx-2">
-                                                <img src="../../../img/gheVip16.png" alt="ghe" />
-                                                <span style={{ color: "white", marginLeft: '2px' }}>Ghế VIP</span>
-                                            </div>
-                                            <div className="mx-2">
-                                                <img src="../../../img/gheDaDat16.png" alt="ghe" />
-                                                <span style={{ color: "white", marginLeft: '2px' }}>Ghế đã đặt</span>
-                                            </div>
-                                            <div className="mx-2">
-                                                <img src="../../../img/gheDangDat16.png" alt="ghe" />
-                                                <span style={{ color: "white", marginLeft: '2px' }}>Ghế đang đặt</span>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
 
                             </div>
