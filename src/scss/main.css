@@ -3312,7 +3312,7 @@ header #logo_circle {
     padding: 2px 0;
   }
   .ThongTinCaNhan {
-    height: 900px;
+    min-height: 900px;
   }
   .ThongTinCaNhan .content_paper .bg_image .infor_details p {
     font-size: 13px;
