@@ -34,16 +34,15 @@ export default function AdminQuanLyNguoiDung() {
             <div className="admin__title text-center">
                 <h1 className="font-weight-bold">Quản lý người dùng</h1>
             </div>
-            <form className="search_form" onSubmit={formik.handleSubmit}>
-                <div className="input-group">
-                    <Input placeholder="Nhập vào tài khoản hoặc họ tên người dùng" name="tuKhoa" onChange={formik.handleChange} />
-                    <div className="input-group-append">
-                        <button type="submit" style={{ border: "none" }}>
+            <form className="search_form px-2" onSubmit={formik.handleSubmit}>
+                <div className="input-group timNguoiDung ">
+                    <Input style={{width:'85%',borderRadius:'20px 0 0 20px'}} placeholder="Nhập vào tài khoản hoặc họ tên người dùng" name="tuKhoa" onChange={formik.handleChange} />
+                    <div style={{width:'14%'}} className="input-group-append">
+                        <button  type="submit" style={{ border: "none" }}>
                             <span className="input-group-text" id="basic-addon2" style={{ height: "100%" }}>
                                 <i className="fa fa-search" />
                             </span>
                         </button>
-
                     </div>
                 </div>
             </form>
@@ -80,6 +79,8 @@ export default function AdminQuanLyNguoiDung() {
                     />
                 </Table>
             </div>
+       
+       
         </div>
     )
 }

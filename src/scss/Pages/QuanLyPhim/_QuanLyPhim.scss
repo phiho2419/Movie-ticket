@@ -1,43 +1,67 @@
 .pageQuanLyPhim {
     margin-top: 40px;
-        .form-control {
-            height: 40px;
-            border-radius: 20px 0px 0px 20px;
-            border: none;
-            &:focus {
-                box-shadow: none;
-                border-color: none;
-            }
-            &::placeholder {
-                font-size: 18x;
-            }
-        }
-        .input-group-append {
-            button{
-                border-radius: 0px 20px 20px 0px;
+    ::-webkit-scrollbar {
+        height: 7px;
+    }
 
-            }
-            .input-group-text {
-                border-radius: 0px 20px 20px 0px;
-                background: white;
-                transition: all 0.3s;
-                border: none;
-                &:hover {
-                    background: $color-red-primary;
-                    color: white;
-                    cursor: pointer;
-                }
-            }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: rgb(156, 62, 62);
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(161, 9, 9);
+    }
+    .form-control {
+        height: 40px;
+        border-radius: 20px 0px 0px 20px;
+        border: none;
+        &:focus {
+            box-shadow: none;
+            border-color: none;
+        }
+        &::placeholder {
+            font-size: 18x;
         }
     }
-    
+    .timNguoiDung {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .input-group-append {
+        button {
+            border-radius: 0px 20px 20px 0px;
+        }
+        .input-group-text {
+            border-radius: 0px 20px 20px 0px;
+            background: $color-red-primary;
+            transition: all 0.3s;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
 
 .modalQuanLyPhim {
     .modal-content {
         .modal-header {
-            .close{
+            .close {
                 margin-left: unset;
             }
+        }
+    }
+}
+@include responsible("medium") {
+    .pageQuanLyPhim {
+        .timNguoiDung {
+            width: 250px;
         }
     }
 }

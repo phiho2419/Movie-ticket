@@ -172,6 +172,7 @@ export default function ThongTinCaNhan() {
                 isOpen={modalMatKhau}
                 onRequestClose={closeDoiMatKhau}
                 style={customStylesDoiMatKhau}
+                ariaHideApp={false}
             >
                 <h2 className="text-center font-weight-bold">Đổi mật khẩu</h2>
                 <form onSubmit={formik.handleSubmit}>
@@ -196,6 +197,7 @@ export default function ThongTinCaNhan() {
                 isOpen={modalHoTen}
                 onRequestClose={closeDoiHoTen}
                 style={customStylesDoiMatKhau}
+                ariaHideApp={false}
             >
                 <h2 className="text-center font-weight-bold">Đổi Họ Tên</h2>
                 <form onSubmit={formik.handleSubmit}>
@@ -215,6 +217,7 @@ export default function ThongTinCaNhan() {
                 isOpen={modalEmail}
                 onRequestClose={closeDoiEmail}
                 style={customStylesDoiMatKhau}
+                ariaHideApp={false}
             >
                 <h2 className="text-center font-weight-bold">Đổi EMAIL</h2>
                 <form onSubmit={formik.handleSubmit}>
@@ -235,6 +238,7 @@ export default function ThongTinCaNhan() {
                 isOpen={modalSdt}
                 onRequestClose={closeDoiSdt}
                 style={customStylesDoiMatKhau}
+                ariaHideApp={false}
             >
                 <h2 className="text-center font-weight-bold">Đổi số điện thoại</h2>
                 <form onSubmit={formik.handleSubmit}>

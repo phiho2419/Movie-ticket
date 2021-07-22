@@ -1631,6 +1631,25 @@ header #logo_circle {
 
 .pageQuanLyPhim {
   margin-top: 40px;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.pageQuanLyPhim ::-webkit-scrollbar {
+  height: 7px;
+}
+
+.pageQuanLyPhim ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.pageQuanLyPhim ::-webkit-scrollbar-thumb {
+  background: #9c3e3e;
+}
+
+.pageQuanLyPhim ::-webkit-scrollbar-thumb:hover {
+  background: #a10909;
 }
 
 .pageQuanLyPhim .form-control {
@@ -1661,26 +1680,33 @@ header #logo_circle {
   font-size: 18x;
 }
 
+.pageQuanLyPhim .timNguoiDung {
+  width: 500px;
+  margin: 0 auto;
+}
+
 .pageQuanLyPhim .input-group-append button {
   border-radius: 0px 20px 20px 0px;
 }
 
 .pageQuanLyPhim .input-group-append .input-group-text {
   border-radius: 0px 20px 20px 0px;
-  background: white;
+  background: #ff5252;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: none;
-}
-
-.pageQuanLyPhim .input-group-append .input-group-text:hover {
-  background: #ff5252;
   color: white;
   cursor: pointer;
 }
 
 .modalQuanLyPhim .modal-content .modal-header .close {
   margin-left: unset;
+}
+
+@media screen and (max-width: 768px) {
+  .pageQuanLyPhim .timNguoiDung {
+    width: 250px;
+  }
 }
 
 .pageChiTietPhongVe {
@@ -3344,6 +3370,7 @@ header #logo_circle {
 
 .admin__title h1 {
   font-weight: 500;
+  font-size: 35px;
 }
 
 .ant-spin-container {
@@ -3354,5 +3381,11 @@ header #logo_circle {
 .ant-table.ant-table-bordered > .ant-table-container {
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+@media screen and (max-width: 768px) {
+  .admin__title h1 {
+    font-size: 25px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
