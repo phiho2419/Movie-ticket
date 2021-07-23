@@ -11,7 +11,7 @@ export default function CTRapInTro(props) {
                     return <Fragment key={index}>
                         
                         <p className="tenCumRap">{rap.tenCumRap}</p>
-                        <p className="diaChi">{rap.diaChi}</p>
+                        <p className="diaChi">{rap.diaChi.replace('[Bản đồ]','')}</p>
                     </Fragment>
                 }
                 else{

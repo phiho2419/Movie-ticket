@@ -28,24 +28,24 @@ export default function CTPhimList(props) {
             <div className="row">
                 <div className="col-12 col-md-6">
                     <p className="row">
-                        <span className="col-4 font-weight-bold">Ngày khởi chiếu</span>
-                        <span className="col-6">{props.ngayKhoiChieu?.substr(0, 10)}</span>
+                        <span className="col-6 col-sm-4 font-weight-bold">Ngày khởi chiếu</span>
+                        <span className="col-6 col-sm-6">{props.ngayKhoiChieu?.substr(0, 10)}</span>
                     </p>
                     <p className="row">
-                        <span className="col-4 font-weight-bold">Đạo diễn</span>
-                        <span className="col-6">Victor Vũ</span>
+                        <span className="col-6 col-sm-4 font-weight-bold">Đạo diễn</span>
+                        <span className="col-6 col-sm-6">Victor Vũ</span>
                     </p>
                     <p className="row">
-                        <span className="col-4 font-weight-bold">Diễn viên</span>
-                        <span className="col-6">Bích Phương, Tăng Thanh Hà</span>
+                        <span className="col-6 col-sm-4 font-weight-bold">Diễn viên</span>
+                        <span className="col-6 col-sm-6">Bích Phương, Tăng Thanh Hà</span>
                     </p>
                     <p className="row">
-                        <span className="col-4 font-weight-bold">Thể loại</span>
-                        <span className="col-6">Horror, Comedy</span>
+                        <span className="col-6 col-sm-4 font-weight-bold">Thể loại</span>
+                        <span className="col-6 col-sm-6">Horror, Comedy</span>
                     </p>
                     <p className="row">
-                        <span className="col-4 font-weight-bold">Định dạng</span>
-                        <span className="col-6">2D, 3D MAX</span>
+                        <span className="col-6 col-sm-4 font-weight-bold">Định dạng</span>
+                        <span className="col-6 col-sm-6">2D, 3D MAX</span>
                     </p>
                 </div>
                 <div className="col-12 col-md-6">

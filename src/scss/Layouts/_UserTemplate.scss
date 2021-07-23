@@ -6,6 +6,25 @@
     width: 100%;
     display: flex;
     align-items: center;
+    .logoUser{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        #logo_circle{
+            animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotate(0);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    }
     .user__back {
         position: fixed;
         top: 0;

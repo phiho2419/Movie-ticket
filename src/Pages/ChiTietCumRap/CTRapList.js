@@ -119,28 +119,28 @@ export default function CTRapList(props) {
         return chiTietRap?.map((ctr) => {
             return ctr.lstCumRap?.map((rap,indexRap) => {
                 if (rap.maCumRap === props.maCumRap) {
-                    return <div key={indexRap} style={{ maxHeight: '500px', color: 'white', padding: '0 50px' }}>
+                    return <div key={indexRap} style={{ minHeight: '200px', color: 'white', padding: '0 50px' }}>
                         <div className="row">
                             <div className="col-12 col-md-6">
                                 <p className="row">
-                                    <span className="col-4 font-weight-bold">Địa chỉ</span>
-                                    <span className="col-6">{rap.diaChi}</span>
+                                    <span className="col-6 col-sm-4 font-weight-bold">Địa chỉ</span>
+                                    <span className="col-6 col-sm-6">{rap.diaChi.replace('[Bản đồ]','')}</span>
                                 </p>
                                 <p className="row">
-                                    <span className="col-4 font-weight-bold">Điện thoại</span>
-                                    <span className="col-6">096 325 8741</span>
+                                    <span className="col-6 col-sm-4 font-weight-bold">Điện thoại</span>
+                                    <span className="col-6 col-sm-6">096 325 8741</span>
                                 </p>
                                 <p className="row">
-                                    <span className="col-4 font-weight-bold">Email</span>
-                                    <span className="col-6">infor@movie.com</span>
+                                    <span className="col-6 col-sm-4 font-weight-bold">Email</span>
+                                    <span className="col-6 col-sm-6">infor@movie.com</span>
                                 </p>
                                 <p className="row">
-                                    <span className="col-4 font-weight-bold">Phòng chiếu</span>
-                                    <span className="col-6">7 2D. 4 3D</span>
+                                    <span className="col-6 col-sm-4 font-weight-bold">Phòng chiếu</span>
+                                    <span className="col-6 col-sm-6">7 2D. 4 3D</span>
                                 </p>
                                 <p className="row">
-                                    <span className="col-4 font-weight-bold">Giờ mở cửa</span>
-                                    <span className="col-6">8:00 - 24:00</span>
+                                    <span className="col-6 col-sm-4 font-weight-bold">Giờ mở cửa</span>
+                                    <span className="col-6 col-sm-6">8:00 - 24:00</span>
                                 </p>
                             </div>
                             <div className="col-12 col-md-6">

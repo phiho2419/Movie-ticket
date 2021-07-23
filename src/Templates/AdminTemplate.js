@@ -33,7 +33,7 @@ export const AdminTemplate = (props) => { //props.path, props.component
                         <div className={zoom ? "col-1 col-md-3 dashboard__left" : "col-1 dashboard__left"} style={{ height: '100vh' }}>
                             <div className="dashboard__img" style={{ position: 'relative' }}>
                                 <NavLink to='/' >
-                                    <img id="logo_circle" style={{ width: '90px', objectFit: 'cover', height: '90px' }} className="navbar-brand header-logo p-0 pr-1 img-fluid" src="../../../img/logoheader.png" alt="logo" />
+                                    <img style={{ width: '90px', objectFit: 'cover', height: '90px' }} className="navbar-brand header-logo p-0 pr-1 img-fluid " src="../../../img/logoheader.png" alt="logo" />
                                     <img style={{ position: 'absolute', top: '0', left: '50%', transform: 'translateX(-55%)', width: '90px', objectFit: 'cover', height: '90px' }} className=" header-logo p-0 pr-1 img-fluid" src="../../../img/logoheaderA.png" alt="logo" />
                                 </NavLink>
                             </div>

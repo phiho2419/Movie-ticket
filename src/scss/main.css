@@ -2182,6 +2182,32 @@ header #logo_circle {
           align-items: center;
 }
 
+.UserTemplate .logoUser {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.UserTemplate .logoUser #logo_circle {
+  -webkit-animation: rotate 3s linear infinite;
+          animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .UserTemplate .user__back {
   position: fixed;
   top: 0;
@@ -2504,18 +2530,18 @@ header #logo_circle {
   color: #ff5252;
 }
 
-@media screen and (max-width: 768px) {
-  .ctp_list .nav_tabs_chiTietPhim {
-    font-size: 16 !important;
-  }
-  .user_comment .user_star {
-    font-size: 13px !important;
-  }
-}
-
 @media screen and (max-width: 499px) {
   .ctp_list .nav_tabs_chiTietPhim {
     font-size: 15px !important;
+  }
+  .user_comment .user_star {
+    font-size: 10px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .user_comment .user_star {
+    font-size: 13px !important;
   }
 }
 
@@ -2971,6 +2997,9 @@ header #logo_circle {
 @media screen and (max-width: 499px) {
   .ctr_list .nav_tabs_chiTietPhim {
     font-size: 15px !important;
+  }
+  .user_comment .user_star {
+    font-size: 11px !important;
   }
 }
 

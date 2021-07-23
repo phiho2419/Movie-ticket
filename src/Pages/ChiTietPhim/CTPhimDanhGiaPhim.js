@@ -150,10 +150,10 @@ export default function CTPhimDanhGiaPhim() {
                 checkOpenModal }
             >
                 <div >
-                    <img alt="avatar" style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={ dataUser ? `https://i.pravatar.cc/150?u=${dataUser.taiKhoan}` : "../../../img/avatarFalsy.png"} />
+                    <img  alt="avatar" style={{ width: '40px', height: '40px', borderRadius: '50%' }} src={ dataUser ? `https://i.pravatar.cc/150?u=${dataUser.taiKhoan}` : "../../../img/avatarFalsy.png"} />
                     <span className="yourThink ml-2">Bạn nghĩ gì về phim này ?</span>
                 </div>
-                <div className="user_star">
+                <div className="user_star d-none d-sm-block">
                     <i className="fa fa-star yel__star"></i>
                     <i className="fa fa-star yel__star"></i>
                     <i className="fa fa-star yel__star"></i>
@@ -163,7 +163,7 @@ export default function CTPhimDanhGiaPhim() {
             </div>
             <Modal isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                style={userAreaStyle} >
+                style={userAreaStyle} ariaHideApp={false}>
                 <div id="modal_comment">
                     <p id="danhGia">Hãy cho mọi người biết cảm nhận của bạn</p>
                     <div id="rating_bar">
@@ -174,7 +174,7 @@ export default function CTPhimDanhGiaPhim() {
                         <span id="rate_5" onClick={() => { commitStar(5); setDanhGia({ ...danhGia, diemDanhGia: 10 }) }}></span>
                     </div>
                     <div>
-                        <TextArea rows={3} placeholder="Nhận xét ở đây nè" onChange={(e) => { handleComment(e) }} />
+                        <TextArea  rows={3} placeholder="Nhận xét ở đây nè" onChange={(e) => { handleComment(e) }} />
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '10px' }}>
                         <Button style={{ fontWeight: '700' }} type="primary" danger onClick={() => {
@@ -192,7 +192,7 @@ export default function CTPhimDanhGiaPhim() {
             {renderComment()}
             <div className=" text-center p-3">
                 {numberItem !== 3 ? <button className="less_btn" onClick={readLess}>Rút gọn</button> : null}
-                {cmt.length > 3 ? <button className="ml-3 more_btn " onClick={readMore}>Xem thêm</button> : null}
+                {cmt.length > 3 && cmt.length >  numberItem ? <button className="ml-3 more_btn " onClick={readMore}>Xem thêm</button> : null}
             </div>
         </div>
     )
