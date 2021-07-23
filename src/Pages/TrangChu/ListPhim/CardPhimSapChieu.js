@@ -30,14 +30,14 @@ export default function CardPhimSapChieu(props) {
         width: '40px',
         height: '40px',
         lineHeight: '40px',
-        border: '2px solid white',
         borderRadius: '50%',
         color: 'white',
         fontSize: '30px',
         position: 'absolute',
         right: '0px',
         top: '0px',
-        outline: 'none'
+        outline: 'none',
+        backgroundColor:'transparent'
     }
     const [modalIsOpen, setIsOpen] = useState(false);
     function openModal() {

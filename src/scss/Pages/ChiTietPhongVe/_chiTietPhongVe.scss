@@ -8,20 +8,8 @@
         background-position: center;
         background-size: cover;
         height: 100%;
-        animation: brightness 2s linear infinite ;
         position: relative;
         z-index: 10;
-    }
-    @keyframes brightness {
-        0%{
-            filter: brightness(1);
-        }
-        50%{
-            filter: brightness(1.2);
-        }
-        100%{
-            filter: brightness(1);
-        }
     }
     .bg-content{
         position: absolute;

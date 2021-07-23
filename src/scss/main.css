@@ -695,14 +695,22 @@ header #logo_circle {
   }
 }
 
+.loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0;
+}
+
 .loading .loader {
   left: 50%;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 15px 0;
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 150px;
 }
 
@@ -1733,40 +1741,8 @@ header #logo_circle {
   background-position: center;
   background-size: cover;
   height: 100%;
-  -webkit-animation: brightness 2s linear infinite;
-          animation: brightness 2s linear infinite;
   position: relative;
   z-index: 10;
-}
-
-@-webkit-keyframes brightness {
-  0% {
-    -webkit-filter: brightness(1);
-            filter: brightness(1);
-  }
-  50% {
-    -webkit-filter: brightness(1.2);
-            filter: brightness(1.2);
-  }
-  100% {
-    -webkit-filter: brightness(1);
-            filter: brightness(1);
-  }
-}
-
-@keyframes brightness {
-  0% {
-    -webkit-filter: brightness(1);
-            filter: brightness(1);
-  }
-  50% {
-    -webkit-filter: brightness(1.2);
-            filter: brightness(1.2);
-  }
-  100% {
-    -webkit-filter: brightness(1);
-            filter: brightness(1);
-  }
 }
 
 .pageChiTietPhongVe .bg-content {

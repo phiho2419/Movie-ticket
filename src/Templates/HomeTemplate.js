@@ -7,9 +7,11 @@ export const HomeTemplate = (props) => {
     return <Route path={props.path} exact render={
         (propsRoute) => {
             return <Fragment>
-                <BackTop style={{right:"25px"}}/>
+                <BackTop style={{ right: "25px" }} />
                 <Header />
-                <props.component {...propsRoute} />
+                <div>
+                    <props.component {...propsRoute} />
+                </div>
                 <Footer />
             </Fragment>
         }
