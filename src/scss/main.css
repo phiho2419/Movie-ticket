@@ -345,12 +345,11 @@ circle {
 .ticket {
   display: inline-block;
   font-size: 18px;
-  width: 90px;
+  width: 83px;
   height: 46px;
   text-align: center;
   line-height: 46px;
-  padding: 0px 8px;
-  margin-left: 8px;
+  padding: 0px 4px;
   background-image: url("../assets/img/ticket.png");
   -webkit-filter: saturate(2);
           filter: saturate(2);
@@ -1275,6 +1274,20 @@ header #logo_circle {
 
 .sectionTabPhim .film_details, .ctp_list .film_details {
   font-style: italic;
+}
+
+@media screen and (max-width: 576px) {
+  .tabphim_avaPhim {
+    text-align: center;
+  }
+  .content_chitietphim {
+    text-align: center;
+  }
+  .content_tenphim {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .news .newContainer {

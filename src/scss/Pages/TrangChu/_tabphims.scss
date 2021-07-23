@@ -92,3 +92,15 @@
         font-style: italic;
     }
 }
+
+@include responsible("small") {
+    .tabphim_avaPhim {
+        text-align: center ;
+    }
+    .content_chitietphim{
+        text-align: center ;
+    }
+    .content_tenphim{
+        justify-content: center ;
+    }
+}

@@ -10,7 +10,7 @@ export default function CTRapDetailsList(props) {
         return props.danhSachPhim?.map((phim, index) => {
             return <Fragment key={index}>
                 <div className="d-md-flex my-3 " >
-                    <img src={phim.hinhAnh} alt='film_picture' width={120} height={150} />
+                    <img src={phim.hinhAnh} alt='film_picture' width={120} height={150} style={{objectFit:'cover'}}/>
                     <div className='mx-2'>
                         <p className="font-weight-bold mb-0" style={{ fontSize: '20px' }}>{phim.tenPhim}</p>
                         <p className="m-0">Các suất chiếu:</p>

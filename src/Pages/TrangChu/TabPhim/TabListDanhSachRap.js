@@ -43,26 +43,26 @@ export default function TabListDanhSachRap(props) {
         let string_handled = string.trim()
 
         if (string_handled.trim() === 'BHD') {
-            return <img src="../../../../img/BHDStar_theater.jpg" width={50} alt="Theater_Picture"/>
+            return <img src="../../../../img/BHDStar_theater.jpg" width={50} alt="Theater_Picture" />
         }
         else if (string_handled.trim() === 'CGV') {
-            return <img src="../../../../img/CGV_theater.jpg" width={50} alt="Theater_Picture"/>
+            return <img src="../../../../img/CGV_theater.jpg" width={50} alt="Theater_Picture" />
 
         }
         else if (string_handled.trim() === 'CNS') {
-            return <img src="../../../../img/CineStar_theater.jpg" width={50} alt="Theater_Picture"/>
+            return <img src="../../../../img/CineStar_theater.jpg" width={50} alt="Theater_Picture" />
 
         }
         else if (string_handled.trim() === 'GLX') {
-            return <img src="../../../../img/Galaxy_theater.jpg" width={50} alt="Theater_Picture"/>
+            return <img src="../../../../img/Galaxy_theater.jpg" width={50} alt="Theater_Picture" />
 
         }
         else if (string_handled.trim() === 'Lotte') {
-            return <img src="../../../../img/LotteCinima_theater.jpg" width={50} alt="Theater_Picture"/>
+            return <img src="../../../../img/LotteCinima_theater.jpg" width={50} alt="Theater_Picture" />
 
         }
         else if (string_handled.trim() === 'MegaGS') {
-            return <img src="../../../../img/MegaGS_theater.jpg" width={50} alt="Theater_Picture"/>
+            return <img src="../../../../img/MegaGS_theater.jpg" width={50} alt="Theater_Picture" />
 
         }
     }
@@ -72,7 +72,7 @@ export default function TabListDanhSachRap(props) {
 
     const renderTheaterDetails = () => {
         return props.heThongRap?.map((ctr, index) => {
-            return <TabPane tab={<div className=" tabpane_tabs d-flex" style={{ width: "250px" }} >
+            return <TabPane  key={index} tab={<div className=" tabpane_tabs d-flex" style={{ width: "250px" }} >
                 {hanleLogoRap(ctr.tenCumRap)}
                 <div className=" pl-2 pt-2 text-left tabpane_thongTinRap " style={{ width: "200px" }}>
                     <p className="m-0 tabpane_tenRap" > {handlePreString_TheaterName(ctr.tenCumRap)} <span >{handleAfterString_TheaterName(ctr.tenCumRap)}</span></p>
@@ -81,7 +81,7 @@ export default function TabListDanhSachRap(props) {
                         {/* <NavLink to={`/chitietcumrap/${props.maHeThongRap}/${ctr.maCumRap}`}>[Chi tiết rạp]</NavLink> */}
                         <Link
                             activeClass="active"
-                            style={{color:"#1890ff"}}
+                            style={{ color: "#1890ff" }}
                             to="detail"
                             spy={true}
                             smooth={true}
@@ -99,7 +99,7 @@ export default function TabListDanhSachRap(props) {
                         >[Chi tiết rạp]</Link>
                     </p>
                 </div>
-            </div>} key={index} >
+            </div>} >
                 <div className="pl-3">
                     <TabDanhSachPhim danhSachPhim={ctr.danhSachPhim} />
                 </div>

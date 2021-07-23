@@ -55,14 +55,17 @@ export default function CardPhimSapChieu(props) {
                     style={customStyles}
                     contentLabel="Example Modal"
                     onRequestClose={closeModal}
+                    ariaHideApp={false}
                 >
-                    <button style={buttonCloseStyle} onClick={closeModal}>X</button>
-                    <iframe width="800" height="500" src={phim.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div className="modal_video" >
+                        <button style={buttonCloseStyle} onClick={closeModal}><i className="fa fa-times"></i></button>
+                        <iframe style={{ width: '100%', height: "90%" }} src={phim.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    </div>
                 </Modal>
                 <div className="overlay" onClick={openModal} >
                     <span className="icon_play">
-                        <p style={{cursor:'pointer'}} className="playBut">
-                            <svg version="1.1"  xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
+                        <p style={{ cursor: 'pointer' }} className="playBut">
+                            <svg version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 213.7 213.7" enableBackground="new 0 0 213.7 213.7" xmlSpace="preserve">
                                 <polygon className="triangle" id="XMLID_18_" fill="none" strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} points="73.5,62.5 148.5,105.8 73.5,149.1 " />
                                 <circle className="circle" id="XMLID_17_" fill="none" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} cx="106.8" cy="106.8" r="103.3" />
                             </svg>
@@ -72,10 +75,10 @@ export default function CardPhimSapChieu(props) {
             </div>
             <div className="card-body p-3">
                 <p className="card_tenphim" style={{
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis'
-                    }}> <span className="tag_phim_c18">C18</span > {phim.tenPhim} </p>
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
+                }}> <span className="tag_phim_c18">C18</span > {phim.tenPhim} </p>
                 <div className="card_ngaykhoichieu">
                     <span>Ngày khởi chiếu: </span> <span> {phim.ngayKhoiChieu.substr(0, 10)}</span>
                 </div>
