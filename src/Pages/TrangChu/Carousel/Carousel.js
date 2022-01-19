@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import Modal from 'react-modal';
+import rampageBg from '../../../assets/publicImg/wprampage.jpg';
+import banTayDietQuy from '../../../assets/publicImg/banTayDietQuy.png';
+import godzillaVsKong from '../../../assets/publicImg/godzillaVsKong.jpg';
 
 export default function Carousel() {
     const customStyles = {
@@ -58,7 +61,7 @@ export default function Carousel() {
                 </ol>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img className="d-block w-100 carousel_poster" src="./img/ps1.jpg" alt="First slide" />
+                        <img className="d-block w-100 carousel_poster" src={godzillaVsKong} alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
                             <Modal
@@ -87,7 +90,7 @@ export default function Carousel() {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100 carousel_poster " src="./img/wprampage.jpg" alt="First slide" />
+                        <img className="d-block w-100 carousel_poster " src={rampageBg} alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
                             <Modal
@@ -117,7 +120,7 @@ export default function Carousel() {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100 carousel_poster " src="./img/img1.png" alt="First slide" />
+                        <img className="d-block w-100 carousel_poster " src={banTayDietQuy} alt="First slide" />
                         <div>
                             <div className="carousel__overlay" />
                             <Modal

@@ -19,11 +19,14 @@ export const dangNhapAction = (userLogin) => {
             })
             localStorage.setItem(TOKEN, result.data.accessToken);
             localStorage.setItem(USERLOGIN, JSON.stringify(result.data))
-
             history.push('/');
 
         } catch (err) {
-            console.log('error');
+            Swal.fire({
+                icon: 'error',
+                title:"Đăng nhập thất bại",
+                text: 'Tài khoản hoặc mật khẩu không đúng !',
+            })
         }
     }
 }

@@ -29,7 +29,6 @@ export const LayChiTietPhimAppiAction = (maPhim) => {
         } catch (errors) {
             if (errors.response.status === 400) {
                 alert('Không hợp lệ!');
-                // history.push('/');
             }
         }
     }
@@ -48,7 +47,6 @@ export const LayThongTinPhimAction = (maPhim) => {
         } catch (errors) {
             if (errors.response.status === 400) {
                 alert('Không hợp lệ!');
-                // history.push('/');
             }
         }
     }

@@ -1,11 +1,16 @@
 import React from 'react';
 import { Tabs } from 'antd';
-// import { NavLink } from 'react-router-dom';
-// import moment from 'moment'
 import CTRapDetailsList from './CTRapDetailsList'
 import CTRapDanhGiaRap from './CTRapDanhGiaRap'
 import { Link, scroller } from "react-scroll";
 import { history } from '../../App';
+
+import ctrbhd from '../../assets/publicImg/ctrbhd.png';
+import ctrcgv from '../../assets/publicImg/ctrcgv.png';
+import ctrglx from '../../assets/publicImg/ctrglx.jpg';
+import ctrcns from '../../assets/publicImg/ctrcns.jpg';
+import ctrlot from '../../assets/publicImg/ctrlot.jpg';
+import ctrmeg from '../../assets/publicImg/ctrmeg.jpg';
 
 const { TabPane } = Tabs;
 export default function CTRapList(props) {
@@ -13,22 +18,22 @@ export default function CTRapList(props) {
     const renderLogoChiTiet = (maCumRap) => {
         let tenLogo = maCumRap.substr(0, 3).trim()
         if (tenLogo === 'bhd') {
-            return "../../../img/ctrbhd.png"
+            return ctrbhd
         }
         else if (tenLogo === 'cgv') {
-            return "../../../img/ctrcgv.png"
+            return ctrcgv
         }
         else if (tenLogo === 'glx') {
-            return "../../../img/ctrglx.jpg"
+            return ctrglx
         }
         else if (tenLogo === 'cns') {
-            return "../../../img/ctrcns.jpg"
+            return ctrcns
         }
         else if (tenLogo === 'lot') {
-            return "../../../img/ctrlot.jpg"
+            return ctrlot
         }
         else if (tenLogo === 'meg') {
-            return "../../../img/ctrmeg.jpg"
+            return ctrmeg
         }
     }
 

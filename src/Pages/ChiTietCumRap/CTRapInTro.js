@@ -2,6 +2,12 @@ import React, { Fragment } from 'react'
 import { Progress } from 'antd';
 import { renderIMDb } from '../../Util/services';
 import { Link } from "react-scroll";
+import ctrbhd from '../../assets/publicImg/ctrbhd.png';
+import ctrcgv from '../../assets/publicImg/ctrcgv.png';
+import ctrglx from '../../assets/publicImg/ctrglx.jpg';
+import ctrcns from '../../assets/publicImg/ctrcns.jpg';
+import ctrlot from '../../assets/publicImg/ctrlot.jpg';
+import ctrmeg from '../../assets/publicImg/ctrmeg.jpg';
 
 export default function CTRapInTro(props) {
     const renderTenRap = () => {
@@ -23,22 +29,22 @@ export default function CTRapInTro(props) {
     const renderLogoChiTiet = (mcr) => {
         let tenLogo = mcr.substr(0, 3).trim()
         if (tenLogo === 'bhd') {
-            return "../../../img/ctrbhd.png"
+            return ctrbhd
         }
         else if (tenLogo === 'cgv') {
-            return "../../../img/ctrcgv.png"
+            return ctrcgv
         }
         else if (tenLogo === 'glx') {
-            return "../../../img/ctrglx.jpg"
+            return ctrglx
         }
         else if (tenLogo === 'cns') {
-            return "../../../img/ctrcns.jpg"
+            return ctrcns
         }
         else if (tenLogo === 'lot') {
-            return "../../../img/ctrlot.jpg"
+            return ctrlot
         }
         else if (tenLogo === 'meg') {
-            return "../../../img/ctrmeg.jpg"
+            return ctrmeg
         }
     }
     const styleBgImage = {

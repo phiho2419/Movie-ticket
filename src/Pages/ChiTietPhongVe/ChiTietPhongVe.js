@@ -4,8 +4,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { layThongTinLichChieuAction, datVeAction } from '../../Redux/Actions/LichChieuAction';
 import { USERLOGIN } from '../../Util/setting';
 import Swal from 'sweetalert2';
-// import { Redirect } from 'react-router';
 import { handleSttGhe } from '../../Util/services';
+import gheThuongpng from '../../assets/publicImg/gheThuong.png';
+import gheThuong16 from '../../assets/publicImg/gheThuong16.png';
+import gheVippng from '../../assets/publicImg/gheVip.png';
+import gheVip16 from '../../assets/publicImg/gheVip16.png';
+import gheDaDatpng from '../../assets/publicImg/gheDaDat.png';
+import gheDaDat16 from '../../assets/publicImg/gheDaDat16.png';
+import gheDangDatpng from '../../assets/publicImg/gheDangDat.png';
+import gheDangDat16 from '../../assets/publicImg/gheDangDat16.png';
+import viDienTu from '../../assets/publicImg/viDienTu.png';
+import atmMachine from '../../assets/publicImg/atmMachine.png';
+import creditCard from '../../assets/publicImg/creditCard.png';
 
 export default function ChiTietPhongVe(props) {
 
@@ -51,7 +61,7 @@ export default function ChiTietPhongVe(props) {
                         })
                     }
                 }>
-                    <img src={indexGheDD !== -1 ? "../../../img/gheDangDat.png" : gheDaDat ? "../../../img/gheDaDat.png" : gheVip ? '../../../img/gheVip.png' : "../../../img/gheThuong.png"} alt="ghe" style={{ margin: "2px", cursor: 'pointer' }} />
+                    <img src={indexGheDD !== -1 ? gheDangDatpng : gheDaDat ? gheDaDatpng : gheVip ? gheVippng : gheThuongpng} alt="ghe" style={{ margin: "2px", cursor: 'pointer' }} />
                 </button>
 
                 {/* Xuống dòng  */}
@@ -79,7 +89,6 @@ export default function ChiTietPhongVe(props) {
                             <div className="wrap_ghemanhinh">
                                 <div className="ghe_manhinh">
                                     <div className="man_hinh">
-                                        {/* <img src="../../../img/screen.png" alt="screen" /> */}
                                     </div>
                                     <div className="cumGhe text-center">
 
@@ -121,19 +130,19 @@ export default function ChiTietPhongVe(props) {
                                         <div className="chuThichGhe mt-3">
                                             <div className="d-flex justify-content-center font-weight-bold ">
                                                 <div className="mx-2">
-                                                    <img src="../../../img/gheThuong16.png" alt="ghe" />
+                                                    <img src={gheThuong16} alt="ghe" />
                                                     <span style={{ color: "white", marginLeft: '2px' }}>Ghế thường</span>
                                                 </div >
                                                 <div className="mx-2">
-                                                    <img src="../../../img/gheVip16.png" alt="ghe" />
+                                                    <img src={gheVip16} alt="ghe" />
                                                     <span style={{ color: "white", marginLeft: '2px' }}>Ghế VIP</span>
                                                 </div>
                                                 <div className="mx-2">
-                                                    <img src="../../../img/gheDaDat16.png" alt="ghe" />
+                                                    <img src={gheDaDat16} alt="ghe" />
                                                     <span style={{ color: "white", marginLeft: '2px' }}>Ghế đã đặt</span>
                                                 </div>
                                                 <div className="mx-2">
-                                                    <img src="../../../img/gheDangDat16.png" alt="ghe" />
+                                                    <img src={gheDangDat16} alt="ghe" />
                                                     <span style={{ color: "white", marginLeft: '2px' }}>Ghế đang đặt</span>
                                                 </div>
                                             </div>
@@ -146,7 +155,6 @@ export default function ChiTietPhongVe(props) {
                         </div>
                         <div className=" col-12 col-lg-4 ">
                             <div className="thongtin_datve">
-                                {/* <div className="ticket_tag"><img src="../../../img/tickettagC.png" alt="ghe" /></div> */}
                                 <div className="wrap_content_datve">
                                     <p className="tt_tenRap text-center"> {lichChieu.thongTinPhim?.tenCumRap}</p>
                                     <div  >
@@ -155,15 +163,7 @@ export default function ChiTietPhongVe(props) {
                                             <p className="tt_thoiGianChieu">{lichChieu.thongTinPhim?.ngayChieu} {lichChieu.thongTinPhim?.gioChieu} - {lichChieu.thongTinPhim?.tenRap}</p>
 
                                         </div>
-                                        {/* <div style={{flexGrow:'1'}} className="logo_ticket" style={{position:'relative'}}>
-                                        <img id="logo_circle" style={{ width: '78px', objectFit: 'cover', height: '60px' }} className="navbar-brand header-logo p-0 pr-1 img-fluid" src="../../img/logoheader.png" alt="logo" />
-                                        <img style={{ position: 'absolute', top: '0', left: '0', width: '85px', objectFit: 'cover', height: '60px' }} className="navbar-brand header-logo p-0 pr-1 img-fluid" src="../../img/logoheaderA.png" alt="logo" />
-                                    </div> */}
                                     </div>
-                                    {/* <p className="mb-1 tt_email">Email</p>
-                                <p className=""> {dataUser.email}</p>
-                                <p className="mb-1 tt_sdt">Số điện thoại</p>
-                                <p className=""> {dataUser.soDT} </p> */}
 
                                     <hr />
                                     <p className="tt_datGhe "> Ghế:
@@ -176,7 +176,7 @@ export default function ChiTietPhongVe(props) {
                                     <p className="tt_giaVe">Giá: <span className="tt_tongGiaVe">
                                         {danhSachGheDangDat.reduce((tongTien, gheDD, index) => {
                                             return tongTien += gheDD.giaVe;
-                                        }, 0).toLocaleString()}  VND
+                                        }, 0).toLocaleString('de-DE')}  VND
                                     </span></p>
                                     <hr />
                                     <div className="tt_httt">
@@ -185,19 +185,19 @@ export default function ChiTietPhongVe(props) {
                                             <div className="form-check">
                                                 <label className="form-check-label">
                                                     <input type="radio" className="form-check-input" name="optradio" defaultChecked />
-                                                    <img src="../../../img/viDienTu.png" alt="viDienTu" /> Ví điện tử
+                                                    <img src={viDienTu} alt="viDienTu" /> Ví điện tử
                                                 </label>
                                             </div>
                                             <div className="form-check">
                                                 <label className="form-check-label">
                                                     <input type="radio" className="form-check-input" name="optradio" />
-                                                    <img src="../../../img/creditCard.png" alt="viSa" /> Visa, Master
+                                                    <img src={creditCard} alt="viSa" /> Visa, Master
                                                 </label>
                                             </div>
                                             <div className="form-check ">
                                                 <label className="form-check-label">
                                                     <input type="radio" className="form-check-input" name="optradio" />
-                                                    <img src="../../../img/atmMachine.png" alt="atm" /> Thẻ ATM nội địa
+                                                    <img src={atmMachine} alt="atm" /> Thẻ ATM nội địa
                                                 </label>
                                             </div>
 

@@ -5,11 +5,19 @@ import Swal from 'sweetalert2';
 export const layThongTinLichChieuAction = (maLichChieu) => {
     // fetch
     return async dispatch => {
+        dispatch({
+            type:'SET_LOADING',
+            isLoading:true
+        })
         try {
             const result = await axios({
                 url: `https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${maLichChieu}`,
                 method: 'GET'
             });
+            dispatch({
+                type:'SET_LOADING',
+                isLoading:false
+            })
             dispatch({
                 type: 'SET_LICH_CHIEU',
                 lichChieu: result.data

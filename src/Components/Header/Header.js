@@ -4,6 +4,9 @@ import { NavLink } from 'react-router-dom'
 import Swal from 'sweetalert2';
 import { history } from '../../App';
 import { Link,  scroller } from "react-scroll";
+import LogoHeader from '../../assets/publicImg/logoHeader.png';
+import LogoCircle from '../../assets/publicImg/logoCircle.png';
+
 export default function Header() {
     let dataUser = JSON.parse(localStorage.getItem('userLogin'));
 
@@ -12,8 +15,8 @@ export default function Header() {
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light ">
                     <NavLink to='/' style={{position:'relative'}}>
-                        <img id="logo_circle" style={{width: '78px', objectFit: 'cover', height: '60px'}} className="navbar-brand header-logo p-0 pr-1 img-fluid"  src="../../../img/logoheader.png" alt="logo"/>
-                        <img style={{position:'absolute',top:'0',left:'0',width: '85px', objectFit: 'cover', height: '60px'}} className="navbar-brand header-logo p-0 pr-1 img-fluid"  src="../../../img/logoheaderA.png" alt="logo" />
+                        <img id="logo_circle" style={{width: '78px', objectFit: 'cover', height: '60px'}} className="navbar-brand header-logo p-0 pr-1 img-fluid"  src={LogoCircle} alt="logo"/>
+                        <img style={{position:'absolute',top:'0',left:'0',width: '85px', objectFit: 'cover', height: '60px'}} className="navbar-brand header-logo p-0 pr-1 img-fluid"  src={LogoHeader} alt="logo" />
                     </NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i className="fa fa-bars"></i>

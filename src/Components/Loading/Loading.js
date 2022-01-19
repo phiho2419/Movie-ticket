@@ -1,18 +1,18 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 export default function Loading() {
     document.title = "Loading...";
+    const { isLoading } = useSelector(state => state.LoadingReducer)
+    if (isLoading) {
+        return (
+            <div className="loading">
 
-    return (
-        <div className="loading">
-            <div className="loader">
-                <span className="ball" />
-                <span className="ball2" />
-                <ul>
-                    <li /><li /><li /><li /><li />
-                </ul>
             </div>
+        )
+    }
+    else {
+        return null
+    }
 
-        </div>
-    )
 }

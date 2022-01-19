@@ -3,6 +3,10 @@ import axios from 'axios'
 
 export const callApi_layThongTinHeThongRap = () => {
     return async dispatch => {
+        dispatch({
+            type:"SET_LOADING",
+            isLoading:true
+        })
         try {
             let result = await axios({
                 url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP09`,
@@ -12,12 +16,14 @@ export const callApi_layThongTinHeThongRap = () => {
                 type: 'SET_MANG_RAP',
                 mangRap: result.data
             })
+            dispatch({
+                type:"SET_LOADING",
+                isLoading:false
+            })
         } catch (errors) {
             if (errors.response.status === 400) {
                 alert('Không hợp lệ!');
-                // history.push('/');
             }
-            // console.log('error', error.reponse.status);
         }
     }
 }
@@ -57,9 +63,7 @@ export const LayThongTinHeThongRapApiAction = (maHeThongRap) => {
         } catch (errors) {
             if (errors.response.status === 400) {
                 alert('Không hợp lệ!');
-                // history.push('/');
             }
-            // console.log('error', error.reponse.status);
         }
     }
 }
