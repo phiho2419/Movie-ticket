@@ -3,7 +3,12 @@ import { Tabs } from 'antd';
 import TabDanhSachPhim from './TabDanhSachPhim';
 import { Link, scroller } from "react-scroll";
 import { history } from '../../../App';
-
+import BHDStar_theater from '../../../assets/publicImg/BHDStar_theater.jpg';
+import CGV_theater from '../../../assets/publicImg/CGV_theater.jpg';
+import CineStar_theater from '../../../assets/publicImg/CineStar_theater.jpg';
+import Galaxy_theater from '../../../assets/publicImg/Galaxy_theater.jpg';
+import LotteCinima_theater from '../../../assets/publicImg/LotteCinima_theater.jpg';
+import MegaGS_theater from '../../../assets/publicImg/MegaGS_theater.jpg';
 
 const { TabPane } = Tabs;
 
@@ -43,26 +48,26 @@ export default function TabListDanhSachRap(props) {
         let string_handled = string.trim()
 
         if (string_handled.trim() === 'BHD') {
-            return <img src="../../../../img/BHDStar_theater.jpg" width={50} alt="Theater_Picture" />
+            return <img src={BHDStar_theater} width={50} alt="Theater_Picture" />
         }
         else if (string_handled.trim() === 'CGV') {
-            return <img src="../../../../img/CGV_theater.jpg" width={50} alt="Theater_Picture" />
+            return <img src={CGV_theater} width={50} alt="Theater_Picture" />
 
         }
         else if (string_handled.trim() === 'CNS') {
-            return <img src="../../../../img/CineStar_theater.jpg" width={50} alt="Theater_Picture" />
+            return <img src={CineStar_theater} width={50} alt="Theater_Picture" />
 
         }
         else if (string_handled.trim() === 'GLX') {
-            return <img src="../../../../img/Galaxy_theater.jpg" width={50} alt="Theater_Picture" />
+            return <img src={Galaxy_theater} width={50} alt="Theater_Picture" />
 
         }
         else if (string_handled.trim() === 'Lotte') {
-            return <img src="../../../../img/LotteCinima_theater.jpg" width={50} alt="Theater_Picture" />
+            return <img src={LotteCinima_theater} width={50} alt="Theater_Picture" />
 
         }
         else if (string_handled.trim() === 'MegaGS') {
-            return <img src="../../../../img/MegaGS_theater.jpg" width={50} alt="Theater_Picture" />
+            return <img src={MegaGS_theater} width={50} alt="Theater_Picture" />
 
         }
     }
@@ -78,7 +83,6 @@ export default function TabListDanhSachRap(props) {
                     <p className="m-0 tabpane_tenRap" > {handlePreString_TheaterName(ctr.tenCumRap)} <span >{handleAfterString_TheaterName(ctr.tenCumRap)}</span></p>
                     <p className="m-0 tabpane_diaChiRap" >{ctr.diaChi}</p>
                     <p className="m-0" >
-                        {/* <NavLink to={`/chitietcumrap/${props.maHeThongRap}/${ctr.maCumRap}`}>[Chi tiết rạp]</NavLink> */}
                         <Link
                             activeClass="active"
                             style={{ color: "#1890ff" }}

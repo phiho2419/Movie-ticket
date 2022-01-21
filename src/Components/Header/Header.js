@@ -45,8 +45,8 @@ export default function Header() {
                                         }}>Đăng xuất</NavLink>
                                     </Fragment> :
                                     <Fragment>
-                                        <NavLink to="/dangnhap" className="btn_header btn_dangnhap"><i className="fa fa-user-circle" style={{ fontSize: '20px', paddingBottom: '3px' }}></i> <span>Đăng Nhập</span></NavLink>
-                                        <NavLink to="/dangky" className="btn_header btn_dangki"> Đăng Kí <i className="fa fa-user" style={{ fontSize: '20px', paddingBottom: '3px' }}></i></NavLink>
+                                        <NavLink to="/dangnhap" className="btn_header btn_dangnhap d-flex"><i className="fa fa-user-circle" style={{ fontSize: '20px', paddingBottom: '3px', paddingRight:"3px" }}></i> <span>Đăng Nhập</span></NavLink>
+                                        <NavLink to="/dangky" className="btn_header btn_dangki d-flex"> Đăng Kí <i className="fa fa-user" style={{ fontSize: '20px', paddingBottom: '3px', paddingLeft:"3px" }}></i></NavLink>
                                     </Fragment>
                             }
                         </form>

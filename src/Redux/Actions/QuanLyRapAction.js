@@ -16,10 +16,12 @@ export const callApi_layThongTinHeThongRap = () => {
                 type: 'SET_MANG_RAP',
                 mangRap: result.data
             })
-            dispatch({
-                type:"SET_LOADING",
-                isLoading:false
-            })
+            setTimeout(() => {
+                dispatch({
+                    type:'SET_LOADING',
+                    isLoading:false
+                })
+            }, 1000);
         } catch (errors) {
             if (errors.response.status === 400) {
                 alert('Không hợp lệ!');

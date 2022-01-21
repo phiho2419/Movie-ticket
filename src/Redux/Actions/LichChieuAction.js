@@ -14,10 +14,12 @@ export const layThongTinLichChieuAction = (maLichChieu) => {
                 url: `https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${maLichChieu}`,
                 method: 'GET'
             });
-            dispatch({
-                type:'SET_LOADING',
-                isLoading:false
-            })
+            setTimeout(() => {
+                dispatch({
+                    type:'SET_LOADING',
+                    isLoading:false
+                })
+            }, 1000);
             dispatch({
                 type: 'SET_LICH_CHIEU',
                 lichChieu: result.data

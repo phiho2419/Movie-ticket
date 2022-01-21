@@ -1,6 +1,13 @@
 import React, { Fragment } from 'react'
 import { Tabs, Tag } from 'antd';
 import { NavLink } from 'react-router-dom';
+import BHDStar_theater from '../../assets/publicImg/BHDStar_theater.jpg';
+import CGV_theater from '../../assets/publicImg/CGV_theater.jpg';
+import CineStar_theater from '../../assets/publicImg/CineStar_theater.jpg';
+import Galaxy_theater from '../../assets/publicImg/Galaxy_theater.jpg';
+import LotteCinima_theater from '../../assets/publicImg/LotteCinima_theater.jpg';
+import MegaGS_theater from '../../assets/publicImg/MegaGS_theater.jpg';
+
 const { TabPane } = Tabs;
 
 export default function CTPhimDetailsList(props) {
@@ -10,22 +17,22 @@ export default function CTPhimDetailsList(props) {
     const renderLogoChiTiet = () => {
         let tenLogo = logo.substr(0, 3).trim()
         if (tenLogo === 'BHD') {
-            return <img src="../../../img/BHDStar_theater.jpg" width={120} height={140} alt="hinhRap"/>
+            return <img src={BHDStar_theater} width={120} height={140} alt="hinhRap"/>
         }
         else if (tenLogo === 'cgv') {
-            return <img src="../../../img/CGV_theater.jpg" width={120} height={140} alt="hinhRap"/>
+            return <img src={CGV_theater} width={120} height={140} alt="hinhRap"/>
         }
         else if (tenLogo === 'Gal') {
-            return <img src="../../../img/Galaxy_theater.jpg" width={120} height={140} alt="hinhRap"/>
+            return <img src={Galaxy_theater} width={120} height={140} alt="hinhRap"/>
         }
         else if (tenLogo === 'Cin') {
-            return <img src="../../../img/CineStar_theater.jpg" width={120} height={140} alt="hinhRap"/>
+            return <img src={CineStar_theater} width={120} height={140} alt="hinhRap"/>
         }
         else if (tenLogo === 'Lot') {
-            return <img src="../../../img/LotteCinima_theater.jpg" width={120} height={140} alt="hinhRap"/>
+            return <img src={LotteCinima_theater} width={120} height={140} alt="hinhRap"/>
         }
         else if (tenLogo === 'Meg') {
-            return <img src="../../../img/MegaGS_theater.jpg" width={120} height={140} alt="hinhRap"/>
+            return <img src={MegaGS_theater} width={120} height={140} alt="hinhRap"/>
         }
     }
     const handleTenCumRap = (tenCumRap) => {
